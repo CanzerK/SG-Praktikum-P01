@@ -6,7 +6,35 @@
 //
 
 import Foundation
+import Combine
 import CoreBluetooth
+
+enum DeviceError: Error {
+	case unableToConnect
+	case alreadyConnected
+}
+
+enum ConnectionState {
+	case connecting
+	case interrogating
+	case acknowledging
+	case connected
+}
+
+enum DeviceState {
+	case discovered
+	case connecting
+	case connected
+}
+
+protocol DeviceDelegate {
+	/**
+	 * @discussion Called when the device changes its state.
+	 *
+	 * @parameter The device instance.
+	 */
+	func deviceDidChangeState(_ device: Device)
+}
 
 class Device: NSObject, CBPeripheralDelegate {
 	/// Underlying bluetooth peripheral instance.
@@ -19,11 +47,25 @@ class Device: NSObject, CBPeripheralDelegate {
 	private var antidosCharacteristic: CBCharacteristic?
 
 	/// Command buffer to enqueue all device commands into.
-	private var commandQueue = CommandQueue()
+	private var commandQueue: CommandQueue?
 
 	/// Current sequence number of the command.
 	private var sequenceNumber: UInt8 = 0
 
+	/// Broadcasts events during the connection process.
+	private var connectionSubject: PassthroughSubject<ConnectionState, DeviceError>?
+
+	/// The delegate of the device instance that will receive messages of changes.
+	var delegate: DeviceDelegate?
+
+	/// The current state of the device depends on what the coordinator does with it and is based on the connection to it.
+	var state = DeviceState.discovered {
+		didSet {
+			delegate?.deviceDidChangeState(self)
+		}
+	}
+
+	/// Representative name of the device.
 	var name: String? {
 		return peripheral.name
 	}
@@ -40,21 +82,30 @@ class Device: NSObject, CBPeripheralDelegate {
 	}
 
 	override func isEqual(_ object: Any?) -> Bool {
-		guard let otherDevice = object as? Device else {
+		if let otherDevice = object as? Device {
+			return peripheral == otherDevice.peripheral
+		} else if let otherPeripheral = object as? CBPeripheral {
+			return peripheral == otherPeripheral
+		} else {
 			return false
 		}
-
-		return peripheral == otherDevice.peripheral
 	}
 
-	func connect(toManager manager: CBCentralManager) {
+	/// Connect to the given device using the manager. Don't call directly!
+	func connect(toManager manager: CBCentralManager) -> PassthroughSubject<ConnectionState, DeviceError> {
+		state = .connecting
+
+		connectionSubject = PassthroughSubject<ConnectionState, DeviceError>()
+
 		manager.connect(peripheral)
 
-		peripheral.discoverServices([Constants.serviceUUID, Constants.initializeServiceUUID])
+		return connectionSubject!
 	}
 
+	/// Disconnect from the given device using the manager. Don't call directly!
 	func disconnect(fromManager manager: CBCentralManager) {
-		commandQueue.empty()
+		commandQueue?.cancelAll()
+		connectionSubject = nil
 
 		manager.cancelPeripheralConnection(peripheral)
 	}
@@ -69,7 +120,7 @@ class Device: NSObject, CBPeripheralDelegate {
 		}
 	}
 
-	internal func enqueueCommand(deviceId: DeviceId, commandId: CommandId, contents: [UInt8], sourceId: UInt8?, targetId: UInt8?) {
+	internal func enqueueCommand<T: CommandRepresentable>(deviceId: DeviceId, commandId: T, sourceId: UInt8? = nil, targetId: UInt8? = nil) {
 		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
 
 		if (sourceId != nil) {
@@ -80,9 +131,25 @@ class Device: NSObject, CBPeripheralDelegate {
 			flags.insert(PacketFlags.commandHasTargetId)
 		}
 
-		let command = Command(flags, deviceId: deviceId, commandId: commandId, sequenceNumber: nextSequenceNumber, contents: contents, sourceId: sourceId, targetId: targetId)
+		let command = Command(flags.rawValue, deviceId: deviceId.rawValue, commandId: commandId.rawValue, sequenceNumber: nextSequenceNumber, contents: nil, sourceId: sourceId, targetId: targetId)
 
-		commandQueue.enqueue(command)
+		commandQueue?.enqueue(command)
+	}
+
+	internal func enqueueCommand<T: CommandRepresentable, D: CommandDataConvertible>(deviceId: DeviceId, commandId: T, data: D?, sourceId: UInt8? = nil, targetId: UInt8? = nil) {
+		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
+
+		if (sourceId != nil) {
+			flags.insert(PacketFlags.commandHasSourceId)
+		}
+
+		if (targetId != nil) {
+			flags.insert(PacketFlags.commandHasTargetId)
+		}
+
+		let command = Command(flags.rawValue, deviceId: deviceId.rawValue, commandId: commandId.rawValue, sequenceNumber: nextSequenceNumber, contents: data?.packet, sourceId: sourceId, targetId: targetId)
+
+		commandQueue?.enqueue(command)
 	}
 
 	internal func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
@@ -90,43 +157,65 @@ class Device: NSObject, CBPeripheralDelegate {
 	}
 
 	internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-		if let error = error {
-			print(error.localizedDescription)
-		}
-		else {
-			print("Successfully wrote to \(peripheral).")
+		if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
+			if error != nil {
+				connectionSubject?.send(completion: .failure(.unableToConnect))
 
-			if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
-				guard let apiCharacteristic = apiCharacteristic else {
-					return
-				}
-
-				let start: UInt8 = 0x8d
-				let end: UInt8 = 0xd8
-				let response: UInt8 = 0x0a
-//				let sourceId: UInt8 = 0xff
-//				let targetId: UInt8 = 0x11
-				let deviceId: UInt8 = 0x13
-				let commandId : UInt8 = 0x0d
-	//			let led: UInt8 = LED.all()
-	//			let r: UInt8 = 0xff
-	//			let g: UInt8 = 0x00
-	//			let b: UInt8 = 0x00
-	//			let a: UInt8 = 0x00
-				let seqNum: UInt8 = (1) % 255
-				let sum = response + deviceId + commandId + seqNum
-				let checksum: UInt8 = (~sum) & 0xff
-
-				let bytes: [UInt8] = [start, response, deviceId, commandId, seqNum, checksum, end]
-				let data = Data(bytes)
-
-				peripheral.writeValue(data, for: apiCharacteristic, type: .withResponse)
+				return
 			}
+
+			// At this point we know we have successfully passed the antidos protection and we are connected to the central manager.
+			state = .connected
+
+			connectionSubject?.send(.connected)
+			connectionSubject?.send(completion: .finished)
+
+			commandQueue = CommandQueue(peripheral, apiCharacteristic: apiCharacteristic!)
 		}
+
+//		if let error = error {
+//			print(error.localizedDescription)
+//		}
+//		else {
+//			print("Successfully wrote to \(peripheral).")
+//
+//			if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
+//				guard let apiCharacteristic = apiCharacteristic else {
+//					return
+//				}
+//
+//				let start: UInt8 = 0x8d
+//				let end: UInt8 = 0xd8
+//				let response: UInt8 = 0x0a
+////				let sourceId: UInt8 = 0xff
+////				let targetId: UInt8 = 0x11
+//				let deviceId: UInt8 = 0x13
+//				let commandId : UInt8 = 0x0d
+//	//			let led: UInt8 = LED.all()
+//	//			let r: UInt8 = 0xff
+//	//			let g: UInt8 = 0x00
+//	//			let b: UInt8 = 0x00
+//	//			let a: UInt8 = 0x00
+//				let seqNum: UInt8 = (1) % 255
+//				let sum = response + deviceId + commandId + seqNum
+//				let checksum: UInt8 = (~sum) & 0xff
+//
+//				let bytes: [UInt8] = [start, response, deviceId, commandId, seqNum, checksum, end]
+//				let data = Data(bytes)
+//
+//				peripheral.writeValue(data, for: apiCharacteristic, type: .withResponse)
+//			}
+//		}
 	}
 
 	internal func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-		guard let services = peripheral.services else { return }
+		guard let services = peripheral.services else {
+			connectionSubject?.send(completion: .failure(.unableToConnect))
+
+			return
+		}
+
+		connectionSubject?.send(.interrogating)
 
 		for service in services {
 			peripheral.discoverCharacteristics([Constants.apiCharacteristicUUID, Constants.antidosCharacteristicUUID], for: service)
@@ -134,7 +223,17 @@ class Device: NSObject, CBPeripheralDelegate {
 	}
 
 	internal func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-		guard let characteristics = service.characteristics else { return }
+		if error != nil {
+			connectionSubject?.send(completion: .failure(.unableToConnect))
+
+			return
+		}
+
+		guard let characteristics = service.characteristics else {
+			connectionSubject?.send(completion: .failure(.unableToConnect))
+
+			return
+		}
 
 		if (service.uuid == Constants.serviceUUID) {
 			for characteristic in characteristics {
@@ -154,13 +253,16 @@ class Device: NSObject, CBPeripheralDelegate {
 			}
 		}
 
-		guard let characteristic = antidosCharacteristic else {
-			print("Unable to get antidos characteristic.")
-
+		// Only after we made sure we got both characteristics we proceed.
+		guard let antidosCharacteristic = antidosCharacteristic, let _ = apiCharacteristic else {
 			return
 		}
 
-		peripheral.writeValue(Data(Constants.antidosData), for: characteristic, type: .withResponse)
+		// Send the andidos protection data to the robot.
+		peripheral.writeValue(Data(Constants.antidosData), for: antidosCharacteristic, type: .withResponse)
+
+		// Mark the connection state as acknowledging and continue to full connection.
+		connectionSubject?.send(.acknowledging)
 	}
 
 	internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {

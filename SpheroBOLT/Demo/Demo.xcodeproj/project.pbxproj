@@ -17,6 +17,7 @@
 		5B97655C2B134D51007A1894 /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655B2B134D51007A1894 /* Echo.swift */; };
 		5B97655E2B134D8A007A1894 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655D2B134D8A007A1894 /* PeerConnection.swift */; };
 		5B9765602B134E7D007A1894 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655F2B134E7D007A1894 /* Sensor.swift */; };
+		5B9ADAB22B137A6800A35074 /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9ADAB12B137A6800A35074 /* DeviceId.swift */; };
 		5BBC38FF2AFEC6DC009260EC /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */; };
 		5BC335102AFECA5F00510380 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3350F2AFECA5F00510380 /* Constants.swift */; };
 		5BC335122AFFED6100510380 /* CommandId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335112AFFED6100510380 /* CommandId.swift */; };
@@ -40,6 +41,7 @@
 		5B97655B2B134D51007A1894 /* Echo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
 		5B97655D2B134D8A007A1894 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		5B97655F2B134E7D007A1894 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		5B9ADAB12B137A6800A35074 /* DeviceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
 		5BC3350F2AFECA5F00510380 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5BC335112AFFED6100510380 /* CommandId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandId.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		5B9765592B110AD1007A1894 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				5B9ADAB12B137A6800A35074 /* DeviceId.swift */,
 				5BC335112AFFED6100510380 /* CommandId.swift */,
 				5BC3351B2B001D2500510380 /* Command.swift */,
 				5B41F2102B0FE66600C18352 /* CommandQueue.swift */,
@@ -208,6 +211,7 @@
 				5BC335142AFFED9200510380 /* Result.swift in Sources */,
 				5B41F2112B0FE66600C18352 /* CommandQueue.swift in Sources */,
 				5B5B17E92AFD6B2200C3DF11 /* ContentView.swift in Sources */,
+				5B9ADAB22B137A6800A35074 /* DeviceId.swift in Sources */,
 				5B97655C2B134D51007A1894 /* Echo.swift in Sources */,
 				5B5B17E72AFD6B2200C3DF11 /* DemoApp.swift in Sources */,
 				5B6708B12B0BDD3E005D8C62 /* Navigation.swift in Sources */,

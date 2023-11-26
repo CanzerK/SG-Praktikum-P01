@@ -19,7 +19,7 @@ enum ChargingState: UInt8 {
 	case charged = 0x03
 }
 
-enum PowerCommand: UInt8 {
+enum PowerCommandId: UInt8 {
 	case enterDeepSleep = 0x00
 	case enterSoftSleep = 0x01
 	case getUSBState = 0x02
@@ -37,4 +37,14 @@ enum PowerCommand: UInt8 {
 	case willSleepAsync = 0x19
 	case sleepAsync = 0x1a
 	case batteryStateChanged = 0x1f
+}
+
+/// Power extensions to the device object.
+extension Device {
+	/**
+	 * Wakes up the device.
+	 */
+	func wake() {
+		enqueueCommand(deviceId: .power, commandId: PowerCommandId.wake)
+	}
 }

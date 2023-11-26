@@ -7,24 +7,6 @@
 
 import Foundation
 
-enum DeviceId: UInt8 {
-	case apiProcessor = 0x10
-	case systemInfo = 0x11
-	case systemModes = 0x12
-	case power = 0x13
-	case driving = 0x16
-	case animatronics = 0x17
-	case sensors = 0x18
-	case peerConnection = 0x19
-	case userIO = 0x1a
-	case storageCommand = 0x1b
-	case secondaryMCUFirmwareUpdateCommand = 0x1d
-	case wifiCommand = 0x1e
-	case factoryTest = 0x1f
-	case macroSystem = 0x20
-	case proto = 0xfe
-}
-
 enum CommandId: UInt8 {
 	case enableGestureEventNotification = 0x00
 	case gestureEvent = 0x01
@@ -62,4 +44,19 @@ enum CommandId: UInt8 {
 	case setLEDMatrixTextScrolling = 0x3b
 	case setLEDMatrixTextScrollingNotify = 0x3c
 	case setLEDMatrixSingleCharacter = 0x42
+}
+
+enum CommandResult: UInt8 {
+	case success = 0x00
+	case badDeviceId = 0x01
+	case badCommandId = 0x02
+	case notYetImplemented = 0x03
+	case commandIsRestricted = 0x04
+	case badDataLength = 0x05
+	case commandFailed = 0x06
+	case badParameterValue = 0x07
+	case busy = 0x08
+	case badTargetId = 0x09
+	case targetUnavailable = 0x0a
+	case unknown = 0xff
 }

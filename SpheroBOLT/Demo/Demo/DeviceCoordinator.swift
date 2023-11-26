@@ -9,113 +9,118 @@ import Foundation
 import CoreBluetooth
 import Combine
 
-enum DeviceCoordinatorError: Error {
-	case deviceAlreadyConnected
-	case deviceUnableToConnect
-}
-
 ///
 /// @protocol DeviceCoordinatorDelegate
 ///
 /// @discussion Provides functionality to find which devices have been discovered and when we are connected to them.
 protocol DeviceCoordinatorDelegate {
 	///
+	/// @method deviceCoordinatorDidUpdateBluetoothState:
+	///
+	/// @param coordinator  The device coordinator whose state has changed.
+	///
+	//// @discussion     Invoked whenever the central manager's state has been updated. Commands should only be issued when the state is
+	/// <code>CBCentralManagerStatePoweredOn</code>. A state below <code>CBCentralManagerStatePoweredOn</code>
+	///                  implies that scanning has stopped and any connected peripherals have been disconnected. If the state moves below
+	///                  <code>CBCentralManagerStatePoweredOff</code>, all <code>CBPeripheral</code> objects obtained from this central
+	///                  manager become invalid and must be retrieved or discovered again.
+	///
+	mutating func deviceCoordinatorDidUpdateBluetoothState(_ coordinator: DeviceCoordinator, state: CBManagerState)
+
+	///
 	/// @method deviceCoordinatorDidFindDevice
 	///
 	/// @param coordinator The instance of the coordinator that sent the message.
 	/// @param device The device that was found.
 	///
-	func deviceCoordinatorDidFindDevice(coordinator: DeviceCoordinator, device: Device)
+	mutating func deviceCoordinatorDidFindDevice(_ coordinator: DeviceCoordinator, device: Device)
 }
 
 class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
-	typealias DeviceFuture = Future<Device, DeviceCoordinatorError>
-
 	/// Bluetooth central manager for all connections.
 	private var centralManager: CBCentralManager!
 
-	/// All currently connected devices.
-	private var connectedDevices = Set<Device>()
-
-	/// All devices that we have discovered so far.
-	private var discoveredDevices = Set<Device>()
-
-	/// All devices that we are currently establishing connection with.
-	private var connectingDevices = Set<Device>()
-
-	/// The current promise for a request to discover all devices.
-	private var findSubject: PassthroughSubject<Device, DeviceCoordinatorError>?
-
-	/// Future for when the state has been updated.
-	private var stateSubject = PassthroughSubject<CBManagerState, Never>()
+	/// All  devices in all different states.
+	private var devices = Set<Device>()
 
 	/// Delegate that listens for messages sent by the coordinator.
 	var delegate: DeviceCoordinatorDelegate?
 
-	var state: AnyPublisher<CBManagerState, Never> {
-		return stateSubject.eraseToAnyPublisher()
-	}
-
-	public override init() {
+	public init(_ delegate: DeviceCoordinatorDelegate?) {
 		super.init()
+
+		self.delegate = delegate
 
 		centralManager = CBCentralManager(delegate: self, queue: nil)
 	}
 
-	public func findDevices() -> AnyPublisher<Device, DeviceCoordinatorError> {
-		findSubject = PassthroughSubject<Device, DeviceCoordinatorError>()
-
+	public func findDevices() {
 		centralManager.scanForPeripherals(withServices: [Constants.serviceUUID], options: nil)
-
-		return findSubject!.eraseToAnyPublisher()
 	}
 
 	public func stop() {
 		centralManager.stopScan()
-		findSubject = nil
 	}
 
-	public func connect(toDevice device: Device) -> Result<Void, DeviceCoordinatorError> {
+	public func connect(toDevice device: Device) -> PassthroughSubject<ConnectionState, DeviceError> {
 		// If a device is currently being connected or is already connected then don't do anything.
-		if (connectedDevices.contains(device) || connectingDevices.contains(device)) {
-			return .failure(.deviceAlreadyConnected)
+		if (device.state == .connecting || device.state == .connected) {
+			let subject = PassthroughSubject<ConnectionState, DeviceError>()
+			subject.send(completion: .failure(.alreadyConnected))
+
+			return subject
 		}
 
-		device.connect(toManager: centralManager)
+		// When we exit the scope we will broadcast a single connection state change.
+//		connectionSubject?.send(.connecting)
 
-		connectingDevices.insert(device)
-
-		return .success(())
+		// This will put the device in the correct state also.
+		return device.connect(toManager: centralManager)
 	}
 
 	internal func centralManagerDidUpdateState(_ central: CBCentralManager) {
-		stateSubject.send(central.state)
+		// Stop scanning immediately if we have switched to another state other than powered on.
+		if (central.state != .poweredOn) {
+			centralManager.stopScan()
+		}
+
+		delegate?.deviceCoordinatorDidUpdateBluetoothState(self, state: central.state)
 	}
 
+	/// Called when a new device has been found by our manager, which we will broadcast and add to the discovered devices.
 	internal func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
 	{
 		let foundDevice = Device(peripheral)
-
-		findSubject?.send(foundDevice)
+		devices.insert(foundDevice)
 
 		// Notify the delegate we have found a new device.
-		delegate?.deviceCoordinatorDidFindDevice(coordinator: self, device: foundDevice)
+		delegate?.deviceCoordinatorDidFindDevice(self, device: foundDevice)
 	}
 
 	internal func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-		let newDevice = Device(peripheral)
-
 		// Move the device to the list of connected devices and remove it from the other pending lists.
-		connectedDevices.insert(newDevice)
+		if (!devices.contains(where: { $0.isEqual(peripheral) })) {
+			return
+		}
 
-//		connectingDevices.filter { $0. == peripheral }.first
+		peripheral.discoverServices([Constants.serviceUUID, Constants.initializeServiceUUID])
 	}
 
 	internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+		// Move the device to the list of connected devices and remove it from the other pending lists.
+		guard let connectedDevice = devices.first(where: { $0.isEqual(peripheral) }) else {
+			return
+		}
 
+		connectedDevice.state = .discovered
 	}
 
 	internal func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-		
+		// Move the device to the list of connected devices and remove it from the other pending lists.
+		guard let connectedDevice = devices.first(where: { $0.isEqual(peripheral) }) else {
+			return
+		}
+
+		connectedDevice.state = .discovered
 	}
 }

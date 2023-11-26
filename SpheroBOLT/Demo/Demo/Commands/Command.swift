@@ -18,6 +18,12 @@ struct PacketFlags: OptionSet {
 	static let commandHasSourceId = PacketFlags(rawValue: 0x20)
 }
 
+typealias CommandRepresentable = RawRepresentable<UInt8>
+
+protocol CommandDataConvertible {
+	var packet: AnySequence<UInt8>? { get }
+}
+
 /// Packet structure:
 /// ---------------------------------
 /// - start		[1 byte] Specifies the beginning of a packet, the value is always FFh.
@@ -32,31 +38,30 @@ struct PacketFlags: OptionSet {
 /// ---------------------------------
 /// Usually the first data byte is the api_v2 response code.
 class Command {
-	let start: UInt8 = 0x8d
-	let flags: PacketFlags
+	static let start: UInt8 = 0x8d
+	static let end: UInt8 = 0xd8
+
+	let flags: UInt8
 	let sourceId: UInt8?
 	let targetId: UInt8?
-	let deviceId: DeviceId
-	let commandId: CommandId
-	let contents: [UInt8]
+	let deviceId: UInt8
+	let commandId: UInt8
 	let sequenceNumber: UInt8
-	let end: UInt8 = 0xd8
 
-	init(_ flags: PacketFlags, deviceId: DeviceId, commandId: CommandId, sequenceNumber: UInt8, contents: [UInt8], sourceId: UInt8?, targetId: UInt8?) {
+	init(_ flags: UInt8, deviceId: UInt8, commandId: UInt8, sequenceNumber: UInt8, contents: AnySequence<UInt8>?, sourceId: UInt8?, targetId: UInt8?) {
 		self.flags = flags
 		self.sourceId = sourceId
 		self.targetId = targetId
 		self.deviceId = deviceId
 		self.commandId = commandId
-		self.contents = contents
 		self.sequenceNumber = sequenceNumber
 	}
 
 	var packet: Data {
 		get {
-			let sum = flags.rawValue + deviceId.rawValue + commandId.rawValue + sequenceNumber
-		 	let checksum: UInt8 = (~sum) & 0xff
-			let bytes: [UInt8] = [start, flags.rawValue, deviceId.rawValue, commandId.rawValue, sequenceNumber, checksum, end]
+			let sum = flags + deviceId + commandId + sequenceNumber
+			let checksum: UInt8 = (~sum) & 0xff
+			let bytes: Array<UInt8> = [Command.start, flags, deviceId, commandId, sequenceNumber, checksum, Command.end]
 
 			return Data(bytes)
 		}
