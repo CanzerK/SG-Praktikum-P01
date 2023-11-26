@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvm2w7iu6f6dt"]
+
+[sub_resource type="Environment" id="Environment_v10de"]
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_65va3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4kuov"]
+size = Vector2(200, 200)
+
+[node name="Word" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v10de")
+camera_attributes = SubResource("CameraAttributesPractical_65va3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0977326, 0.317006, -0.943375, 0.0195299, 0.947119, 0.320288, 0.995021, -0.0497266, 0.0863733, -95.1918, 26.3979, -24.7034)
+fov = 86.665
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.346854, -0.626931, 0.697603, -0.032757, 0.735226, 0.67703, -0.937347, -0.257682, 0.234479, 0, 107.482, 40.0934)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_4kuov")

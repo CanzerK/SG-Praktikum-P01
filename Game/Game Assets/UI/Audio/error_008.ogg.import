@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dnlhojpg01j33"
+path="res://.godot/imported/error_008.ogg-c19a1f17ad1312004878df47fa08f4fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://Game Assets/UI/Audio/error_008.ogg"
+dest_files=["res://.godot/imported/error_008.ogg-c19a1f17ad1312004878df47fa08f4fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

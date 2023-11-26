@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxsjt6mene3k"
+path="res://.godot/imported/click1.ogg-6e4141d6d8c59bbfe9b25b8e45f6d3cf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Game Assets/UI/Bonus/click1.ogg"
+dest_files=["res://.godot/imported/click1.ogg-6e4141d6d8c59bbfe9b25b8e45f6d3cf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
