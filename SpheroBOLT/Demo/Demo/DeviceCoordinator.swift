@@ -26,14 +26,6 @@ protocol DeviceCoordinatorDelegate {
 	///                  manager become invalid and must be retrieved or discovered again.
 	///
 	mutating func deviceCoordinatorDidUpdateBluetoothState(_ coordinator: DeviceCoordinator, state: CBManagerState)
-
-	///
-	/// @method deviceCoordinatorDidFindDevice
-	///
-	/// @param coordinator The instance of the coordinator that sent the message.
-	/// @param device The device that was found.
-	///
-	mutating func deviceCoordinatorDidFindDevice(_ coordinator: DeviceCoordinator, device: Device)
 }
 
 class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
@@ -46,36 +38,84 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 	/// Delegate that listens for messages sent by the coordinator.
 	var delegate: DeviceCoordinatorDelegate?
 
+	/// Connection established from the central manager subject.
+	private var didDiscoverPeripheralSubject = PassthroughSubject<Device, Never>()
+
+	/// Connection established from the central manager publisher.
+	private var didDiscoverPeripheralPublisher: AnyPublisher<Device, Never>
+
+	/// Connection established from the central manager cancellable.
+	private var didDiscoverSubjectCancellable = Set<AnyCancellable>()
+
+	/// Connection established from the central manager subject.
+	private var didConnectPeripheralSubject = PassthroughSubject<Device, DeviceError>()
+
+	/// Connection established from the central manager publisher.
+	private var didConnectPeripheralPublisher: AnyPublisher<Device, DeviceError>
+
+	/// Connection established from the central manager cancellable.
+	private var didConnectSubjectCancellable = Set<AnyCancellable>()
+
+	/// Connection established from the central manager subject.
+	private var didFailToConnectPeripheralSubject = PassthroughSubject<Device, DeviceError>()
+
+	/// Connection established from the central manager publisher.
+	private var didFailToConnectPeripheralPublisher: AnyPublisher<Device, DeviceError>
+
+	/// Connection established from the central manager cancellable.
+	private var didFailToConnectSubjectCancellable = Set<AnyCancellable>()
+
 	public init(_ delegate: DeviceCoordinatorDelegate?) {
+		self.didDiscoverPeripheralPublisher = didDiscoverPeripheralSubject.eraseToAnyPublisher()
+
 		super.init()
 
 		self.delegate = delegate
 
-		centralManager = CBCentralManager(delegate: self, queue: nil)
+		centralManager = CBCentralManager(delegate: self,
+										  queue: DispatchQueue(label: "spherobolt.central-manager", target: .global()))
 	}
 
-	public func findDevices() {
-		centralManager.scanForPeripherals(withServices: [Constants.serviceUUID], options: nil)
+	public func findDevices() -> AnyPublisher<Device, Never> {
+		return didDiscoverPeripheralPublisher
+			.handleEvents(receiveSubscription: { _ in
+				self.centralManager.scanForPeripherals(withServices: [Constants.serviceUUID], options: nil)
+			}, receiveCancel: {
+				self.centralManager.stopScan()
+			})
+			.shareCurrentValue()
+			.eraseToAnyPublisher()
 	}
 
 	public func stop() {
 		centralManager.stopScan()
 	}
 
-	public func connect(toDevice device: Device) -> PassthroughSubject<ConnectionState, DeviceError> {
+	public func connect(toDevice device: Device) -> AnyPublisher<ConnectionState, DeviceError> {
 		// If a device is currently being connected or is already connected then don't do anything.
 		if (device.state == .connecting || device.state == .connected) {
 			let subject = PassthroughSubject<ConnectionState, DeviceError>()
 			subject.send(completion: .failure(.alreadyConnected))
 
-			return subject
+			return subject.eraseToAnyPublisher()
 		}
 
-		// When we exit the scope we will broadcast a single connection state change.
-//		connectionSubject?.send(.connecting)
+		Publishers.Merge(
+			didConnectPeripheralPublisher!
+				.filter { $0 == device }
+				.setFailureType(to: DeviceError.self),
+			didFailToConnectPeripheralPublisher!
+				.fil
+		)
 
-		// This will put the device in the correct state also.
-		return device.connect(toManager: centralManager)
+//		return didConnectPeripheralPublisher
+//			.map { device in
+//				guard let strongSelf = self else { return }
+//
+//				device.connect(toManager: strongSelf.centralManager)
+//			}.eraseToAnyPublisher()
+//
+//		return didConnectPeripheralPublisher
 	}
 
 	internal func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -94,16 +134,16 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 		devices.insert(foundDevice)
 
 		// Notify the delegate we have found a new device.
-		delegate?.deviceCoordinatorDidFindDevice(self, device: foundDevice)
+		didDiscoverPeripheralSubject.send(foundDevice)
 	}
 
 	internal func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
 		// Move the device to the list of connected devices and remove it from the other pending lists.
-		if (!devices.contains(where: { $0.isEqual(peripheral) })) {
+		guard let connectedDevice = devices.filter({ $0.isEqual(peripheral) }).first else {
 			return
 		}
 
-		peripheral.discoverServices([Constants.serviceUUID, Constants.initializeServiceUUID])
+//		didConnectPeripheralSubject.send(connectedDevice)
 	}
 
 	internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
@@ -117,10 +157,12 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 
 	internal func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
 		// Move the device to the list of connected devices and remove it from the other pending lists.
-		guard let connectedDevice = devices.first(where: { $0.isEqual(peripheral) }) else {
+		guard let device = devices.filter({ $0.isEqual(peripheral) }).first else {
 			return
 		}
 
-		connectedDevice.state = .discovered
+		device.state = .discovered
+
+//		didConnectPeripheralSubject.send(completion: .failure(.unableToConnect))
 	}
 }
