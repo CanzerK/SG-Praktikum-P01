@@ -1,0 +1,227 @@
+[gd_scene load_steps=57 format=3 uid="uid://dlxuhgn5hwpwi"]
+
+[ext_resource type="PackedScene" uid="uid://5fwme4wfbn17" path="res://Game Assets/Buildings/GLB/wall_doorA.glb" id="1_twakb"]
+[ext_resource type="PackedScene" uid="uid://ccqv0vukw80rx" path="res://Game Assets/Buildings/GLB/skyscraperE.glb" id="2_o8org"]
+[ext_resource type="PackedScene" uid="uid://274xqqxa6ovp" path="res://Game Assets/Buildings/GLB/skyscraperB.glb" id="3_2ojrl"]
+[ext_resource type="PackedScene" uid="uid://cfw7kjun0pyum" path="res://Game Assets/Buildings/GLB/skyscraperA.glb" id="4_qnu2n"]
+[ext_resource type="PackedScene" uid="uid://cgwqmhfr0m4o4" path="res://Game Assets/Buildings/GLB/low_buildingN.glb" id="5_2i1rg"]
+[ext_resource type="PackedScene" uid="uid://bh4dtrs0pwmhb" path="res://Game Assets/Buildings/GLB/low_buildingI.glb" id="6_xmdth"]
+[ext_resource type="PackedScene" uid="uid://b3w1gnjckrt2y" path="res://Game Assets/Buildings/GLB/large_buildingE.glb" id="7_5ie8e"]
+[ext_resource type="PackedScene" uid="uid://dmtvstnw1w6m" path="res://Game Assets/Buildings/GLB/large_buildingA.glb" id="8_nrucr"]
+[ext_resource type="PackedScene" uid="uid://comi3r38g0846" path="res://Game Assets/Buildings/GLB/detail_overhangWide.glb" id="9_esmw3"]
+[ext_resource type="PackedScene" uid="uid://dhasl6xs7fxlj" path="res://Game Assets/Buildings/GLB/detail_awning.glb" id="10_u7jsj"]
+[ext_resource type="PackedScene" uid="uid://bqx0mnitl2x68" path="res://Game Assets/Buildings/GLB/detail_awningWide.glb" id="11_5npdm"]
+[ext_resource type="PackedScene" uid="uid://dqpbhjk87abyt" path="res://Game Assets/Buildings/GLB/detail_overhang.glb" id="12_uri41"]
+[ext_resource type="PackedScene" uid="uid://dtf1eerct1n7q" path="res://Game Assets/Buildings/GLB/detail_umbrella.glb" id="13_ib1xp"]
+[ext_resource type="PackedScene" uid="uid://b2winqhdbegwh" path="res://Game Assets/Buildings/GLB/detail_umbrellaDetailed.glb" id="14_3hdqs"]
+[ext_resource type="PackedScene" uid="uid://ciaco7t7fbhmu" path="res://Game Assets/Buildings/GLB/large_buildingB.glb" id="15_cdlu8"]
+[ext_resource type="PackedScene" uid="uid://bukehcn6nexp7" path="res://Game Assets/Buildings/GLB/large_buildingC.glb" id="16_553dm"]
+[ext_resource type="PackedScene" uid="uid://b13g8mr6l76d7" path="res://Game Assets/Buildings/GLB/large_buildingD.glb" id="17_cg5b3"]
+[ext_resource type="PackedScene" uid="uid://dhmqvk1myifnc" path="res://Game Assets/Buildings/GLB/large_buildingF.glb" id="18_v05kp"]
+[ext_resource type="PackedScene" uid="uid://dek344agwkkqw" path="res://Game Assets/Buildings/GLB/large_buildingG.glb" id="19_0iw7q"]
+[ext_resource type="PackedScene" uid="uid://c5xu5aldqk3d7" path="res://Game Assets/Buildings/GLB/sign_hospital.glb" id="20_iopju"]
+[ext_resource type="PackedScene" uid="uid://cb8a5wootbvew" path="res://Game Assets/Buildings/GLB/low_buildingA.glb" id="21_kl6we"]
+[ext_resource type="PackedScene" uid="uid://b4x6bvkk0dgi3" path="res://Game Assets/Buildings/GLB/low_buildingB.glb" id="22_y57co"]
+[ext_resource type="PackedScene" uid="uid://cqhv23e83bolp" path="res://Game Assets/Buildings/GLB/low_buildingC.glb" id="23_3j6eb"]
+[ext_resource type="PackedScene" uid="uid://bs3bt3d8s2xox" path="res://Game Assets/Buildings/GLB/low_buildingD.glb" id="24_ooee3"]
+[ext_resource type="PackedScene" uid="uid://cw7uxuxawjon0" path="res://Game Assets/Buildings/GLB/low_buildingE.glb" id="25_ysc36"]
+[ext_resource type="PackedScene" uid="uid://dhms804gsorw0" path="res://Game Assets/Buildings/GLB/low_buildingF.glb" id="26_nid3p"]
+[ext_resource type="PackedScene" uid="uid://c3ks4mff51jif" path="res://Game Assets/Buildings/GLB/low_buildingG.glb" id="27_idgew"]
+[ext_resource type="PackedScene" uid="uid://d32b80o2kt7ep" path="res://Game Assets/Buildings/GLB/low_buildingH.glb" id="28_36t4x"]
+[ext_resource type="PackedScene" uid="uid://xb7p3acamc2o" path="res://Game Assets/Buildings/GLB/low_buildingJ.glb" id="29_ftijh"]
+[ext_resource type="PackedScene" uid="uid://ckhkewc2lgvs2" path="res://Game Assets/Buildings/GLB/low_buildingK.glb" id="30_ktuvp"]
+[ext_resource type="PackedScene" uid="uid://cpxbpa7ukrlhp" path="res://Game Assets/Buildings/GLB/low_buildingL.glb" id="31_x71xr"]
+[ext_resource type="PackedScene" uid="uid://ceq0utsnrxd48" path="res://Game Assets/Buildings/GLB/low_buildingM.glb" id="32_erqtx"]
+[ext_resource type="PackedScene" uid="uid://di1fxylrgwwmk" path="res://Game Assets/Buildings/GLB/low_wideA.glb" id="33_knrfi"]
+[ext_resource type="PackedScene" uid="uid://cpqhgi2ahy17r" path="res://Game Assets/Buildings/GLB/low_wideB.glb" id="34_7bjp8"]
+[ext_resource type="PackedScene" uid="uid://cehmwgoda61u3" path="res://Game Assets/Buildings/GLB/roof_center.glb" id="35_ul3n5"]
+[ext_resource type="PackedScene" uid="uid://cw0ewb0qfpe51" path="res://Game Assets/Buildings/GLB/roof_corner.glb" id="36_m2sjh"]
+[ext_resource type="PackedScene" uid="uid://c7avr6kb00xj4" path="res://Game Assets/Buildings/GLB/roof_overhang.glb" id="37_5jw1x"]
+[ext_resource type="PackedScene" uid="uid://c2il3ubwyafqi" path="res://Game Assets/Buildings/GLB/roof_side.glb" id="38_ym62d"]
+[ext_resource type="PackedScene" uid="uid://o56y0elxdsai" path="res://Game Assets/Buildings/GLB/sign_billboard.glb" id="39_2y6hx"]
+[ext_resource type="PackedScene" uid="uid://stjnnm1foevc" path="res://Game Assets/Buildings/GLB/skyscraperC.glb" id="40_85m11"]
+[ext_resource type="PackedScene" uid="uid://bybsjudveu7iq" path="res://Game Assets/Buildings/GLB/skyscraperD.glb" id="41_ws4vr"]
+[ext_resource type="PackedScene" uid="uid://bq2vp848gmxnk" path="res://Game Assets/Buildings/GLB/skyscraperF.glb" id="42_pjtqw"]
+[ext_resource type="PackedScene" uid="uid://dtbtn3ydf457u" path="res://Game Assets/Buildings/GLB/small_buildingA.glb" id="43_13qc0"]
+[ext_resource type="PackedScene" uid="uid://bomr6lc78vh8f" path="res://Game Assets/Buildings/GLB/small_buildingB.glb" id="44_3jk8n"]
+[ext_resource type="PackedScene" uid="uid://bvu7vo2oqcdn2" path="res://Game Assets/Buildings/GLB/small_buildingC.glb" id="45_pnwhj"]
+[ext_resource type="PackedScene" uid="uid://dp2jeosa7xpt0" path="res://Game Assets/Buildings/GLB/small_buildingD.glb" id="46_iofxp"]
+[ext_resource type="PackedScene" uid="uid://03u3xgwo5x44" path="res://Game Assets/Buildings/GLB/small_buildingE.glb" id="47_0fvsb"]
+[ext_resource type="PackedScene" uid="uid://blivj6lui4jc" path="res://Game Assets/Buildings/GLB/small_buildingF.glb" id="48_0jq7n"]
+[ext_resource type="PackedScene" uid="uid://bijlwgjpda0lq" path="res://Game Assets/Buildings/GLB/wall_doorB.glb" id="49_iapiw"]
+[ext_resource type="PackedScene" uid="uid://bvxcwr6wn8pw0" path="res://Game Assets/Buildings/GLB/wall_solid.glb" id="50_8kycv"]
+[ext_resource type="PackedScene" uid="uid://kmjqevhds42b" path="res://Game Assets/Buildings/GLB/wall_windowA.glb" id="51_87tsg"]
+[ext_resource type="PackedScene" uid="uid://bhuukwwe46gvt" path="res://Game Assets/Buildings/GLB/wall_windowB.glb" id="52_q4xpu"]
+[ext_resource type="PackedScene" uid="uid://btfq754p87vrg" path="res://Game Assets/Buildings/GLB/wall_windowC.glb" id="53_s2uns"]
+[ext_resource type="PackedScene" uid="uid://cmhdrihd3bouc" path="res://Game Assets/Buildings/GLB/wall_windowD.glb" id="54_mbg3g"]
+[ext_resource type="PackedScene" uid="uid://xn16ok2n6bxp" path="res://Game Assets/Buildings/GLB/wall_windowE.glb" id="55_f4643"]
+[ext_resource type="PackedScene" uid="uid://drbuwuogao484" path="res://Game Assets/Buildings/GLB/wall_windowF.glb" id="56_wj17u"]
+
+[node name="World" type="Node3D"]
+
+[node name="wall_doorA2" parent="." instance=ExtResource("1_twakb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.9, 0, 0)
+
+[node name="skyscraperE2" parent="." instance=ExtResource("2_o8org")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1, 0, 0)
+
+[node name="skyscraperB2" parent="." instance=ExtResource("3_2ojrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4, 0, 0)
+
+[node name="skyscraperA2" parent="." instance=ExtResource("4_qnu2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="low_buildingN2" parent="." instance=ExtResource("5_2i1rg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0, 0)
+
+[node name="low_buildingI2" parent="." instance=ExtResource("6_xmdth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1, 0, 0)
+
+[node name="large_buildingE2" parent="." instance=ExtResource("7_5ie8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="large_buildingA2" parent="." instance=ExtResource("8_nrucr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="detail_overhangWide2" parent="." instance=ExtResource("9_esmw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="detail_awning2" parent="." instance=ExtResource("10_u7jsj")]
+
+[node name="detail_awningWide2" parent="." instance=ExtResource("11_5npdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="detail_overhang2" parent="." instance=ExtResource("12_uri41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="detail_umbrella2" parent="." instance=ExtResource("13_ib1xp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="detail_umbrellaDetailed2" parent="." instance=ExtResource("14_3hdqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="large_buildingB2" parent="." instance=ExtResource("15_cdlu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="large_buildingC2" parent="." instance=ExtResource("16_553dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="large_buildingD2" parent="." instance=ExtResource("17_cg5b3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
+
+[node name="large_buildingF2" parent="." instance=ExtResource("18_v05kp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="large_buildingG2" parent="." instance=ExtResource("19_0iw7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+
+[node name="sign_hospital2" parent="." instance=ExtResource("20_iopju")]
+transform = Transform3D(-1.74846e-07, 1.74846e-07, 4, 4, 3.01992e-07, 1.74846e-07, -3.01992e-07, 4, -1.74846e-07, 7, 2.4, 2.2)
+
+[node name="low_buildingA2" parent="." instance=ExtResource("21_kl6we")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.7, 0, 0)
+
+[node name="low_buildingB2" parent="." instance=ExtResource("22_y57co")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 0)
+
+[node name="low_buildingC2" parent="." instance=ExtResource("23_3j6eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9, 0, 0)
+
+[node name="low_buildingD2" parent="." instance=ExtResource("24_ooee3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9, 0, 0)
+
+[node name="low_buildingE2" parent="." instance=ExtResource("25_ysc36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9, 0, 0)
+
+[node name="low_buildingF2" parent="." instance=ExtResource("26_nid3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 0)
+
+[node name="low_buildingG2" parent="." instance=ExtResource("27_idgew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7, 0, 0)
+
+[node name="low_buildingH2" parent="." instance=ExtResource("28_36t4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4, 0, 0)
+
+[node name="low_buildingJ2" parent="." instance=ExtResource("29_ftijh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 0, 0)
+
+[node name="low_buildingK2" parent="." instance=ExtResource("30_ktuvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7, 0, 0)
+
+[node name="low_buildingL2" parent="." instance=ExtResource("31_x71xr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 0)
+
+[node name="low_buildingM2" parent="." instance=ExtResource("32_erqtx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3, 0, 0)
+
+[node name="low_wideA2" parent="." instance=ExtResource("33_knrfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2, 0, 0)
+
+[node name="low_wideB2" parent="." instance=ExtResource("34_7bjp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4, 0, 0)
+
+[node name="roof_center2" parent="." instance=ExtResource("35_ul3n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 0)
+
+[node name="roof_corner2" parent="." instance=ExtResource("36_m2sjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3, 0, 0)
+
+[node name="roof_overhang2" parent="." instance=ExtResource("37_5jw1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2, 0, 0)
+
+[node name="roof_side2" parent="." instance=ExtResource("38_ym62d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="sign_billboard2" parent="." instance=ExtResource("39_2y6hx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8, 0, 0)
+
+[node name="skyscraperC2" parent="." instance=ExtResource("40_85m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2, 0, 0)
+
+[node name="skyscraperD2" parent="." instance=ExtResource("41_ws4vr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2, 0, 0)
+
+[node name="skyscraperF2" parent="." instance=ExtResource("42_pjtqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9, 0, 0)
+
+[node name="small_buildingA2" parent="." instance=ExtResource("43_13qc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8, 0, 0)
+
+[node name="small_buildingB2" parent="." instance=ExtResource("44_3jk8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9, 0, 0)
+
+[node name="small_buildingC2" parent="." instance=ExtResource("45_pnwhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1, 0, 0)
+
+[node name="small_buildingD2" parent="." instance=ExtResource("46_iofxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4, 0, 0)
+
+[node name="small_buildingE2" parent="." instance=ExtResource("47_0fvsb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1, 0, 0)
+
+[node name="small_buildingF2" parent="." instance=ExtResource("48_0jq7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7, 0, 0)
+
+[node name="wall_doorB2" parent="." instance=ExtResource("49_iapiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.7, 0, 0)
+
+[node name="wall_solid2" parent="." instance=ExtResource("50_8kycv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.3, 0, 0)
+
+[node name="wall_windowA2" parent="." instance=ExtResource("51_87tsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+
+[node name="wall_windowB2" parent="." instance=ExtResource("52_q4xpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7, 0, 0)
+
+[node name="wall_windowC2" parent="." instance=ExtResource("53_s2uns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3, 0, 0)
+
+[node name="wall_windowD2" parent="." instance=ExtResource("54_mbg3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9, 0, 0)
+
+[node name="wall_windowE2" parent="." instance=ExtResource("55_f4643")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, 0, 0)
+
+[node name="wall_windowF2" parent="." instance=ExtResource("56_wj17u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1, 0, 0)
