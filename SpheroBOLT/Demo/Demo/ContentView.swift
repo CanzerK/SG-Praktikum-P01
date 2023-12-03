@@ -29,13 +29,13 @@ struct ContentView: View {
 					Button(action: { }, label: {
 						Text("Ping")
 							.padding(8)
-							.background(RoundedRectangle(cornerRadius: 8).fill(Color(.systemBlue)))
+							.background(RoundedRectangle(cornerRadius: 8).fill(SwiftUI.Color(.systemBlue)))
 							.foregroundStyle(.white)
 					})
 					Button(action: { }, label: {
 						Text("Color")
 							.padding(8)
-							.background(RoundedRectangle(cornerRadius: 8).fill(Color(.systemBlue)))
+							.background(RoundedRectangle(cornerRadius: 8).fill(SwiftUI.Color(.systemBlue)))
 							.foregroundStyle(.white)
 					})
 				}
@@ -58,7 +58,7 @@ struct DeviceRow: View {
 			Button(action: { }, label: {
 				Text("Connect")
 					.padding(8)
-					.background(RoundedRectangle(cornerRadius: 8).fill(Color(.systemGreen)))
+					.background(RoundedRectangle(cornerRadius: 8).fill(SwiftUI.Color(.systemGreen)))
 					.foregroundStyle(.white)
 			})
 		}

@@ -19,6 +19,7 @@
 		5B9765602B134E7D007A1894 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655F2B134E7D007A1894 /* Sensor.swift */; };
 		5B9ADAB22B137A6800A35074 /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9ADAB12B137A6800A35074 /* DeviceId.swift */; };
 		5BBC38FF2AFEC6DC009260EC /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */; };
+		5BBF87072B1925BA00B408BA /* PublisherExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF87062B1925BA00B408BA /* PublisherExt.swift */; };
 		5BC335102AFECA5F00510380 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3350F2AFECA5F00510380 /* Constants.swift */; };
 		5BC335122AFFED6100510380 /* CommandId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335112AFFED6100510380 /* CommandId.swift */; };
 		5BC335142AFFED9200510380 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335132AFFED9200510380 /* Result.swift */; };
@@ -41,8 +42,9 @@
 		5B97655B2B134D51007A1894 /* Echo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
 		5B97655D2B134D8A007A1894 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		5B97655F2B134E7D007A1894 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
-		5B9ADAB12B137A6800A35074 /* DeviceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
+		5B9ADAB12B137A6800A35074 /* DeviceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceId.swift; path = ../Commands/DeviceId.swift; sourceTree = "<group>"; };
 		5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
+		5BBF87062B1925BA00B408BA /* PublisherExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExt.swift; sourceTree = "<group>"; };
 		5BC3350F2AFECA5F00510380 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5BC335112AFFED6100510380 /* CommandId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandId.swift; sourceTree = "<group>"; };
 		5BC335132AFFED9200510380 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				5B97655A2B110AE2007A1894 /* Device */,
 				5B9765592B110AD1007A1894 /* Commands */,
 				5BC3350F2AFECA5F00510380 /* Constants.swift */,
+				5BBF87062B1925BA00B408BA /* PublisherExt.swift */,
 				5BC335152AFFEDB000510380 /* Characteristics.swift */,
 				5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */,
 				5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */,
@@ -115,7 +118,6 @@
 		5B9765592B110AD1007A1894 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				5B9ADAB12B137A6800A35074 /* DeviceId.swift */,
 				5BC335112AFFED6100510380 /* CommandId.swift */,
 				5BC3351B2B001D2500510380 /* Command.swift */,
 				5B41F2102B0FE66600C18352 /* CommandQueue.swift */,
@@ -126,7 +128,6 @@
 		5B97655A2B110AE2007A1894 /* Device */ = {
 			isa = PBXGroup;
 			children = (
-				5BC335172AFFF00F00510380 /* Device.swift */,
 				5B6708B02B0BDD3E005D8C62 /* Navigation.swift */,
 				5B41F20E2B0E9A7D00C18352 /* UserIO.swift */,
 				5BC335192B001C2100510380 /* Power.swift */,
@@ -134,6 +135,8 @@
 				5B97655B2B134D51007A1894 /* Echo.swift */,
 				5B97655D2B134D8A007A1894 /* PeerConnection.swift */,
 				5B97655F2B134E7D007A1894 /* Sensor.swift */,
+				5B9ADAB12B137A6800A35074 /* DeviceId.swift */,
+				5BC335172AFFF00F00510380 /* Device.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				5BBC38FF2AFEC6DC009260EC /* DeviceCoordinator.swift in Sources */,
 				5BC335122AFFED6100510380 /* CommandId.swift in Sources */,
 				5BC335162AFFEDB000510380 /* Characteristics.swift in Sources */,
+				5BBF87072B1925BA00B408BA /* PublisherExt.swift in Sources */,
 				5BC335182AFFF00F00510380 /* Device.swift in Sources */,
 				5BC3351C2B001D2500510380 /* Command.swift in Sources */,
 				5B9765602B134E7D007A1894 /* Sensor.swift in Sources */,
