@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b12s8seq0fiox"
-path="res://.godot/imported/road_bendSquareBarrier.glb-2e13a6e976bbdb449fa05a9e7a94e0dd.scn"
+path="res://.godot/imported/road_bendSquareBarrier.glb-814a97b50af9529484ddb2f1bf8b8f7c.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_bendSquareBarrier.glb"
-dest_files=["res://.godot/imported/road_bendSquareBarrier.glb-2e13a6e976bbdb449fa05a9e7a94e0dd.scn"]
+source_file="res://Assets/Roads/road_bendSquareBarrier.glb"
+dest_files=["res://.godot/imported/road_bendSquareBarrier.glb-814a97b50af9529484ddb2f1bf8b8f7c.scn"]
 
 [params]
 

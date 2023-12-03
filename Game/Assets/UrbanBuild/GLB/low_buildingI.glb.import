@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bh4dtrs0pwmhb"
-path="res://.godot/imported/low_buildingI.glb-bcf636b1e7021b59c7db32b9ff3b8565.scn"
+path="res://.godot/imported/low_buildingI.glb-3ff41efde5e78e7f566a13d038044bbc.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/low_buildingI.glb"
-dest_files=["res://.godot/imported/low_buildingI.glb-bcf636b1e7021b59c7db32b9ff3b8565.scn"]
+source_file="res://Assets/UrbanBuild/GLB/low_buildingI.glb"
+dest_files=["res://.godot/imported/low_buildingI.glb-3ff41efde5e78e7f566a13d038044bbc.scn"]
 
 [params]
 

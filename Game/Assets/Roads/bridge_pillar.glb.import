@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://du5rs3lqcnwag"
-path="res://.godot/imported/bridge_pillar.glb-5941039fefa0cdf05235c35848f3da4a.scn"
+path="res://.godot/imported/bridge_pillar.glb-627318ffbd08c97da5d20121fb778e0e.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/bridge_pillar.glb"
-dest_files=["res://.godot/imported/bridge_pillar.glb-5941039fefa0cdf05235c35848f3da4a.scn"]
+source_file="res://Assets/Roads/bridge_pillar.glb"
+dest_files=["res://.godot/imported/bridge_pillar.glb-627318ffbd08c97da5d20121fb778e0e.scn"]
 
 [params]
 

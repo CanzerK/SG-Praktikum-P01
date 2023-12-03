@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b3ikqpaufcvxp"
-path="res://.godot/imported/kenvector_future.ttf-f9e27b804c1d1ef32ebd90c2b866bf20.fontdata"
+path="res://.godot/imported/kenvector_future.ttf-6dfd286d0448d90c25d801617990ddad.fontdata"
 
 [deps]
 
-source_file="res://Game Assets/UI/Font/kenvector_future.ttf"
-dest_files=["res://.godot/imported/kenvector_future.ttf-f9e27b804c1d1ef32ebd90c2b866bf20.fontdata"]
+source_file="res://Assets/UI/Font/kenvector_future.ttf"
+dest_files=["res://.godot/imported/kenvector_future.ttf-6dfd286d0448d90c25d801617990ddad.fontdata"]
 
 [params]
 

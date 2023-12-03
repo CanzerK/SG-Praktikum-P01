@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bt02affqbn2bk"
-path="res://.godot/imported/wheelDefault.glb-a6e4123d2f98067bb924a0a566ae17c4.scn"
+path="res://.godot/imported/wheelDefault.glb-8073edb62b73b7af9e29ee68f1c00eb6.scn"
 
 [deps]
 
-source_file="res://Game Assets/Car/wheelDefault.glb"
-dest_files=["res://.godot/imported/wheelDefault.glb-a6e4123d2f98067bb924a0a566ae17c4.scn"]
+source_file="res://Assets/Car/wheelDefault.glb"
+dest_files=["res://.godot/imported/wheelDefault.glb-8073edb62b73b7af9e29ee68f1c00eb6.scn"]
 
 [params]
 

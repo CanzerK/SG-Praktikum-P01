@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bkrrli8ibbdl4"
-path="res://.godot/imported/driveway_short.glb-c374f9a60694803ed7995f2e895e4aeb.scn"
+path="res://.godot/imported/driveway_short.glb-270391c366d3ba8ed4f92eaff847a165.scn"
 
 [deps]
 
-source_file="res://Game Assets/SubUrban/driveway_short.glb"
-dest_files=["res://.godot/imported/driveway_short.glb-c374f9a60694803ed7995f2e895e4aeb.scn"]
+source_file="res://Assets/SubUrbanBuild/driveway_short.glb"
+dest_files=["res://.godot/imported/driveway_short.glb-270391c366d3ba8ed4f92eaff847a165.scn"]
 
 [params]
 

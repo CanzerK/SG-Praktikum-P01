@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pook6rfeu7an"
-path="res://.godot/imported/red_boxCheckmark.png-d3a871863cdd7db77e53dad58233ef02.ctex"
+path="res://.godot/imported/red_boxCheckmark.png-9d12c965a08d447522ede5d9c99db40d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/red_boxCheckmark.png"
-dest_files=["res://.godot/imported/red_boxCheckmark.png-d3a871863cdd7db77e53dad58233ef02.ctex"]
+source_file="res://Assets/UI/PNG/red_boxCheckmark.png"
+dest_files=["res://.godot/imported/red_boxCheckmark.png-9d12c965a08d447522ede5d9c99db40d.ctex"]
 
 [params]
 

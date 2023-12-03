@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c31qaj4kborl7"
-path="res://.godot/imported/red_boxCross.png-4f0e476ff9b1885d8474f4f4a763243e.ctex"
+path="res://.godot/imported/red_boxCross.png-a93fd90f5e52d607629f723a1ff5fb62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/red_boxCross.png"
-dest_files=["res://.godot/imported/red_boxCross.png-4f0e476ff9b1885d8474f4f4a763243e.ctex"]
+source_file="res://Assets/UI/PNG/red_boxCross.png"
+dest_files=["res://.godot/imported/red_boxCross.png-a93fd90f5e52d607629f723a1ff5fb62.ctex"]
 
 [params]
 

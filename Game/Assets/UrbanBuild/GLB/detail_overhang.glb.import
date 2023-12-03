@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dqpbhjk87abyt"
-path="res://.godot/imported/detail_overhang.glb-d67df282565a77ca347544f0a9e3d554.scn"
+path="res://.godot/imported/detail_overhang.glb-2eb69123460f1dc8d25c12e8b33eea40.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/detail_overhang.glb"
-dest_files=["res://.godot/imported/detail_overhang.glb-d67df282565a77ca347544f0a9e3d554.scn"]
+source_file="res://Assets/UrbanBuild/GLB/detail_overhang.glb"
+dest_files=["res://.godot/imported/detail_overhang.glb-2eb69123460f1dc8d25c12e8b33eea40.scn"]
 
 [params]
 

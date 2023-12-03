@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cg471y57cmfd7"
-path="res://.godot/imported/road_slantCurveBarrier.glb-d6d3adaad0193ecb5169e01a6e503224.scn"
+path="res://.godot/imported/road_slantCurveBarrier.glb-d7f9ddb5109c249046d034876f529b15.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_slantCurveBarrier.glb"
-dest_files=["res://.godot/imported/road_slantCurveBarrier.glb-d6d3adaad0193ecb5169e01a6e503224.scn"]
+source_file="res://Assets/Roads/road_slantCurveBarrier.glb"
+dest_files=["res://.godot/imported/road_slantCurveBarrier.glb-d7f9ddb5109c249046d034876f529b15.scn"]
 
 [params]
 

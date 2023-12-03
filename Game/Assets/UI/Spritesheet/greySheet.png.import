@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xyfd50cotxpn"
-path="res://.godot/imported/greySheet.png-328a863ab33f6e8083623e8b7a196937.ctex"
+path="res://.godot/imported/greySheet.png-ce9957886a20fa9c1476e8858c78c585.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/Spritesheet/greySheet.png"
-dest_files=["res://.godot/imported/greySheet.png-328a863ab33f6e8083623e8b7a196937.ctex"]
+source_file="res://Assets/UI/Spritesheet/greySheet.png"
+dest_files=["res://.godot/imported/greySheet.png-ce9957886a20fa9c1476e8858c78c585.ctex"]
 
 [params]
 

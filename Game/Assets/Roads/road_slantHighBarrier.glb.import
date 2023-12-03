@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bncva2jwneude"
-path="res://.godot/imported/road_slantHighBarrier.glb-6ffefafd95f14d36b1697fc6a21cecf8.scn"
+path="res://.godot/imported/road_slantHighBarrier.glb-714bacba21541fc4e005aa02913b688c.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_slantHighBarrier.glb"
-dest_files=["res://.godot/imported/road_slantHighBarrier.glb-6ffefafd95f14d36b1697fc6a21cecf8.scn"]
+source_file="res://Assets/Roads/road_slantHighBarrier.glb"
+dest_files=["res://.godot/imported/road_slantHighBarrier.glb-714bacba21541fc4e005aa02913b688c.scn"]
 
 [params]
 

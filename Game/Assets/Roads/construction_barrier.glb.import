@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dokgg811pe6r1"
-path="res://.godot/imported/construction_barrier.glb-32b04c953ec84758a7487d925416b3be.scn"
+path="res://.godot/imported/construction_barrier.glb-68d56319899e62592320fbbf4cd34ff9.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/construction_barrier.glb"
-dest_files=["res://.godot/imported/construction_barrier.glb-32b04c953ec84758a7487d925416b3be.scn"]
+source_file="res://Assets/Roads/construction_barrier.glb"
+dest_files=["res://.godot/imported/construction_barrier.glb-68d56319899e62592320fbbf4cd34ff9.scn"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://edxjgy05kn4u"
-path="res://.godot/imported/yellow_boxCheckmark.png-d1ef66ee433331723ccce7ca8d5ae124.ctex"
+path="res://.godot/imported/yellow_boxCheckmark.png-303c65ba57a45b246d5238c1ec544199.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/yellow_boxCheckmark.png"
-dest_files=["res://.godot/imported/yellow_boxCheckmark.png-d1ef66ee433331723ccce7ca8d5ae124.ctex"]
+source_file="res://Assets/UI/PNG/yellow_boxCheckmark.png"
+dest_files=["res://.godot/imported/yellow_boxCheckmark.png-303c65ba57a45b246d5238c1ec544199.ctex"]
 
 [params]
 

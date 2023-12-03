@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3n8iv5un8mo"
-path="res://.godot/imported/fence_short.glb-75807324d7e2b3ce74b34aa0bb980fc5.scn"
+path="res://.godot/imported/fence_short.glb-b3e2233b9775ee46e8e29808402c6cef.scn"
 
 [deps]
 
-source_file="res://Game Assets/SubUrban/fence_short.glb"
-dest_files=["res://.godot/imported/fence_short.glb-75807324d7e2b3ce74b34aa0bb980fc5.scn"]
+source_file="res://Assets/SubUrbanBuild/fence_short.glb"
+dest_files=["res://.godot/imported/fence_short.glb-b3e2233b9775ee46e8e29808402c6cef.scn"]
 
 [params]
 

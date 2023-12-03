@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxbvujej6414b"
-path="res://.godot/imported/exit.png-1ad540a8d248e56fa4e469f7c9fb4629.ctex"
+path="res://.godot/imported/exit.png-9b0bfe3823935dc997e81abee5c12387.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/Black/2x/exit.png"
-dest_files=["res://.godot/imported/exit.png-1ad540a8d248e56fa4e469f7c9fb4629.ctex"]
+source_file="res://Assets/Icons/PNG/Black/2x/exit.png"
+dest_files=["res://.godot/imported/exit.png-9b0bfe3823935dc997e81abee5c12387.ctex"]
 
 [params]
 

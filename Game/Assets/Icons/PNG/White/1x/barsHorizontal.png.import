@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cctokscpyayd8"
-path="res://.godot/imported/barsHorizontal.png-e211c765dec5c6ea5a4c254c99b632f2.ctex"
+path="res://.godot/imported/barsHorizontal.png-8a7ad68db11733f530579dce96f57a5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/White/1x/barsHorizontal.png"
-dest_files=["res://.godot/imported/barsHorizontal.png-e211c765dec5c6ea5a4c254c99b632f2.ctex"]
+source_file="res://Assets/Icons/PNG/White/1x/barsHorizontal.png"
+dest_files=["res://.godot/imported/barsHorizontal.png-8a7ad68db11733f530579dce96f57a5d.ctex"]
 
 [params]
 

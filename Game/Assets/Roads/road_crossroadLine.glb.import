@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhxw0nc8nidle"
-path="res://.godot/imported/road_crossroadLine.glb-c297c7faaef5d48c62bb1ad60c810466.scn"
+path="res://.godot/imported/road_crossroadLine.glb-c5748886b3acd3ca1aff57486f3d770e.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_crossroadLine.glb"
-dest_files=["res://.godot/imported/road_crossroadLine.glb-c297c7faaef5d48c62bb1ad60c810466.scn"]
+source_file="res://Assets/Roads/road_crossroadLine.glb"
+dest_files=["res://.godot/imported/road_crossroadLine.glb-c5748886b3acd3ca1aff57486f3d770e.scn"]
 
 [params]
 

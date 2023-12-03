@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://o56y0elxdsai"
-path="res://.godot/imported/sign_billboard.glb-b4fc80da4b63ccbfb7bd1e7500f3edb4.scn"
+path="res://.godot/imported/sign_billboard.glb-b654182cbe9cd4778d8e3a33c2df72b9.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/sign_billboard.glb"
-dest_files=["res://.godot/imported/sign_billboard.glb-b4fc80da4b63ccbfb7bd1e7500f3edb4.scn"]
+source_file="res://Assets/UrbanBuild/GLB/sign_billboard.glb"
+dest_files=["res://.godot/imported/sign_billboard.glb-b654182cbe9cd4778d8e3a33c2df72b9.scn"]
 
 [params]
 

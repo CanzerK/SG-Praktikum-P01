@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2n60kts65ut1"
-path="res://.godot/imported/grey_tickWhite.png-5e3649a73576c00d2f47c9c39d8002b3.ctex"
+path="res://.godot/imported/grey_tickWhite.png-da75b01140a748ecfbc943ee63ec39cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/grey_tickWhite.png"
-dest_files=["res://.godot/imported/grey_tickWhite.png-5e3649a73576c00d2f47c9c39d8002b3.ctex"]
+source_file="res://Assets/UI/PNG/grey_tickWhite.png"
+dest_files=["res://.godot/imported/grey_tickWhite.png-da75b01140a748ecfbc943ee63ec39cd.ctex"]
 
 [params]
 

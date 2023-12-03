@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cob0vfx2jgd0k"
-path="res://.godot/imported/scratch_001.ogg-fc1c1bd2bed9b4199bc016e5afff6775.oggvorbisstr"
+path="res://.godot/imported/scratch_001.ogg-a0894a9857171dd43a80ac8538e0fe55.oggvorbisstr"
 
 [deps]
 
-source_file="res://Game Assets/UI/Audio/scratch_001.ogg"
-dest_files=["res://.godot/imported/scratch_001.ogg-fc1c1bd2bed9b4199bc016e5afff6775.oggvorbisstr"]
+source_file="res://Assets/UI/Audio/scratch_001.ogg"
+dest_files=["res://.godot/imported/scratch_001.ogg-a0894a9857171dd43a80ac8538e0fe55.oggvorbisstr"]
 
 [params]
 

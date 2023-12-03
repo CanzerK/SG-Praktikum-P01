@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddfsi8j3c5og4"
-path="res://.godot/imported/suvLuxury.glb-97ed3ebc547e666dd84a1ddc11fbdeb8.scn"
+path="res://.godot/imported/suvLuxury.glb-3157ca509a12265eec2a39e93f654897.scn"
 
 [deps]
 
-source_file="res://Game Assets/Car/suvLuxury.glb"
-dest_files=["res://.godot/imported/suvLuxury.glb-97ed3ebc547e666dd84a1ddc11fbdeb8.scn"]
+source_file="res://Assets/Car/suvLuxury.glb"
+dest_files=["res://.godot/imported/suvLuxury.glb-3157ca509a12265eec2a39e93f654897.scn"]
 
 [params]
 

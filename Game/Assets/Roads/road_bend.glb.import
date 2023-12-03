@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d1tpnocnle1o6"
-path="res://.godot/imported/road_bend.glb-7867198d76089bd7a4c2dd481129d7eb.scn"
+path="res://.godot/imported/road_bend.glb-34d62138e8d89c0b4aac519377377d86.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_bend.glb"
-dest_files=["res://.godot/imported/road_bend.glb-7867198d76089bd7a4c2dd481129d7eb.scn"]
+source_file="res://Assets/Roads/road_bend.glb"
+dest_files=["res://.godot/imported/road_bend.glb-34d62138e8d89c0b4aac519377377d86.scn"]
 
 [params]
 

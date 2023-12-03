@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ba8wf1cwyovo3"
-path="res://.godot/imported/light_curvedDouble.glb-0a855d85e0122c55e939c6f5d8d3d148.scn"
+path="res://.godot/imported/light_curvedDouble.glb-2afb6b700d86554fa6e40e8a7a27561d.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/light_curvedDouble.glb"
-dest_files=["res://.godot/imported/light_curvedDouble.glb-0a855d85e0122c55e939c6f5d8d3d148.scn"]
+source_file="res://Assets/Roads/light_curvedDouble.glb"
+dest_files=["res://.godot/imported/light_curvedDouble.glb-2afb6b700d86554fa6e40e8a7a27561d.scn"]
 
 [params]
 

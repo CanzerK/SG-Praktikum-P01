@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4v55bs1krvb8"
-path="res://.godot/imported/trashcanOpen.png-ef703ac4bb38947f09ad8fecf8286134.ctex"
+path="res://.godot/imported/trashcanOpen.png-a3b6da22067cd162037279cdbaa5a11f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/White/2x/trashcanOpen.png"
-dest_files=["res://.godot/imported/trashcanOpen.png-ef703ac4bb38947f09ad8fecf8286134.ctex"]
+source_file="res://Assets/Icons/PNG/White/2x/trashcanOpen.png"
+dest_files=["res://.godot/imported/trashcanOpen.png-a3b6da22067cd162037279cdbaa5a11f.ctex"]
 
 [params]
 

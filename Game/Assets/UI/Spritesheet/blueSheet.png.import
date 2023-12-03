@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://berom2j8tcgld"
-path="res://.godot/imported/blueSheet.png-0f4137eda7a1bf4e57e1973b19e9ee5b.ctex"
+path="res://.godot/imported/blueSheet.png-2f17de6ab0ac09b254aba8a5236aa9ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/Spritesheet/blueSheet.png"
-dest_files=["res://.godot/imported/blueSheet.png-0f4137eda7a1bf4e57e1973b19e9ee5b.ctex"]
+source_file="res://Assets/UI/Spritesheet/blueSheet.png"
+dest_files=["res://.godot/imported/blueSheet.png-2f17de6ab0ac09b254aba8a5236aa9ca.ctex"]
 
 [params]
 
