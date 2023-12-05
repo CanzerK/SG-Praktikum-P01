@@ -24,6 +24,10 @@ protocol CommandDataConvertible {
 	var packet: AnySequence<UInt8>? { get }
 }
 
+protocol DataInitializable {
+	init(fromData data: Data) throws
+}
+
 /// Packet structure:
 /// ---------------------------------
 /// - start		[1 byte] Specifies the beginning of a packet, the value is always FFh.

@@ -12,6 +12,8 @@ import Combine
 /// A device error specific to the queue request type.
 enum DeviceError: Error {
 	case unableToConnect
+	case unableToDisconnect
+	case notConnected
 	case alreadyConnected
 	case unableToWrite
 }
@@ -29,210 +31,9 @@ enum ConnectionProgress {
 	case completed(_ apiCharacteristic: CBCharacteristic)
 }
 
-/// Base for all peripheral operations.
-class PeripheralOperation<R>: Operation, CBPeripheralDelegate {
-	internal let packet: Data
-	internal let peripheral: CBPeripheral
-	internal var writeSubject: PassthroughSubject<R, DeviceError>
-	internal var writePublisher: AnyPublisher<R, DeviceError>
-	internal var subjectCancellable = Set<AnyCancellable>()
-	internal var dataWritten = false
-	internal var subjectCancelled = false
+//<R: DataInitializable>
 
-	override var isAsynchronous: Bool {
-		return true
-	}
-
-	override var isConcurrent: Bool {
-		return false
-	}
-
-	override var isFinished: Bool {
-		return dataWritten
-	}
-
-	override var isCancelled: Bool {
-		return subjectCancelled
-	}
-
-	init(_ packet: Data,
-		 peripheral: CBPeripheral,
-		 writeSubject: PassthroughSubject<R, DeviceError>,
-		 writePublisher: AnyPublisher<R, DeviceError>) {
-		self.packet = packet
-		self.peripheral = peripheral
-		self.writeSubject = writeSubject
-		self.writePublisher = writePublisher
-
-		super.init()
-
-		writePublisher.sink { [weak self] completion in
-			print("Successfully written value.")
-
-			self?.dataWritten = true
-		} receiveValue: { value in
-
-		}.store(in: &subjectCancellable)
-	}
-
-	/// Executed as soon as the operation can be started.
-	override func main() {
-		guard isCancelled else {
-			return
-		}
-
-		// Set ourselves as the delegate to get the message callbacks and write the value.
-		peripheral.delegate = self
-	}
-
-	/// Called when the operation has been cancelled.
-	override func cancel() {
-		super.cancel()
-
-		subjectCancellable.first?.cancel()
-		subjectCancelled = true
-	}
-}
-
-/// A connection operation that returns the api characteristics once finished.
-final class ConnectOperation: PeripheralOperation<ConnectionProgress> {
-	/// Bluetooth characteristic for API calls.
-	private var apiCharacteristic: CBCharacteristic?
-
-	/// Bluetooth characteristic for antidos check.
-	private var antidosCharacteristic: CBCharacteristic?
-
-	init(peripheral: CBPeripheral,
-		 writeSubject: PassthroughSubject<ConnectionProgress, DeviceError>,
-		 writePublisher: AnyPublisher<ConnectionProgress, DeviceError>) {
-		super.init(Constants.antidosData,
-				   peripheral: peripheral,
-				   writeSubject: writeSubject,
-				   writePublisher: writePublisher)
-
-		peripheral.discoverServices([Constants.serviceUUID, Constants.initializeServiceUUID])
-	}
-
-	//MARK: CBPeripheralDelegate
-
-	internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-		if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
-			if error != nil {
-				writeSubject.send(completion: .failure(.unableToConnect))
-
-				return
-			}
-
-			// Only after we made sure we got both characteristics we proceed.
-			guard let _ = antidosCharacteristic, let apiCharacteristic = apiCharacteristic else {
-				writeSubject.send(completion: .failure(.unableToConnect))
-
-				return
-			}
-
-			writeSubject.send(.updated(.connected))
-			writeSubject.send(.completed(apiCharacteristic))
-
-			writeSubject.send(completion: .finished)
-		}
-	}
-
-	internal func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-		guard let services = peripheral.services else {
-			writeSubject.send(completion: .failure(.unableToConnect))
-
-			return
-		}
-
-		writeSubject.send(.updated(.interrogating))
-
-		for service in services {
-			peripheral.discoverCharacteristics([Constants.apiCharacteristicUUID, Constants.antidosCharacteristicUUID], for: service)
-		}
-	}
-
-	internal func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-		if error != nil {
-			writeSubject.send(completion: .failure(.unableToConnect))
-
-			return
-		}
-
-		guard let characteristics = service.characteristics else {
-			writeSubject.send(completion: .failure(.unableToConnect))
-
-			return
-		}
-
-		if (service.uuid == Constants.serviceUUID) {
-			for characteristic in characteristics {
-				if (characteristic.uuid == Constants.apiCharacteristicUUID) {
-					apiCharacteristic = characteristic
-
-					break
-				}
-			}
-		} else if (service.uuid == Constants.initializeServiceUUID) {
-			for characteristic in characteristics {
-				if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
-					antidosCharacteristic = characteristic
-
-					break
-				}
-			}
-		}
-
-		// Only after we made sure we got both characteristics we proceed.
-		guard let antidosCharacteristic = antidosCharacteristic, let _ = apiCharacteristic else {
-			return
-		}
-
-		// Send the andidos protection data to the robot.
-		peripheral.writeValue(packet, for: antidosCharacteristic, type: .withResponse)
-
-		// Mark the connection state as acknowledging and continue to full connection.
-		writeSubject.send(.updated(.acknowledging))
-	}
-}
-
-/// A single command operation that is scheduled onto the command queue.
-final class CommandOperation<R>: PeripheralOperation<R> {
-	/// Bluetooth characteristic for API calls.
-	private var apiCharacteristic: CBCharacteristic
-
-	init(_ packet: Data,
-		 peripheral: CBPeripheral,
-		 writeSubject: PassthroughSubject<R, DeviceError>,
-		 writePublisher: AnyPublisher<R, DeviceError>,
-		 apiCharacteristic: CBCharacteristic) {
-		self.apiCharacteristic = apiCharacteristic
-
-		super.init(packet, peripheral: peripheral, writeSubject: writeSubject, writePublisher: writePublisher)
-	}
-
-	override func main() {
-		guard isCancelled else {
-			return
-		}
-
-		// Set ourselves as the delegate to get the message callbacks and write the value.
-		peripheral.writeValue(packet, for: apiCharacteristic, type: .withResponse)
-	}
-
-	internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-		if (characteristic.uuid == Constants.apiCharacteristicUUID) {
-			writeSubject.send(completion: .finished)
-		} else {
-			writeSubject.send(completion: .failure(.unableToWrite))
-		}
-	}
-
-	internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-		print("Unhandled Characteristic UUID: \(characteristic.uuid)")
-	}
-}
-
-class CommandQueue: NSObject {
+class CommandQueue {
 	private let operationQueue = OperationQueue()
 
 	/// Underlying bluetooth peripheral instance.
@@ -241,72 +42,73 @@ class CommandQueue: NSObject {
 	/// Bluetooth characteristic for API calls.
 	private var apiCharacteristic: CBCharacteristic?
 
-	/// All cancellable subjects.
-	private var subjectCancellables = Set<AnyCancellable>()
-
 	init(_ peripheral: CBPeripheral) {
 		self.peripheral = peripheral
 
 		self.operationQueue.maxConcurrentOperationCount = 1
 		self.operationQueue.qualityOfService = .default
 		self.operationQueue.name = "CommandQueue"
-
-		super.init()
 	}
 
-	func enqueue<R>(_ command: Command) -> AnyPublisher<R, DeviceError> {
-		let subject = PassthroughSubject<R, DeviceError>()
-
+	func enqueue<R>(_ command: Command, completion: ((Result<R, DeviceError>) -> Void)?) {
 		guard let apiCharacteristic = apiCharacteristic else {
-			return subject.eraseToAnyPublisher()
+			completion?(.failure(.notConnected))
+
+			return
 		}
 
-		let publisher = subject.eraseToAnyPublisher()
 		let operation = CommandOperation(command.packet,
 										 peripheral: peripheral,
-										 writeSubject: subject,
-										 writePublisher: publisher,
+										 completion: { result in
+			completion?(result)
+		},
 										 apiCharacteristic: apiCharacteristic)
 
 		operationQueue.addOperation(operation)
+	}
 
-		return publisher
+	func enqueue<R: DataInitializable>(_ command: Command, completion: ((Result<R, DeviceError>) -> Void)?) {
+		guard let apiCharacteristic = apiCharacteristic else {
+			completion?(.failure(.notConnected))
+
+			return
+		}
+
+		let operation = DataCommandOperation(command.packet,
+											 peripheral: peripheral,
+											 completion: { result in
+			completion?(result)
+		},
+										 apiCharacteristic: apiCharacteristic)
+
+		operationQueue.addOperation(operation)
 	}
 
 	func cancelAll() {
-		for cancellable in subjectCancellables {
-			cancellable.cancel()
-		}
-
-		subjectCancellables.removeAll()
-
 		operationQueue.cancelAllOperations()
 	}
 
-	func connect() -> AnyPublisher<ConnectionProgress, DeviceError> {
-		let subject = PassthroughSubject<ConnectionProgress, DeviceError>()
-		let publisher = subject.eraseToAnyPublisher()
-
+	func connect(_ device: Device, completion: ((Result<ConnectionProgress, DeviceError>) -> Void)?) {
 		let operation = ConnectOperation(peripheral: peripheral,
-										 writeSubject: subject,
-										 writePublisher: publisher)
+										 completion: { [weak self] result in
+			guard let self = self else {
+				return
+			}
 
-		publisher
-			.timeout(.seconds(30), scheduler: DispatchQueue.main, options: nil, customError:nil)
-			.sink { _ in
-
-			} receiveValue: { [weak self] progress in
+			switch result {
+			case .success(let progress):
 				switch progress {
 				case .completed(let characteristic):
-					self?.apiCharacteristic = characteristic
-				default: break
+					self.apiCharacteristic = characteristic
+				case .updated(_): break
 				}
+			case .failure(_): break
 			}
-			.store(in: &subjectCancellables)
+
+			completion?(result)
+		})
 
 		operationQueue.addOperation(operation)
-
-		return publisher
 	}
 
 //		if let error = error {

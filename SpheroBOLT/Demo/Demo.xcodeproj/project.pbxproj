@@ -14,6 +14,8 @@
 		5B5B17EB2AFD6B2300C3DF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */; };
 		5B5B17EE2AFD6B2300C3DF11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17ED2AFD6B2300C3DF11 /* Preview Assets.xcassets */; };
 		5B6708B12B0BDD3E005D8C62 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6708B02B0BDD3E005D8C62 /* Navigation.swift */; };
+		5B74CDA62B1E5CB500072A3A /* QueueOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74CDA52B1E5CB500072A3A /* QueueOperation.swift */; };
+		5B75BB282B1CDB10007078BE /* DeviceManagerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */; };
 		5B97655C2B134D51007A1894 /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655B2B134D51007A1894 /* Echo.swift */; };
 		5B97655E2B134D8A007A1894 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655D2B134D8A007A1894 /* PeerConnection.swift */; };
 		5B9765602B134E7D007A1894 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655F2B134E7D007A1894 /* Sensor.swift */; };
@@ -39,6 +41,8 @@
 		5B5B17ED2AFD6B2300C3DF11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B5B17F72AFD6BA800C3DF11 /* SpheroBOLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpheroBOLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6708B02B0BDD3E005D8C62 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		5B74CDA52B1E5CB500072A3A /* QueueOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueOperation.swift; sourceTree = "<group>"; };
+		5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManagerDemo.swift; sourceTree = "<group>"; };
 		5B97655B2B134D51007A1894 /* Echo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
 		5B97655D2B134D8A007A1894 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
 		5B97655F2B134E7D007A1894 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				5BBF87062B1925BA00B408BA /* PublisherExt.swift */,
 				5BC335152AFFEDB000510380 /* Characteristics.swift */,
 				5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */,
+				5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */,
 				5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */,
 				5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */,
 				5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */,
@@ -121,6 +126,7 @@
 				5BC335112AFFED6100510380 /* CommandId.swift */,
 				5BC3351B2B001D2500510380 /* Command.swift */,
 				5B41F2102B0FE66600C18352 /* CommandQueue.swift */,
+				5B74CDA52B1E5CB500072A3A /* QueueOperation.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -212,12 +218,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC335142AFFED9200510380 /* Result.swift in Sources */,
+				5B74CDA62B1E5CB500072A3A /* QueueOperation.swift in Sources */,
 				5B41F2112B0FE66600C18352 /* CommandQueue.swift in Sources */,
 				5B5B17E92AFD6B2200C3DF11 /* ContentView.swift in Sources */,
 				5B9ADAB22B137A6800A35074 /* DeviceId.swift in Sources */,
 				5B97655C2B134D51007A1894 /* Echo.swift in Sources */,
 				5B5B17E72AFD6B2200C3DF11 /* DemoApp.swift in Sources */,
 				5B6708B12B0BDD3E005D8C62 /* Navigation.swift in Sources */,
+				5B75BB282B1CDB10007078BE /* DeviceManagerDemo.swift in Sources */,
 				5BBC38FF2AFEC6DC009260EC /* DeviceCoordinator.swift in Sources */,
 				5BC335122AFFED6100510380 /* CommandId.swift in Sources */,
 				5BC335162AFFEDB000510380 /* Characteristics.swift in Sources */,

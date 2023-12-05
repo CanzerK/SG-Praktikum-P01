@@ -15,30 +15,53 @@ enum DeviceState {
 	case connected
 }
 
-protocol DeviceDelegate {
+///
+/// @method deviceCoordinatorDidConnectDevice
+///
+/// @param coordinator The instance of the coordinator that sent the message.
+/// @param device The device that was connected.
+///
+//func deviceCoordinatorDidConnectDevice(_ coordinator: DeviceCoordinator, device: Device, error: DeviceError?)
+
+///
+/// @method deviceCoordinatorDidDisconnectDevice
+///
+/// @param coordinator The instance of the coordinator that sent the message.
+/// @param device The device that was disconnected.
+///
+//func deviceCoordinatorDidDisconnectDevice(_ coordinator: DeviceCoordinator, device: Device, error: DeviceError?)
+
+protocol DeviceDelegate: AnyObject {
 	/**
 	 * @discussion Called when the device changes its state.
 	 *
 	 * @parameter The device instance.
 	 */
 	func deviceDidChangeState(_ device: Device)
+
+	/**
+	 * @discussion Called when the device changes its state.
+	 *
+	 * @parameter The device instance.
+	 */
+	func deviceDidUpdateConnectionState(_ device: Device, state: ConnectionState, error: DeviceError?)
 }
 
-class Device: NSObject, CBPeripheralDelegate {
+class Device: NSObject {
 	/// Underlying bluetooth peripheral instance.
 	private var peripheral: CBPeripheral
 
 	/// Command buffer to enqueue all device commands into.
 	private var commandQueue: CommandQueue
 
-	/// All cancellable subscriptions to events.
-	private var cancellables = Set<AnyCancellable>()
-
 	/// Current sequence number of the command.
 	private var sequenceNumber: UInt8 = 0
 
 	/// The delegate of the device instance that will receive messages of changes.
-	var delegate: DeviceDelegate?
+	weak var delegate: DeviceDelegate?
+
+	/// Stored during the call to connect and invoked upon completion of connection.
+	var connectionCompletion: ((Result<ConnectionProgress, DeviceError>) -> Void)?
 
 	/// The current state of the device depends on what the coordinator does with it and is based on the connection to it.
 	var state = DeviceState.discovered {
@@ -74,48 +97,47 @@ class Device: NSObject, CBPeripheralDelegate {
 	}
 
 	/// Connect to the given device using the manager. Don't call directly!
-	func connect(toCoordinator coordinator: DeviceCoordinator) -> AnyPublisher<ConnectionState, DeviceError> {
+	func connect(toManager centralManager: CBCentralManager, completion: ((Result<ConnectionProgress, DeviceError>) -> Void)?) {
 		state = .connecting
 
+		centralManager.connect(peripheral)
+
+		connectionCompletion = completion
+	}
+
+	func completeConnection() {
 		// Create a new publisher by calling connect on the device.
 		// Whenever we are completed we mark the device as connected.
-		let connectPublisher = commandQueue.connect().map { output in
-			switch output {
-			case .updated(let state):
-				switch state {
-				case .connecting:
-					self.state = .connecting
-				case .connected:
-					// At this point we know we have successfully passed the antidos protection and we are connected to the central manager.
-					self.state = .connected
-				default: break
-				}
-
-				return state
-			default:
-				return ConnectionState.connected
+		commandQueue.connect(self, completion: { [weak self] result in
+			guard let self = self else {
+				return
 			}
-		}
-		.mapError {
-			self.state = .discovered
 
-			return $0
-		}.eraseToAnyPublisher()
+			switch result {
+			case .success(let progress):
+				switch progress {
+					case .updated(let state):
+						switch state {
+						case .connecting:
+							self.state = .connecting
+						case .connected:
+							// At this point we know we have successfully passed the antidos protection and we are connected to the central manager.
+							self.state = .connected
+						default: break
+						}
+					default:
+						self.state = .connected
+				}
+			case .failure(_):
+				self.state = .discovered
+			}
 
-//		manager.connect(peripheral)
-
-		// Re-publish the subscriber.
-		return connectPublisher
+			self.connectionCompletion?(result)
+		})
 	}
 
 	/// Disconnect from the given device using the manager. Don't call directly!
 	func disconnect(fromManager manager: CBCentralManager) {
-		for cancellable in cancellables {
-			cancellable.cancel()
-		}
-
-		cancellables.removeAll()
-
 		commandQueue.cancelAll()
 
 		manager.cancelPeripheralConnection(peripheral)
@@ -133,10 +155,11 @@ class Device: NSObject, CBPeripheralDelegate {
 		}
 	}
 
-	internal func enqueueCommand<T: CommandRepresentable>(deviceId: DeviceId, 
-														  commandId: T,
-														  sourceId: UInt8? = nil, 
-														  targetId: UInt8? = nil) -> AnyPublisher<Void, DeviceError> {
+	internal func enqueueCommand<T: CommandRepresentable, R>(deviceId: DeviceId,
+															 commandId: T,
+															 sourceId: UInt8? = nil,
+															 targetId: UInt8? = nil,
+															 completion: ((Result<R, DeviceError>) -> Void)?) {
 		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
 
 		if (sourceId != nil) {
@@ -147,16 +170,23 @@ class Device: NSObject, CBPeripheralDelegate {
 			flags.insert(PacketFlags.commandHasTargetId)
 		}
 
-		let command = Command(flags.rawValue, deviceId: deviceId.rawValue, commandId: commandId.rawValue, sequenceNumber: nextSequenceNumber, contents: nil, sourceId: sourceId, targetId: targetId)
+		let command = Command(flags.rawValue,
+							  deviceId: deviceId.rawValue,
+							  commandId: commandId.rawValue,
+							  sequenceNumber: nextSequenceNumber,
+							  contents: nil,
+							  sourceId: sourceId,
+							  targetId: targetId)
 
-		return commandQueue.enqueue(command)
+		return commandQueue.enqueue(command, completion: completion)
 	}
 
 	internal func enqueueCommand<T: CommandRepresentable, D: CommandDataConvertible>(deviceId: DeviceId, 
 																					 commandId: T,
 																					 data: D?,
 																					 sourceId: UInt8? = nil,
-																					 targetId: UInt8? = nil) -> AnyPublisher<Void, DeviceError> {
+																					 targetId: UInt8? = nil,
+																					 completion: ((Result<Void, DeviceError>) -> Void)?) {
 		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
 
 		if (sourceId != nil) {
@@ -167,8 +197,14 @@ class Device: NSObject, CBPeripheralDelegate {
 			flags.insert(PacketFlags.commandHasTargetId)
 		}
 
-		let command = Command(flags.rawValue, deviceId: deviceId.rawValue, commandId: commandId.rawValue, sequenceNumber: nextSequenceNumber, contents: data?.packet, sourceId: sourceId, targetId: targetId)
+		let command = Command(flags.rawValue, 
+							  deviceId: deviceId.rawValue,
+							  commandId: commandId.rawValue,
+							  sequenceNumber: nextSequenceNumber,
+							  contents: data?.packet,
+							  sourceId: sourceId,
+							  targetId: targetId)
 
-		return commandQueue.enqueue(command)
+		return commandQueue.enqueue(command, completion: completion)
 	}
 }
