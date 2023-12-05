@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bybsjudveu7iq"
-path="res://.godot/imported/skyscraperD.glb-a82d7b494cac6e328a7a262ca0a6ecea.scn"
+path="res://.godot/imported/skyscraperD.glb-96c6c19ef8f20c9450f1e22443623da5.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/skyscraperD.glb"
-dest_files=["res://.godot/imported/skyscraperD.glb-a82d7b494cac6e328a7a262ca0a6ecea.scn"]
+source_file="res://Assets/UrbanBuild/GLB/skyscraperD.glb"
+dest_files=["res://.godot/imported/skyscraperD.glb-96c6c19ef8f20c9450f1e22443623da5.scn"]
 
 [params]
 

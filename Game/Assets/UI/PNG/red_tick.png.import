@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c74no7r4yn2vc"
-path="res://.godot/imported/red_tick.png-72927c35b105f128a3fde5193a06e58e.ctex"
+path="res://.godot/imported/red_tick.png-2d7e5d946b4f337f7396781156af7b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/red_tick.png"
-dest_files=["res://.godot/imported/red_tick.png-72927c35b105f128a3fde5193a06e58e.ctex"]
+source_file="res://Assets/UI/PNG/red_tick.png"
+dest_files=["res://.godot/imported/red_tick.png-2d7e5d946b4f337f7396781156af7b50.ctex"]
 
 [params]
 

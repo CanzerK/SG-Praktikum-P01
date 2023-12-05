@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://1rhx1lnm1eqt"
-path="res://.godot/imported/house_type14.glb-be16e4b644b266dee3bbf19a26fbc811.scn"
+path="res://.godot/imported/house_type14.glb-fe5a2fd6b98a40762c16184c31375a79.scn"
 
 [deps]
 
-source_file="res://Game Assets/SubUrban/house_type14.glb"
-dest_files=["res://.godot/imported/house_type14.glb-be16e4b644b266dee3bbf19a26fbc811.scn"]
+source_file="res://Assets/SubUrbanBuild/house_type14.glb"
+dest_files=["res://.godot/imported/house_type14.glb-fe5a2fd6b98a40762c16184c31375a79.scn"]
 
 [params]
 

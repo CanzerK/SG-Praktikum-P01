@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dnlhojpg01j33"
-path="res://.godot/imported/error_008.ogg-c19a1f17ad1312004878df47fa08f4fa.oggvorbisstr"
+path="res://.godot/imported/error_008.ogg-792d3408cc4181600c7ff2147ff549b5.oggvorbisstr"
 
 [deps]
 
-source_file="res://Game Assets/UI/Audio/error_008.ogg"
-dest_files=["res://.godot/imported/error_008.ogg-c19a1f17ad1312004878df47fa08f4fa.oggvorbisstr"]
+source_file="res://Assets/UI/Audio/error_008.ogg"
+dest_files=["res://.godot/imported/error_008.ogg-792d3408cc4181600c7ff2147ff549b5.oggvorbisstr"]
 
 [params]
 

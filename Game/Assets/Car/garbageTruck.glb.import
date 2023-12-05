@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cjggyfkwql8ti"
-path="res://.godot/imported/garbageTruck.glb-87e8a32b4419298d723815e6263eaf0e.scn"
+path="res://.godot/imported/garbageTruck.glb-5a2a010b2f92fe7b662483bdf77699b6.scn"
 
 [deps]
 
-source_file="res://Game Assets/Car/garbageTruck.glb"
-dest_files=["res://.godot/imported/garbageTruck.glb-87e8a32b4419298d723815e6263eaf0e.scn"]
+source_file="res://Assets/Car/garbageTruck.glb"
+dest_files=["res://.godot/imported/garbageTruck.glb-5a2a010b2f92fe7b662483bdf77699b6.scn"]
 
 [params]
 

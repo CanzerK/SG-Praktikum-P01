@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btu4h8qltqa0n"
-path="res://.godot/imported/contrast.png-f5a5a71f54e3bab642bd01b3dde13109.ctex"
+path="res://.godot/imported/contrast.png-7727d3833900f360766781c99fb229c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/White/1x/contrast.png"
-dest_files=["res://.godot/imported/contrast.png-f5a5a71f54e3bab642bd01b3dde13109.ctex"]
+source_file="res://Assets/Icons/PNG/White/1x/contrast.png"
+dest_files=["res://.godot/imported/contrast.png-7727d3833900f360766781c99fb229c7.ctex"]
 
 [params]
 

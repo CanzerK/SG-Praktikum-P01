@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b3w1gnjckrt2y"
-path="res://.godot/imported/large_buildingE.glb-cfd901ff68493fd141bd58a2dfe9c7bd.scn"
+path="res://.godot/imported/large_buildingE.glb-d4584701e111c77b9e55345abca9b5b9.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/large_buildingE.glb"
-dest_files=["res://.godot/imported/large_buildingE.glb-cfd901ff68493fd141bd58a2dfe9c7bd.scn"]
+source_file="res://Assets/UrbanBuild/GLB/large_buildingE.glb"
+dest_files=["res://.godot/imported/large_buildingE.glb-d4584701e111c77b9e55345abca9b5b9.scn"]
 
 [params]
 

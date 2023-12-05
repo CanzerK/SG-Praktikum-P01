@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqwem5vs1gufy"
-path="res://.godot/imported/road_intersectionLine.glb-ef8b56fbf3cc0fa4a9145ddc1b1fd4eb.scn"
+path="res://.godot/imported/road_intersectionLine.glb-c73c36b4d60e030ec39b6b30c051a3fd.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_intersectionLine.glb"
-dest_files=["res://.godot/imported/road_intersectionLine.glb-ef8b56fbf3cc0fa4a9145ddc1b1fd4eb.scn"]
+source_file="res://Assets/Roads/road_intersectionLine.glb"
+dest_files=["res://.godot/imported/road_intersectionLine.glb-c73c36b4d60e030ec39b6b30c051a3fd.scn"]
 
 [params]
 

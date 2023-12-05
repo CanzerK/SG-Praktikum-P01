@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://wk4ok6t5terq"
-path="res://.godot/imported/light_squareDouble.glb-2c4e0bb8ba35486974080f65a8008e12.scn"
+path="res://.godot/imported/light_squareDouble.glb-57ae02d1a08d5c53fd7aaa7cf9756065.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/light_squareDouble.glb"
-dest_files=["res://.godot/imported/light_squareDouble.glb-2c4e0bb8ba35486974080f65a8008e12.scn"]
+source_file="res://Assets/Roads/light_squareDouble.glb"
+dest_files=["res://.godot/imported/light_squareDouble.glb-57ae02d1a08d5c53fd7aaa7cf9756065.scn"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6asjjdcvvwrq"
-path="res://.godot/imported/blue_tick.png-3003f5db010abf68b745f718aa9c98d8.ctex"
+path="res://.godot/imported/blue_tick.png-c62cb9bb425c453a9ed0256a0b74df6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/blue_tick.png"
-dest_files=["res://.godot/imported/blue_tick.png-3003f5db010abf68b745f718aa9c98d8.ctex"]
+source_file="res://Assets/UI/PNG/blue_tick.png"
+dest_files=["res://.godot/imported/blue_tick.png-c62cb9bb425c453a9ed0256a0b74df6c.ctex"]
 
 [params]
 

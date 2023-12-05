@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://hii0oclse8ay"
-path="res://.godot/imported/road_drivewayDoubleBarrier.glb-907f6e2e679ec436c4e426f0a64981d3.scn"
+path="res://.godot/imported/road_drivewayDoubleBarrier.glb-d08fd78ebe6102f2c410646fc31a0bef.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_drivewayDoubleBarrier.glb"
-dest_files=["res://.godot/imported/road_drivewayDoubleBarrier.glb-907f6e2e679ec436c4e426f0a64981d3.scn"]
+source_file="res://Assets/Roads/road_drivewayDoubleBarrier.glb"
+dest_files=["res://.godot/imported/road_drivewayDoubleBarrier.glb-d08fd78ebe6102f2c410646fc31a0bef.scn"]
 
 [params]
 

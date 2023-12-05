@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bfju4benoeiux"
-path="res://.godot/imported/maximize_008.ogg-777a72905e2530543b139154f1bc43a8.oggvorbisstr"
+path="res://.godot/imported/maximize_008.ogg-dcc9bb36dbeb159e1c1e9c40122a1951.oggvorbisstr"
 
 [deps]
 
-source_file="res://Game Assets/UI/Audio/maximize_008.ogg"
-dest_files=["res://.godot/imported/maximize_008.ogg-777a72905e2530543b139154f1bc43a8.oggvorbisstr"]
+source_file="res://Assets/UI/Audio/maximize_008.ogg"
+dest_files=["res://.godot/imported/maximize_008.ogg-dcc9bb36dbeb159e1c1e9c40122a1951.oggvorbisstr"]
 
 [params]
 

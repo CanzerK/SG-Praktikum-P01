@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgyspdh4nb01p"
-path="res://.godot/imported/grey_arrowDownGrey.png-f9585c90228eac0b3c1f32f7d3bdd7a2.ctex"
+path="res://.godot/imported/grey_arrowDownGrey.png-d6cd075afdf9d5570b06a1d3815a4916.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/grey_arrowDownGrey.png"
-dest_files=["res://.godot/imported/grey_arrowDownGrey.png-f9585c90228eac0b3c1f32f7d3bdd7a2.ctex"]
+source_file="res://Assets/UI/PNG/grey_arrowDownGrey.png"
+dest_files=["res://.godot/imported/grey_arrowDownGrey.png-d6cd075afdf9d5570b06a1d3815a4916.ctex"]
 
 [params]
 

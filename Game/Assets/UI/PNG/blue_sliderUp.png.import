@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf0k7wbjecjb0"
-path="res://.godot/imported/blue_sliderUp.png-2d7d0b06c56d082283d9a81b19bcb3be.ctex"
+path="res://.godot/imported/blue_sliderUp.png-5692344645716bfb620837be4cf10fc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/blue_sliderUp.png"
-dest_files=["res://.godot/imported/blue_sliderUp.png-2d7d0b06c56d082283d9a81b19bcb3be.ctex"]
+source_file="res://Assets/UI/PNG/blue_sliderUp.png"
+dest_files=["res://.godot/imported/blue_sliderUp.png-5692344645716bfb620837be4cf10fc0.ctex"]
 
 [params]
 

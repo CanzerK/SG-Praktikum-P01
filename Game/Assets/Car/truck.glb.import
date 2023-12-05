@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cs2dair44bcj2"
-path="res://.godot/imported/truck.glb-e86992332bf0ef879723f459d64c92a9.scn"
+path="res://.godot/imported/truck.glb-d91da8ac819553fcbf65a8f9f43cb27d.scn"
 
 [deps]
 
-source_file="res://Game Assets/Car/truck.glb"
-dest_files=["res://.godot/imported/truck.glb-e86992332bf0ef879723f459d64c92a9.scn"]
+source_file="res://Assets/Car/truck.glb"
+dest_files=["res://.godot/imported/truck.glb-d91da8ac819553fcbf65a8f9f43cb27d.scn"]
 
 [params]
 

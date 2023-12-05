@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://byl658s1wwncs"
-path="res://.godot/imported/path_tilesLong.glb-6db8ca557749994d46811777a7c01f25.scn"
+path="res://.godot/imported/path_tilesLong.glb-05ba889f402c42ec3fe3a776d19f56e3.scn"
 
 [deps]
 
-source_file="res://Game Assets/SubUrban/path_tilesLong.glb"
-dest_files=["res://.godot/imported/path_tilesLong.glb-6db8ca557749994d46811777a7c01f25.scn"]
+source_file="res://Assets/SubUrbanBuild/path_tilesLong.glb"
+dest_files=["res://.godot/imported/path_tilesLong.glb-05ba889f402c42ec3fe3a776d19f56e3.scn"]
 
 [params]
 

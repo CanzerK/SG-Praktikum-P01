@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5xu5aldqk3d7"
-path="res://.godot/imported/sign_hospital.glb-3c57777f9384209c7fb69700ed8b4d43.scn"
+path="res://.godot/imported/sign_hospital.glb-f2c7dbec0c0b15e916717a573998d869.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/sign_hospital.glb"
-dest_files=["res://.godot/imported/sign_hospital.glb-3c57777f9384209c7fb69700ed8b4d43.scn"]
+source_file="res://Assets/UrbanBuild/GLB/sign_hospital.glb"
+dest_files=["res://.godot/imported/sign_hospital.glb-f2c7dbec0c0b15e916717a573998d869.scn"]
 
 [params]
 

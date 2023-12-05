@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dg1ijkdj7llr7"
-path="res://.godot/imported/road_splitBarrier.glb-9a59ecf20bda987c53025f8d8f72b10a.scn"
+path="res://.godot/imported/road_splitBarrier.glb-460f8fe91e14fd3c6ffe91110dd1837a.scn"
 
 [deps]
 
-source_file="res://Game Assets/Roads/GLB/road_splitBarrier.glb"
-dest_files=["res://.godot/imported/road_splitBarrier.glb-9a59ecf20bda987c53025f8d8f72b10a.scn"]
+source_file="res://Assets/Roads/road_splitBarrier.glb"
+dest_files=["res://.godot/imported/road_splitBarrier.glb-460f8fe91e14fd3c6ffe91110dd1837a.scn"]
 
 [params]
 

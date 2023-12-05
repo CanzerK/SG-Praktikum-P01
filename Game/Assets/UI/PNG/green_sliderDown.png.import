@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ikb7pewqshnt"
-path="res://.godot/imported/green_sliderDown.png-a947f505b450192172631d524af11294.ctex"
+path="res://.godot/imported/green_sliderDown.png-1a6a59bceced4acd06332511180f703c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/UI/PNG/green_sliderDown.png"
-dest_files=["res://.godot/imported/green_sliderDown.png-a947f505b450192172631d524af11294.ctex"]
+source_file="res://Assets/UI/PNG/green_sliderDown.png"
+dest_files=["res://.godot/imported/green_sliderDown.png-1a6a59bceced4acd06332511180f703c.ctex"]
 
 [params]
 

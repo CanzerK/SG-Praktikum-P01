@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpdpkfh5mbts7"
-path="res://.godot/imported/shoppingCart.png-f87e4daf72d9176309b807775b5b816c.ctex"
+path="res://.godot/imported/shoppingCart.png-e7341bfdf993b05ca5d95df2db4fd1e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/White/2x/shoppingCart.png"
-dest_files=["res://.godot/imported/shoppingCart.png-f87e4daf72d9176309b807775b5b816c.ctex"]
+source_file="res://Assets/Icons/PNG/White/2x/shoppingCart.png"
+dest_files=["res://.godot/imported/shoppingCart.png-e7341bfdf993b05ca5d95df2db4fd1e8.ctex"]
 
 [params]
 

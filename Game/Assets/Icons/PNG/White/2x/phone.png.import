@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4e5usedxlwbl"
-path="res://.godot/imported/phone.png-a0ea37fcea698b269fb492869839f6a1.ctex"
+path="res://.godot/imported/phone.png-7fdfb16215db5478a094179aef20af04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/White/2x/phone.png"
-dest_files=["res://.godot/imported/phone.png-a0ea37fcea698b269fb492869839f6a1.ctex"]
+source_file="res://Assets/Icons/PNG/White/2x/phone.png"
+dest_files=["res://.godot/imported/phone.png-7fdfb16215db5478a094179aef20af04.ctex"]
 
 [params]
 

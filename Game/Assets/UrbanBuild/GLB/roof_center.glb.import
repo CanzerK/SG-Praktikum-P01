@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cehmwgoda61u3"
-path="res://.godot/imported/roof_center.glb-ae544a2e0385c83a1ad241cd8ae66498.scn"
+path="res://.godot/imported/roof_center.glb-f945dd57f9a898a58cec4728cf503fe9.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/roof_center.glb"
-dest_files=["res://.godot/imported/roof_center.glb-ae544a2e0385c83a1ad241cd8ae66498.scn"]
+source_file="res://Assets/UrbanBuild/GLB/roof_center.glb"
+dest_files=["res://.godot/imported/roof_center.glb-f945dd57f9a898a58cec4728cf503fe9.scn"]
 
 [params]
 

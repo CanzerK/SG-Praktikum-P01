@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsvdtcrrwuwrs"
-path="res://.godot/imported/medal2.png-6f8f3b3851dfc6d36a7d94c5c9aa9250.ctex"
+path="res://.godot/imported/medal2.png-add6129c6cf8b261d619ebd6bf831351.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/PNG/Black/1x/medal2.png"
-dest_files=["res://.godot/imported/medal2.png-6f8f3b3851dfc6d36a7d94c5c9aa9250.ctex"]
+source_file="res://Assets/Icons/PNG/Black/1x/medal2.png"
+dest_files=["res://.godot/imported/medal2.png-add6129c6cf8b261d619ebd6bf831351.ctex"]
 
 [params]
 

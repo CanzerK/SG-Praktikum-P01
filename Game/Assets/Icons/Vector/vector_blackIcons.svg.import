@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ej6fv17p5pso"
-path="res://.godot/imported/vector_blackIcons.svg-ca6ab7ba97c03fc5ba8a03531908151c.ctex"
+path="res://.godot/imported/vector_blackIcons.svg-e694869c2fab849251ed5477d9821258.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game Assets/Icons/Vector/vector_blackIcons.svg"
-dest_files=["res://.godot/imported/vector_blackIcons.svg-ca6ab7ba97c03fc5ba8a03531908151c.ctex"]
+source_file="res://Assets/Icons/Vector/vector_blackIcons.svg"
+dest_files=["res://.godot/imported/vector_blackIcons.svg-e694869c2fab849251ed5477d9821258.ctex"]
 
 [params]
 

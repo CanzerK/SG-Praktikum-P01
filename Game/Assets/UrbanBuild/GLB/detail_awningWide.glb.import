@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqx0mnitl2x68"
-path="res://.godot/imported/detail_awningWide.glb-60de9b588a28179f7fc444ffc1d664ec.scn"
+path="res://.godot/imported/detail_awningWide.glb-0a6bd659f039ef15da6ad28505b0238c.scn"
 
 [deps]
 
-source_file="res://Game Assets/Buildings/GLB/detail_awningWide.glb"
-dest_files=["res://.godot/imported/detail_awningWide.glb-60de9b588a28179f7fc444ffc1d664ec.scn"]
+source_file="res://Assets/UrbanBuild/GLB/detail_awningWide.glb"
+dest_files=["res://.godot/imported/detail_awningWide.glb-0a6bd659f039ef15da6ad28505b0238c.scn"]
 
 [params]
 
