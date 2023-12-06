@@ -60,3 +60,13 @@ enum CommandResult: UInt8 {
 	case targetUnavailable = 0x0a
 	case unknown = 0xff
 }
+
+enum CommandResponse: UInt8 {
+	case escape = 0xab
+	case startOfPacket = 0x8d
+	case endOfPacket = 0xd8
+	case escapeMask = 0x88
+	case escapedEscape = 0x23
+	case escapedStartOfPacket = 0x05
+	case escapedEndOfPacket = 0x50
+}
