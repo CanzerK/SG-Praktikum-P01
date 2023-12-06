@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btg7t10pu7wic"]
+
+[ext_resource type="PackedScene" uid="uid://0a2c8p8c1gsg" path="res://Assets/Car/ambulance.glb" id="1_lt2fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33mn2"]
+size = Vector3(1, 1.8, 3.3)
+
+[node name="Ambulance3" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0.0500001)
+shape = SubResource("BoxShape3D_33mn2")
+
+[node name="ambulance2" parent="CollisionShape3D" instance=ExtResource("1_lt2fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -0.0500001)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

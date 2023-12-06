@@ -226,7 +226,7 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 28, 0, -106)
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 28, 0, -106)
 
 [node name="road_slantCurve2" parent="." instance=ExtResource("51_blgcq")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 24, 0, -122)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 23, 0, -122)
 
 [node name="road_slantCurveBarrier2" parent="." instance=ExtResource("52_agf8o")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 24, 0, -122)
