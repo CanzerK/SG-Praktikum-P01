@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum Direction: UInt8 {
 	case forward = 0x00
@@ -27,7 +28,7 @@ enum StabilizationIndex: UInt8 {
 	case speedAndYawControlSystem = 0x05
 }
 
-enum DriveCommand: UInt8 {
+enum DriveCommandId: UInt8 {
 	case rawMotor = 0x01
 	case setAckermannSteeringParameters = 0x02
 	case drift = 0x03
@@ -39,4 +40,21 @@ enum DriveCommand: UInt8 {
 	case rcCarDrive = 0x09
 	case driveToPosition = 0x0a
 	case setStabilization = 0x0c
+}
+
+/// UserIO extensions to the device object.
+extension Device {
+	/**
+	 * Sets the color of the main matrix.
+	 * @param speed Value from 0 to 255.
+	 * @param heading Value from 0 to 360
+	 * @param direction Direction of drive.
+	 */
+	func driveWithHeading(speed: UInt8, heading: UInt16, direction: Direction) -> CommandResponseType<Void> {
+		return enqueueCommand(deviceId: .driving,
+							  commandId: DriveCommandId.driveWithHeading,
+							  data: [speed.packet, heading.packet, direction.rawValue.packet],
+							  sourceId: nil,
+							  targetId: 0x12)
+	}
 }

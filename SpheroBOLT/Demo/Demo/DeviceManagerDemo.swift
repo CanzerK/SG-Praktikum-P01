@@ -29,22 +29,30 @@ class DeviceManagerDemo: DeviceCoordinatorDelegate, DeviceDelegate {
 		device.delegate = self
 
 		coordinator.connect(toDevice: device)
+			.retry(3)
 			.receive(on: DispatchQueue.main)
 			.flatMap {
 				return device.wake()
 			}
+			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
 			.flatMap {
-				return device.enterSoftSleep()
+				return device.driveWithHeading(speed: 50, heading: 180, direction: .forward)
 			}
+//			.flatMap {
+//				return device.setPixelColor(Color(1.0, 0.0, 0.0), pixel: Pixel(2, 2))
+//			}
+//			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
+//			.flatMap {
+//				return device.enterSoftSleep()
+//			}
 			.sink { completion in
 				switch completion {
-				case .finished:
-					print("Data written.")
+				case .finished: break
 				case .failure(let error):
 					print(error)
 				}
-			} receiveValue: { future in
-
+			} receiveValue: { value in
+				print("Got \(value).")
 			}
 			.store(in: &cancellables)
 	}

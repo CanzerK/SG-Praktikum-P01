@@ -49,79 +49,33 @@ enum PowerCommandId: UInt8 {
 	case batteryStateChanged = 0x1f
 }
 
-extension Device {
-	internal func enqueueCommand<T: CommandRepresentable>(deviceId: DeviceId, commandId: T) -> Future<Void, DeviceError> {
-		return Future<Void, DeviceError> { [weak self] promise in
-			guard let self = self else {
-				promise(.failure(.unableToWrite))
-
-				return
-			}
-
-			return self.enqueueCommand(deviceId: deviceId, commandId: commandId) {
-				switch $0 {
-				case .success:
-					promise(.success(()))
-				case .failure(let error):
-					promise(.failure(error))
-				}
-			}
-		}
-	}
-
-	internal func enqueueCommand<T: CommandRepresentable, R: DataInitializable>(deviceId: DeviceId, commandId: T) -> Future<R, DeviceError> {
-		return Future<R, DeviceError> { [weak self] promise in
-			guard let self = self else {
-				promise(.failure(.unableToWrite))
-
-				return
-			}
-
-			return self.enqueueCommand<R>(deviceId: deviceId, commandId: commandId) {
-				switch $0 {
-				case .success(let value):
-					promise(.success(value))
-				case .failure(let error):
-					promise(.failure(error))
-				}
-			}
-		}
-	}
-}
-
-struct BatteryLevel: DataInitializable {
-	init(fromData data: Data) throws {
-
-	}
-}
-
 /// Power extensions to the device object.
 extension Device {
 	/**
 	 * Wakes up the device.
 	 */
-	func wake() -> Future<Void, DeviceError> {
+	func wake() -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.wake)
 	}
 
 	/**
 	 * Shuts down the robot.
 	 */
-	func enterDeepSleep() -> Future<Void, DeviceError> {
+	func enterDeepSleep() -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.enterDeepSleep)
 	}
 
 	/**
 	 * Sends a soft sleep command to the robot.
 	 */
-	func enterSoftSleep() -> Future<Void, DeviceError> {
+	func enterSoftSleep() -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.enterSoftSleep)
 	}
 
 	/**
 	 * Get the current battery voltage. Determines the level of charge.
 	 */
-	func getBatteryVoltage() -> Future<BatteryLevel, DeviceError> {
+	func getBatteryVoltage() -> CommandResponseType<BatteryLevel> {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryVoltage)
 //		let batteryCharge = Float(100.0) / 100.0
 //
@@ -131,7 +85,7 @@ extension Device {
 	/**
 	 * Get battery state without known voltage constants.
 	 */
-	func getBatteryLMQ() -> Future<Void, DeviceError> { // -> BatteryLMQ {
+	func getBatteryLMQ() -> CommandResponseType<Void> { // -> BatteryLMQ {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryStateLMQ)
 
 //		let batteryState = BatteryLMQ(rawValue: 0x02)!
@@ -141,7 +95,7 @@ extension Device {
 	/**
 	 * Get battery state without known voltage constants.
 	 */
-	func getBatteryState() -> Future<Void, DeviceError> { // -> BatteryVoltage {
+	func getBatteryState() -> CommandResponseType<Void> { // -> BatteryVoltage {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryState)
 
 //		let batteryVoltage = BatteryVoltage(rawValue: 0x02)!
@@ -151,7 +105,7 @@ extension Device {
 	/**
 	 * Charging status information.
 	 */
-	func batteryStateChanged() -> Future<Void, DeviceError> { // -> ChargeState {
+	func batteryStateChanged() -> CommandResponseType<Void> { // -> ChargeState {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.batteryStateChanged)
 
 //		let batteryState = ChargeState(rawValue: 0x02)!
@@ -161,7 +115,7 @@ extension Device {
 	/**
 	 * Returns the battery percentage.
 	 */
-	func getBatteryPercentage() -> Future<Void, DeviceError> { // -> Int {
+	func getBatteryPercentage() -> CommandResponseType<Int> {
 		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryPercentage)
 
 //		let batteryPercentage = 100

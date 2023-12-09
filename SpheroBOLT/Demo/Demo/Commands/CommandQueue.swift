@@ -16,6 +16,8 @@ enum DeviceError: Error {
 	case notConnected
 	case alreadyConnected
 	case unableToWrite
+	case unableToFindDescriptor
+	case unableToSetNotification
 }
 
 /// The connection state during a device connection.
@@ -50,7 +52,7 @@ class CommandQueue {
 		self.operationQueue.name = "CommandQueue"
 	}
 
-	func enqueue<R>(_ command: Command, completion: ((Result<R, DeviceError>) -> Void)?) {
+	func enqueue(command: Command, completion: ((Result<Void, DeviceError>) -> Void)?) {
 		guard let apiCharacteristic = apiCharacteristic else {
 			completion?(.failure(.notConnected))
 
@@ -67,7 +69,7 @@ class CommandQueue {
 		operationQueue.addOperation(operation)
 	}
 
-	func enqueue<R: DataInitializable>(_ command: Command, completion: ((Result<R, DeviceError>) -> Void)?) {
+	func enqueueWithData<R: DataInitializable>(command: Command, completion: ((Result<R, DeviceError>) -> Void)?) {
 		guard let apiCharacteristic = apiCharacteristic else {
 			completion?(.failure(.notConnected))
 
@@ -79,7 +81,7 @@ class CommandQueue {
 											 completion: { result in
 			completion?(result)
 		},
-										 apiCharacteristic: apiCharacteristic)
+											 apiCharacteristic: apiCharacteristic)
 
 		operationQueue.addOperation(operation)
 	}
@@ -110,38 +112,4 @@ class CommandQueue {
 
 		operationQueue.addOperation(operation)
 	}
-
-//		if let error = error {
-//			print(error.localizedDescription)
-//		}
-//		else {
-//			print("Successfully wrote to \(peripheral).")
-//
-//			if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
-//				guard let apiCharacteristic = apiCharacteristic else {
-//					return
-//				}
-//
-//				let start: UInt8 = 0x8d
-//				let end: UInt8 = 0xd8
-//				let response: UInt8 = 0x0a
-////				let sourceId: UInt8 = 0xff
-////				let targetId: UInt8 = 0x11
-//				let deviceId: UInt8 = 0x13
-//				let commandId : UInt8 = 0x0d
-//	//			let led: UInt8 = LED.all()
-//	//			let r: UInt8 = 0xff
-//	//			let g: UInt8 = 0x00
-//	//			let b: UInt8 = 0x00
-//	//			let a: UInt8 = 0x00
-//				let seqNum: UInt8 = (1) % 255
-//				let sum = response + deviceId + commandId + seqNum
-//				let checksum: UInt8 = (~sum) & 0xff
-//
-//				let bytes: [UInt8] = [start, response, deviceId, commandId, seqNum, checksum, end]
-//				let data = Data(bytes)
-//
-//				peripheral.writeValue(data, for: apiCharacteristic, type: .withResponse)
-//			}
-//		}
 }

@@ -63,33 +63,35 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 		centralManager.stopScan()
 	}
 
-	public func connect(toDevice device: Device) -> Future<Void, DeviceError> {
-		return Future<Void, DeviceError> { [weak self] promise in
-			guard let self = self else {
-				promise(.failure(.alreadyConnected))
-
-				return
-			}
-
-			// If a device is currently being connected or is already connected then don't do anything.
-			if (device.state == .connecting || device.state == .connected) {
-				promise(.failure(.alreadyConnected))
-
-				return
-			}
-
-			device.connect(toManager: self.centralManager, completion: { progress in
-				switch progress {
-				case .success(let state):
-					switch state {
-					case .completed(_):
-						promise(.success(()))
+	public func connect(toDevice device: Device) -> CommandResponseType<Void> {
+//		Deferred {
+			Future<Void, DeviceError> { [weak self] promise in
+				guard let self = self else {
+					promise(.failure(.alreadyConnected))
+					
+					return
+				}
+				
+				// If a device is currently being connected or is already connected then don't do anything.
+				if (device.state == .connecting || device.state == .connected) {
+					promise(.failure(.alreadyConnected))
+					
+					return
+				}
+				
+				device.connect(toManager: self.centralManager, completion: { progress in
+					switch progress {
+					case .success(let state):
+						switch state {
+						case .completed(_):
+							promise(.success(()))
+						default: break
+						}
 					default: break
 					}
-				default: break
-				}
-			})
-		}
+				})
+			}
+//		}.eraseToAnyPublisher()
 	}
 
 	internal func centralManagerDidUpdateState(_ central: CBCentralManager) {
