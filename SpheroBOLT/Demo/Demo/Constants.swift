@@ -20,7 +20,10 @@ struct Constants {
 
 	/// Characteristic UUID for the antidos protection.
 	static let antidosCharacteristicUUID = CBUUID(string: "00020005-574f-4f20-5370-6865726f2121")
-	
+	static let DFUControlCharacteristicUUID = CBUUID(string: "00020002-574f-4f20-5370-6865726f2121")
+	static let DFUInfoCharacteristicUUID = CBUUID(string: "00020004-574f-4f20-5370-6865726f2121")
+	static let SubsCharacteristicUUID = CBUUID(string: "00020003-574f-4f20-5370-6865726f2121")
+
 	/// Required configuration to read data from the Sphero device.
 	static let clientCharacteristicConfiguration = CBUUID(data: Data([0x29, 0x02]))
 

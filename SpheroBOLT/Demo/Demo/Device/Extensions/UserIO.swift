@@ -90,7 +90,7 @@ extension Color: CommandDataConvertible {
 		let green: UInt8 = UInt8(round(g / 1.0) * 255)
 		let blue: UInt8 = UInt8(round(b / 1.0) * 255)
 
-		return [red & 0xff, green & 0xff, blue & 0xff]
+		return [red, green, blue]
 	}
 }
 
@@ -110,7 +110,7 @@ extension Device {
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [LED.all().rawValue.packet, front.packet, back.packet],
 							  sourceId: nil,
-							  targetId: 0x11)
+							  targetId: nil)
 	}
 
 	/**

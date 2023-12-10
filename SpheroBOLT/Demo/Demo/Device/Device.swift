@@ -148,10 +148,9 @@ class Device: NSObject {
 	/// Returns the sequence number of the next packet.
 	private var nextSequenceNumber: UInt8 {
 		get {
-			let nextSequenceNumber = (sequenceNumber + 1) % 255
 			sequenceNumber += 1
 
-			return nextSequenceNumber
+			return (sequenceNumber % 255)
 		}
 	}
 
@@ -185,7 +184,7 @@ class Device: NSObject {
 	internal func enqueueCommandInternal<R, T: CommandRepresentable, D: CommandDataConvertible>(_ dump: R.Type,
 																								deviceId: DeviceId,
 																								commandId: T,
-																								data: D,
+																								data: D?,
 																								sourceId: UInt8? = nil,
 																								targetId: UInt8? = nil,
 																								completion: ((Result<Void, DeviceError>) -> Void)?) {
@@ -203,7 +202,7 @@ class Device: NSObject {
 							  deviceId: deviceId.rawValue,
 							  commandId: commandId.rawValue,
 							  sequenceNumber: nextSequenceNumber,
-							  contents: data.packet,
+							  contents: data?.packet,
 							  sourceId: sourceId,
 							  targetId: targetId)
 
@@ -240,7 +239,7 @@ class Device: NSObject {
 	internal func enqueueCommandInternal<R: DataInitializable, T: CommandRepresentable, D: CommandDataConvertible>(_ dump: R.Type,
 																												   deviceId: DeviceId,
 																												   commandId: T,
-																												   data: D,
+																												   data: D?,
 																												   sourceId: UInt8? = nil,
 																												   targetId: UInt8? = nil,
 																												   completion: ((Result<R, DeviceError>) -> Void)?) {
@@ -258,7 +257,7 @@ class Device: NSObject {
 							  deviceId: deviceId.rawValue,
 							  commandId: commandId.rawValue,
 							  sequenceNumber: nextSequenceNumber,
-							  contents: data.packet,
+							  contents: data?.packet,
 							  sourceId: sourceId,
 							  targetId: targetId)
 

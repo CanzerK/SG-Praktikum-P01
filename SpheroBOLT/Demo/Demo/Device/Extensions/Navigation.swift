@@ -42,7 +42,7 @@ enum DriveCommandId: UInt8 {
 	case setStabilization = 0x0c
 }
 
-/// UserIO extensions to the device object.
+/// Navigation and drive extensions to the device object.
 extension Device {
 	/**
 	 * Sets the color of the main matrix.
@@ -54,6 +54,19 @@ extension Device {
 		return enqueueCommand(deviceId: .driving,
 							  commandId: DriveCommandId.driveWithHeading,
 							  data: [speed.packet, heading.packet, direction.rawValue.packet],
+							  sourceId: nil,
+							  targetId: 0x12)
+	}
+
+	/**
+	 * Sets the color of the main matrix.
+	 * @param speed Value from 0 to 255.
+	 * @param heading Value from 0 to 360
+	 * @param direction Direction of drive.
+	 */
+	func resetYaw() -> CommandResponseType<Void> {
+		return enqueueCommand(deviceId: .driving,
+							  commandId: DriveCommandId.resetYaw,
 							  sourceId: nil,
 							  targetId: 0x12)
 	}

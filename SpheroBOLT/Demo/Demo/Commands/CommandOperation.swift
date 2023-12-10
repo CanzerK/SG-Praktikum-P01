@@ -30,6 +30,12 @@ class CommandOperationBase<R>: PeripheralOperation<R> {
 		// Set ourselves as the delegate to get the message callbacks and write the value.
 		peripheral.writeValue(packet, for: apiCharacteristic, type: .withResponse)
 	}
+
+	internal func fail(_ error: DeviceError) {
+		completion?(.failure(error))
+
+		finish()
+	}
 }
 
 final class CommandOperation: CommandOperationBase<Void>, CBPeripheralDelegate {
@@ -39,21 +45,23 @@ final class CommandOperation: CommandOperationBase<Void>, CBPeripheralDelegate {
 		peripheral.delegate = self
 	}
 
+	internal func complete() {
+		completion?(.success(()))
+
+		finish()
+	}
+
 	//MARK: CBPeripheralDelegate
 
 	internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
 		if error != nil {
-			completion?(.failure(.unableToWrite))
-
-			finish()
+			fail(.unableToWrite)
 
 			return
 		}
 
 		if (characteristic.uuid == Constants.apiCharacteristicUUID) {
-			completion?(.success(()))
-
-			finish()
+			complete()
 		}
 	}
 }
@@ -66,13 +74,23 @@ final class DataCommandOperation<R: DataInitializable>: CommandOperationBase<R>,
 		peripheral.delegate = self
 	}
 
+	internal func complete(_ data: Data) {
+		guard let value = try? R(fromData: data) else {
+			fail(.unableToWrite)
+
+			return
+		}
+
+		completion?(.success(value))
+
+		finish()
+	}
+
 	// MARK: CBPeripheralDelegate
 
 	internal func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
 		if error != nil {
-			completion?(.failure(.unableToWrite))
-
-			finish()
+			fail(.unableToWrite)
 
 			return
 		}
@@ -84,9 +102,7 @@ final class DataCommandOperation<R: DataInitializable>: CommandOperationBase<R>,
 
 	internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
 		if error != nil {
-			completion?(.failure(.unableToWrite))
-
-			finish()
+			fail(.unableToWrite)
 
 			return
 		}
@@ -100,17 +116,7 @@ final class DataCommandOperation<R: DataInitializable>: CommandOperationBase<R>,
 				return
 			}
 
-			guard let value = try? R(fromData: data) else {
-				completion?(.failure(.unableToWrite))
-
-				finish()
-
-				return
-			}
-
-			completion?(.success(value))
-
-			finish()
+			complete(data)
 		}
 	}
 }

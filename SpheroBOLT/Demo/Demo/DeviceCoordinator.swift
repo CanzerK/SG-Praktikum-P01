@@ -64,7 +64,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 	}
 
 	public func connect(toDevice device: Device) -> CommandResponseType<Void> {
-//		Deferred {
+		Deferred {
 			Future<Void, DeviceError> { [weak self] promise in
 				guard let self = self else {
 					promise(.failure(.alreadyConnected))
@@ -91,7 +91,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 					}
 				})
 			}
-//		}.eraseToAnyPublisher()
+		}.eraseToAnyPublisher()
 	}
 
 	internal func centralManagerDidUpdateState(_ central: CBCentralManager) {

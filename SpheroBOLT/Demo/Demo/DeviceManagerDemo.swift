@@ -34,14 +34,19 @@ class DeviceManagerDemo: DeviceCoordinatorDelegate, DeviceDelegate {
 			.flatMap {
 				return device.wake()
 			}
-			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
 			.flatMap {
-				return device.driveWithHeading(speed: 50, heading: 180, direction: .forward)
+				return device.resetYaw()
 			}
-//			.flatMap {
-//				return device.setPixelColor(Color(1.0, 0.0, 0.0), pixel: Pixel(2, 2))
-//			}
-//			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
+			.flatMap {
+				return device.resetLocator()
+			}
+			.flatMap {
+				return device.setAllLEDColors(front: Color(1.0, 0.0, 0.0), back: Color(1.0, 0.0, 0.0))
+			}
+			.flatMap {
+				return device.setOneColor(Color(1.0, 0.0, 0.0))
+			}
+			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
 //			.flatMap {
 //				return device.enterSoftSleep()
 //			}

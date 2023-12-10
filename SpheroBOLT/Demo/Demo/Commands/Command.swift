@@ -33,6 +33,18 @@ protocol DataInitializable {
 }
 
 struct Payload {
+	static let start: UInt8 = 0x8d
+	static let end: UInt8 = 0xd8
+	static let escape: UInt8 = 0xab
+	static let escapeMask: UInt8 = 0x88
+
+	static let escapedStart = start & ~escapeMask
+	static let escapedEnd = end & ~escapeMask
+	static let escapedEscape = escape & ~escapeMask
+
+	static let escapedBytes: Array<UInt8> = [escapedStart, escapedEnd, escapedEscape]
+	static let badBytes: Array<UInt8> = [start, end, escape]
+
 	var data = Array<UInt8>()
 	let checksum: UInt8
 
@@ -43,39 +55,44 @@ struct Payload {
 		 contents: Array<UInt8>?,
 		 sourceId: UInt8?,
 		 targetId: UInt8?) {
-		var sum: UInt8 = 0
+		var sum: UInt32 = 0
 
 		data.append(flags)
-		sum &+= flags
+		sum += UInt32(flags)
 
 		if let targetId = targetId {
 			data.append(targetId)
-			sum &+= targetId
+			sum += UInt32(targetId)
 		}
 
 		if let sourceId = sourceId {
 			data.append(sourceId)
-			sum &+= sourceId
+			sum += UInt32(sourceId)
 		}
 
 		data.append(deviceId)
-		sum &+= deviceId
+		sum += UInt32(deviceId)
 
 		data.append(commandId)
-		sum &+= commandId
+		sum += UInt32(commandId)
 
 		data.append(sequenceNumber)
-		sum &+= sequenceNumber
+		sum += UInt32(sequenceNumber)
 
 		if let contents = contents {
 			data.append(contentsOf: contents)
 
-			sum &+= data.reduce(0, { partialResult, value in
-				return partialResult &+ value
+			let dataSum = contents.reduce(0, { partialResult, value in
+				return partialResult + UInt32(value)
 			})
+
+			sum += dataSum
 		}
 
-		checksum = (~sum) & 0xff
+		let lastByte = withUnsafeBytes(of: sum.bigEndian) { Array($0) }.last!
+		checksum = ~lastByte
+
+		data.append(checksum)
 	}
 }
 
@@ -93,9 +110,6 @@ struct Payload {
 /// ---------------------------------
 /// Usually the first data byte is the api_v2 response code.
 class Command {
-	static let start: UInt8 = 0x8d
-	static let end: UInt8 = 0xd8
-
 	let payload: Payload
 
 	init(_ flags: UInt8, deviceId: UInt8, commandId: UInt8, sequenceNumber: UInt8, contents: Array<UInt8>?, sourceId: UInt8?, targetId: UInt8?) {
@@ -104,50 +118,25 @@ class Command {
 
 	var packet: Data {
 		get {
+			var escapedData = Array<UInt8>()
+			payload.data.forEach { value in
+				if Payload.badBytes.contains(value) {
+					escapedData.append(Payload.escape)
+					escapedData.append(value & ~Payload.escapeMask)
+				} else {
+					escapedData.append(value)
+				}
+			}
+
 			var bytes = Array<UInt8>()
-			bytes.append(Command.start)
-			bytes.append(contentsOf: payload.data)
-			bytes.append(payload.checksum)
-			bytes.append(Command.end)
+			bytes.append(Payload.start)
+			bytes.append(contentsOf: escapedData)
+			bytes.append(Payload.end)
 
 			return Data(bytes)
 		}
 	}
 }
-
-//		if let error = error {
-//			print(error.localizedDescription)
-//		}
-//		else {
-//			print("Successfully wrote to \(peripheral).")
-//
-//			if (characteristic.uuid == Constants.antidosCharacteristicUUID) {
-//				guard let apiCharacteristic = apiCharacteristic else {
-//					return
-//				}
-//
-//				let start: UInt8 = 0x8d
-//				let end: UInt8 = 0xd8
-//				let response: UInt8 = 0x0a
-////				let sourceId: UInt8 = 0xff
-////				let targetId: UInt8 = 0x11
-//				let deviceId: UInt8 = 0x13
-//				let commandId : UInt8 = 0x0d
-//	//			let led: UInt8 = LED.all()
-//	//			let r: UInt8 = 0xff
-//	//			let g: UInt8 = 0x00
-//	//			let b: UInt8 = 0x00
-//	//			let a: UInt8 = 0x00
-//				let seqNum: UInt8 = (1) % 255
-//				let sum = response + deviceId + commandId + seqNum
-//				let checksum: UInt8 = (~sum) & 0xff
-//
-//				let bytes: [UInt8] = [start, response, deviceId, commandId, seqNum, checksum, end]
-//				let data = Data(bytes)
-//
-//				peripheral.writeValue(data, for: apiCharacteristic, type: .withResponse)
-//			}
-//		}
 
 extension Data {
 	var bytes: [UInt8] {
@@ -165,11 +154,11 @@ class Response {
 
 		for byte in bytes {
 			switch byte {
-			case CommandResponse.startOfPacket.rawValue:
+			case Payload.start:
 				packet.append(byte)
 
 				break
-			case CommandResponse.endOfPacket.rawValue:
+			case Payload.end:
 				guard let lastByte = packet.last else { throw DataError.unableToParseResponse }
 
 				sum -= lastByte
@@ -188,14 +177,14 @@ class Response {
 				decode(packet)
 
 
-			case CommandResponse.escape.rawValue:
+			case Payload.escape:
 				escaped = true
 				break
-			case CommandResponse.escapedEscape.rawValue: fallthrough
-			case CommandResponse.escapedStartOfPacket.rawValue: fallthrough
-			case CommandResponse.escapedEndOfPacket.rawValue:
+			case Payload.escapedEscape: fallthrough
+			case Payload.start: fallthrough
+			case Payload.end:
 				if (escaped) {
-					let escapedByte = byte | CommandResponse.escapeMask.rawValue
+					let escapedByte = byte | Payload.escapeMask
 					packet.append(escapedByte)
 					sum += escapedByte
 

@@ -77,4 +77,4 @@ extension Int: DataInitializable {
 	}
 }
 
-typealias CommandResponseType<R> = Future<R, DeviceError>
+typealias CommandResponseType<R> = AnyPublisher<R, DeviceError>
