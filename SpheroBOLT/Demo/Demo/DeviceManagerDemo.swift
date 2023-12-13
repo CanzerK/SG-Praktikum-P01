@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 import CoreBluetooth
+import SpheroBOLT
+
+extension Device
+{
+}
 
 class DeviceManagerDemo: DeviceCoordinatorDelegate, DeviceDelegate {
 	var spheroManager: DeviceCoordinator!
@@ -31,25 +36,17 @@ class DeviceManagerDemo: DeviceCoordinatorDelegate, DeviceDelegate {
 		coordinator.connect(toDevice: device)
 			.retry(3)
 			.receive(on: DispatchQueue.main)
-			.flatMap {
-				return device.wake()
-			}
-			.flatMap {
-				return device.resetYaw()
-			}
-			.flatMap {
-				return device.resetLocator()
-			}
-			.flatMap {
-				return device.setAllLEDColors(front: Color(1.0, 0.0, 0.0), back: Color(1.0, 0.0, 0.0))
-			}
-			.flatMap {
-				return device.setOneColor(Color(1.0, 0.0, 0.0))
-			}
+			.flatMap { device.wake() }
+			.flatMap { device.resetYaw() }
+			.flatMap { device.resetLocator() }
+//			.flatMap { device.getBatteryPercentage() }
+//			.flatMap { device.setAllLEDColors(front: Color(0.0, 1.0, 1.0), back: Color(0.2, 0.5, 1.0)) }
+//			.flatMap { device.setLEDMatrixCharacter("D", color: Color(0.0, 0.2, 0.1)) }
+			.flatMap { device.driveWithHeading(speed: 60, heading: 350, direction: .forward) }
 			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
-//			.flatMap {
-//				return device.enterSoftSleep()
-//			}
+			.flatMap { device.driveWithHeading(speed: 0, heading: 0, direction: .forward) }
+			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
+//			.flatMap { device.enterSoftSleep() }
 			.sink { completion in
 				switch completion {
 				case .finished: break

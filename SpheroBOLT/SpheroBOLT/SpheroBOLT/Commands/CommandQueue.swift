@@ -1,6 +1,6 @@
 //
-//  Queue.swift
-//  Demo
+//  CommandQueue.swift
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 23.11.23.
 //
@@ -10,7 +10,7 @@ import CoreBluetooth
 import Combine
 
 /// A device error specific to the queue request type.
-enum DeviceError: Error {
+public enum DeviceError: Error {
 	case unableToConnect
 	case unableToDisconnect
 	case notConnected
@@ -21,7 +21,7 @@ enum DeviceError: Error {
 }
 
 /// The connection state during a device connection.
-enum ConnectionState {
+public enum ConnectionState {
 	case connecting
 	case interrogating
 	case acknowledging

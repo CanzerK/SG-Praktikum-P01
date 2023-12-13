@@ -1,6 +1,6 @@
 //
-//  SpheroDevice.swift
-//  Demo
+//  Device.swift
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 11.11.23.
 //
@@ -9,29 +9,13 @@ import Foundation
 import Combine
 import CoreBluetooth
 
-enum DeviceState {
+public enum DeviceState {
 	case discovered
 	case connecting
 	case connected
 }
 
-///
-/// @method deviceCoordinatorDidConnectDevice
-///
-/// @param coordinator The instance of the coordinator that sent the message.
-/// @param device The device that was connected.
-///
-//func deviceCoordinatorDidConnectDevice(_ coordinator: DeviceCoordinator, device: Device, error: DeviceError?)
-
-///
-/// @method deviceCoordinatorDidDisconnectDevice
-///
-/// @param coordinator The instance of the coordinator that sent the message.
-/// @param device The device that was disconnected.
-///
-//func deviceCoordinatorDidDisconnectDevice(_ coordinator: DeviceCoordinator, device: Device, error: DeviceError?)
-
-protocol DeviceDelegate: AnyObject {
+public protocol DeviceDelegate: AnyObject {
 	/**
 	 * @discussion Called when the device changes its state.
 	 *
@@ -47,7 +31,7 @@ protocol DeviceDelegate: AnyObject {
 	func deviceDidUpdateConnectionState(_ device: Device, state: ConnectionState, error: DeviceError?)
 }
 
-class Device: NSObject {
+public class Device: NSObject {
 	/// Underlying bluetooth peripheral instance.
 	private var peripheral: CBPeripheral
 
@@ -57,25 +41,25 @@ class Device: NSObject {
 	/// Current sequence number of the command.
 	private var sequenceNumber: UInt8 = 0
 
-	/// The delegate of the device instance that will receive messages of changes.
-	weak var delegate: DeviceDelegate?
-
 	/// Stored during the call to connect and invoked upon completion of connection.
 	var connectionCompletion: ((Result<ConnectionProgress, DeviceError>) -> Void)?
 
+	/// The delegate of the device instance that will receive messages of changes.
+	public weak var delegate: DeviceDelegate?
+
 	/// The current state of the device depends on what the coordinator does with it and is based on the connection to it.
-	var state = DeviceState.discovered {
+	public var state = DeviceState.discovered {
 		didSet {
 			delegate?.deviceDidChangeState(self)
 		}
 	}
 
 	/// Representative name of the device.
-	var name: String? {
+	public var name: String? {
 		return peripheral.name
 	}
 
-	override var hash: Int {
+	open override var hash: Int {
 		return peripheral.hash
 	}
 
@@ -86,7 +70,7 @@ class Device: NSObject {
 		super.init()
 	}
 
-	override func isEqual(_ object: Any?) -> Bool {
+	open override func isEqual(_ object: Any?) -> Bool {
 		if let otherDevice = object as? Device {
 			return peripheral == otherDevice.peripheral
 		} else if let otherPeripheral = object as? CBPeripheral {

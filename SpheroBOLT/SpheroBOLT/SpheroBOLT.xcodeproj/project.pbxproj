@@ -7,12 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B2D79E52B262B4B004BE131 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D79E22B262B4B004BE131 /* Constants.swift */; };
+		5B2D79E62B262B4B004BE131 /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D79E32B262B4B004BE131 /* DeviceCoordinator.swift */; };
+		5B2D79E72B262B4B004BE131 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D79E42B262B4B004BE131 /* Characteristics.swift */; };
 		5B5B17D22AFD6A4C00C3DF11 /* SpheroBOLT.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B5B17D12AFD6A4C00C3DF11 /* SpheroBOLT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B92180C2B2892E500D1B2DA /* PeripheralOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218092B2892E500D1B2DA /* PeripheralOperation.swift */; };
+		5B92180D2B2892E500D1B2DA /* QueueOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92180A2B2892E500D1B2DA /* QueueOperation.swift */; };
+		5B92180E2B2892E500D1B2DA /* ConnectOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92180B2B2892E500D1B2DA /* ConnectOperation.swift */; };
+		5B9218172B2892F100D1B2DA /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218102B2892F100D1B2DA /* PeerConnection.swift */; };
+		5B9218182B2892F100D1B2DA /* UserIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218112B2892F100D1B2DA /* UserIO.swift */; };
+		5B9218192B2892F100D1B2DA /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218122B2892F100D1B2DA /* Power.swift */; };
+		5B92181A2B2892F100D1B2DA /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218132B2892F100D1B2DA /* DeviceId.swift */; };
+		5B92181B2B2892F100D1B2DA /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218142B2892F100D1B2DA /* Navigation.swift */; };
+		5B92181C2B2892F100D1B2DA /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218152B2892F100D1B2DA /* Sensor.swift */; };
+		5B92181D2B2892F100D1B2DA /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218162B2892F100D1B2DA /* Echo.swift */; };
+		5B9218212B2892F700D1B2DA /* DeviceCommandsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B92181F2B2892F700D1B2DA /* DeviceCommandsExt.swift */; };
+		5B9218222B2892F700D1B2DA /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218202B2892F700D1B2DA /* Device.swift */; };
+		5B9218292B2892FB00D1B2DA /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218242B2892FB00D1B2DA /* Command.swift */; };
+		5B92182A2B2892FB00D1B2DA /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218252B2892FB00D1B2DA /* CommandQueue.swift */; };
+		5B92182B2B2892FB00D1B2DA /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218262B2892FB00D1B2DA /* CommandResult.swift */; };
+		5B92182C2B2892FB00D1B2DA /* CommandOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218272B2892FB00D1B2DA /* CommandOperation.swift */; };
+		5B92182D2B2892FB00D1B2DA /* CommandDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9218282B2892FB00D1B2DA /* CommandDataTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B2D79E22B262B4B004BE131 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B2D79E32B262B4B004BE131 /* DeviceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
+		5B2D79E42B262B4B004BE131 /* Characteristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristics.swift; sourceTree = "<group>"; };
 		5B5B17CE2AFD6A4C00C3DF11 /* SpheroBOLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpheroBOLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5B17D12AFD6A4C00C3DF11 /* SpheroBOLT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpheroBOLT.h; sourceTree = "<group>"; };
+		5B9218092B2892E500D1B2DA /* PeripheralOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralOperation.swift; sourceTree = "<group>"; };
+		5B92180A2B2892E500D1B2DA /* QueueOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueOperation.swift; sourceTree = "<group>"; };
+		5B92180B2B2892E500D1B2DA /* ConnectOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectOperation.swift; sourceTree = "<group>"; };
+		5B9218102B2892F100D1B2DA /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
+		5B9218112B2892F100D1B2DA /* UserIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIO.swift; sourceTree = "<group>"; };
+		5B9218122B2892F100D1B2DA /* Power.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		5B9218132B2892F100D1B2DA /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
+		5B9218142B2892F100D1B2DA /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		5B9218152B2892F100D1B2DA /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		5B9218162B2892F100D1B2DA /* Echo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
+		5B92181F2B2892F700D1B2DA /* DeviceCommandsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCommandsExt.swift; sourceTree = "<group>"; };
+		5B9218202B2892F700D1B2DA /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		5B9218242B2892FB00D1B2DA /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		5B9218252B2892FB00D1B2DA /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
+		5B9218262B2892FB00D1B2DA /* CommandResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResult.swift; sourceTree = "<group>"; };
+		5B9218272B2892FB00D1B2DA /* CommandOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandOperation.swift; sourceTree = "<group>"; };
+		5B9218282B2892FB00D1B2DA /* CommandDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandDataTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,9 +85,61 @@
 		5B5B17D02AFD6A4C00C3DF11 /* SpheroBOLT */ = {
 			isa = PBXGroup;
 			children = (
+				5B9218232B2892FB00D1B2DA /* Commands */,
+				5B92181E2B2892F700D1B2DA /* Device */,
+				5B92180F2B2892F100D1B2DA /* Extensions */,
+				5B9218082B2892E500D1B2DA /* Operations */,
 				5B5B17D12AFD6A4C00C3DF11 /* SpheroBOLT.h */,
+				5B2D79E42B262B4B004BE131 /* Characteristics.swift */,
+				5B2D79E22B262B4B004BE131 /* Constants.swift */,
+				5B2D79E32B262B4B004BE131 /* DeviceCoordinator.swift */,
 			);
 			path = SpheroBOLT;
+			sourceTree = "<group>";
+		};
+		5B9218082B2892E500D1B2DA /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				5B9218092B2892E500D1B2DA /* PeripheralOperation.swift */,
+				5B92180A2B2892E500D1B2DA /* QueueOperation.swift */,
+				5B92180B2B2892E500D1B2DA /* ConnectOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		5B92180F2B2892F100D1B2DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B9218102B2892F100D1B2DA /* PeerConnection.swift */,
+				5B9218112B2892F100D1B2DA /* UserIO.swift */,
+				5B9218122B2892F100D1B2DA /* Power.swift */,
+				5B9218132B2892F100D1B2DA /* DeviceId.swift */,
+				5B9218142B2892F100D1B2DA /* Navigation.swift */,
+				5B9218152B2892F100D1B2DA /* Sensor.swift */,
+				5B9218162B2892F100D1B2DA /* Echo.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B92181E2B2892F700D1B2DA /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				5B92181F2B2892F700D1B2DA /* DeviceCommandsExt.swift */,
+				5B9218202B2892F700D1B2DA /* Device.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		5B9218232B2892FB00D1B2DA /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				5B9218242B2892FB00D1B2DA /* Command.swift */,
+				5B9218252B2892FB00D1B2DA /* CommandQueue.swift */,
+				5B9218262B2892FB00D1B2DA /* CommandResult.swift */,
+				5B9218272B2892FB00D1B2DA /* CommandOperation.swift */,
+				5B9218282B2892FB00D1B2DA /* CommandDataTypes.swift */,
+			);
+			path = Commands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +222,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2D79E72B262B4B004BE131 /* Characteristics.swift in Sources */,
+				5B92182C2B2892FB00D1B2DA /* CommandOperation.swift in Sources */,
+				5B92181C2B2892F100D1B2DA /* Sensor.swift in Sources */,
+				5B92182D2B2892FB00D1B2DA /* CommandDataTypes.swift in Sources */,
+				5B92180D2B2892E500D1B2DA /* QueueOperation.swift in Sources */,
+				5B92180C2B2892E500D1B2DA /* PeripheralOperation.swift in Sources */,
+				5B92181B2B2892F100D1B2DA /* Navigation.swift in Sources */,
+				5B2D79E62B262B4B004BE131 /* DeviceCoordinator.swift in Sources */,
+				5B92181D2B2892F100D1B2DA /* Echo.swift in Sources */,
+				5B9218292B2892FB00D1B2DA /* Command.swift in Sources */,
+				5B92180E2B2892E500D1B2DA /* ConnectOperation.swift in Sources */,
+				5B2D79E52B262B4B004BE131 /* Constants.swift in Sources */,
+				5B9218222B2892F700D1B2DA /* Device.swift in Sources */,
+				5B9218212B2892F700D1B2DA /* DeviceCommandsExt.swift in Sources */,
+				5B92182B2B2892FB00D1B2DA /* CommandResult.swift in Sources */,
+				5B9218182B2892F100D1B2DA /* UserIO.swift in Sources */,
+				5B9218192B2892F100D1B2DA /* Power.swift in Sources */,
+				5B92181A2B2892F100D1B2DA /* DeviceId.swift in Sources */,
+				5B9218172B2892F100D1B2DA /* PeerConnection.swift in Sources */,
+				5B92182A2B2892FB00D1B2DA /* CommandQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +385,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

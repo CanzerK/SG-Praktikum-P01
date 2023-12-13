@@ -1,13 +1,13 @@
 //
-//  Command.swift
-//  Demo
+//  CommandResult.swift
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 11.11.23.
 //
 
 import Foundation
 
-enum CommandResult: UInt8 {
+public enum CommandResult: UInt8 {
 	case success = 0x00
 	case badDeviceId = 0x01
 	case badCommandId = 0x02

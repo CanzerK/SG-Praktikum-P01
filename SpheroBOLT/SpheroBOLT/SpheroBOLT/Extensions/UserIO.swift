@@ -1,6 +1,6 @@
 //
 //  UserIO.swift
-//  Demo
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 22.11.23.
 //
@@ -26,8 +26,6 @@ enum UserIOCommandId: UInt8 {
 	case setAllLED = 0x0e
 	case setBacklightIntensity = 0x0f
 	case capTouchIndication = 0x10
-	case enableDebugData = 0x11
-	case assertLCDResetPIN = 0x12
 	case setHeadlights = 0x13
 	case setTaillights = 0x14
 	case playTestTone = 0x18
@@ -36,8 +34,6 @@ enum UserIOCommandId: UInt8 {
 	case toyEvents = 0x21
 	case setUserProfile = 0x22
 	case getUserProfile = 0x23
-	case setAllLED32BitMask = 0x1a
-	case setAllLED64BitMask = 0x1b
 	case setAllLED8BitMask = 0x1c
 	case setLEDMatrixPixel = 0x2d
 	case setLEDMatrixOneColor = 0x2f
@@ -62,7 +58,7 @@ struct LED: OptionSet {
 	}
 }
 
-struct Pixel {
+public struct Pixel {
 	let x: UInt8
 	let y: UInt8
 
@@ -72,12 +68,12 @@ struct Pixel {
 	}
 }
 
-struct Color {
+public struct Color {
 	let r: Float
 	let g: Float
 	let b: Float
 
-	init(_ r: Float, _ g: Float, _ b: Float) {
+	public init(_ r: Float, _ g: Float, _ b: Float) {
 		self.r = r
 		self.g = g
 		self.b = b
@@ -105,7 +101,7 @@ extension Device {
 	/**
 	 * Sets the color of the main matrix.
 	 */
-	func setAllLEDColors(front: Color, back: Color) -> CommandResponseType<Void> {
+	public func setAllLEDColors(front: Color, back: Color) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [LED.all().rawValue.packet, front.packet, back.packet],
@@ -116,7 +112,7 @@ extension Device {
 	/**
 	 * Sets the main LED color.
 	 */
-	func setMainLEDColor(_ color: Color) -> CommandResponseType<Void> {
+	public func setMainLEDColor(_ color: Color) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [[0x07], color.packet])
@@ -125,7 +121,7 @@ extension Device {
 	/**
 	 * Sets the back LED color.
 	 */
-	func setBackLEDColor(_ color: Color) -> CommandResponseType<Void> {
+	public func setBackLEDColor(_ color: Color) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [[0x38], color.packet])
@@ -134,7 +130,7 @@ extension Device {
 	/**
 	 * Sets a single color.
 	 */
-	func setOneColor(_ color: Color) -> CommandResponseType<Void> {
+	public func setOneColor(_ color: Color) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixOneColor,
 							  data: color, 
@@ -145,7 +141,7 @@ extension Device {
 	/**
 	 * Sets a single pixel to a color.
 	 */
-	func setPixelColor(_ color: Color, pixel: Pixel) -> CommandResponseType<Void> {
+	public func setPixelColor(_ color: Color, pixel: Pixel) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixPixel,
 							  data: [pixel.packet, color.packet],
@@ -156,14 +152,14 @@ extension Device {
 	/**
 	 * Sets the audio volume.
 	 */
-	func setAudioVolume(_ value: UInt8) -> CommandResponseType<Void> {
+	public func setAudioVolume(_ value: UInt8) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO, commandId: UserIOCommandId.setAudioVolume, data: [value])
 	}
 
 	/**
 	 * Sets the matrix to display a single character.
 	 */
-	func setLEDMatrixCharacter(_ character: Character, color: Color) -> CommandResponseType<Void> {
+	public func setLEDMatrixCharacter(_ character: Character, color: Color) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixSingleCharacter,
 							  data: [color.packet, [character].byteArray.packet],
@@ -171,7 +167,10 @@ extension Device {
 							  targetId: 0x12)
 	}
 
-	func setLEDMatrixTextScrolling(_ text: String, color: Color, speed: UInt8 = 0x10, rep: Bool = true) -> CommandResponseType<Void> {
+	/**
+	 * Sets the matrix to display an entire string of text.
+	 */
+	public func setLEDMatrixTextScrolling(_ text: String, color: Color, speed: UInt8 = 0x10, rep: Bool = true) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixTextScrolling,
 							  data: [color.packet, (speed % 0x1e).packet, rep.packet, text.byteArray.packet, [0x00]],

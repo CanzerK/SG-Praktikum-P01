@@ -1,6 +1,6 @@
 //
 //  CommandDataTypes.swift
-//  Demo
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 05.12.23.
 //
@@ -59,7 +59,7 @@ func combineBits(part1: UInt8, part2: UInt8) -> UInt16 {
 	return UInt16(part1) << 8 + UInt16(part2)
 }
 
-struct BatteryLevel: DataInitializable {
+public struct BatteryLevel: DataInitializable {
 	init(fromData data: Data) throws {
 
 	}
@@ -77,4 +77,4 @@ extension Int: DataInitializable {
 	}
 }
 
-typealias CommandResponseType<R> = AnyPublisher<R, DeviceError>
+public typealias CommandResponseType<R> = AnyPublisher<R, DeviceError>

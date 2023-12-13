@@ -1,6 +1,6 @@
 //
 //  QueueOperation.swift
-//  Demo
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 04.12.23.
 //

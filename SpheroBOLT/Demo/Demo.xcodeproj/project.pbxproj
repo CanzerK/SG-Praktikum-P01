@@ -7,63 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B356E0B2B1F8CDE006F0F29 /* ConnectOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B356E0A2B1F8CDE006F0F29 /* ConnectOperation.swift */; };
-		5B356E0D2B1F8CF0006F0F29 /* PeripheralOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B356E0C2B1F8CF0006F0F29 /* PeripheralOperation.swift */; };
-		5B356E0F2B1F8D3B006F0F29 /* CommandOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B356E0E2B1F8D3B006F0F29 /* CommandOperation.swift */; };
-		5B356E112B1F94C9006F0F29 /* DeviceCommandsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B356E102B1F94C9006F0F29 /* DeviceCommandsExt.swift */; };
-		5B356E132B1F952C006F0F29 /* CommandDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B356E122B1F952C006F0F29 /* CommandDataTypes.swift */; };
-		5B41F20F2B0E9A7D00C18352 /* UserIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41F20E2B0E9A7D00C18352 /* UserIO.swift */; };
-		5B41F2112B0FE66600C18352 /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41F2102B0FE66600C18352 /* CommandQueue.swift */; };
 		5B5B17E72AFD6B2200C3DF11 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */; };
 		5B5B17E92AFD6B2200C3DF11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */; };
 		5B5B17EB2AFD6B2300C3DF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */; };
 		5B5B17EE2AFD6B2300C3DF11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17ED2AFD6B2300C3DF11 /* Preview Assets.xcassets */; };
-		5B6708B12B0BDD3E005D8C62 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6708B02B0BDD3E005D8C62 /* Navigation.swift */; };
-		5B74CDA62B1E5CB500072A3A /* QueueOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74CDA52B1E5CB500072A3A /* QueueOperation.swift */; };
 		5B75BB282B1CDB10007078BE /* DeviceManagerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */; };
-		5B97655C2B134D51007A1894 /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655B2B134D51007A1894 /* Echo.swift */; };
-		5B97655E2B134D8A007A1894 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655D2B134D8A007A1894 /* PeerConnection.swift */; };
-		5B9765602B134E7D007A1894 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97655F2B134E7D007A1894 /* Sensor.swift */; };
-		5B9ADAB22B137A6800A35074 /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9ADAB12B137A6800A35074 /* DeviceId.swift */; };
-		5BBC38FF2AFEC6DC009260EC /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */; };
-		5BBF87072B1925BA00B408BA /* PublisherExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF87062B1925BA00B408BA /* PublisherExt.swift */; };
-		5BC335102AFECA5F00510380 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3350F2AFECA5F00510380 /* Constants.swift */; };
-		5BC335122AFFED6100510380 /* CommandId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335112AFFED6100510380 /* CommandId.swift */; };
-		5BC335162AFFEDB000510380 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335152AFFEDB000510380 /* Characteristics.swift */; };
-		5BC335182AFFF00F00510380 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335172AFFF00F00510380 /* Device.swift */; };
-		5BC3351A2B001C2100510380 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC335192B001C2100510380 /* Power.swift */; };
-		5BC3351C2B001D2500510380 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3351B2B001D2500510380 /* Command.swift */; };
+		5BA712732B29007F005A403C /* SpheroBOLT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */; };
+		5BA712742B29007F005A403C /* SpheroBOLT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5BA712752B29007F005A403C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BA712742B29007F005A403C /* SpheroBOLT.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5B356E0A2B1F8CDE006F0F29 /* ConnectOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectOperation.swift; sourceTree = "<group>"; };
-		5B356E0C2B1F8CF0006F0F29 /* PeripheralOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralOperation.swift; sourceTree = "<group>"; };
-		5B356E0E2B1F8D3B006F0F29 /* CommandOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandOperation.swift; sourceTree = "<group>"; };
-		5B356E102B1F94C9006F0F29 /* DeviceCommandsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCommandsExt.swift; sourceTree = "<group>"; };
-		5B356E122B1F952C006F0F29 /* CommandDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandDataTypes.swift; sourceTree = "<group>"; };
-		5B41F20E2B0E9A7D00C18352 /* UserIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIO.swift; sourceTree = "<group>"; };
-		5B41F2102B0FE66600C18352 /* CommandQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
+		5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpheroBOLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5B17E32AFD6B2200C3DF11 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5B17ED2AFD6B2300C3DF11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5B5B17F72AFD6BA800C3DF11 /* SpheroBOLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpheroBOLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B6708B02B0BDD3E005D8C62 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
-		5B74CDA52B1E5CB500072A3A /* QueueOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueOperation.swift; sourceTree = "<group>"; };
 		5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManagerDemo.swift; sourceTree = "<group>"; };
-		5B97655B2B134D51007A1894 /* Echo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
-		5B97655D2B134D8A007A1894 /* PeerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
-		5B97655F2B134E7D007A1894 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
-		5B9ADAB12B137A6800A35074 /* DeviceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeviceId.swift; path = ../Commands/DeviceId.swift; sourceTree = "<group>"; };
-		5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
-		5BBF87062B1925BA00B408BA /* PublisherExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExt.swift; sourceTree = "<group>"; };
-		5BC3350F2AFECA5F00510380 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		5BC335112AFFED6100510380 /* CommandId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandId.swift; sourceTree = "<group>"; };
-		5BC335152AFFEDB000510380 /* Characteristics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characteristics.swift; sourceTree = "<group>"; };
-		5BC335172AFFF00F00510380 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		5BC335192B001C2100510380 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
-		5BC3351B2B001D2500510380 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA712732B29007F005A403C /* SpheroBOLT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +72,6 @@
 		5B5B17E52AFD6B2200C3DF11 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				5B97655A2B110AE2007A1894 /* Device */,
-				5B9765592B110AD1007A1894 /* Commands */,
-				5BC3350F2AFECA5F00510380 /* Constants.swift */,
-				5BBF87062B1925BA00B408BA /* PublisherExt.swift */,
-				5BC335152AFFEDB000510380 /* Characteristics.swift */,
-				5BBC38FE2AFEC6DC009260EC /* DeviceCoordinator.swift */,
 				5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */,
 				5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */,
 				5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */,
@@ -123,48 +92,9 @@
 		5B5B17F62AFD6BA800C3DF11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5B5B17F72AFD6BA800C3DF11 /* SpheroBOLT.framework */,
+				5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5B9765592B110AD1007A1894 /* Commands */ = {
-			isa = PBXGroup;
-			children = (
-				5BC335112AFFED6100510380 /* CommandId.swift */,
-				5BC3351B2B001D2500510380 /* Command.swift */,
-				5B74CDA52B1E5CB500072A3A /* QueueOperation.swift */,
-				5B356E0C2B1F8CF0006F0F29 /* PeripheralOperation.swift */,
-				5B356E0A2B1F8CDE006F0F29 /* ConnectOperation.swift */,
-				5B356E0E2B1F8D3B006F0F29 /* CommandOperation.swift */,
-				5B41F2102B0FE66600C18352 /* CommandQueue.swift */,
-			);
-			path = Commands;
-			sourceTree = "<group>";
-		};
-		5B97655A2B110AE2007A1894 /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				5BC0EA132B24E0F10067F19D /* Extensions */,
-				5B9ADAB12B137A6800A35074 /* DeviceId.swift */,
-				5BC335172AFFF00F00510380 /* Device.swift */,
-				5B356E102B1F94C9006F0F29 /* DeviceCommandsExt.swift */,
-				5B356E122B1F952C006F0F29 /* CommandDataTypes.swift */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
-		5BC0EA132B24E0F10067F19D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5B97655D2B134D8A007A1894 /* PeerConnection.swift */,
-				5BC335192B001C2100510380 /* Power.swift */,
-				5B97655F2B134E7D007A1894 /* Sensor.swift */,
-				5B6708B02B0BDD3E005D8C62 /* Navigation.swift */,
-				5B41F20E2B0E9A7D00C18352 /* UserIO.swift */,
-				5B97655B2B134D51007A1894 /* Echo.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +107,7 @@
 				5B5B17DF2AFD6B2200C3DF11 /* Sources */,
 				5B5B17E02AFD6B2200C3DF11 /* Frameworks */,
 				5B5B17E12AFD6B2200C3DF11 /* Resources */,
+				5BA712752B29007F005A403C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,30 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B356E0D2B1F8CF0006F0F29 /* PeripheralOperation.swift in Sources */,
-				5B74CDA62B1E5CB500072A3A /* QueueOperation.swift in Sources */,
-				5B41F2112B0FE66600C18352 /* CommandQueue.swift in Sources */,
 				5B5B17E92AFD6B2200C3DF11 /* ContentView.swift in Sources */,
-				5B9ADAB22B137A6800A35074 /* DeviceId.swift in Sources */,
-				5B97655C2B134D51007A1894 /* Echo.swift in Sources */,
 				5B5B17E72AFD6B2200C3DF11 /* DemoApp.swift in Sources */,
-				5B6708B12B0BDD3E005D8C62 /* Navigation.swift in Sources */,
 				5B75BB282B1CDB10007078BE /* DeviceManagerDemo.swift in Sources */,
-				5BBC38FF2AFEC6DC009260EC /* DeviceCoordinator.swift in Sources */,
-				5BC335122AFFED6100510380 /* CommandId.swift in Sources */,
-				5BC335162AFFEDB000510380 /* Characteristics.swift in Sources */,
-				5BBF87072B1925BA00B408BA /* PublisherExt.swift in Sources */,
-				5B356E0B2B1F8CDE006F0F29 /* ConnectOperation.swift in Sources */,
-				5BC335182AFFF00F00510380 /* Device.swift in Sources */,
-				5BC3351C2B001D2500510380 /* Command.swift in Sources */,
-				5B9765602B134E7D007A1894 /* Sensor.swift in Sources */,
-				5B356E132B1F952C006F0F29 /* CommandDataTypes.swift in Sources */,
-				5B41F20F2B0E9A7D00C18352 /* UserIO.swift in Sources */,
-				5BC3351A2B001C2100510380 /* Power.swift in Sources */,
-				5B356E0F2B1F8D3B006F0F29 /* CommandOperation.swift in Sources */,
-				5B356E112B1F94C9006F0F29 /* DeviceCommandsExt.swift in Sources */,
-				5B97655E2B134D8A007A1894 /* PeerConnection.swift in Sources */,
-				5BC335102AFECA5F00510380 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

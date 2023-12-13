@@ -1,6 +1,6 @@
 //
-//  Packet.swift
-//  Demo
+//  Command.swift
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 11.11.23.
 //

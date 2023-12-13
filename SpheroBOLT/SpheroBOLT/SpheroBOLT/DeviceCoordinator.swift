@@ -13,7 +13,7 @@ import Combine
 /// @protocol DeviceCoordinatorDelegate
 ///
 /// @discussion Provides functionality to find which devices have been discovered and when we are connected to them.
-protocol DeviceCoordinatorDelegate: AnyObject {
+public protocol DeviceCoordinatorDelegate: AnyObject {
 	///
 	/// @method deviceCoordinatorDidUpdateBluetoothState:
 	///
@@ -36,7 +36,7 @@ protocol DeviceCoordinatorDelegate: AnyObject {
 	func deviceCoordinatorDidFindDevice(_ coordinator: DeviceCoordinator, device: Device)
 }
 
-class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
+public class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 	/// Bluetooth central manager for all connections.
 	private var centralManager: CBCentralManager!
 
@@ -94,7 +94,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 		}.eraseToAnyPublisher()
 	}
 
-	internal func centralManagerDidUpdateState(_ central: CBCentralManager) {
+	public func centralManagerDidUpdateState(_ central: CBCentralManager) {
 		// Stop scanning immediately if we have switched to another state other than powered on.
 		if (central.state != .poweredOn) {
 			centralManager.stopScan()
@@ -104,7 +104,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 	}
 
 	/// Called when a new device has been found by our manager, which we will broadcast and add to the discovered devices.
-	internal func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
+	public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber)
 	{
 		let foundDevice = Device(peripheral)
 		devices.insert(foundDevice)
@@ -113,7 +113,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 		delegate?.deviceCoordinatorDidFindDevice(self, device: foundDevice)
 	}
 
-	internal func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+	public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
 		// Move the device to the list of connected devices and remove it from the other pending lists.
 		guard let connectedDevice = devices.filter({ $0.isEqual(peripheral) }).first else {
 			return
@@ -124,7 +124,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 		connectedDevice.completeConnection()
 	}
 
-	internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+	public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
 		// Move the device to the list of connected devices and remove it from the other pending lists.
 		guard let connectedDevice = devices.first(where: { $0.isEqual(peripheral) }) else {
 			return
@@ -133,7 +133,7 @@ class DeviceCoordinator: NSObject, CBCentralManagerDelegate {
 		connectedDevice.state = .discovered
 	}
 
-	internal func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+	public func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
 		// Move the device to the list of connected devices and remove it from the other pending lists.
 		guard let device = devices.filter({ $0.isEqual(peripheral) }).first else {
 			return

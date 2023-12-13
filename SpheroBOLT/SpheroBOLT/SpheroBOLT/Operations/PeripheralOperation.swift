@@ -1,6 +1,6 @@
 //
 //  PeripheralOperation.swift
-//  Demo
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 05.12.23.
 //

@@ -1,6 +1,6 @@
 //
 //  PeerConnection.swift
-//  Demo
+//  SpheroBOLT
 //
 //  Created by Zhivko Bogdanov on 26.11.23.
 //
