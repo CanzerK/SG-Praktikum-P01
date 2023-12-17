@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BDE25D42B2E33A300FED5A4 /* GodotSphero.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */; };
+		5BDE25D52B2E33A300FED5A4 /* SpheroManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */; };
+		5BDE25F22B2E33DE00FED5A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DA2B2E33DE00FED5A4 /* Constants.swift */; };
+		5BDE25F32B2E33DE00FED5A4 /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DB2B2E33DE00FED5A4 /* DeviceCoordinator.swift */; };
+		5BDE25F42B2E33DE00FED5A4 /* PeripheralOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DD2B2E33DE00FED5A4 /* PeripheralOperation.swift */; };
+		5BDE25F52B2E33DE00FED5A4 /* QueueOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DE2B2E33DE00FED5A4 /* QueueOperation.swift */; };
+		5BDE25F62B2E33DE00FED5A4 /* ConnectOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DF2B2E33DE00FED5A4 /* ConnectOperation.swift */; };
+		5BDE25F72B2E33DE00FED5A4 /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E12B2E33DE00FED5A4 /* PeerConnection.swift */; };
+		5BDE25F82B2E33DE00FED5A4 /* UserIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E22B2E33DE00FED5A4 /* UserIO.swift */; };
+		5BDE25F92B2E33DE00FED5A4 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E32B2E33DE00FED5A4 /* Power.swift */; };
+		5BDE25FA2B2E33DE00FED5A4 /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E42B2E33DE00FED5A4 /* DeviceId.swift */; };
+		5BDE25FB2B2E33DF00FED5A4 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E52B2E33DE00FED5A4 /* Navigation.swift */; };
+		5BDE25FC2B2E33DF00FED5A4 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E62B2E33DE00FED5A4 /* Sensor.swift */; };
+		5BDE25FD2B2E33DF00FED5A4 /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E72B2E33DE00FED5A4 /* Echo.swift */; };
+		5BDE25FE2B2E33DF00FED5A4 /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25E82B2E33DE00FED5A4 /* Characteristics.swift */; };
+		5BDE25FF2B2E33DF00FED5A4 /* DeviceCommandsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25EA2B2E33DE00FED5A4 /* DeviceCommandsExt.swift */; };
+		5BDE26002B2E33DF00FED5A4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25EB2B2E33DE00FED5A4 /* Device.swift */; };
+		5BDE26012B2E33DF00FED5A4 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25ED2B2E33DE00FED5A4 /* Command.swift */; };
+		5BDE26022B2E33DF00FED5A4 /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25EE2B2E33DE00FED5A4 /* CommandQueue.swift */; };
+		5BDE26032B2E33DF00FED5A4 /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25EF2B2E33DE00FED5A4 /* CommandResult.swift */; };
+		5BDE26042B2E33DF00FED5A4 /* CommandOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25F02B2E33DE00FED5A4 /* CommandOperation.swift */; };
+		5BDE26052B2E33DF00FED5A4 /* CommandDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25F12B2E33DE00FED5A4 /* CommandDataTypes.swift */; };
+		5BDE26082B2F550C00FED5A4 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDE26072B2F550C00FED5A4 /* CoreBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5BDE25C22B2E332D00FED5A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5BDE25C42B2E332D00FED5A4 /* libSpheroBOLT-Godot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSpheroBOLT-Godot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GodotSphero.mm; sourceTree = "<group>"; };
+		5BDE25D12B2E33A300FED5A4 /* GodotSphero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GodotSphero.h; sourceTree = "<group>"; };
+		5BDE25D22B2E33A300FED5A4 /* SpheroManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpheroManager.h; sourceTree = "<group>"; };
+		5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SpheroManager.mm; sourceTree = "<group>"; };
+		5BDE25D62B2E33CE00FED5A4 /* SpheroBOLT-Godot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpheroBOLT-Godot-Bridging-Header.h"; sourceTree = "<group>"; };
+		5BDE25DA2B2E33DE00FED5A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5BDE25DB2B2E33DE00FED5A4 /* DeviceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
+		5BDE25DD2B2E33DE00FED5A4 /* PeripheralOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralOperation.swift; sourceTree = "<group>"; };
+		5BDE25DE2B2E33DE00FED5A4 /* QueueOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueOperation.swift; sourceTree = "<group>"; };
+		5BDE25DF2B2E33DE00FED5A4 /* ConnectOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectOperation.swift; sourceTree = "<group>"; };
+		5BDE25E12B2E33DE00FED5A4 /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
+		5BDE25E22B2E33DE00FED5A4 /* UserIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIO.swift; sourceTree = "<group>"; };
+		5BDE25E32B2E33DE00FED5A4 /* Power.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		5BDE25E42B2E33DE00FED5A4 /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
+		5BDE25E52B2E33DE00FED5A4 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		5BDE25E62B2E33DE00FED5A4 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		5BDE25E72B2E33DE00FED5A4 /* Echo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
+		5BDE25E82B2E33DE00FED5A4 /* Characteristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristics.swift; sourceTree = "<group>"; };
+		5BDE25EA2B2E33DE00FED5A4 /* DeviceCommandsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCommandsExt.swift; sourceTree = "<group>"; };
+		5BDE25EB2B2E33DE00FED5A4 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		5BDE25ED2B2E33DE00FED5A4 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		5BDE25EE2B2E33DE00FED5A4 /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
+		5BDE25EF2B2E33DE00FED5A4 /* CommandResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResult.swift; sourceTree = "<group>"; };
+		5BDE25F02B2E33DE00FED5A4 /* CommandOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandOperation.swift; sourceTree = "<group>"; };
+		5BDE25F12B2E33DE00FED5A4 /* CommandDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandDataTypes.swift; sourceTree = "<group>"; };
+		5BDE26072B2F550C00FED5A4 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BDE25C12B2E332D00FED5A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BDE26082B2F550C00FED5A4 /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BDE25BB2B2E332D00FED5A4 = {
+			isa = PBXGroup;
+			children = (
+				5BDE25C62B2E332D00FED5A4 /* SpheroBOLT-Godot */,
+				5BDE25C52B2E332D00FED5A4 /* Products */,
+				5BDE26062B2F550C00FED5A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BDE25C52B2E332D00FED5A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25C42B2E332D00FED5A4 /* libSpheroBOLT-Godot.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BDE25C62B2E332D00FED5A4 /* SpheroBOLT-Godot */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25D92B2E33DE00FED5A4 /* SpheroBOLT */,
+				5BDE25D12B2E33A300FED5A4 /* GodotSphero.h */,
+				5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */,
+				5BDE25D22B2E33A300FED5A4 /* SpheroManager.h */,
+				5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */,
+				5BDE25D62B2E33CE00FED5A4 /* SpheroBOLT-Godot-Bridging-Header.h */,
+			);
+			path = "SpheroBOLT-Godot";
+			sourceTree = "<group>";
+		};
+		5BDE25D92B2E33DE00FED5A4 /* SpheroBOLT */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25E92B2E33DE00FED5A4 /* Device */,
+				5BDE25EC2B2E33DE00FED5A4 /* Commands */,
+				5BDE25DC2B2E33DE00FED5A4 /* Operations */,
+				5BDE25E02B2E33DE00FED5A4 /* Extensions */,
+				5BDE25DA2B2E33DE00FED5A4 /* Constants.swift */,
+				5BDE25E82B2E33DE00FED5A4 /* Characteristics.swift */,
+				5BDE25DB2B2E33DE00FED5A4 /* DeviceCoordinator.swift */,
+			);
+			name = SpheroBOLT;
+			path = ../../SpheroBOLT;
+			sourceTree = "<group>";
+		};
+		5BDE25DC2B2E33DE00FED5A4 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25DD2B2E33DE00FED5A4 /* PeripheralOperation.swift */,
+				5BDE25DE2B2E33DE00FED5A4 /* QueueOperation.swift */,
+				5BDE25DF2B2E33DE00FED5A4 /* ConnectOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		5BDE25E02B2E33DE00FED5A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25E12B2E33DE00FED5A4 /* PeerConnection.swift */,
+				5BDE25E22B2E33DE00FED5A4 /* UserIO.swift */,
+				5BDE25E32B2E33DE00FED5A4 /* Power.swift */,
+				5BDE25E42B2E33DE00FED5A4 /* DeviceId.swift */,
+				5BDE25E52B2E33DE00FED5A4 /* Navigation.swift */,
+				5BDE25E62B2E33DE00FED5A4 /* Sensor.swift */,
+				5BDE25E72B2E33DE00FED5A4 /* Echo.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5BDE25E92B2E33DE00FED5A4 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25EA2B2E33DE00FED5A4 /* DeviceCommandsExt.swift */,
+				5BDE25EB2B2E33DE00FED5A4 /* Device.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		5BDE25EC2B2E33DE00FED5A4 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE25ED2B2E33DE00FED5A4 /* Command.swift */,
+				5BDE25EE2B2E33DE00FED5A4 /* CommandQueue.swift */,
+				5BDE25EF2B2E33DE00FED5A4 /* CommandResult.swift */,
+				5BDE25F02B2E33DE00FED5A4 /* CommandOperation.swift */,
+				5BDE25F12B2E33DE00FED5A4 /* CommandDataTypes.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		5BDE26062B2F550C00FED5A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE26072B2F550C00FED5A4 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BDE25C32B2E332D00FED5A4 /* SpheroBOLT-Godot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BDE25CD2B2E332D00FED5A4 /* Build configuration list for PBXNativeTarget "SpheroBOLT-Godot" */;
+			buildPhases = (
+				5BDE25C02B2E332D00FED5A4 /* Sources */,
+				5BDE25C12B2E332D00FED5A4 /* Frameworks */,
+				5BDE25C22B2E332D00FED5A4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SpheroBOLT-Godot";
+			productName = "SpheroBOLT-Godot";
+			productReference = 5BDE25C42B2E332D00FED5A4 /* libSpheroBOLT-Godot.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BDE25BC2B2E332D00FED5A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					5BDE25C32B2E332D00FED5A4 = {
+						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
+					};
+				};
+			};
+			buildConfigurationList = 5BDE25BF2B2E332D00FED5A4 /* Build configuration list for PBXProject "SpheroBOLT-Godot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BDE25BB2B2E332D00FED5A4;
+			productRefGroup = 5BDE25C52B2E332D00FED5A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BDE25C32B2E332D00FED5A4 /* SpheroBOLT-Godot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BDE25C02B2E332D00FED5A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BDE25D42B2E33A300FED5A4 /* GodotSphero.mm in Sources */,
+				5BDE25F82B2E33DE00FED5A4 /* UserIO.swift in Sources */,
+				5BDE25FC2B2E33DF00FED5A4 /* Sensor.swift in Sources */,
+				5BDE26002B2E33DF00FED5A4 /* Device.swift in Sources */,
+				5BDE25D52B2E33A300FED5A4 /* SpheroManager.mm in Sources */,
+				5BDE26042B2E33DF00FED5A4 /* CommandOperation.swift in Sources */,
+				5BDE26012B2E33DF00FED5A4 /* Command.swift in Sources */,
+				5BDE25FB2B2E33DF00FED5A4 /* Navigation.swift in Sources */,
+				5BDE26022B2E33DF00FED5A4 /* CommandQueue.swift in Sources */,
+				5BDE25FF2B2E33DF00FED5A4 /* DeviceCommandsExt.swift in Sources */,
+				5BDE25F32B2E33DE00FED5A4 /* DeviceCoordinator.swift in Sources */,
+				5BDE26052B2E33DF00FED5A4 /* CommandDataTypes.swift in Sources */,
+				5BDE25FE2B2E33DF00FED5A4 /* Characteristics.swift in Sources */,
+				5BDE25F72B2E33DE00FED5A4 /* PeerConnection.swift in Sources */,
+				5BDE26032B2E33DF00FED5A4 /* CommandResult.swift in Sources */,
+				5BDE25F52B2E33DE00FED5A4 /* QueueOperation.swift in Sources */,
+				5BDE25FD2B2E33DF00FED5A4 /* Echo.swift in Sources */,
+				5BDE25F42B2E33DE00FED5A4 /* PeripheralOperation.swift in Sources */,
+				5BDE25F92B2E33DE00FED5A4 /* Power.swift in Sources */,
+				5BDE25F22B2E33DE00FED5A4 /* Constants.swift in Sources */,
+				5BDE25FA2B2E33DE00FED5A4 /* DeviceId.swift in Sources */,
+				5BDE25F62B2E33DE00FED5A4 /* ConnectOperation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5BDE25CB2B2E332D00FED5A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = SpheroBOLT;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+			};
+			name = Debug;
+		};
+		5BDE25CC2B2E332D00FED5A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_MODULE_NAME = SpheroBOLT;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BDE25CE2B2E332D00FED5A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WJRD5T6PU9;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/godot",
+					"$(SRCROOT)/godot/platform/ios",
+				);
+				OTHER_CFLAGS = (
+					"-fcxx-modules",
+					"-DPTRCALL_ENABLED",
+					"-DDEBUG_ENABLED",
+					"-DDEBUG_MEMORY_ALLOC",
+					"-DDISABLE_FORCED_INLINE",
+					"-DTYPED_METHOD_BIND",
+					"-DDEBUG",
+					"-fmodules",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpheroBOLT-Godot/SpheroBOLT-Godot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BDE25CF2B2E332D00FED5A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WJRD5T6PU9;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/godot",
+					"$(SRCROOT)/godot/platform/ios",
+				);
+				OTHER_CFLAGS = (
+					"-fcxx-modules",
+					"-DPTRCALL_ENABLED",
+					"-DDEBUG_ENABLED",
+					"-DDEBUG_MEMORY_ALLOC",
+					"-DDISABLE_FORCED_INLINE",
+					"-DTYPED_METHOD_BIND",
+					"-DDEBUG",
+					"-fmodules",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpheroBOLT-Godot/SpheroBOLT-Godot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BDE25BF2B2E332D00FED5A4 /* Build configuration list for PBXProject "SpheroBOLT-Godot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BDE25CB2B2E332D00FED5A4 /* Debug */,
+				5BDE25CC2B2E332D00FED5A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BDE25CD2B2E332D00FED5A4 /* Build configuration list for PBXNativeTarget "SpheroBOLT-Godot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BDE25CE2B2E332D00FED5A4 /* Debug */,
+				5BDE25CF2B2E332D00FED5A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BDE25BC2B2E332D00FED5A4 /* Project object */;
+}

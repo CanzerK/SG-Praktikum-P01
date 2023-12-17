@@ -46,7 +46,7 @@ class DeviceManagerDemo: DeviceCoordinatorDelegate, DeviceDelegate {
 			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
 			.flatMap { device.driveWithHeading(speed: 0, heading: 0, direction: .forward) }
 			.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
-//			.flatMap { device.enterSoftSleep() }
+			.flatMap { device.enterSoftSleep() }
 			.sink { completion in
 				switch completion {
 				case .finished: break

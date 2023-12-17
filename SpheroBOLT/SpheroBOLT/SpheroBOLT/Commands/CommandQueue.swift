@@ -10,7 +10,7 @@ import CoreBluetooth
 import Combine
 
 /// A device error specific to the queue request type.
-public enum DeviceError: Error {
+@objc public enum DeviceError: Int, Error {
 	case unableToConnect
 	case unableToDisconnect
 	case notConnected
@@ -21,7 +21,7 @@ public enum DeviceError: Error {
 }
 
 /// The connection state during a device connection.
-public enum ConnectionState {
+@objc public enum ConnectionState: Int {
 	case connecting
 	case interrogating
 	case acknowledging

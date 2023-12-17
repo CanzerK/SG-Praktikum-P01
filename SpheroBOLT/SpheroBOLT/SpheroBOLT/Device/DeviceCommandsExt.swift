@@ -10,6 +10,116 @@ import CoreBluetooth
 import Combine
 
 extension Device {
+	internal func enqueueCommandInternal<R, T: CommandRepresentable>(_ dump: R.Type,
+																	 deviceId: DeviceId,
+																	 commandId: T,
+																	 sourceId: UInt8? = nil,
+																	 targetId: UInt8? = nil,
+																	 completion: ((Result<Void, DeviceError>) -> Void)?) {
+		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
+
+		if (sourceId != nil) {
+			flags.insert(PacketFlags.commandHasSourceId)
+		}
+
+		if (targetId != nil) {
+			flags.insert(PacketFlags.commandHasTargetId)
+		}
+
+		let command = Command(flags.rawValue,
+							  deviceId: deviceId.rawValue,
+							  commandId: commandId.rawValue,
+							  sequenceNumber: nextSequenceNumber,
+							  contents: nil,
+							  sourceId: sourceId,
+							  targetId: targetId)
+
+		return commandQueue.enqueue(command: command, completion: completion)
+	}
+
+	internal func enqueueCommandInternal<R, T: CommandRepresentable, D: CommandDataConvertible>(_ dump: R.Type,
+																								deviceId: DeviceId,
+																								commandId: T,
+																								data: D?,
+																								sourceId: UInt8? = nil,
+																								targetId: UInt8? = nil,
+																								completion: ((Result<Void, DeviceError>) -> Void)?) {
+		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
+
+		if (sourceId != nil) {
+			flags.insert(PacketFlags.commandHasSourceId)
+		}
+
+		if (targetId != nil) {
+			flags.insert(PacketFlags.commandHasTargetId)
+		}
+
+		let command = Command(flags.rawValue,
+							  deviceId: deviceId.rawValue,
+							  commandId: commandId.rawValue,
+							  sequenceNumber: nextSequenceNumber,
+							  contents: data?.packet,
+							  sourceId: sourceId,
+							  targetId: targetId)
+
+		return commandQueue.enqueue(command: command, completion: completion)
+	}
+
+	internal func enqueueCommandInternal<R: DataInitializable, T: CommandRepresentable>(_ dump: R.Type,
+																						deviceId: DeviceId,
+																						commandId: T,
+																						sourceId: UInt8? = nil,
+																						targetId: UInt8? = nil,
+																						completion: ((Result<R, DeviceError>) -> Void)?) {
+		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
+
+		if (sourceId != nil) {
+			flags.insert(PacketFlags.commandHasSourceId)
+		}
+
+		if (targetId != nil) {
+			flags.insert(PacketFlags.commandHasTargetId)
+		}
+
+		let command = Command(flags.rawValue,
+							  deviceId: deviceId.rawValue,
+							  commandId: commandId.rawValue,
+							  sequenceNumber: nextSequenceNumber,
+							  contents: nil,
+							  sourceId: sourceId,
+							  targetId: targetId)
+
+		commandQueue.enqueueWithData(command: command, completion: completion)
+	}
+
+	internal func enqueueCommandInternal<R: DataInitializable, T: CommandRepresentable, D: CommandDataConvertible>(_ dump: R.Type,
+																												   deviceId: DeviceId,
+																												   commandId: T,
+																												   data: D?,
+																												   sourceId: UInt8? = nil,
+																												   targetId: UInt8? = nil,
+																												   completion: ((Result<R, DeviceError>) -> Void)?) {
+		var flags: PacketFlags = [.requestsResponse, .resetsInactivityTimeout]
+
+		if (sourceId != nil) {
+			flags.insert(PacketFlags.commandHasSourceId)
+		}
+
+		if (targetId != nil) {
+			flags.insert(PacketFlags.commandHasTargetId)
+		}
+
+		let command = Command(flags.rawValue,
+							  deviceId: deviceId.rawValue,
+							  commandId: commandId.rawValue,
+							  sequenceNumber: nextSequenceNumber,
+							  contents: data?.packet,
+							  sourceId: sourceId,
+							  targetId: targetId)
+
+		commandQueue.enqueueWithData(command: command, completion: completion)
+	}
+
 	internal func enqueueCommand<T: CommandRepresentable>(deviceId: DeviceId, commandId: T) -> CommandResponseType<Void> {
 		Deferred {
 			Future<Void, DeviceError> { [weak self] promise in

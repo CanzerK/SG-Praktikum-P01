@@ -1,0 +1,22 @@
+[config]
+name="Sphero"
+binary="Sphero.xcframework"
+use_swift_runtime=true
+
+initialization="godot_sphero_init"
+deinitialization="godot_sphero_deinit"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["CoreBluetooth.framework", "Foundation.framework"]
+
+capabilities=["bluetooth-le"]
+
+files=[]
+
+linker_flags=["-ObjC"]
+
+[plist]
+NSBluetoothPeripheralUsageDescription:string_input="We need permissions to use Bluetooth."
+NSBluetoothAlwaysUsageDescription="We need permissions to use Bluetooth."
