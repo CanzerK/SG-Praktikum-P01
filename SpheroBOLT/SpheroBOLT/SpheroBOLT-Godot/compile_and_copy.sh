@@ -8,6 +8,9 @@ RELEASE_MODE="Release"
 
 rm -rf plugin/*.xcframework
 
+rm -rf ${OUTPUT_DIR}/${FRAMEWORK_NAME}.xcframework
+rm -rf ${OUTPUT_DIR}/godotsphero.gdip
+
 # Build for iPhoneOS
 xcodebuild -project ${PROJECT_NAME}.xcodeproj -target ${TARGET_NAME} -sdk iphoneos -configuration ${RELEASE_MODE}
 

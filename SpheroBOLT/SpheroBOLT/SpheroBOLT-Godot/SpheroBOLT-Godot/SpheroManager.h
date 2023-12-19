@@ -9,37 +9,30 @@
 #include <core/version.h>
 #include <core/object/class_db.h>
 
-@interface SpheroManagerImpl : NSObject <DeviceCoordinatorDelegate, DeviceDelegate>
+class SpheroManager;
 
-@property (nonatomic, strong) DeviceCoordinator* _Nonnull deviceCoordinator;
-@property (nonatomic, strong) NSMutableArray* _Nonnull connectedDevices;
+@interface SpheroManagerImpl : NSObject
 
 - (instancetype _Nullable)init;
+- (void)dealloc;
 
 - (void)findDevices;
 - (void)stop;
-
-- (void)deviceCoordinatorDidUpdateBluetoothState:(DeviceCoordinator * _Nonnull)deviceCoordinator state:(CBManagerState)state;
-- (void)deviceCoordinatorDidFindDevice:(DeviceCoordinator * _Nonnull)coordinator device:(Device * _Nonnull)device;
-- (void)deviceCoordinatorDidDisconnectDevice:(DeviceCoordinator * _Nonnull)coordinator device:(Device * _Nonnull)device;
-
-- (void)deviceDidChangeState:(Device * _Nonnull)device;
-- (void)deviceDidUpdateConnectionState:(Device * _Nonnull)device state:(enum ConnectionState)state;
-- (void)deviceDidFailConnectionState:(Device * _Nonnull)device error:(NSError * _Nullable)error;
-- (void)deviceDidWake:(Device * _Nonnull)device;
-- (void)deviceDidSleep:(Device * _Nonnull)device;
+- (NSArray *_Nonnull)getConnectedDevices;
 
 @end
 
 class SpheroManager : public Object
 {
+	NS_ASSUME_NONNULL_BEGIN
 	GDCLASS(SpheroManager, Object);
+	NS_ASSUME_NONNULL_END
 
-	static SpheroManager* _instance;
+	static SpheroManager* _Nonnull _instance;
 	static void _bind_methods();
 
 public:
-	static SpheroManager* get_singleton();
+	static SpheroManager* _Nonnull get_singleton();
 
 	SpheroManager();
 	~SpheroManager();
@@ -48,8 +41,10 @@ public:
 
 	void stop();
 
+	Array getConnectedDevices() const;
+
 private:
-	SpheroManagerImpl* _manager = nullptr;
+	SpheroManagerImpl* _Nullable _manager = nullptr;
 };
 
 #endif /* SpheroManager_h */

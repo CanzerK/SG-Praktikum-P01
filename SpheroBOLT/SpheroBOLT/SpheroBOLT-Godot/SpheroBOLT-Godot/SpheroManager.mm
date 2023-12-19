@@ -6,6 +6,25 @@
 
 #import <platform/ios/app_delegate.h>
 
+@interface SpheroManagerImpl() <DeviceCoordinatorDelegate, DeviceDelegate>
+
+@property (nonatomic, strong) DeviceCoordinator* _Nonnull deviceCoordinator;
+@property (nonatomic, strong) NSMutableArray* _Nonnull connectedDevices;
+
+@property (atomic, unsafe_unretained, assign) SpheroManager* _Nonnull godotManager;
+
+- (void)deviceCoordinatorDidUpdateBluetoothState:(DeviceCoordinator * _Nonnull)deviceCoordinator state:(CBManagerState)state;
+- (void)deviceCoordinatorDidFindDevice:(DeviceCoordinator * _Nonnull)coordinator device:(Device * _Nonnull)device;
+- (void)deviceCoordinatorDidDisconnectDevice:(DeviceCoordinator * _Nonnull)coordinator device:(Device * _Nonnull)device;
+
+- (void)deviceDidChangeState:(Device * _Nonnull)device;
+- (void)deviceDidUpdateConnectionState:(Device * _Nonnull)device state:(enum ConnectionState)state;
+- (void)deviceDidFailConnectionState:(Device * _Nonnull)device error:(NSError * _Nullable)error;
+- (void)deviceDidWake:(Device * _Nonnull)device;
+- (void)deviceDidSleep:(Device * _Nonnull)device;
+
+@end
+
 @implementation SpheroManagerImpl
 
 - (instancetype)init
@@ -21,6 +40,11 @@
 	return self;
 }
 
+- (void)dealloc
+{
+	_godotManager = nullptr;
+}
+
 - (void)findDevices
 {
 	[_deviceCoordinator findDevices];
@@ -31,10 +55,17 @@
 	[_deviceCoordinator stop];
 }
 
+- (NSArray *)getConnectedDevices
+{
+	return [NSArray arrayWithArray:_connectedDevices];
+}
+
 - (void)deviceCoordinatorDidUpdateBluetoothState:(DeviceCoordinator * _Nonnull)deviceCoordinator
 										   state:(CBManagerState)state
 {
-	NSLog(@"%ld", (long)state);
+//	NSLog(@"%ld", (long)state);
+
+	_godotManager->emit_signal("managerStateUpdated", Variant((int)state));
 }
 
 - (void)deviceCoordinatorDidFindDevice:(DeviceCoordinator * _Nonnull)coordinator
@@ -87,6 +118,7 @@ SpheroManager::SpheroManager()
 
 	_instance = this;
 	_manager = [SpheroManagerImpl new];
+	_manager.godotManager = this;
 }
 
 SpheroManager::~SpheroManager()
@@ -109,7 +141,7 @@ void SpheroManager::_bind_methods()
 //	ClassDB::bind_method(D_METHOD("signal_demo", "s"), &SpheroManager::signal_demo);
 //	ClassDB::bind_method(D_METHOD("share_video_web", "url"), &SpheroManager::share_video_web);
 
-	ADD_SIGNAL(MethodInfo("deviceFound", PropertyInfo(Device*, "device")));
+	ADD_SIGNAL(MethodInfo("managerStateUpdated", PropertyInfo(Variant::OBJECT, "device")));
 //	ADD_SIGNAL(MethodInfo("signal_demo_complete", PropertyInfo(Variant::INT, "i"), PropertyInfo(Variant::STRING, "s")));
 }
 
@@ -121,6 +153,21 @@ void SpheroManager::findDevices()
 void SpheroManager::stop()
 {
 	[_manager stop];
+}
+
+Array SpheroManager::getConnectedDevices() const
+{
+	NSArray* connectedDevices = [_manager getConnectedDevices];
+
+	Array result;
+	result.resize(static_cast<int>(connectedDevices.count));
+
+	for (const Device* device : connectedDevices)
+	{
+		result.push_back(Variant(device));
+	}
+
+	return result;
 }
 
 //int SpheroManager::function_demo(int i)
