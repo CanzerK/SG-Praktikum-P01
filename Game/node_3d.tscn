@@ -1401,5 +1401,32 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 12.6931, 0, -199.979)
 [node name="skyscraperA5" parent="." instance=ExtResource("16_ldmx6")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.2361, 0, -199.979)
 
+[node name="large_buildingC12" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 83.8357, 0, -132.004)
+
+[node name="large_buildingC13" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 91.6358, 0, -132.004)
+
+[node name="large_buildingC14" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 99.6653, 0, -132.004)
+
+[node name="large_buildingC15" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -132.004)
+
+[node name="large_buildingC16" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -123.745)
+
+[node name="large_buildingC17" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -115.486)
+
+[node name="large_buildingC18" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -107.457)
+
+[node name="large_buildingC19" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -99.4272)
+
+[node name="large_buildingC20" parent="." instance=ExtResource("3_weql7")]
+transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -91.8566)
+
 [editable path="Ambulance3"]
 [editable path="tile_low2"]
