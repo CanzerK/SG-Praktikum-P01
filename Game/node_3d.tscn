@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvm2w7iu6f6dt"]
+[gd_scene load_steps=38 format=3 uid="uid://cvm2w7iu6f6dt"]
 
 [ext_resource type="PackedScene" uid="uid://dw75p503bbcyj" path="res://Assets/Roads/road_straight.glb" id="1_1tlyp"]
 [ext_resource type="PackedScene" uid="uid://d1tpnocnle1o6" path="res://Assets/Roads/road_bend.glb" id="2_nrqb8"]
@@ -11,9 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://bhuyolt4yxip6" path="res://Assets/SubUrbanBuild/path_long.glb" id="13_464p2"]
 [ext_resource type="PackedScene" uid="uid://b4d2xm4i5ti28" path="res://Assets/Roads/road_crossroadPath.glb" id="14_rg2up"]
 [ext_resource type="PackedScene" uid="uid://bgwadjnvasnw6" path="res://Assets/SubUrbanBuild/house_type01.glb" id="15_cqdpd"]
+[ext_resource type="PackedScene" uid="uid://stjnnm1foevc" path="res://Assets/UrbanBuild/GLB/skyscraperC.glb" id="15_wlehs"]
+[ext_resource type="PackedScene" uid="uid://cfw7kjun0pyum" path="res://Assets/UrbanBuild/GLB/skyscraperA.glb" id="16_ldmx6"]
 [ext_resource type="PackedScene" uid="uid://b586kgvlhjd4b" path="res://Assets/Roads/light_square.glb" id="16_yh8gy"]
+[ext_resource type="PackedScene" uid="uid://bq2vp848gmxnk" path="res://Assets/UrbanBuild/GLB/skyscraperF.glb" id="17_pi8qs"]
+[ext_resource type="PackedScene" uid="uid://b3w1gnjckrt2y" path="res://Assets/UrbanBuild/GLB/large_buildingE.glb" id="18_13aof"]
 [ext_resource type="PackedScene" uid="uid://bw07urbvpsypo" path="res://Assets/SubUrbanBuild/fence_open.glb" id="18_l0upm"]
 [ext_resource type="PackedScene" uid="uid://ct0oa7rampcmb" path="res://Assets/Roads/tile_low.glb" id="19_55opf"]
+[ext_resource type="PackedScene" uid="uid://c5xu5aldqk3d7" path="res://Assets/UrbanBuild/GLB/sign_hospital.glb" id="19_dobeu"]
+[ext_resource type="PackedScene" uid="uid://dmtvstnw1w6m" path="res://Assets/UrbanBuild/GLB/large_buildingA.glb" id="20_jbtxp"]
+[ext_resource type="PackedScene" uid="uid://btsntlic74irq" path="res://Assets/Car/police.glb" id="21_o6osu"]
+[ext_resource type="PackedScene" uid="uid://dek344agwkkqw" path="res://Assets/UrbanBuild/GLB/large_buildingG.glb" id="22_gvlqi"]
+[ext_resource type="PackedScene" uid="uid://nou3it5i5ms7" path="res://Assets/Car/firetruck.glb" id="23_2b3nr"]
+[ext_resource type="PackedScene" uid="uid://dtlwa3h4jjq48" path="res://Assets/SubUrbanBuild/tree_small.glb" id="24_rxaft"]
+[ext_resource type="PackedScene" uid="uid://ccqv0vukw80rx" path="res://Assets/UrbanBuild/GLB/skyscraperE.glb" id="25_iva3t"]
 
 [sub_resource type="Environment" id="Environment_v10de"]
 reflected_light_source = 2
@@ -102,6 +113,19 @@ func _physics_process(delta):
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b18ej"]
 albedo_color = Color(0.0745098, 0.427451, 0.0823529, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g15t7"]
+
+[sub_resource type="Skin" id="Skin_00dju"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id004"]
+albedo_color = Color(0.211765, 0.52549, 0.219608, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_26pos"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h46v6"]
+next_pass = SubResource("PanoramaSkyMaterial_26pos")
+albedo_color = Color(0.278431, 1, 1, 0.964706)
 
 [node name="Word" type="Node3D"]
 
@@ -972,6 +996,12 @@ transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 14.6, 1,
 [node name="house_type022" parent="." instance=ExtResource("4_nqcfx")]
 transform = Transform3D(-4, 0, -4.76837e-07, 0, 4, 0, 4.76837e-07, 0, -4, 114, 1, -234)
 
+[node name="house_type028" parent="." instance=ExtResource("4_nqcfx")]
+transform = Transform3D(-4, 0, -4.76837e-07, 0, 4, 0, 4.76837e-07, 0, -4, 114, 1, -227.245)
+
+[node name="house_type029" parent="." instance=ExtResource("4_nqcfx")]
+transform = Transform3D(-4, 0, -4.76837e-07, 0, 4, 0, 4.76837e-07, 0, -4, 114, 1, -220.061)
+
 [node name="house_type023" parent="." instance=ExtResource("4_nqcfx")]
 transform = Transform3D(6.51683e-07, 0, -4, 0, 4, 0, 4, 0, 6.51683e-07, -24, 1, -234)
 
@@ -1136,6 +1166,240 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 65.194, 0, -131.425)
 
 [node name="tile_low" parent="tile_low2/tmpParent" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_b18ej")
+
+[node name="skyscraperC2" parent="." instance=ExtResource("15_wlehs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 27.831, 0, -63.5646)
+
+[node name="skyscraperC3" parent="." instance=ExtResource("15_wlehs")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 27.831, 0, -63.5646)
+
+[node name="skyscraperC4" parent="." instance=ExtResource("15_wlehs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.0571, 0, -77.5647)
+
+[node name="skyscraperA3" parent="." instance=ExtResource("16_ldmx6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 28.1195, 0, -77.0638)
+
+[node name="skyscraperF2" parent="skyscraperA3" instance=ExtResource("17_pi8qs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 13.5682, 0, -76.6605)
+
+[node name="skyscraperF2" parent="." instance=ExtResource("17_pi8qs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 13.5682, 0, -76.6605)
+
+[node name="skyscraperF3" parent="." instance=ExtResource("17_pi8qs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.5682, 0, -62.6605)
+
+[node name="skyscraperA2" parent="." instance=ExtResource("16_ldmx6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 14, 6.96558, -63.154)
+
+[node name="tile_low3" parent="." instance=ExtResource("19_55opf")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 47.193, 0, -148.394)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0797634, 0.379446)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0797634, 2.36352)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689602, 0.0797634, 4.35131)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689602, 0.0797634, 6.09608)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95166, 0.0797634, 6.09608)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93751, 0.0797634, 6.09608)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82856, 0.0797634, 6.09608)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82856, 0.0797634, 4.18814)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82856, 0.0797634, 2.3583)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82856, 0.0797634, 0.464813)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82856, 0.0797634, -1.49322)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82856, 0.0797634, -3.45174)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0792599, 0.0797634, -1.62055)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96168, 0.0797634, -1.62055)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96168, 0.0797634, 4.20503)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26946, 0.0797634, -1.62055)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87172, 0.0797634, 0.392088)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_h46v6")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88906, 0.0797634, 0.392086)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_h46v6")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88906, 0.0797634, 2.25262)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_h46v6")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87073, 0.0797634, 2.25262)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_h46v6")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26946, 0.0797634, 4.1654)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218182, 0.0797634, -3.49555)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17233, 0.0797634, -3.49555)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="tile_low3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13597, 0.0797634, -3.49555)
+mesh = SubResource("PlaneMesh_g15t7")
+skin = SubResource("Skin_00dju")
+surface_material_override/0 = SubResource("StandardMaterial3D_id004")
+
+[node name="hospital" parent="." instance=ExtResource("18_13aof")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 74.9983, 0, -37.3632)
+
+[node name="hospital2" parent="hospital" instance=ExtResource("18_13aof")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32487, 0, 0.0155869)
+
+[node name="sign_hospital2" parent="hospital/hospital2" instance=ExtResource("19_dobeu")]
+transform = Transform3D(7.16504e-15, 1.63918e-07, 3.75, 3.75, -1.63918e-07, 2.64698e-20, 1.63918e-07, 3.75, -1.63918e-07, -1.24857, 2.37872, -0.651122)
+
+[node name="ambulance2" parent="hospital/hospital2" instance=ExtResource("5_7ryj8")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -2.65916, 0, 0.128873)
+
+[node name="ambulance3" parent="hospital/hospital2" instance=ExtResource("5_7ryj8")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -2.65916, 0, 0.8123)
+
+[node name="Police station" parent="." instance=ExtResource("20_jbtxp")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 78.0575, 0, -175.589)
+
+[node name="Police station2" parent="Police station" instance=ExtResource("20_jbtxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15291, 0, 0)
+
+[node name="policecar" parent="Police station" instance=ExtResource("21_o6osu")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -1.42668, 0, -0.499301)
+
+[node name="policecar2" parent="Police station" instance=ExtResource("21_o6osu")]
+transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, -1.36105, 11.25, 1.30047)
+
+[node name="police" parent="Police station" instance=ExtResource("22_gvlqi")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.40576, 0, -0.414969)
+
+[node name="Fire office" parent="." instance=ExtResource("22_gvlqi")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -17.1683, 0, -138.64)
+
+[node name="firetruck2" parent="Fire office" instance=ExtResource("23_2b3nr")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 1.06692, 0, 1.04042)
+
+[node name="tree_small2" parent="." instance=ExtResource("24_rxaft")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 13.2208, 0, -99.7071)
+
+[node name="tree_small3" parent="." instance=ExtResource("24_rxaft")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 12.515, 0, -172.584)
+
+[node name="tree_small4" parent="." instance=ExtResource("24_rxaft")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 26.4551, 0, -162.526)
+
+[node name="tree_small5" parent="." instance=ExtResource("24_rxaft")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 49.2182, 0, -155.997)
+
+[node name="skyscraperE2" parent="." instance=ExtResource("25_iva3t")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 28.9409, 0, -213.956)
+
+[node name="skyscraperF6" parent="." instance=ExtResource("17_pi8qs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 12.9583, 0, -229.356)
+
+[node name="skyscraperF7" parent="." instance=ExtResource("17_pi8qs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.5013, 0, -229.356)
+
+[node name="skyscraperA4" parent="." instance=ExtResource("16_ldmx6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 12.6931, 0, -199.979)
+
+[node name="skyscraperA5" parent="." instance=ExtResource("16_ldmx6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.2361, 0, -199.979)
 
 [editable path="Ambulance3"]
 [editable path="tile_low2"]
