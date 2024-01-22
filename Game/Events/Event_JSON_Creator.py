@@ -4,10 +4,10 @@ import json
 
 def create_json_from_folders():
     eventId = 1
-    script_path = os.path.abspath(__file__)
-    for root, dirs, files in script_path:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    for root, dirs, files in os.walk(script_dir):
         for dir in dirs:
-            if dir != 'JSON_Files'
+            if dir != 'JSON_Files':
                 event = {
                     'EventId': eventId,
                     'EventName': dir,
@@ -19,8 +19,12 @@ def create_json_from_folders():
                 }
 
                 subdir = os.path.join(root, dir)
+                print(subdir)
+                subdir_splitted = subdir.split('\\')
+                department = subdir_splitted[-2]
+                print(department)
                 for file in os.listdir(subdir):
-                    file_path ="res://Events/FireFighter_Events/" + dir + "//" + file
+                    file_path =r"res://Events/" + department + r"/" + dir + r"/" + file
                     if file.endswith('.txt'):
                         if 'Occurance' in file:
                             event['EventTextMain'] = file_path
@@ -40,4 +44,8 @@ def create_json_from_folders():
 
                 eventId += 1
 
-create_json_from_folders()
+try:
+    create_json_from_folders()
+    print("Files have been created!")
+except Exception:
+    print("Ooops! Something went wrong! Scream in panic!")

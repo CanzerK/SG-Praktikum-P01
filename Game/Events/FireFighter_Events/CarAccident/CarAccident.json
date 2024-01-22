@@ -1,0 +1,9 @@
+{
+    "EventId": 3,
+    "EventName": "CarAccident",
+    "EventTextMain": "res://Events/FireFighter_Events/CarAccident/CarAccident_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter_Events/CarAccident/CarAccident_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter_Events/CarAccident/CarAccident_Success.txt",
+    "ImgFail": "res://Events/FireFighter_Events/CarAccident/CarAccident_Failure.png",
+    "ImgOK": "res://Events/FireFighter_Events/CarAccident/CarAccident_Success.png"
+}

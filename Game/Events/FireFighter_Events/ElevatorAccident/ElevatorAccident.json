@@ -1,9 +1,9 @@
 {
-    "EventId": 4,
+    "EventId": 6,
     "EventName": "ElevatorAccident",
-    "EventTextMain": "res://Events/FireFighter_Events/ElevatorAccident//ElevatorAccident_Occurance.txt",
-    "EventTextFail": "res://Events/FireFighter_Events/ElevatorAccident//ElevatorAccident_Failure.txt",
-    "EventTextOK": "res://Events/FireFighter_Events/ElevatorAccident//ElevatorAccident_Success.txt",
+    "EventTextMain": "res://Events/FireFighter_Events/ElevatorAccident/ElevatorAccident_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter_Events/ElevatorAccident/ElevatorAccident_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter_Events/ElevatorAccident/ElevatorAccident_Success.txt",
     "ImgFail": null,
     "ImgOK": null
 }
