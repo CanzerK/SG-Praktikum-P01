@@ -1,0 +1,9 @@
+{
+    "EventId": 2,
+    "EventName": "CatTree",
+    "EventTextMain": "res://Events/FireFighter_Events/CatTree//CatTree_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter_Events/CatTree//CatTree_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter_Events/CatTree//CatTree_Success.txt",
+    "ImgFail": null,
+    "ImgOK": null
+}

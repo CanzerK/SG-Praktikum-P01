@@ -1,0 +1,9 @@
+{
+    "EventId": 8,
+    "EventName": "OilSpill",
+    "EventTextMain": "res://Events/FireFighter_Events/OilSpill//OilSpill_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter_Events/OilSpill//OilSpill_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter_Events/OilSpill//OilSpill_Success.txt",
+    "ImgFail": null,
+    "ImgOK": null
+}

@@ -1,0 +1,9 @@
+{
+    "EventId": 5,
+    "EventName": "FireInRestaurant",
+    "EventTextMain": "res://Events/FireFighter_Events/FireInRestaurant//FireInRestaurant_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter_Events/FireInRestaurant//FireInRestaurant_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter_Events/FireInRestaurant//FireInRestaurant_Success.txt",
+    "ImgFail": null,
+    "ImgOK": null
+}
