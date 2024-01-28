@@ -1,5 +1,5 @@
 {
-    "EventId": 1,
+    "EventId": "1",
     "EventName": "CarAccident",
     "EventTextMain": "res://Events/FireFighter_Events/CarAccident//CarAccident_Occurance.txt",
     "EventTextFail": "res://Events/FireFighter_Events/CarAccident//CarAccident_Failure.txt",

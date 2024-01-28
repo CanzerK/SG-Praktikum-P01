@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdtqmmf6i2xoy"]
+
+[sub_resource type="GDScript" id="GDScript_lwlqw"]
+resource_name = "Init_Event_Window"
+script/source = "extends Sprite2D
+
+# We need to implement the way to get event information from Event Handler
+# The objects/variables from EventHandler should provide, which JSON file we
+# should read.
+# Define the JSON path here.
+var itemData = {}
+var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
+
+# List of keys to load from itemData dictionary
+var keys_to_load = [\"EventId\", \"EventName\", \"EventTextMain\", \"EventTextFail\",
+ \"EventTextOK\", \"ImgFail\", \"ImgOK\"]  # Add more keys as needed
+
+# List of variable names to initialize
+var variable_names = [\"eventId\", \"eventName\", \"eventTextName\", \"eventTextOK\",
+ \"eventTextFail\", \"eventImgFail\", \"eventImgOK\"]  # Add variable names for each key
+
+@onready var sprite_node: Sprite2D
+
+func _init():
+	sprite_node = $Window/EventImage
+
+func _ready():
+	itemData = load_json_file(data_file_path)	
+	
+	var image_path_occurance = \"\" # This could ne generic for all event/department
+	var loaded_data
+	for i in range(keys_to_load.size()):
+		var key = keys_to_load[i]
+		if key in itemData:
+			var key_path = itemData[key]
+			if \"Event\" in keys_to_load[i]:
+				loaded_data = FileAccess.open(loaded_data, FileAccess.READ)
+				var txt = loaded_data.get_as_text()
+			else:
+				loaded_data = load(key_path)
+			
+			if loaded_data:
+				# Initialize the corresponding variable using the variable name
+				variable_names[i] = loaded_data
+				print(\"Initialized\", variable_names[i], \"with data for key:\", key)
+			else:
+				print(\"Error loading data for key:\", key)
+		else:
+			print(\"Key not found in itemData:\", key)
+	
+	sprite_node.texture = variable_names[6]
+	
+func load_json_file(filePath : String):
+	if FileAccess.file_exists(filePath):
+		var dataFile = FileAccess.open(filePath, FileAccess.READ)
+		var parsedResults = JSON.parse_string(dataFile.get_as_text())
+		
+		if parsedResults is Dictionary:
+			return parsedResults
+		else:
+			print(\"Error reading file. Probably JSON-File is corrupted.\")
+			
+	else:
+		print(\"File doesn't exists!\")
+		
+		
+	
+"
+
+[node name="EventWindow" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 280)
+
+[node name="Window" type="Window" parent="."]
+initial_position = 3
+size = Vector2i(600, 600)
+current_screen = 0
+
+[node name="EventImage" type="Sprite2D" parent="Window"]
+position = Vector2(160, 30)
+scale = Vector2(0.25, 0.25)
+centered = false
+region_rect = Rect2(0, 0, 1024, 1024)
+script = SubResource("GDScript_lwlqw")

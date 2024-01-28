@@ -15,6 +15,10 @@ run/main_scene="res://node_3d.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/subwindows/embed_subwindows=false
+
 [dotnet]
 
 project/assembly_name="Sg-praktikum-p 01"
