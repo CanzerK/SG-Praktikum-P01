@@ -12,24 +12,22 @@ var itemData = {}
 var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
 
 @onready var sprite_node: Sprite2D
-@onready var text_node
+
 
 func _ready():
 	itemData = load_json_file(data_file_path)	
 	sprite_node = $\"../EventImage\"
-	text_node = $\"../EventText\"
 
 	
 	var image_path_occurance = \"\" # This could ne generic for all event/department
 	
 	if \"EventId\" in itemData:
 		var event_id_path = itemData[\"EventId\"]
-		# var event_id = load(event_id_path)
+		var event_id = load(event_id_path)
 	
 	if \"EventName\" in itemData:
 		var event_name_path = itemData[\"EventName\"]
-		#var eventNane = load(event_name_path)
-		print(event_name_path)
+		var eventNane = load(event_name_path)
 	
 	if \"ImgOK\" in itemData:
 		var image_ok_path = itemData[\"ImgOK\"]
@@ -40,10 +38,7 @@ func _ready():
 	
 	if \"EventTextOK\" in itemData:
 		var textOK_path = itemData[\"EventTextOK\"]
-		var file = FileAccess.open(textOK_path, FileAccess.READ)
-		var textOK = file.get_as_text()
-		text_node.text = textOK
-		print(textOK)
+		var textOK = load(textOK_path)
 		
 	var text_occurance_path = itemData[\"EventTextMain\"]
 	var text_ok_path = itemData[\"EventTextOK\"]
@@ -72,34 +67,28 @@ func load_json_file(filePath : String):
 
 [node name="EventWindow" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 280)
+
 [node name="Window" type="Window" parent="."]
 initial_position = 3
-size = Vector2i(400, 600)
+size = Vector2i(600, 600)
 current_screen = 0
 
 [node name="EventImage" type="Sprite2D" parent="Window"]
-position = Vector2(70, 30)
+position = Vector2(160, 30)
 scale = Vector2(0.25, 0.25)
 centered = false
 region_rect = Rect2(0, 0, 1024, 1024)
 script = SubResource("GDScript_lwlqw")
 
-[node name="EventText" type="Label" parent="Window"]
+[node name="EventText" type="RichTextLabel" parent="Window"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 4569.0
-offset_bottom = 4349.0
+offset_left = -0.5
+offset_right = 0.5
 grow_horizontal = 2
 grow_vertical = 0
-text = "Displaying exceptional skill and coordination, the firefighters of the Darmsville Fire Department meticulously extricate the trapped person from the wreckage. Using specialized equipment and techniques, they carefully navigate the damaged vehicle, ensuring the safety of both the rescuers and the individual inside. The relieved onlookers witness the successful rescue, expressing gratitude for the swift and efficient response of the firefighters. The rescued individual, though shaken, is in the capable hands of the emergency medical team, receiving prompt attention for a swift recovery.
-"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 323)
