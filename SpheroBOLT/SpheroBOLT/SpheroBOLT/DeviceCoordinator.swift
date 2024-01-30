@@ -105,8 +105,6 @@ import Combine
 			return
 		}
 
-		connectedDevice.state = .connecting
-
 		connectedDevice.completeConnection()
 	}
 

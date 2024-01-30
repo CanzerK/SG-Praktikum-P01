@@ -12,8 +12,26 @@
 		5B5B17EB2AFD6B2300C3DF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */; };
 		5B5B17EE2AFD6B2300C3DF11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17ED2AFD6B2300C3DF11 /* Preview Assets.xcassets */; };
 		5B75BB282B1CDB10007078BE /* DeviceManagerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */; };
-		5BA712732B29007F005A403C /* SpheroBOLT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */; };
-		5BA712742B29007F005A403C /* SpheroBOLT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BA092022B555DF3000784DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091EA2B555DF3000784DF /* Constants.swift */; };
+		5BA092032B555DF3000784DF /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091EB2B555DF3000784DF /* DeviceCoordinator.swift */; };
+		5BA092042B555DF3000784DF /* PeripheralOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091ED2B555DF3000784DF /* PeripheralOperation.swift */; };
+		5BA092052B555DF3000784DF /* QueueOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091EE2B555DF3000784DF /* QueueOperation.swift */; };
+		5BA092062B555DF3000784DF /* ConnectOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091EF2B555DF3000784DF /* ConnectOperation.swift */; };
+		5BA092072B555DF3000784DF /* PeerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F12B555DF3000784DF /* PeerConnection.swift */; };
+		5BA092082B555DF3000784DF /* UserIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F22B555DF3000784DF /* UserIO.swift */; };
+		5BA092092B555DF3000784DF /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F32B555DF3000784DF /* Power.swift */; };
+		5BA0920A2B555DF3000784DF /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F42B555DF3000784DF /* DeviceId.swift */; };
+		5BA0920B2B555DF3000784DF /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F52B555DF3000784DF /* Navigation.swift */; };
+		5BA0920C2B555DF3000784DF /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F62B555DF3000784DF /* Sensor.swift */; };
+		5BA0920D2B555DF3000784DF /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F72B555DF3000784DF /* Echo.swift */; };
+		5BA0920E2B555DF3000784DF /* Characteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091F82B555DF3000784DF /* Characteristics.swift */; };
+		5BA0920F2B555DF3000784DF /* DeviceCommandsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091FA2B555DF3000784DF /* DeviceCommandsExt.swift */; };
+		5BA092102B555DF3000784DF /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091FB2B555DF3000784DF /* Device.swift */; };
+		5BA092112B555DF3000784DF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091FD2B555DF3000784DF /* Command.swift */; };
+		5BA092122B555DF3000784DF /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091FE2B555DF3000784DF /* CommandQueue.swift */; };
+		5BA092132B555DF3000784DF /* CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA091FF2B555DF3000784DF /* CommandResult.swift */; };
+		5BA092142B555DF3000784DF /* CommandOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA092002B555DF3000784DF /* CommandOperation.swift */; };
+		5BA092152B555DF3000784DF /* CommandDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA092012B555DF3000784DF /* CommandDataTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5BA712742B29007F005A403C /* SpheroBOLT.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,13 +48,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpheroBOLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5B17E32AFD6B2200C3DF11 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5B17ED2AFD6B2300C3DF11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManagerDemo.swift; sourceTree = "<group>"; };
+		5BA091EA2B555DF3000784DF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5BA091EB2B555DF3000784DF /* DeviceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCoordinator.swift; sourceTree = "<group>"; };
+		5BA091ED2B555DF3000784DF /* PeripheralOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralOperation.swift; sourceTree = "<group>"; };
+		5BA091EE2B555DF3000784DF /* QueueOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueOperation.swift; sourceTree = "<group>"; };
+		5BA091EF2B555DF3000784DF /* ConnectOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectOperation.swift; sourceTree = "<group>"; };
+		5BA091F12B555DF3000784DF /* PeerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerConnection.swift; sourceTree = "<group>"; };
+		5BA091F22B555DF3000784DF /* UserIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIO.swift; sourceTree = "<group>"; };
+		5BA091F32B555DF3000784DF /* Power.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		5BA091F42B555DF3000784DF /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
+		5BA091F52B555DF3000784DF /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		5BA091F62B555DF3000784DF /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		5BA091F72B555DF3000784DF /* Echo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
+		5BA091F82B555DF3000784DF /* Characteristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristics.swift; sourceTree = "<group>"; };
+		5BA091FA2B555DF3000784DF /* DeviceCommandsExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCommandsExt.swift; sourceTree = "<group>"; };
+		5BA091FB2B555DF3000784DF /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		5BA091FD2B555DF3000784DF /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		5BA091FE2B555DF3000784DF /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
+		5BA091FF2B555DF3000784DF /* CommandResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandResult.swift; sourceTree = "<group>"; };
+		5BA092002B555DF3000784DF /* CommandOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandOperation.swift; sourceTree = "<group>"; };
+		5BA092012B555DF3000784DF /* CommandDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandDataTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BA712732B29007F005A403C /* SpheroBOLT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +107,7 @@
 		5B5B17E52AFD6B2200C3DF11 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				5BA091E92B555DF3000784DF /* SpheroBOLT */,
 				5B75BB272B1CDB10007078BE /* DeviceManagerDemo.swift */,
 				5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */,
 				5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */,
@@ -92,9 +128,68 @@
 		5B5B17F62AFD6BA800C3DF11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5B2D79E82B262B72004BE131 /* SpheroBOLT.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BA091E92B555DF3000784DF /* SpheroBOLT */ = {
+			isa = PBXGroup;
+			children = (
+				5BA091EA2B555DF3000784DF /* Constants.swift */,
+				5BA091EB2B555DF3000784DF /* DeviceCoordinator.swift */,
+				5BA091EC2B555DF3000784DF /* Operations */,
+				5BA091F02B555DF3000784DF /* Extensions */,
+				5BA091F82B555DF3000784DF /* Characteristics.swift */,
+				5BA091F92B555DF3000784DF /* Device */,
+				5BA091FC2B555DF3000784DF /* Commands */,
+			);
+			name = SpheroBOLT;
+			path = ../../SpheroBOLT/SpheroBOLT;
+			sourceTree = "<group>";
+		};
+		5BA091EC2B555DF3000784DF /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				5BA091ED2B555DF3000784DF /* PeripheralOperation.swift */,
+				5BA091EF2B555DF3000784DF /* ConnectOperation.swift */,
+				5BA091EE2B555DF3000784DF /* QueueOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		5BA091F02B555DF3000784DF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BA091F12B555DF3000784DF /* PeerConnection.swift */,
+				5BA091F22B555DF3000784DF /* UserIO.swift */,
+				5BA091F32B555DF3000784DF /* Power.swift */,
+				5BA091F42B555DF3000784DF /* DeviceId.swift */,
+				5BA091F52B555DF3000784DF /* Navigation.swift */,
+				5BA091F62B555DF3000784DF /* Sensor.swift */,
+				5BA091F72B555DF3000784DF /* Echo.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5BA091F92B555DF3000784DF /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				5BA091FA2B555DF3000784DF /* DeviceCommandsExt.swift */,
+				5BA091FB2B555DF3000784DF /* Device.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		5BA091FC2B555DF3000784DF /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				5BA091FD2B555DF3000784DF /* Command.swift */,
+				5BA091FE2B555DF3000784DF /* CommandQueue.swift */,
+				5BA091FF2B555DF3000784DF /* CommandResult.swift */,
+				5BA092002B555DF3000784DF /* CommandOperation.swift */,
+				5BA092012B555DF3000784DF /* CommandDataTypes.swift */,
+			);
+			path = Commands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +263,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA092032B555DF3000784DF /* DeviceCoordinator.swift in Sources */,
 				5B5B17E92AFD6B2200C3DF11 /* ContentView.swift in Sources */,
+				5BA092052B555DF3000784DF /* QueueOperation.swift in Sources */,
+				5BA092102B555DF3000784DF /* Device.swift in Sources */,
 				5B5B17E72AFD6B2200C3DF11 /* DemoApp.swift in Sources */,
+				5BA0920F2B555DF3000784DF /* DeviceCommandsExt.swift in Sources */,
+				5BA092092B555DF3000784DF /* Power.swift in Sources */,
+				5BA092082B555DF3000784DF /* UserIO.swift in Sources */,
+				5BA0920A2B555DF3000784DF /* DeviceId.swift in Sources */,
+				5BA092062B555DF3000784DF /* ConnectOperation.swift in Sources */,
 				5B75BB282B1CDB10007078BE /* DeviceManagerDemo.swift in Sources */,
+				5BA0920D2B555DF3000784DF /* Echo.swift in Sources */,
+				5BA092152B555DF3000784DF /* CommandDataTypes.swift in Sources */,
+				5BA0920B2B555DF3000784DF /* Navigation.swift in Sources */,
+				5BA092142B555DF3000784DF /* CommandOperation.swift in Sources */,
+				5BA092122B555DF3000784DF /* CommandQueue.swift in Sources */,
+				5BA092072B555DF3000784DF /* PeerConnection.swift in Sources */,
+				5BA0920E2B555DF3000784DF /* Characteristics.swift in Sources */,
+				5BA092112B555DF3000784DF /* Command.swift in Sources */,
+				5BA092022B555DF3000784DF /* Constants.swift in Sources */,
+				5BA092132B555DF3000784DF /* CommandResult.swift in Sources */,
+				5BA092042B555DF3000784DF /* PeripheralOperation.swift in Sources */,
+				5BA0920C2B555DF3000784DF /* Sensor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

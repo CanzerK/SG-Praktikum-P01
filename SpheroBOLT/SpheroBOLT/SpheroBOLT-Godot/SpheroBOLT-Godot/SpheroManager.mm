@@ -63,8 +63,6 @@
 - (void)deviceCoordinatorDidUpdateBluetoothState:(DeviceCoordinator * _Nonnull)deviceCoordinator
 										   state:(CBManagerState)state
 {
-//	NSLog(@"%ld", (long)state);
-
 	_godotManager->emit_signal("managerStateUpdated", Variant((int)state));
 }
 

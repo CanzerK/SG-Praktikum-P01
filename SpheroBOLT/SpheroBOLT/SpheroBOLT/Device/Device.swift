@@ -134,23 +134,10 @@ import CoreBluetooth
 			}
 
 			switch result {
-			case .success(let progress):
-				switch progress {
-					case .updated(let state):
-					self.delegate?.deviceDidUpdateConnectionState?(self, state: state)
+			case .success(_):
+				self.state = .connected
 
-						switch state {
-						case .connecting:
-							self.state = .connecting
-
-						case .connected:
-							// At this point we know we have successfully passed the antidos protection and we are connected to the central manager.
-							self.state = .connected
-						default: break
-						}
-					default:
-						self.state = .connected
-				}
+				self.delegate?.deviceDidUpdateConnectionState?(self, state: .connected)
 			case .failure(let error):
 				self.state = .discovered
 

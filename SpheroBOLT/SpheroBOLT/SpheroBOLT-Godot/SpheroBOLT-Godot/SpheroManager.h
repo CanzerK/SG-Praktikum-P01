@@ -22,6 +22,20 @@ class SpheroManager;
 
 @end
 
+class SpheroDevice : public Object
+{
+	NS_ASSUME_NONNULL_BEGIN
+	GDCLASS(SpheroDevice, Object);
+	NS_ASSUME_NONNULL_END
+
+	static void _bind_methods();
+
+public:
+
+private:
+	Device* _Nullable _device = nullptr;
+};
+
 class SpheroManager : public Object
 {
 	NS_ASSUME_NONNULL_BEGIN

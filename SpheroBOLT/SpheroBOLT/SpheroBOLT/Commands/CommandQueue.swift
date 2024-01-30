@@ -23,14 +23,7 @@ import Combine
 /// The connection state during a device connection.
 @objc public enum ConnectionState: Int {
 	case connecting
-	case interrogating
-	case acknowledging
 	case connected
-}
-
-enum ConnectionProgress {
-	case updated(_ state: ConnectionState)
-	case completed(_ apiCharacteristic: CBCharacteristic)
 }
 
 //<R: DataInitializable>
@@ -90,7 +83,7 @@ class CommandQueue {
 		operationQueue.cancelAllOperations()
 	}
 
-	func connect(_ device: Device, completion: ((Result<ConnectionProgress, DeviceError>) -> Void)?) {
+	func connect(_ device: Device, completion: ((Result<CBCharacteristic, DeviceError>) -> Void)?) {
 		let operation = ConnectOperation(peripheral: peripheral,
 										 completion: { [weak self] result in
 			guard let self = self else {
@@ -98,12 +91,7 @@ class CommandQueue {
 			}
 
 			switch result {
-			case .success(let progress):
-				switch progress {
-				case .completed(let characteristic):
-					self.apiCharacteristic = characteristic
-				case .updated(_): break
-				}
+			case .success(let characteristic): self.apiCharacteristic = characteristic
 			case .failure(_): break
 			}
 

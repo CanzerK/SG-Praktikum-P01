@@ -28,7 +28,7 @@ extension Array {
 }
 
 /// A connection operation that returns the api characteristics once finished.
-final class ConnectOperation: PeripheralOperation<ConnectionProgress>, CBPeripheralDelegate {
+final class ConnectOperation: PeripheralOperation<CBCharacteristic>, CBPeripheralDelegate {
 	/// Bluetooth characteristic for API calls.
 	private var discoveredCharacteristics = Array<CBCharacteristic?>(repeating: nil, count: DeviceCharacteristics.allCases.count)
 
@@ -36,7 +36,7 @@ final class ConnectOperation: PeripheralOperation<ConnectionProgress>, CBPeriphe
 	private var descriptorSet = false
 
 	init(peripheral: CBPeripheral,
-		 completion: ((Result<ConnectionProgress, DeviceError>) -> Void)?) {
+		 completion: ((Result<CBCharacteristic, DeviceError>) -> Void)?) {
 		super.init(Constants.antidosData,
 				   peripheral: peripheral,
 				   completion: completion)
@@ -55,7 +55,7 @@ final class ConnectOperation: PeripheralOperation<ConnectionProgress>, CBPeriphe
 	}
 
 	internal func complete(_ apiCharacteristic: CBCharacteristic) {
-		completion?(.success(.completed(apiCharacteristic)))
+		completion?(.success(apiCharacteristic))
 
 		finish()
 	}
