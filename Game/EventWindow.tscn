@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdtqmmf6i2xoy"]
+[gd_scene load_steps=3 format=3 uid="uid://bdtqmmf6i2xoy"]
 
-[sub_resource type="GDScript" id="GDScript_lwlqw"]
+[sub_resource type="GDScript" id="GDScript_4wb85"]
 resource_name = "Init_Event_Window"
 script/source = "extends Sprite2D
 
@@ -70,7 +70,16 @@ func load_json_file(filePath : String):
 	
 "
 
-[node name="EventWindow" type="Node2D"]
+[sub_resource type="Theme" id="Theme_t8yp5"]
+default_font_size = 13
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Window" type="Window" parent="."]
 initial_position = 3
@@ -82,24 +91,18 @@ position = Vector2(70, 30)
 scale = Vector2(0.25, 0.25)
 centered = false
 region_rect = Rect2(0, 0, 1024, 1024)
-script = SubResource("GDScript_lwlqw")
+script = SubResource("GDScript_4wb85")
 
 [node name="EventText" type="Label" parent="Window"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 4569.0
-offset_bottom = 4349.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 197.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "Displaying exceptional skill and coordination, the firefighters of the Darmsville Fire Department meticulously extricate the trapped person from the wreckage. Using specialized equipment and techniques, they carefully navigate the damaged vehicle, ensuring the safety of both the rescuers and the individual inside. The relieved onlookers witness the successful rescue, expressing gratitude for the swift and efficient response of the firefighters. The rescued individual, though shaken, is in the capable hands of the emergency medical team, receiving prompt attention for a swift recovery.
-"
+grow_vertical = 2
+theme = SubResource("Theme_t8yp5")
 horizontal_alignment = 1
 vertical_alignment = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 323)
+autowrap_mode = 3
