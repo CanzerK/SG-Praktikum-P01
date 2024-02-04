@@ -1,0 +1,151 @@
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://bt2457pxcgln2"]
+
+[ext_resource type="FontFile" uid="uid://cpw7iotat8swy" path="res://Assets/ui/fonts/kenvector_future_thin.ttf" id="1_akvtf"]
+[ext_resource type="StyleBox" uid="uid://dqh4256uuwa3v" path="res://ui/button_normal.tres" id="2_p8yph"]
+[ext_resource type="StyleBox" uid="uid://11u6v3f5uvgk" path="res://ui/button_pressed.tres" id="3_yjyo1"]
+[ext_resource type="FontFile" uid="uid://b3ikqpaufcvxp" path="res://Assets/ui/fonts/kenvector_future.ttf" id="4_hb2f5"]
+[ext_resource type="Texture2D" uid="uid://cxkx1u7gc1onn" path="res://Assets/ui/ui_pack_vector.svg" id="4_wfbfj"]
+[ext_resource type="StyleBox" uid="uid://cj2uxxwp06i06" path="res://ui/button_disabled.tres" id="5_d2xdn"]
+[ext_resource type="StyleBox" uid="uid://c6winc6y0u72w" path="res://ui/label.tres" id="6_5b4v2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqqdi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prwrv"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(195, 540, 45, 45)
+margin = Rect2(-4, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ke6"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(245, 540, 45, 45)
+margin = Rect2(-4, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udi33"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(195, 435, 45, 45)
+margin = Rect2(-4, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aick"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(245, 435, 45, 45)
+margin = Rect2(-4, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdlyj"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(0, 435, 40, 45)
+margin = Rect2(1, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6vl0"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(0, 435, 40, 45)
+margin = Rect2(1, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrvmy"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(0, 540, 40, 45)
+margin = Rect2(1, -4, -4, -4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlala"]
+atlas = ExtResource("4_wfbfj")
+region = Rect2(0, 540, 40, 45)
+margin = Rect2(1, -4, -4, -4)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1f7t"]
+texture = ExtResource("4_wfbfj")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(480, 305, 110, 110)
+modulate_color = Color(1, 1, 1, 0.627451)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tokq3"]
+texture = ExtResource("4_wfbfj")
+texture_margin_left = 15.0
+texture_margin_right = 15.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(675, 680, 60, 50)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_akvtf")
+Button/styles/disabled = SubResource("StyleBoxFlat_jqqdi")
+Button/styles/focus = ExtResource("3_yjyo1")
+Button/styles/hover = ExtResource("2_p8yph")
+Button/styles/normal = ExtResource("3_yjyo1")
+Button/styles/pressed = ExtResource("3_yjyo1")
+CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckBox/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+CheckBox/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+CheckBox/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_outline_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/constants/check_v_offset = 0
+CheckBox/constants/h_separation = 4
+CheckBox/constants/outline_size = 0
+CheckBox/font_sizes/font_size = 19
+CheckBox/fonts/font = ExtResource("1_akvtf")
+CheckBox/icons/checked = SubResource("AtlasTexture_prwrv")
+CheckBox/icons/checked_disabled = SubResource("AtlasTexture_t8ke6")
+CheckBox/icons/radio_checked = SubResource("AtlasTexture_udi33")
+CheckBox/icons/radio_checked_disabled = SubResource("AtlasTexture_2aick")
+CheckBox/icons/radio_unchecked = SubResource("AtlasTexture_gdlyj")
+CheckBox/icons/radio_unchecked_disabled = SubResource("AtlasTexture_a6vl0")
+CheckBox/icons/unchecked = SubResource("AtlasTexture_jrvmy")
+CheckBox/icons/unchecked_disabled = SubResource("AtlasTexture_wlala")
+CheckBox/styles/disabled = ExtResource("5_d2xdn")
+CheckBox/styles/focus = ExtResource("2_p8yph")
+CheckBox/styles/hover = ExtResource("2_p8yph")
+CheckBox/styles/hover_pressed = ExtResource("3_yjyo1")
+CheckBox/styles/normal = ExtResource("2_p8yph")
+CheckBox/styles/pressed = ExtResource("3_yjyo1")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/fonts/font = ExtResource("4_hb2f5")
+ItemList/styles/panel = SubResource("StyleBoxTexture_p1f7t")
+ItemList/styles/selected = SubResource("StyleBoxTexture_tokq3")
+Label/colors/font_color = Color(0.313726, 0.643137, 0.862745, 1)
+Label/colors/font_outline_color = Color(0.152941, 0.152941, 0.152941, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("4_hb2f5")
+Label/styles/normal = ExtResource("6_5b4v2")
+LineEdit/fonts/font = ExtResource("1_akvtf")
+MenuButton/fonts/font = ExtResource("4_hb2f5")
+TabBar/fonts/font = ExtResource("1_akvtf")
+TextEdit/fonts/font = ExtResource("1_akvtf")
+Tree/fonts/font = ExtResource("1_akvtf")
+Tree/fonts/title_button_font = ExtResource("4_hb2f5")

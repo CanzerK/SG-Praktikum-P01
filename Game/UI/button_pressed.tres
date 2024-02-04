@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://11u6v3f5uvgk"]
+
+[ext_resource type="Texture2D" uid="uid://cxkx1u7gc1onn" path="res://Assets/ui/ui_pack_vector.svg" id="1_n5fiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yled2"]
+atlas = ExtResource("1_n5fiu")
+
+[resource]
+texture = SubResource("AtlasTexture_yled2")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(840, 240, 195, 55)

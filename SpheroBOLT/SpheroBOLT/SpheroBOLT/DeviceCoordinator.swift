@@ -54,6 +54,11 @@ import Combine
 	/// Delegate that listens for messages sent by the coordinator.
 	@objc public weak var delegate: DeviceCoordinatorDelegate?
 
+	/// Returns the state of the bluetooth manager.
+	@objc public var state: CBManagerState {
+		return centralManager.state
+	}
+
 	public override init() {
 		super.init()
 

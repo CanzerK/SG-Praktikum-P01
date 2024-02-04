@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Sg-praktikum-p 01"
-run/main_scene="res://node_3d.tscn"
+config/name="Urban Heroes"
+run/main_scene="res://ui/lobby.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DeviceManager="*res://scripts/device_manager.gd"
 
 [display]
 
@@ -31,3 +35,6 @@ import/fbx/enabled=false
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/screen_space_aa=1

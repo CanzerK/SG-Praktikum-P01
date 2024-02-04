@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://d3w0sau70gjj1"]
+[gd_scene load_steps=2 format=3 uid="uid://d3w0sau70gjj1"]
+
+[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="1_ednwg"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -8,23 +10,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -15.5
-offset_right = 48.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
+anchors_preset = -1
+anchor_left = 0.36
+anchor_top = 0.6
+anchor_right = 0.65
+anchor_bottom = 0.75
+theme = ExtResource("1_ednwg")
+theme_override_font_sizes/font_size = 35
 text = "Start Game"

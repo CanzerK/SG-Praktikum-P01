@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B120C132B6EC09D007391ED /* ObjCPtr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B120C122B6EC09D007391ED /* ObjCPtr.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5BDE25D42B2E33A300FED5A4 /* GodotSphero.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */; };
-		5BDE25D52B2E33A300FED5A4 /* SpheroManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */; };
+		5BDE25D52B2E33A300FED5A4 /* SpheroManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5BDE25F22B2E33DE00FED5A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DA2B2E33DE00FED5A4 /* Constants.swift */; };
 		5BDE25F32B2E33DE00FED5A4 /* DeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DB2B2E33DE00FED5A4 /* DeviceCoordinator.swift */; };
 		5BDE25F42B2E33DE00FED5A4 /* PeripheralOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DD2B2E33DE00FED5A4 /* PeripheralOperation.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B120C122B6EC09D007391ED /* ObjCPtr.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ObjCPtr.mm; sourceTree = "<group>"; };
 		5BDE25C42B2E332D00FED5A4 /* libSpheroBOLT-Godot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSpheroBOLT-Godot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GodotSphero.mm; sourceTree = "<group>"; };
 		5BDE25D12B2E33A300FED5A4 /* GodotSphero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GodotSphero.h; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				5BDE25D22B2E33A300FED5A4 /* SpheroManager.h */,
 				5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */,
 				5BDE25D62B2E33CE00FED5A4 /* SpheroBOLT-Godot-Bridging-Header.h */,
+				5B120C122B6EC09D007391ED /* ObjCPtr.mm */,
 			);
 			path = "SpheroBOLT-Godot";
 			sourceTree = "<group>";
@@ -211,7 +214,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					5BDE25C32B2E332D00FED5A4 = {
 						CreatedOnToolsVersion = 15.1;
@@ -257,6 +260,7 @@
 				5BDE25FE2B2E33DF00FED5A4 /* Characteristics.swift in Sources */,
 				5BDE25F72B2E33DE00FED5A4 /* PeerConnection.swift in Sources */,
 				5BDE26032B2E33DF00FED5A4 /* CommandResult.swift in Sources */,
+				5B120C132B6EC09D007391ED /* ObjCPtr.mm in Sources */,
 				5BDE25F52B2E33DE00FED5A4 /* QueueOperation.swift in Sources */,
 				5BDE25FD2B2E33DF00FED5A4 /* Echo.swift in Sources */,
 				5BDE25F42B2E33DE00FED5A4 /* PeripheralOperation.swift in Sources */,
@@ -306,6 +310,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -325,6 +330,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -370,6 +377,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -383,10 +391,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_MODULE_NAME = SpheroBOLT;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				VALIDATE_PRODUCT = YES;
 			};
