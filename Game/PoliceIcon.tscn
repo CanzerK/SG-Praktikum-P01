@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://g31758i1gw2"]
+
+[ext_resource type="Texture2D" uid="uid://cui6dnxv0n0sk" path="res://Assets/Icons/vecteezy_police-car-icon-on-transparent-background_17177796.png" id="1_3k76a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faei7"]
+albedo_color = Color(0, 0, 1, 1)
+albedo_texture = ExtResource("1_3k76a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x78xo"]
+albedo_texture = ExtResource("1_3k76a")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pvn0g"]
+material = SubResource("StandardMaterial3D_x78xo")
+
+[node name="PoliceIcon" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_faei7")
+mesh = SubResource("PlaneMesh_pvn0g")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bec54tjgnp2dh"]
+
+[ext_resource type="Texture2D" uid="uid://ncbw6thwatxi" path="res://Assets/Generic Items/Button/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg" id="1_jrcs5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u6x72"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gjev"]
+albedo_texture = ExtResource("1_jrcs5")
+
+[node name="Ambulance_Icon" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_u6x72")
+surface_material_override/0 = SubResource("StandardMaterial3D_1gjev")

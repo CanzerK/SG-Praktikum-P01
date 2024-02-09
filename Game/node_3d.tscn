@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cvm2w7iu6f6dt"]
+[gd_scene load_steps=41 format=3 uid="uid://cvm2w7iu6f6dt"]
 
 [ext_resource type="PackedScene" uid="uid://dw75p503bbcyj" path="res://Assets/Roads/road_straight.glb" id="1_1tlyp"]
 [ext_resource type="PackedScene" uid="uid://d1tpnocnle1o6" path="res://Assets/Roads/road_bend.glb" id="2_nrqb8"]
@@ -25,9 +25,13 @@
 [ext_resource type="PackedScene" uid="uid://nou3it5i5ms7" path="res://Assets/Car/firetruck.glb" id="23_2b3nr"]
 [ext_resource type="PackedScene" uid="uid://dtlwa3h4jjq48" path="res://Assets/SubUrbanBuild/tree_small.glb" id="24_rxaft"]
 [ext_resource type="PackedScene" uid="uid://ccqv0vukw80rx" path="res://Assets/UrbanBuild/GLB/skyscraperE.glb" id="25_iva3t"]
+[ext_resource type="PackedScene" uid="uid://vpske6kqu380" path="res://FireIcon.tscn" id="26_bjwqs"]
+[ext_resource type="PackedScene" uid="uid://bec54tjgnp2dh" path="res://AmbulanceIcon.tscn" id="27_g0h56"]
+[ext_resource type="PackedScene" uid="uid://g31758i1gw2" path="res://PoliceIcon.tscn" id="28_l8s8w"]
 
 [sub_resource type="Environment" id="Environment_v10de"]
 reflected_light_source = 2
+glow_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_65va3"]
 
@@ -134,7 +138,8 @@ environment = SubResource("Environment_v10de")
 camera_attributes = SubResource("CameraAttributesPractical_65va3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.346854, -0.626931, 0.697603, -0.032757, 0.735226, 0.67703, -0.937347, -0.257682, 0.234479, 0, 107.482, 40.0934)
+transform = Transform3D(0.346854, -0.626931, 0.697603, -0.032757, 0.735226, 0.67703, -0.937347, -0.257682, 0.23448, 0, 140.965, -57.9661)
+shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
@@ -1427,6 +1432,15 @@ transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612,
 
 [node name="large_buildingC20" parent="." instance=ExtResource("3_weql7")]
 transform = Transform3D(8, 0, 9.53674e-07, 0, 8, 0, -9.53674e-07, 0, 8, 108.612, 0, -91.8566)
+
+[node name="Node3D" parent="." instance=ExtResource("26_bjwqs")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 19, 2, 7)
+
+[node name="Ambulance_Icon" parent="." instance=ExtResource("27_g0h56")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 13, 2, 7)
+
+[node name="PoliceIcon" parent="." instance=ExtResource("28_l8s8w")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 25, 2, 7)
 
 [editable path="Ambulance3"]
 [editable path="tile_low2"]

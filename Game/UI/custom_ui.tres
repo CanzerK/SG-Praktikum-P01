@@ -1,12 +1,12 @@
 [gd_resource type="Theme" load_steps=19 format=3 uid="uid://bt2457pxcgln2"]
 
-[ext_resource type="FontFile" uid="uid://cpw7iotat8swy" path="res://Assets/ui/fonts/kenvector_future_thin.ttf" id="1_akvtf"]
-[ext_resource type="StyleBox" uid="uid://dqh4256uuwa3v" path="res://ui/button_normal.tres" id="2_p8yph"]
-[ext_resource type="StyleBox" uid="uid://11u6v3f5uvgk" path="res://ui/button_pressed.tres" id="3_yjyo1"]
-[ext_resource type="FontFile" uid="uid://b3ikqpaufcvxp" path="res://Assets/ui/fonts/kenvector_future.ttf" id="4_hb2f5"]
-[ext_resource type="Texture2D" uid="uid://cxkx1u7gc1onn" path="res://Assets/ui/ui_pack_vector.svg" id="4_wfbfj"]
-[ext_resource type="StyleBox" uid="uid://cj2uxxwp06i06" path="res://ui/button_disabled.tres" id="5_d2xdn"]
-[ext_resource type="StyleBox" uid="uid://c6winc6y0u72w" path="res://ui/label.tres" id="6_5b4v2"]
+[ext_resource type="FontFile" uid="uid://cpw7iotat8swy" path="res://Assets/UI/fonts/kenvector_future_thin.ttf" id="1_akvtf"]
+[ext_resource type="StyleBox" uid="uid://dqh4256uuwa3v" path="res://UI/button_normal.tres" id="2_p8yph"]
+[ext_resource type="StyleBox" uid="uid://11u6v3f5uvgk" path="res://UI/button_pressed.tres" id="3_yjyo1"]
+[ext_resource type="FontFile" uid="uid://b3ikqpaufcvxp" path="res://Assets/UI/fonts/kenvector_future.ttf" id="4_hb2f5"]
+[ext_resource type="Texture2D" uid="uid://cxkx1u7gc1onn" path="res://Assets/UI/ui_pack_vector.svg" id="4_wfbfj"]
+[ext_resource type="StyleBox" uid="uid://cj2uxxwp06i06" path="res://UI/button_disabled.tres" id="5_d2xdn"]
+[ext_resource type="StyleBox" uid="uid://c6winc6y0u72w" path="res://UI/label.tres" id="6_5b4v2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqqdi"]
 content_margin_left = 4.0

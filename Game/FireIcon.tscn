@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://vpske6kqu380"]
+
+[ext_resource type="Texture2D" uid="uid://c78dhsdcoiqtr" path="res://Assets/Generic Items/Button/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg" id="1_4n04a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdrqh"]
+albedo_color = Color(0.598014, 0, 0.0442486, 1)
+albedo_texture = ExtResource("1_4n04a")
+emission_enabled = true
+emission = Color(0.976471, 0, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w4j8r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0620037, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kdrqh")
+mesh = SubResource("PlaneMesh_w4j8r")
