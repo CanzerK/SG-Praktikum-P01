@@ -1182,9 +1182,6 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.0571, 0, -77.5647)
 [node name="skyscraperA3" parent="." instance=ExtResource("16_ldmx6")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 28.1195, 0, -77.0638)
 
-[node name="skyscraperF2" parent="skyscraperA3" instance=ExtResource("17_pi8qs")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 13.5682, 0, -76.6605)
-
 [node name="skyscraperF2" parent="." instance=ExtResource("17_pi8qs")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 13.5682, 0, -76.6605)
 
