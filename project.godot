@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="next_try"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Online="*res://addons/NakamaOnline/Online.gd"
+OnlineMatch="*res://addons/NakamaOnline/OnlineMatch.gd"
+Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
+
+[debug]
+
+multirun/number_of_windows=2
+multirun/add_custom_args=true
+multirun/window_args=["listen", "join"]
+
+[dotnet]
+
+project/assembly_name="next_try"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/multirun/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
