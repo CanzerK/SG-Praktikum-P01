@@ -11,30 +11,59 @@ config_version=5
 [application]
 
 config/name="Urban Heroes"
-run/main_scene="res://ui/lobby.tscn"
+run/main_scene="res://scenes/game/game.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DeviceManager="*res://scripts/device_manager.gd"
-
-[display]
-
-window/subwindows/embed_subwindows=false
+InputManager="*res://addons/InputManager.gd"
 
 [dotnet]
 
 project/assembly_name="Sg-praktikum-p 01"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+
 [filesystem]
 
 import/fbx/enabled=false
 
+[input]
+
+pinch_inward={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+pinch_outward={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+3d_physics/layer_1="Bodies"
+3d_physics/layer_3="Terrain"
+
 [rendering]
 
+occlusion_culling/bvh_build_quality=1
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+shading/overrides/force_vertex_shading.mobile=false
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
+occlusion_culling/use_occlusion_culling=true
+quality/filters/use_nearest_mipmap_filter=true
+quality/filters/msaa=2
+quality/intended_usage/framebuffer_allocation.mobile=0

@@ -1,0 +1,31 @@
+[gd_resource type="Terrain3DTextureList" load_steps=10 format=3 uid="uid://dk3u2fyp0xvyy"]
+
+[ext_resource type="Texture2D" uid="uid://c12klwbkumn7" path="res://assets/textures/stylized_grass_basecolor_packed.png" id="1_w7t6a"]
+[ext_resource type="Texture2D" uid="uid://53e3mucdb8kh" path="res://assets/textures/stylized_grass_normal_packed.png" id="2_bjy41"]
+[ext_resource type="Texture2D" uid="uid://b55r4gow61q34" path="res://assets/textures/stylized_ground_basecolor_packed.png" id="3_vaev0"]
+[ext_resource type="Texture2D" uid="uid://dve7hy0cp0ua1" path="res://assets/textures/stylized_ground_normal_packed.png" id="4_aelj8"]
+[ext_resource type="Texture2D" uid="uid://chd84sic061x0" path="res://assets/textures/stylized_rock_basecolor.png" id="5_ar6jp"]
+[ext_resource type="Texture2D" uid="uid://bc0mikw1wmmtt" path="res://assets/textures/stylized_rock_normal_packed.png" id="6_fd2xb"]
+
+[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_c8c1f"]
+albedo_texture = ExtResource("1_w7t6a")
+normal_texture = ExtResource("2_bjy41")
+uv_scale = 0.25
+uv_rotation = 0.15
+
+[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_gj7si"]
+texture_id = 1
+albedo_texture = ExtResource("3_vaev0")
+normal_texture = ExtResource("4_aelj8")
+uv_scale = 0.5
+uv_rotation = 0.25
+
+[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_ovb3j"]
+texture_id = 2
+albedo_texture = ExtResource("5_ar6jp")
+normal_texture = ExtResource("6_fd2xb")
+uv_scale = 0.8
+uv_rotation = 0.25
+
+[resource]
+textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_c8c1f"), SubResource("Terrain3DTexture_gj7si"), SubResource("Terrain3DTexture_ovb3j")])

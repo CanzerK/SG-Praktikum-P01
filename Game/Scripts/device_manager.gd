@@ -36,14 +36,12 @@ func _init():
 		_sphero_manager.connect("manager_state_updated", _on_manager_state_updated)
 		_sphero_manager.connect("manager_did_find_device", _on_manager_did_find_device)
 		_sphero_manager.connect("manager_did_disconnect_device", _on_manager_did_disconnect_device)
-		
-		if (_sphero_manager.get_state() == MANAGER_STATE.POWERED_ON):
-			_sphero_manager.find_devices()
-			
+
+func _find_devices():
+	if (_sphero_manager.get_state() == MANAGER_STATE.POWERED_ON):
+		_sphero_manager.find_devices()
 
 func _on_manager_state_updated(state):
-	print(state)
-	
 	if (state == MANAGER_STATE.POWERED_ON):
 		_sphero_manager.find_devices()
 	

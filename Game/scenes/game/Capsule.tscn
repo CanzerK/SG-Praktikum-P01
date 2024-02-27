@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4fjl4x622anc"]
+
+[sub_resource type="GDScript" id="GDScript_mh3me"]
+script/source = "extends CharacterBody3D
+
+
+const SPEED = 10.0
+const VELO = 10.0
+
+@onready var nav = $NavigationAgent3D
+@onready var Target = $\"../Target\"
+
+func _physics_process(delta):
+	return
+	
+	var direction = Vector3()
+	
+	nav.target_position = Target.global_position
+	direction = nav.get_next_path_position() - global_position
+	direction = direction.normalized()
+	
+	velocity = velocity.lerp(direction * SPEED , VELO * delta)
+	move_and_slide()
+	
+ 
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46lex"]
+albedo_color = Color(0.596078, 0, 0.0431373, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bytlx"]
+material = SubResource("StandardMaterial3D_46lex")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58a8a"]
+
+[node name="Capsule" type="CharacterBody3D" groups=["enemies"]]
+script = SubResource("GDScript_mh3me")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_bytlx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_58a8a")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
