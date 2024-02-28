@@ -20,6 +20,5 @@ macos.release = "res://addons/terrain_3d/bin/libterrain.macos.release.framework"
 
 android.debug.arm64 = "res://addons/terrain_3d/bin/libterrain.android.debug.arm64.so"
 android.release.arm64 = "res://addons/terrain_3d/bin/libterrain.android.release.arm64.so"
-
-ios.debug = "res://addons/terrain_3d/bin/libterrain.ios.debug.arm64.dylib"
-ios.release = "res://addons/terrain_3d/bin/libterrain.ios.release.arm64.dylib"
+ios.debug.arm64 = "res://addons/terrain_3d/bin/libterrain.ios.debug.arm64.dylib"
+ios.release.arm64 = "res://addons/terrain_3d/bin/libterrain.ios.release.arm64.dylib"

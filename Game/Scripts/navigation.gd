@@ -33,37 +33,11 @@ func _zoom(event: InputEventScreenPinch):
 		zd = zf - zi
 		
 	current_camera_dist = zf
-	
-	#var camera_origin = get_global_transform().origin
-	#var camera_dir = get_global_transform().basis.z
-	
-	#current_camera_position = hit_position + camera_dir * distance
-		
-#func _zoom(event):
-	#var li = event.distance
-	#var lf = event.distance - event.relative
-#
-	#var zi = zoom.x
-	#var zf = (li * zi)/lf
-	#var zd = zf - zi
-	#
-	#if zf <= min_zoom and sign(zd) < 0:
-		#zf = min_zoom
-		#zd = zf - zi
-	#elif zf >= max_zoom and sign(zd) > 0:
-		#zf = max_zoom
-		#zd = zf - zi
-	#
-	#zoom = zf * Vector2.ONE
-#
-	#var from_camera_center_pos = event.position - get_camera_center_offset()
-	#var relative = (from_camera_center_pos * zd) / (zi * zf) 
-	#
-	#if (!set_camera_position(position + relative.rotated(rotation))):
-		#zoom = zi * Vector2.ONE
-		#
 
 func _ready():
+	# Set the terrain camera - seems important.
+	terrain.set_camera(camera)
+	
 	# Raycast from the original camera position to the terrain to reposition it at the initial distance.
 	var camera_origin = camera.get_global_transform().origin
 	var camera_dir = get_global_transform().basis.z

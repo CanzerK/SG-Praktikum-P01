@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://cvtex4mm8hnqo"]
+[gd_scene load_steps=82 format=3 uid="uid://cvtex4mm8hnqo"]
 
 [ext_resource type="Texture2D" uid="uid://p58uibd4xpj3" path="res://assets/skybox/skybox.png" id="1_03hob"]
 [ext_resource type="PackedScene" uid="uid://dw75p503bbcyj" path="res://assets/meshes/roads/road_straight.glb" id="2_wk4sm"]
@@ -10,13 +10,6 @@
 [ext_resource type="Shader" path="res://assets/shaders/vignette.gdshader" id="8_h4m78"]
 [ext_resource type="PackedScene" uid="uid://ct0oa7rampcmb" path="res://assets/meshes/roads/tile_low.glb" id="9_lvkud"]
 [ext_resource type="Terrain3DStorage" uid="uid://bphlq21kqloxa" path="res://resources/terrain_storage.res" id="10_7m4iv"]
-[ext_resource type="Terrain3DMaterial" uid="uid://dhppteotut0d0" path="res://assets/materials/terrain.tres" id="11_36vkp"]
-[ext_resource type="Texture2D" uid="uid://c12klwbkumn7" path="res://assets/textures/stylized_grass_basecolor_packed.png" id="12_ugyka"]
-[ext_resource type="Texture2D" uid="uid://53e3mucdb8kh" path="res://assets/textures/stylized_grass_normal_packed.png" id="13_vu4da"]
-[ext_resource type="Texture2D" uid="uid://b55r4gow61q34" path="res://assets/textures/stylized_ground_basecolor_packed.png" id="14_44opn"]
-[ext_resource type="Texture2D" uid="uid://dve7hy0cp0ua1" path="res://assets/textures/stylized_ground_normal_packed.png" id="15_ymeqx"]
-[ext_resource type="Texture2D" uid="uid://chd84sic061x0" path="res://assets/textures/stylized_rock_basecolor.png" id="16_12rgw"]
-[ext_resource type="Texture2D" uid="uid://bc0mikw1wmmtt" path="res://assets/textures/stylized_rock_normal_packed.png" id="17_ov1q5"]
 [ext_resource type="Material" uid="uid://c7mw5tryqfggw" path="res://addons/proton_scatter/demos/assets/materials/m_water.tres" id="18_ea8gs"]
 [ext_resource type="PackedScene" uid="uid://ccqv0vukw80rx" path="res://assets/meshes/buildings/skyscraperE.glb" id="19_oxlf8"]
 [ext_resource type="PackedScene" uid="uid://bq2vp848gmxnk" path="res://assets/meshes/buildings/skyscraperF.glb" id="20_lrf4n"]
@@ -42,10 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://b3w1gnjckrt2y" path="res://assets/meshes/buildings/large_buildingE.glb" id="40_ny34j"]
 [ext_resource type="PackedScene" uid="uid://c5xu5aldqk3d7" path="res://assets/meshes/buildings/sign_hospital.glb" id="41_j8uy7"]
 [ext_resource type="PackedScene" uid="uid://0a2c8p8c1gsg" path="res://assets/meshes/cars/ambulance.glb" id="42_0torm"]
+[ext_resource type="Terrain3DTextureList" uid="uid://dk3u2fyp0xvyy" path="res://resources/terrain_textures.tres" id="42_2iup6"]
 [ext_resource type="PackedScene" uid="uid://dmtvstnw1w6m" path="res://assets/meshes/buildings/large_buildingA.glb" id="43_hbpgv"]
 [ext_resource type="PackedScene" uid="uid://btsntlic74irq" path="res://assets/meshes/cars/police.glb" id="44_ed8sw"]
 [ext_resource type="PackedScene" uid="uid://dek344agwkkqw" path="res://assets/meshes/buildings/large_buildingG.glb" id="45_rts5x"]
-[ext_resource type="PackedScene" uid="uid://nou3it5i5ms7" path="res://assets/meshes/cars/firetruck.glb" id="46_i6dxy"]
 [ext_resource type="PackedScene" uid="uid://bhuyolt4yxip6" path="res://assets/meshes/fences/path_long.glb" id="47_bvh4k"]
 [ext_resource type="PackedScene" uid="uid://btg7t10pu7wic" path="res://scenes/game/ambulance.tscn" id="48_ih5lh"]
 [ext_resource type="PackedScene" uid="uid://cxibdniqxnxi8" path="res://assets/city/building_H.gltf" id="49_6dbqw"]
@@ -89,29 +82,6 @@ shader_parameter/blur_outer = 0.66
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b18ej"]
 albedo_color = Color(0.0745098, 0.427451, 0.0823529, 1)
-
-[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_c8c1f"]
-albedo_texture = ExtResource("12_ugyka")
-normal_texture = ExtResource("13_vu4da")
-uv_scale = 0.25
-uv_rotation = 0.15
-
-[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_gj7si"]
-texture_id = 1
-albedo_texture = ExtResource("14_44opn")
-normal_texture = ExtResource("15_ymeqx")
-uv_scale = 0.5
-uv_rotation = 0.25
-
-[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_ovb3j"]
-texture_id = 2
-albedo_texture = ExtResource("16_12rgw")
-normal_texture = ExtResource("17_ov1q5")
-uv_scale = 0.8
-uv_rotation = 0.25
-
-[sub_resource type="Terrain3DTextureList" id="Terrain3DTextureList_5jth3"]
-textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_c8c1f"), SubResource("Terrain3DTexture_gj7si"), SubResource("Terrain3DTexture_ovb3j")])
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ovss5"]
 lightmap_size_hint = Vector2i(252, 352)
@@ -285,16 +255,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8e4vb")
 
-[sub_resource type="Resource" id="Resource_o68n1"]
+[sub_resource type="Resource" id="Resource_q8x4h"]
 script = ExtResource("31_bpdj3")
-amount = 4000
+amount = 2000
 enabled = true
 override_global_seed = false
 custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_3dj3r"]
+[sub_resource type="Resource" id="Resource_7a2ga"]
 script = ExtResource("32_l6glh")
 position = Vector3(0.25, 0.25, 0.25)
 rotation = Vector3(2.08167e-15, 2.08167e-15, 2.08167e-15)
@@ -305,7 +275,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_33new"]
+[sub_resource type="Resource" id="Resource_ldl24"]
 script = ExtResource("33_jw0xa")
 iterations = 6
 offset_step = 0.2
@@ -317,7 +287,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_n8ca5"]
+[sub_resource type="Resource" id="Resource_vi8av"]
 script = ExtResource("34_5wsus")
 terrain_node = NodePath("../../Terrain")
 align_with_collision_normal = false
@@ -327,9 +297,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_ek0vb"]
+[sub_resource type="Resource" id="Resource_lq288"]
 script = ExtResource("30_13pc7")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_o68n1"), SubResource("Resource_3dj3r"), SubResource("Resource_33new"), SubResource("Resource_n8ca5")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_q8x4h"), SubResource("Resource_7a2ga"), SubResource("Resource_ldl24"), SubResource("Resource_vi8av")])
 
 [sub_resource type="Resource" id="Resource_64uum"]
 script = ExtResource("37_b83cm")
@@ -347,7 +317,7 @@ size = Vector3(1, 1, 1)
 script = ExtResource("37_b83cm")
 size = Vector3(1, 1, 1)
 
-[sub_resource type="Resource" id="Resource_axse7"]
+[sub_resource type="Resource" id="Resource_4eopj"]
 script = ExtResource("31_bpdj3")
 amount = 20
 enabled = true
@@ -356,7 +326,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_u7slr"]
+[sub_resource type="Resource" id="Resource_wsk3j"]
 script = ExtResource("32_l6glh")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(2.08167e-15, 2.08167e-15, 2.08167e-15)
@@ -367,7 +337,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_vkeid"]
+[sub_resource type="Resource" id="Resource_2ygxe"]
 script = ExtResource("33_jw0xa")
 iterations = 3
 offset_step = 0.1
@@ -379,7 +349,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_fldrx"]
+[sub_resource type="Resource" id="Resource_kelq1"]
 script = ExtResource("34_5wsus")
 terrain_node = NodePath("../../Terrain")
 align_with_collision_normal = false
@@ -389,9 +359,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_7cm2j"]
+[sub_resource type="Resource" id="Resource_nscd6"]
 script = ExtResource("30_13pc7")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_axse7"), SubResource("Resource_u7slr"), SubResource("Resource_vkeid"), SubResource("Resource_fldrx")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_4eopj"), SubResource("Resource_wsk3j"), SubResource("Resource_2ygxe"), SubResource("Resource_kelq1")])
 
 [sub_resource type="Resource" id="Resource_m0vwe"]
 script = ExtResource("38_5ukp7")
@@ -472,6 +442,41 @@ func _physics_process(delta):
 	velocity = velocity.lerp(direction * SPEED , VELO * delta)
 	move_and_slide()  
 "
+
+[sub_resource type="Gradient" id="Gradient_48eiu"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tu7no"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ickgg"]
+seamless = true
+color_ramp = SubResource("Gradient_48eiu")
+noise = SubResource("FastNoiseLite_tu7no")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_a5ve7"]
+_shader_parameters = {
+"blend_sharpness": 0.87,
+"height_blending": true,
+"macro_variation1": Color(1, 1, 1, 1),
+"macro_variation2": Color(1, 1, 1, 1),
+"noise1_angle": 0.0,
+"noise1_offset": Vector2(0.5, 0.5),
+"noise1_scale": 0.04,
+"noise2_scale": 0.076,
+"noise3_scale": 0.225,
+"noise_texture": SubResource("NoiseTexture2D_ickgg")
+}
 
 [node name="World" type="Node3D"]
 
@@ -1299,7 +1304,7 @@ script = ExtResource("7_wp412")
 initial_distance = 80.0
 min_zoom = 25.0
 max_zoom = 180.0
-terrain = NodePath("../Terrain")
+terrain = NodePath("../Terrain3D")
 
 [node name="Camera" type="Camera3D" parent="CameraArm"]
 transform = Transform3D(1, 3.20473e-08, -2.21426e-08, -2.71046e-08, 1, 4.8989e-09, 2.23345e-08, 2.11444e-08, 1, 0, 0, 0)
@@ -1323,14 +1328,6 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 65.194, 0, -131.425)
 
 [node name="tile_low" parent="tile_low2/tmpParent" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_b18ej")
-
-[node name="Terrain" type="Terrain3D" parent="."]
-storage = ExtResource("10_7m4iv")
-material = ExtResource("11_36vkp")
-texture_list = SubResource("Terrain3DTextureList_5jth3")
-collision_layer = 4
-collision_mask = 4
-transform = Transform3D(1, -1.34546e-23, -8.36078e-24, 1.50273e-23, 1, 3.48306e-23, -3.42968e-23, 1.12681e-24, 1, 7.62939e-06, -4.76837e-07, 0)
 
 [node name="Lake" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.876357, 0, 0.481662, 0, 1, 0, -0.481662, 0, 0.876357, 34.6493, -2.5, -127.281)
@@ -1526,7 +1523,8 @@ skeleton = NodePath("")
 [node name="Trees" type="Node3D" parent="Foliage"]
 transform = Transform3D(25.1107, -3.27162e-16, 1.2661e-14, 8.75829e-15, 0.938, -1.2661e-14, -8.75829e-15, 3.27162e-16, 36.3, -92, 9.91022, -139.5)
 script = ExtResource("29_771mc")
-modifier_stack = SubResource("Resource_ek0vb")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_lq288")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -1562,7 +1560,7 @@ shape = SubResource("Resource_3tc7j")
 [node name="Bushes" type="Node3D" parent="Foliage"]
 transform = Transform3D(25, -3.48787e-16, 1.00985e-14, 8.71968e-15, 1, -1.00985e-14, -8.71968e-15, 3.48787e-16, 28.9532, 93.2687, 0.662099, -105.212)
 script = ExtResource("29_771mc")
-modifier_stack = SubResource("Resource_7cm2j")
+modifier_stack = SubResource("Resource_nscd6")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -1619,12 +1617,6 @@ transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -1.42668, 2.08165
 
 [node name="police" parent="Facilities/Police station" instance=ExtResource("45_rts5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.40576, 2.08165e-12, -0.414969)
-
-[node name="Fire office" parent="Facilities" instance=ExtResource("45_rts5x")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -17.1683, 2.08165e-12, -138.64)
-
-[node name="firetruck2" parent="Facilities/Fire office" instance=ExtResource("46_i6dxy")]
-transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 1.06692, 2.08165e-12, 1.04042)
 
 [node name="Paths" type="Node3D" parent="."]
 
@@ -1822,7 +1814,6 @@ light_energy = 1.247
 light_indirect_energy = 1.84
 light_volumetric_fog_energy = 1.577
 light_bake_mode = 1
-shadow_enabled = true
 shadow_normal_bias = 3.0
 shadow_opacity = 0.75
 shadow_blur = 3.0
@@ -1841,6 +1832,11 @@ max_texture_size = 8192
 
 [node name="building_H2" parent="." instance=ExtResource("49_6dbqw")]
 transform = Transform3D(-3.0598e-07, -2.44151e-15, -7, 2.44151e-15, 7, -2.44151e-15, 7, -2.44151e-15, -3.0598e-07, 108.765, 2.08082e-12, -36.1466)
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+storage = ExtResource("10_7m4iv")
+material = SubResource("Terrain3DMaterial_a5ve7")
+texture_list = ExtResource("42_2iup6")
 
 [editable path="tile_low2"]
 [editable path="Cars/Ambulance3"]

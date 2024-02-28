@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4bmvjdac22od"]
+
+[ext_resource type="LightmapGIData" uid="uid://crdnp4s4403aq" path="res://scenes/game/lightmap_test.lmbake" id="1_vusri"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lcj40"]
+lightmap_size_hint = Vector2i(14, 21)
+add_uv2 = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bunrh"]
+albedo_color = Color(0.054902, 0.286275, 1, 1)
+roughness = 0.8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8toex"]
+lightmap_size_hint = Vector2i(12, 12)
+add_uv2 = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.403545, -0.208932, 0.890785, 3.39572e-16, 0.973579, 0.228351, -0.91496, -0.0921499, 0.392883, 11.9501, 2.95805, 2.55938)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.85856, 0, 0, 0, 2.5162, 0, 0, 0, 5.50852, 3.90868, 1.07365, -0.231624)
+mesh = SubResource("BoxMesh_lcj40")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.80638, 0, 4.26928, 0, 2.5162, 0, -2.21548, 0, 3.48095, 1.889, 1.34099, -5.51673)
+mesh = SubResource("BoxMesh_lcj40")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.85856, 0, 0, 0, 2.5162, 0, 0, 0, 5.50852, 2.32068, 0.879357, 4.25249)
+mesh = SubResource("BoxMesh_lcj40")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.7, 0, 0, 0, 1, 0, 0, 0, 2.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bunrh")
+mesh = SubResource("PlaneMesh_8toex")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(0.403545, -0.208932, 0.890785, 3.39572e-16, 0.973579, 0.228351, -0.91496, -0.0921499, 0.392883, 11.9501, 2.95805, 2.55938)
+quality = 2
+directional = true
+light_data = ExtResource("1_vusri")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80541, 0.824686, 3.85392)
+light_energy = 3.91
+spot_range = 12.2954
+spot_angle = 26.9169

@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://cah3j38hmtdmf"
+path="res://.godot/imported/lightmap_test.exr-11e9637db58018bbd040028a610018a5.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://scenes/game/lightmap_test.exr"
+dest_files=["res://.godot/imported/lightmap_test.exr-11e9637db58018bbd040028a610018a5.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=4
