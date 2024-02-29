@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://btsntlic74irq"
-path="res://.godot/imported/police.glb-a3372fdb936d7ee5a973061b92510800.scn"
+path="res://.godot/imported/police.glb-d884140631e510158281dff3129d7b1b.scn"
 
 [deps]
 
-source_file="res://assets/meshes/cars/police.glb"
-dest_files=["res://.godot/imported/police.glb-a3372fdb936d7ee5a973061b92510800.scn"]
+source_file="res://Assets/meshes/cars/police.glb"
+dest_files=["res://.godot/imported/police.glb-d884140631e510158281dff3129d7b1b.scn"]
 
 [params]
 

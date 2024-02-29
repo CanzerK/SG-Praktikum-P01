@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5b62vv3wixjr"
-path="res://.godot/imported/fence_rectangle.glb-41f502b0ae315bbcef5eef04e671f6d2.scn"
+path="res://.godot/imported/fence_rectangle.glb-e7c97bf9b9d3899de7d81a50b87488db.scn"
 
 [deps]
 
-source_file="res://assets/meshes/fences/fence_rectangle.glb"
-dest_files=["res://.godot/imported/fence_rectangle.glb-41f502b0ae315bbcef5eef04e671f6d2.scn"]
+source_file="res://Assets/meshes/fences/fence_rectangle.glb"
+dest_files=["res://.godot/imported/fence_rectangle.glb-e7c97bf9b9d3899de7d81a50b87488db.scn"]
 
 [params]
 

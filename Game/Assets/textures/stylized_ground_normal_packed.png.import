@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dve7hy0cp0ua1"
-path.s3tc="res://.godot/imported/stylized_ground_normal_packed.png-9efeee31e2c946d6097a12a5a6a19469.s3tc.ctex"
-path.etc2="res://.godot/imported/stylized_ground_normal_packed.png-9efeee31e2c946d6097a12a5a6a19469.etc2.ctex"
+path.s3tc="res://.godot/imported/stylized_ground_normal_packed.png-2e879c892b04bf4aa28ca969343c737a.s3tc.ctex"
+path.etc2="res://.godot/imported/stylized_ground_normal_packed.png-2e879c892b04bf4aa28ca969343c737a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/stylized_ground_normal_packed.png"
-dest_files=["res://.godot/imported/stylized_ground_normal_packed.png-9efeee31e2c946d6097a12a5a6a19469.s3tc.ctex", "res://.godot/imported/stylized_ground_normal_packed.png-9efeee31e2c946d6097a12a5a6a19469.etc2.ctex"]
+source_file="res://Assets/textures/stylized_ground_normal_packed.png"
+dest_files=["res://.godot/imported/stylized_ground_normal_packed.png-2e879c892b04bf4aa28ca969343c737a.s3tc.ctex", "res://.godot/imported/stylized_ground_normal_packed.png-2e879c892b04bf4aa28ca969343c737a.etc2.ctex"]
 
 [params]
 

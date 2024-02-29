@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b2winqhdbegwh"
-path="res://.godot/imported/detail_umbrellaDetailed.glb-85c00aa49960f320377d7c02f735f265.scn"
+path="res://.godot/imported/detail_umbrellaDetailed.glb-b8ffc1d28ed23bbe5352e4e7b3456db5.scn"
 
 [deps]
 
-source_file="res://assets/meshes/buildings/detail_umbrellaDetailed.glb"
-dest_files=["res://.godot/imported/detail_umbrellaDetailed.glb-85c00aa49960f320377d7c02f735f265.scn"]
+source_file="res://Assets/meshes/buildings/detail_umbrellaDetailed.glb"
+dest_files=["res://.godot/imported/detail_umbrellaDetailed.glb-b8ffc1d28ed23bbe5352e4e7b3456db5.scn"]
 
 [params]
 

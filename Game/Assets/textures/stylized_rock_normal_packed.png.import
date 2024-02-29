@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc0mikw1wmmtt"
-path.s3tc="res://.godot/imported/stylized_rock_normal_packed.png-9c5febc0dedc205d492fc1c0ede26781.s3tc.ctex"
-path.etc2="res://.godot/imported/stylized_rock_normal_packed.png-9c5febc0dedc205d492fc1c0ede26781.etc2.ctex"
+path.s3tc="res://.godot/imported/stylized_rock_normal_packed.png-277cd984beb4e3f02984ebdb5a2268bc.s3tc.ctex"
+path.etc2="res://.godot/imported/stylized_rock_normal_packed.png-277cd984beb4e3f02984ebdb5a2268bc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/stylized_rock_normal_packed.png"
-dest_files=["res://.godot/imported/stylized_rock_normal_packed.png-9c5febc0dedc205d492fc1c0ede26781.s3tc.ctex", "res://.godot/imported/stylized_rock_normal_packed.png-9c5febc0dedc205d492fc1c0ede26781.etc2.ctex"]
+source_file="res://Assets/textures/stylized_rock_normal_packed.png"
+dest_files=["res://.godot/imported/stylized_rock_normal_packed.png-277cd984beb4e3f02984ebdb5a2268bc.s3tc.ctex", "res://.godot/imported/stylized_rock_normal_packed.png-277cd984beb4e3f02984ebdb5a2268bc.etc2.ctex"]
 
 [params]
 

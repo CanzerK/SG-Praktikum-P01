@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c78dhsdcoiqtr"
-path.s3tc="res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-3b1530655a625f59067c9b6c3f996008.s3tc.ctex"
-path.etc2="res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-3b1530655a625f59067c9b6c3f996008.etc2.ctex"
+path.s3tc="res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-f44d75a368e08afb9a6802450033e9f8.s3tc.ctex"
+path.etc2="res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-f44d75a368e08afb9a6802450033e9f8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Generic Items/Button/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg"
-dest_files=["res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-3b1530655a625f59067c9b6c3f996008.s3tc.ctex", "res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-3b1530655a625f59067c9b6c3f996008.etc2.ctex"]
+source_file="res://Assets/Generic Items/Button/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg"
+dest_files=["res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-f44d75a368e08afb9a6802450033e9f8.s3tc.ctex", "res://.godot/imported/vecteezy_fire-sign-fire-flame-icon-isolated-on-white-background_.jpg-f44d75a368e08afb9a6802450033e9f8.etc2.ctex"]
 
 [params]
 

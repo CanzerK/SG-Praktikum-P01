@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvqkx4lxrixch"
-path="res://.godot/imported/tablet.png-651c7a67de01f16967479745fd35d930.ctex"
+path="res://.godot/imported/tablet.png-362c462f2114fc01be500ece0a03ddc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icons/png/Black/1x/tablet.png"
-dest_files=["res://.godot/imported/tablet.png-651c7a67de01f16967479745fd35d930.ctex"]
+source_file="res://Assets/UI/icons/png/Black/1x/tablet.png"
+dest_files=["res://.godot/imported/tablet.png-362c462f2114fc01be500ece0a03ddc1.ctex"]
 
 [params]
 

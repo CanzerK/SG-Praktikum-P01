@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csv8jutkgyuav"
-path="res://.godot/imported/rewind.png-01606282079eefd5d86ac95c60f7e48b.ctex"
+path="res://.godot/imported/rewind.png-f63795f00bdbcb9eaec960d47583949e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icons/png/Black/2x/rewind.png"
-dest_files=["res://.godot/imported/rewind.png-01606282079eefd5d86ac95c60f7e48b.ctex"]
+source_file="res://Assets/UI/icons/png/Black/2x/rewind.png"
+dest_files=["res://.godot/imported/rewind.png-f63795f00bdbcb9eaec960d47583949e.ctex"]
 
 [params]
 

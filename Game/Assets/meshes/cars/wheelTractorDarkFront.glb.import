@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cg6jsenj6k1yl"
-path="res://.godot/imported/wheelTractorDarkFront.glb-81bf2affd65ee6ee317e7c2f16196f69.scn"
+path="res://.godot/imported/wheelTractorDarkFront.glb-f6fa57c6991c641cee366fcd90af8ffb.scn"
 
 [deps]
 
-source_file="res://assets/meshes/cars/wheelTractorDarkFront.glb"
-dest_files=["res://.godot/imported/wheelTractorDarkFront.glb-81bf2affd65ee6ee317e7c2f16196f69.scn"]
+source_file="res://Assets/meshes/cars/wheelTractorDarkFront.glb"
+dest_files=["res://.godot/imported/wheelTractorDarkFront.glb-f6fa57c6991c641cee366fcd90af8ffb.scn"]
 
 [params]
 

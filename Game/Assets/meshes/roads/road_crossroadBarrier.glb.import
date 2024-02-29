@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ce4xbm3hmwipp"
-path="res://.godot/imported/road_crossroadBarrier.glb-bd774707b533011245d1e47c9aca062c.scn"
+path="res://.godot/imported/road_crossroadBarrier.glb-27cb5656492b33cd6a7036192e99fbf3.scn"
 
 [deps]
 
-source_file="res://assets/meshes/roads/road_crossroadBarrier.glb"
-dest_files=["res://.godot/imported/road_crossroadBarrier.glb-bd774707b533011245d1e47c9aca062c.scn"]
+source_file="res://Assets/meshes/roads/road_crossroadBarrier.glb"
+dest_files=["res://.godot/imported/road_crossroadBarrier.glb-27cb5656492b33cd6a7036192e99fbf3.scn"]
 
 [params]
 

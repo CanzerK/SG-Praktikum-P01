@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmq1ywxho8r13"
-path="res://.godot/imported/leaderboardsSimple.png-08d7a2ba6cd5a133f48c26729a71aac4.ctex"
+path="res://.godot/imported/leaderboardsSimple.png-68d72a030084db88773ba909a8542abb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icons/png/Black/1x/leaderboardsSimple.png"
-dest_files=["res://.godot/imported/leaderboardsSimple.png-08d7a2ba6cd5a133f48c26729a71aac4.ctex"]
+source_file="res://Assets/UI/icons/png/Black/1x/leaderboardsSimple.png"
+dest_files=["res://.godot/imported/leaderboardsSimple.png-68d72a030084db88773ba909a8542abb.ctex"]
 
 [params]
 

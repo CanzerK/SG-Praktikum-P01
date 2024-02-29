@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mdgpgkmyjv66"
-path.s3tc="res://.godot/imported/water-derivative-height.png-707f1b1a7d7855ac4e36b26dc00645af.s3tc.ctex"
-path.etc2="res://.godot/imported/water-derivative-height.png-707f1b1a7d7855ac4e36b26dc00645af.etc2.ctex"
+path.s3tc="res://.godot/imported/water-derivative-height.png-d1e7ea3b962c778a6e942358a00780d8.s3tc.ctex"
+path.etc2="res://.godot/imported/water-derivative-height.png-d1e7ea3b962c778a6e942358a00780d8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/water-derivative-height.png"
-dest_files=["res://.godot/imported/water-derivative-height.png-707f1b1a7d7855ac4e36b26dc00645af.s3tc.ctex", "res://.godot/imported/water-derivative-height.png-707f1b1a7d7855ac4e36b26dc00645af.etc2.ctex"]
+source_file="res://Assets/textures/water-derivative-height.png"
+dest_files=["res://.godot/imported/water-derivative-height.png-d1e7ea3b962c778a6e942358a00780d8.s3tc.ctex", "res://.godot/imported/water-derivative-height.png-d1e7ea3b962c778a6e942358a00780d8.etc2.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csymeq840oybl"
-path.s3tc="res://.godot/imported/flowmap.png-d974c5fe7bd6a9a68319a8a41f0b147c.s3tc.ctex"
-path.etc2="res://.godot/imported/flowmap.png-d974c5fe7bd6a9a68319a8a41f0b147c.etc2.ctex"
+path.s3tc="res://.godot/imported/flowmap.png-09882fb5713ea206f698a05b4328d22d.s3tc.ctex"
+path.etc2="res://.godot/imported/flowmap.png-09882fb5713ea206f698a05b4328d22d.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/flowmap.png"
-dest_files=["res://.godot/imported/flowmap.png-d974c5fe7bd6a9a68319a8a41f0b147c.s3tc.ctex", "res://.godot/imported/flowmap.png-d974c5fe7bd6a9a68319a8a41f0b147c.etc2.ctex"]
+source_file="res://Assets/textures/flowmap.png"
+dest_files=["res://.godot/imported/flowmap.png-09882fb5713ea206f698a05b4328d22d.s3tc.ctex", "res://.godot/imported/flowmap.png-09882fb5713ea206f698a05b4328d22d.etc2.ctex"]
 
 [params]
 

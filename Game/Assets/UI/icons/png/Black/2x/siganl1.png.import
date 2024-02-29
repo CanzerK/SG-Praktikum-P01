@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drsnya4tjdkjp"
-path="res://.godot/imported/siganl1.png-3f7a294498d31700ab7979499f882457.ctex"
+path="res://.godot/imported/siganl1.png-4e6c62d0b57f94536185263140847da0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icons/png/Black/2x/siganl1.png"
-dest_files=["res://.godot/imported/siganl1.png-3f7a294498d31700ab7979499f882457.ctex"]
+source_file="res://Assets/UI/icons/png/Black/2x/siganl1.png"
+dest_files=["res://.godot/imported/siganl1.png-4e6c62d0b57f94536185263140847da0.ctex"]
 
 [params]
 

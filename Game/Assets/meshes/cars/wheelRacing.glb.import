@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dflkpgtt2ysr6"
-path="res://.godot/imported/wheelRacing.glb-350cecd797f9d8a0fba15dfa9ac7b199.scn"
+path="res://.godot/imported/wheelRacing.glb-c0951a896521ff628d11279f4bcf918f.scn"
 
 [deps]
 
-source_file="res://assets/meshes/cars/wheelRacing.glb"
-dest_files=["res://.godot/imported/wheelRacing.glb-350cecd797f9d8a0fba15dfa9ac7b199.scn"]
+source_file="res://Assets/meshes/cars/wheelRacing.glb"
+dest_files=["res://.godot/imported/wheelRacing.glb-c0951a896521ff628d11279f4bcf918f.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bw10eho4bltj7"
-path="res://.godot/imported/bridge_pillarWide.glb-372bd01aa97c4bce1d071a8b23cc82f4.scn"
+path="res://.godot/imported/bridge_pillarWide.glb-1757970bab8a3b9770de57e1d8cf1314.scn"
 
 [deps]
 
-source_file="res://assets/meshes/roads/bridge_pillarWide.glb"
-dest_files=["res://.godot/imported/bridge_pillarWide.glb-372bd01aa97c4bce1d071a8b23cc82f4.scn"]
+source_file="res://Assets/meshes/roads/bridge_pillarWide.glb"
+dest_files=["res://.godot/imported/bridge_pillarWide.glb-1757970bab8a3b9770de57e1d8cf1314.scn"]
 
 [params]
 

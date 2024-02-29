@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://w3yi0let7not"
-path="res://.godot/imported/tractor.glb-4ade4dd1c847ea4879497ab45921f235.scn"
+path="res://.godot/imported/tractor.glb-f6a7a247da91a1093fe7f41c7493373e.scn"
 
 [deps]
 
-source_file="res://assets/meshes/cars/tractor.glb"
-dest_files=["res://.godot/imported/tractor.glb-4ade4dd1c847ea4879497ab45921f235.scn"]
+source_file="res://Assets/meshes/cars/tractor.glb"
+dest_files=["res://.godot/imported/tractor.glb-f6a7a247da91a1093fe7f41c7493373e.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d1tdg3prdnbhu"
-path="res://.godot/imported/car_hatchback.gltf-088ab9a9858eec0cdd56118186d7596c.scn"
+path="res://.godot/imported/car_hatchback.gltf-2a4e8e26139656b51538cb8c959ec586.scn"
 
 [deps]
 
-source_file="res://assets/city/car_hatchback.gltf"
-dest_files=["res://.godot/imported/car_hatchback.gltf-088ab9a9858eec0cdd56118186d7596c.scn"]
+source_file="res://Assets/city/car_hatchback.gltf"
+dest_files=["res://.godot/imported/car_hatchback.gltf-2a4e8e26139656b51538cb8c959ec586.scn"]
 
 [params]
 

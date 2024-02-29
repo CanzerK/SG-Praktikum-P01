@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bql1k84vrpi8w"
-path="res://.godot/imported/button_teamBlue.gltf.glb-73c431265e63acb160de0b8dc3c26fcd.scn"
+path="res://.godot/imported/button_teamBlue.gltf.glb-30d541d0e94b2cd97cc3d2987fa9572a.scn"
 
 [deps]
 
-source_file="res://assets/Generic Items/Button/button_teamBlue.gltf.glb"
-dest_files=["res://.godot/imported/button_teamBlue.gltf.glb-73c431265e63acb160de0b8dc3c26fcd.scn"]
+source_file="res://Assets/Generic Items/Button/button_teamBlue.gltf.glb"
+dest_files=["res://.godot/imported/button_teamBlue.gltf.glb-30d541d0e94b2cd97cc3d2987fa9572a.scn"]
 
 [params]
 

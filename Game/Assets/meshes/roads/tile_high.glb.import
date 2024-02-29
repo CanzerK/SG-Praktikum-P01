@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c1ipes7t8ocew"
-path="res://.godot/imported/tile_high.glb-b8786eadb243561477971ed7133e541c.scn"
+path="res://.godot/imported/tile_high.glb-403e25383acc5e54dd6bcfd2ab7688fd.scn"
 
 [deps]
 
-source_file="res://assets/meshes/roads/tile_high.glb"
-dest_files=["res://.godot/imported/tile_high.glb-b8786eadb243561477971ed7133e541c.scn"]
+source_file="res://Assets/meshes/roads/tile_high.glb"
+dest_files=["res://.godot/imported/tile_high.glb-403e25383acc5e54dd6bcfd2ab7688fd.scn"]
 
 [params]
 

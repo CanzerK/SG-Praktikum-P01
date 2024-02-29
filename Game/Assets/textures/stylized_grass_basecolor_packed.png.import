@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c12klwbkumn7"
-path.s3tc="res://.godot/imported/stylized_grass_basecolor_packed.png-c0523df45402056b326bec6e7d41c387.s3tc.ctex"
-path.etc2="res://.godot/imported/stylized_grass_basecolor_packed.png-c0523df45402056b326bec6e7d41c387.etc2.ctex"
+path.s3tc="res://.godot/imported/stylized_grass_basecolor_packed.png-db6455397634073cd1795d5200d8b102.s3tc.ctex"
+path.etc2="res://.godot/imported/stylized_grass_basecolor_packed.png-db6455397634073cd1795d5200d8b102.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/stylized_grass_basecolor_packed.png"
-dest_files=["res://.godot/imported/stylized_grass_basecolor_packed.png-c0523df45402056b326bec6e7d41c387.s3tc.ctex", "res://.godot/imported/stylized_grass_basecolor_packed.png-c0523df45402056b326bec6e7d41c387.etc2.ctex"]
+source_file="res://Assets/textures/stylized_grass_basecolor_packed.png"
+dest_files=["res://.godot/imported/stylized_grass_basecolor_packed.png-db6455397634073cd1795d5200d8b102.s3tc.ctex", "res://.godot/imported/stylized_grass_basecolor_packed.png-db6455397634073cd1795d5200d8b102.etc2.ctex"]
 
 [params]
 

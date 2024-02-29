@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7e1f7t7kq168"
-path="res://.godot/imported/building_F.gltf-fa702acdf5c5d240f2602d4f55703339.scn"
+uid="uid://bh2t5slanna0v"
+path="res://.godot/imported/building_F.gltf-9d59395a36067ebb3a76f48dcd6d8fe7.scn"
 
 [deps]
 
-source_file="res://assets/city/building_F.gltf"
-dest_files=["res://.godot/imported/building_F.gltf-fa702acdf5c5d240f2602d4f55703339.scn"]
+source_file="res://Assets/city/building_F.gltf"
+dest_files=["res://.godot/imported/building_F.gltf-9d59395a36067ebb3a76f48dcd6d8fe7.scn"]
 
 [params]
 
@@ -20,7 +20,7 @@ nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
-meshes/light_baking=2
+meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
