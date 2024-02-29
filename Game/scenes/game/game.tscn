@@ -1,31 +1,31 @@
 [gd_scene load_steps=79 format=3 uid="uid://cvm2w7iu6f6dt"]
 
-[ext_resource type="Texture2D" uid="uid://p58uibd4xpj3" path="res://assets/skybox/skybox.png" id="1_as5hm"]
+[ext_resource type="Texture2D" uid="uid://p58uibd4xpj3" path="res://Assets/skybox/skybox.png" id="1_as5hm"]
 [ext_resource type="PackedScene" uid="uid://bchd04krcgph7" path="res://scenes/game/buildings/road_straight.tscn" id="2_5vrs8"]
-[ext_resource type="PackedScene" uid="uid://dw75p503bbcyj" path="res://assets/meshes/roads/road_straight.glb" id="2_vhpft"]
-[ext_resource type="PackedScene" uid="uid://d1tpnocnle1o6" path="res://assets/meshes/roads/road_bend.glb" id="3_48ehh"]
-[ext_resource type="PackedScene" uid="uid://dsysamk2pod2t" path="res://assets/meshes/roads/road_intersection.glb" id="4_1cxld"]
-[ext_resource type="PackedScene" uid="uid://b4d2xm4i5ti28" path="res://assets/meshes/roads/road_crossroadPath.glb" id="5_h3nbe"]
+[ext_resource type="PackedScene" uid="uid://dw75p503bbcyj" path="res://Assets/meshes/roads/road_straight.glb" id="2_vhpft"]
+[ext_resource type="PackedScene" uid="uid://d1tpnocnle1o6" path="res://Assets/meshes/roads/road_bend.glb" id="3_48ehh"]
+[ext_resource type="PackedScene" uid="uid://dsysamk2pod2t" path="res://Assets/meshes/roads/road_intersection.glb" id="4_1cxld"]
+[ext_resource type="PackedScene" uid="uid://b4d2xm4i5ti28" path="res://Assets/meshes/roads/road_crossroadPath.glb" id="5_h3nbe"]
 [ext_resource type="PackedScene" uid="uid://c4fjl4x622anc" path="res://scenes/game/Capsule.tscn" id="6_l75j3"]
 [ext_resource type="Script" path="res://scripts/navigation.gd" id="7_4g631"]
 [ext_resource type="PackedScene" uid="uid://dgvs5yn07qblw" path="res://scenes/game/buildings/road_intersection.tscn" id="7_avaan"]
 [ext_resource type="Shader" path="res://assets/shaders/vignette.gdshader" id="8_k54fe"]
-[ext_resource type="PackedScene" uid="uid://ct0oa7rampcmb" path="res://assets/meshes/roads/tile_low.glb" id="9_pj03w"]
+[ext_resource type="PackedScene" uid="uid://ct0oa7rampcmb" path="res://Assets/meshes/roads/tile_low.glb" id="9_pj03w"]
 [ext_resource type="Material" uid="uid://c7mw5tryqfggw" path="res://addons/proton_scatter/demos/assets/materials/m_water.tres" id="18_037og"]
-[ext_resource type="PackedScene" uid="uid://ccqv0vukw80rx" path="res://assets/meshes/buildings/skyscraperE.glb" id="19_o1xt2"]
-[ext_resource type="PackedScene" uid="uid://bq2vp848gmxnk" path="res://assets/meshes/buildings/skyscraperF.glb" id="20_c1b4k"]
-[ext_resource type="PackedScene" uid="uid://cfw7kjun0pyum" path="res://assets/meshes/buildings/skyscraperA.glb" id="21_eqaho"]
-[ext_resource type="PackedScene" uid="uid://bukehcn6nexp7" path="res://assets/meshes/buildings/large_buildingC.glb" id="22_j5oqc"]
+[ext_resource type="PackedScene" uid="uid://ccqv0vukw80rx" path="res://Assets/meshes/buildings/skyscraperE.glb" id="19_o1xt2"]
+[ext_resource type="PackedScene" uid="uid://bq2vp848gmxnk" path="res://Assets/meshes/buildings/skyscraperF.glb" id="20_c1b4k"]
+[ext_resource type="PackedScene" uid="uid://cfw7kjun0pyum" path="res://Assets/meshes/buildings/skyscraperA.glb" id="21_eqaho"]
+[ext_resource type="PackedScene" uid="uid://bukehcn6nexp7" path="res://Assets/meshes/buildings/large_buildingC.glb" id="22_j5oqc"]
 [ext_resource type="PackedScene" uid="uid://d0w10ey1fxhwp" path="res://scenes/game/skyscraper_c_2.tscn" id="23_21juv"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="23_m2b6o"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="24_6ttxf"]
-[ext_resource type="PackedScene" uid="uid://stjnnm1foevc" path="res://assets/meshes/buildings/skyscraperC.glb" id="24_7gl1j"]
-[ext_resource type="PackedScene" uid="uid://bgwadjnvasnw6" path="res://assets/meshes/fences/house_type01.glb" id="25_q0bve"]
+[ext_resource type="PackedScene" uid="uid://stjnnm1foevc" path="res://Assets/meshes/buildings/skyscraperC.glb" id="24_7gl1j"]
+[ext_resource type="PackedScene" uid="uid://bgwadjnvasnw6" path="res://Assets/meshes/fences/house_type01.glb" id="25_q0bve"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="25_xod0m"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="26_66h6h"]
-[ext_resource type="PackedScene" uid="uid://b586kgvlhjd4b" path="res://assets/meshes/roads/light_square.glb" id="26_cqroq"]
-[ext_resource type="PackedScene" uid="uid://bw07urbvpsypo" path="res://assets/meshes/fences/fence_open.glb" id="27_esvoe"]
-[ext_resource type="PackedScene" uid="uid://7ibbvtsnba14" path="res://assets/meshes/fences/house_type02.glb" id="28_8qulw"]
+[ext_resource type="PackedScene" uid="uid://b586kgvlhjd4b" path="res://Assets/meshes/roads/light_square.glb" id="26_cqroq"]
+[ext_resource type="PackedScene" uid="uid://bw07urbvpsypo" path="res://Assets/meshes/fences/fence_open.glb" id="27_esvoe"]
+[ext_resource type="PackedScene" uid="uid://7ibbvtsnba14" path="res://Assets/meshes/fences/house_type02.glb" id="28_8qulw"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="29_uet7w"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="30_qjjbg"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="35_g4eo1"]
@@ -33,18 +33,18 @@
 [ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="37_652ur"]
 [ext_resource type="Terrain3DStorage" uid="uid://bphlq21kqloxa" path="res://resources/terrain_storage.res" id="38_fpor3"]
 [ext_resource type="Terrain3DTextureList" uid="uid://dk3u2fyp0xvyy" path="res://resources/terrain_textures.tres" id="39_xa6k6"]
-[ext_resource type="PackedScene" uid="uid://b3w1gnjckrt2y" path="res://assets/meshes/buildings/large_buildingE.glb" id="40_7mkg7"]
-[ext_resource type="PackedScene" uid="uid://c5xu5aldqk3d7" path="res://assets/meshes/buildings/sign_hospital.glb" id="41_5e4sc"]
+[ext_resource type="PackedScene" uid="uid://b3w1gnjckrt2y" path="res://Assets/meshes/buildings/large_buildingE.glb" id="40_7mkg7"]
+[ext_resource type="PackedScene" uid="uid://c5xu5aldqk3d7" path="res://Assets/meshes/buildings/sign_hospital.glb" id="41_5e4sc"]
 [ext_resource type="PackedScene" uid="uid://n6frswsdor3w" path="res://scenes/game/buildings/building_1.tscn" id="41_voo7x"]
-[ext_resource type="PackedScene" uid="uid://0a2c8p8c1gsg" path="res://assets/meshes/cars/ambulance.glb" id="42_8b70c"]
+[ext_resource type="PackedScene" uid="uid://0a2c8p8c1gsg" path="res://Assets/meshes/cars/ambulance.glb" id="42_8b70c"]
 [ext_resource type="PackedScene" uid="uid://w354r3tou36a" path="res://scenes/game/buildings/shop_1.tscn" id="42_kpxk2"]
-[ext_resource type="PackedScene" uid="uid://dmtvstnw1w6m" path="res://assets/meshes/buildings/large_buildingA.glb" id="43_mtldn"]
+[ext_resource type="PackedScene" uid="uid://dmtvstnw1w6m" path="res://Assets/meshes/buildings/large_buildingA.glb" id="43_mtldn"]
 [ext_resource type="LightmapGIData" uid="uid://bfqwj66p5puv1" path="res://scenes/game/game.lmbake" id="43_qnuu6"]
-[ext_resource type="PackedScene" uid="uid://btsntlic74irq" path="res://assets/meshes/cars/police.glb" id="44_28uxq"]
-[ext_resource type="PackedScene" uid="uid://dek344agwkkqw" path="res://assets/meshes/buildings/large_buildingG.glb" id="45_01pkg"]
+[ext_resource type="PackedScene" uid="uid://btsntlic74irq" path="res://Assets/meshes/cars/police.glb" id="44_28uxq"]
+[ext_resource type="PackedScene" uid="uid://dek344agwkkqw" path="res://Assets/meshes/buildings/large_buildingG.glb" id="45_01pkg"]
 [ext_resource type="PackedScene" uid="uid://b7pp4sbevslxt" path="res://scenes/game/buildings/fire_department.tscn" id="45_t54qp"]
 [ext_resource type="PackedScene" uid="uid://dcifjjths2ij8" path="res://scenes/game/buildings/firehydrant.tscn" id="46_immft"]
-[ext_resource type="PackedScene" uid="uid://bhuyolt4yxip6" path="res://assets/meshes/fences/path_long.glb" id="47_axjs6"]
+[ext_resource type="PackedScene" uid="uid://bhuyolt4yxip6" path="res://Assets/meshes/fences/path_long.glb" id="47_axjs6"]
 [ext_resource type="PackedScene" uid="uid://ld53xh6c4aq5" path="res://scenes/game/buildings/base.tscn" id="47_w7erh"]
 [ext_resource type="PackedScene" uid="uid://btg7t10pu7wic" path="res://scenes/game/ambulance.tscn" id="48_38nxw"]
 
@@ -262,7 +262,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8e4vb")
 
-[sub_resource type="Resource" id="Resource_gots6"]
+[sub_resource type="Resource" id="Resource_gy5dc"]
 script = ExtResource("23_m2b6o")
 amount = 2000
 enabled = true
@@ -271,7 +271,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_eynsv"]
+[sub_resource type="Resource" id="Resource_6lxqd"]
 script = ExtResource("24_6ttxf")
 position = Vector3(0, 0, 0)
 rotation = Vector3(2.08167e-15, 40, 2.08167e-15)
@@ -282,7 +282,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_myc4q"]
+[sub_resource type="Resource" id="Resource_4wald"]
 script = ExtResource("25_xod0m")
 iterations = 5
 offset_step = 0.25
@@ -294,7 +294,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_y6tqd"]
+[sub_resource type="Resource" id="Resource_ecgs4"]
 script = ExtResource("26_66h6h")
 terrain_node = NodePath("../../Terrain3D")
 align_with_collision_normal = false
@@ -304,9 +304,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_r1xpv"]
+[sub_resource type="Resource" id="Resource_70ayg"]
 script = ExtResource("30_qjjbg")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_gots6"), SubResource("Resource_eynsv"), SubResource("Resource_myc4q"), SubResource("Resource_y6tqd")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_gy5dc"), SubResource("Resource_6lxqd"), SubResource("Resource_4wald"), SubResource("Resource_ecgs4")])
 
 [sub_resource type="Resource" id="Resource_64uum"]
 script = ExtResource("37_652ur")
@@ -1358,7 +1358,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.191208, 0)
 [node name="Trees" type="Node3D" parent="Foliage"]
 transform = Transform3D(25.1107, -3.27162e-16, 1.2661e-14, 8.75829e-15, 0.938, -1.2661e-14, -8.75829e-15, 3.27162e-16, 36.3, -92, 9.32806, -139.5)
 script = ExtResource("29_uet7w")
-modifier_stack = SubResource("Resource_r1xpv")
+modifier_stack = SubResource("Resource_70ayg")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -1397,28 +1397,21 @@ shape = SubResource("Resource_3tc7j")
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 74.9983, 2.08165e-12, -37.3632)
 
 [node name="hospital2" parent="Facilities/hospital" instance=ExtResource("40_7mkg7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32487, 2.08165e-12, 0.0155869)
 
 [node name="sign_hospital2" parent="Facilities/hospital/hospital2" instance=ExtResource("41_5e4sc")]
-transform = Transform3D(7.16504e-15, 1.63918e-07, 3.75, 3.75, -1.63918e-07, 2.64698e-20, 1.63918e-07, 3.75, -1.63918e-07, -1.24857, 2.08165e-12, -0.651122)
 
 [node name="ambulance2" parent="Facilities/hospital/hospital2" instance=ExtResource("42_8b70c")]
-transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -2.65916, 2.08165e-12, 0.128873)
 
 [node name="ambulance3" parent="Facilities/hospital/hospital2" instance=ExtResource("42_8b70c")]
-transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -2.65916, 2.08165e-12, 0.8123)
 
 [node name="Police station" parent="Facilities" instance=ExtResource("43_mtldn")]
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 78.0575, 2.08165e-12, -175.589)
 
 [node name="Police station2" parent="Facilities/Police station" instance=ExtResource("43_mtldn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15291, 2.08165e-12, 0)
 
 [node name="policecar" parent="Facilities/Police station" instance=ExtResource("44_28uxq")]
-transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -1.42668, 2.08165e-12, -0.499301)
 
 [node name="police" parent="Facilities/Police station" instance=ExtResource("45_01pkg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.40576, 2.08165e-12, -0.414969)
 
 [node name="Paths" type="Node3D" parent="."]
 

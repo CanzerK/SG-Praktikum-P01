@@ -41,45 +41,38 @@ offset_left = -246.0
 offset_top = -144.0
 offset_right = 493.0
 offset_bottom = -78.0
-grow_horizontal = 2
-grow_vertical = 0
-metadata/_edit_use_anchors_ = true
+grow_vertical = 2
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
+[node name="Accept" type="Button" parent="."]
+layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 233.0
 offset_top = 520.0
-offset_right = -813.0
-offset_bottom = -89.0
+offset_right = -805.0
+offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Accept"
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Cancel Button" type="Button" parent="."]
+layout_mode = 2
 offset_left = 511.0
 offset_top = 519.0
-offset_right = -535.0
-offset_bottom = -90.0
+offset_right = 616.0
+offset_bottom = 570.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Cancel"
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Postpone Buttton" type="Button" parent="."]
+layout_mode = 2
 offset_left = 781.0
 offset_top = 517.0
-offset_right = -265.0
-offset_bottom = -92.0
+offset_right = 872.0
+offset_bottom = 564.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Postpone"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
