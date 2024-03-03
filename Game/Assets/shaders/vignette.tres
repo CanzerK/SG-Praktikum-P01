@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cxv36yd662fvn"]
+
+[ext_resource type="Shader" path="res://assets/shaders/vignette.gdshader" id="1_yve3h"]
+
+[resource]
+shader = ExtResource("1_yve3h")
+shader_parameter/blur_radius = 0.3
+shader_parameter/blur_amount = 2.6
+shader_parameter/blur_inner = 0.7
+shader_parameter/blur_outer = 0.66

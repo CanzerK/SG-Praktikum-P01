@@ -6,7 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk5t3"]
 resource_name = "citybits_texture"
 albedo_texture = ExtResource("2_weu4m")
-roughness = 0.4
+roughness = 0.9
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dum8w"]
 _surfaces = [{
@@ -43,5 +43,5 @@ shadow_mesh = SubResource("ArrayMesh_dum8w")
 [node name="building_A2" instance=ExtResource("1_t84nm")]
 
 [node name="building_A" parent="." index="0"]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
 mesh = SubResource("ArrayMesh_scao2")

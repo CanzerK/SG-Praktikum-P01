@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbj3bvq6ia3bm"]
+
+[ext_resource type="PackedScene" uid="uid://juew1lbg3xnr" path="res://assets/city/car_sedan.gltf" id="1_t14xy"]
+
+[node name="car_sedan2" instance=ExtResource("1_t14xy")]
+
+[node name="car_sedan" parent="." index="0"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)

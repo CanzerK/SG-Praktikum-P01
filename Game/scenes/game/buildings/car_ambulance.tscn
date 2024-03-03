@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://wwa8k6i28mq1"]
+
+[ext_resource type="PackedScene" uid="uid://0a2c8p8c1gsg" path="res://assets/meshes/cars/ambulance.glb" id="1_rogpj"]
+
+[node name="ambulance2" instance=ExtResource("1_rogpj")]
+
+[node name="ambulance" parent="." index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="body" parent="ambulance" index="0"]
+gi_mode = 2
+
+[node name="doorLeft" parent="ambulance" index="1"]
+gi_mode = 2
+
+[node name="doorRight" parent="ambulance" index="2"]
+gi_mode = 2
+
+[node name="wheel_backLeft" parent="ambulance" index="3"]
+gi_mode = 2
+
+[node name="wheel_backRight" parent="ambulance" index="4"]
+gi_mode = 2
+
+[node name="wheel_frontLeft" parent="ambulance" index="5"]
+gi_mode = 2
+
+[node name="wheel_frontRight" parent="ambulance" index="6"]
+gi_mode = 2

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1xh3tr85je3n"]
+
+[ext_resource type="PackedScene" uid="uid://pnr8u2wvkm5m" path="res://assets/city/car_police.gltf" id="1_3l41a"]
+
+[node name="car_police2" instance=ExtResource("1_3l41a")]
+
+[node name="car_police" parent="." index="0"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
+gi_mode = 2
