@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://idb327rrdaf2"
-path.s3tc="res://.godot/imported/citybits_texture.png-3c25844b0e9c398da3b7b2feb5b4737d.s3tc.ctex"
-path.etc2="res://.godot/imported/citybits_texture.png-3c25844b0e9c398da3b7b2feb5b4737d.etc2.ctex"
+path.s3tc="res://.godot/imported/citybits_texture.png-d1703ccd1d7e39dac9e9ee9e1a1a4cd2.s3tc.ctex"
+path.etc2="res://.godot/imported/citybits_texture.png-d1703ccd1d7e39dac9e9ee9e1a1a4cd2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/city/citybits_texture.png"
-dest_files=["res://.godot/imported/citybits_texture.png-3c25844b0e9c398da3b7b2feb5b4737d.s3tc.ctex", "res://.godot/imported/citybits_texture.png-3c25844b0e9c398da3b7b2feb5b4737d.etc2.ctex"]
+source_file="res://assets/city/citybits_texture.png"
+dest_files=["res://.godot/imported/citybits_texture.png-d1703ccd1d7e39dac9e9ee9e1a1a4cd2.s3tc.ctex", "res://.godot/imported/citybits_texture.png-d1703ccd1d7e39dac9e9ee9e1a1a4cd2.etc2.ctex"]
 
 [params]
 

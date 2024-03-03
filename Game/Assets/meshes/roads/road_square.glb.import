@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://xvlnp10ahu3f"
-path="res://.godot/imported/road_square.glb-241f4e056d2c553a8e9e45c0ce64f945.scn"
+path="res://.godot/imported/road_square.glb-241ec5f7c7c00f1bc2f7014525ef7b9e.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/road_square.glb"
-dest_files=["res://.godot/imported/road_square.glb-241f4e056d2c553a8e9e45c0ce64f945.scn"]
+source_file="res://assets/meshes/roads/road_square.glb"
+dest_files=["res://.godot/imported/road_square.glb-241ec5f7c7c00f1bc2f7014525ef7b9e.scn"]
 
 [params]
 

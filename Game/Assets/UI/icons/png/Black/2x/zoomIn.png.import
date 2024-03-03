@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp7xscwmax35"
-path="res://.godot/imported/zoomIn.png-a802a60c1f44e0cfa3bfba57ba4f57b4.ctex"
+path="res://.godot/imported/zoomIn.png-b63a01758dd75eee45604106debb5372.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/icons/png/Black/2x/zoomIn.png"
-dest_files=["res://.godot/imported/zoomIn.png-a802a60c1f44e0cfa3bfba57ba4f57b4.ctex"]
+source_file="res://assets/ui/icons/png/Black/2x/zoomIn.png"
+dest_files=["res://.godot/imported/zoomIn.png-b63a01758dd75eee45604106debb5372.ctex"]
 
 [params]
 

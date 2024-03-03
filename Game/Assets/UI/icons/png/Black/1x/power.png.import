@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b67fuml3r6wu6"
-path="res://.godot/imported/power.png-8d45ef80e71edf882a4a97e8d9ad75af.ctex"
+path="res://.godot/imported/power.png-fd66be8b084db8f6a43824605cd3defa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/icons/png/Black/1x/power.png"
-dest_files=["res://.godot/imported/power.png-8d45ef80e71edf882a4a97e8d9ad75af.ctex"]
+source_file="res://assets/ui/icons/png/Black/1x/power.png"
+dest_files=["res://.godot/imported/power.png-fd66be8b084db8f6a43824605cd3defa.ctex"]
 
 [params]
 

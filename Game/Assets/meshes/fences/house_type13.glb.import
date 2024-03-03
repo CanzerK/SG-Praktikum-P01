@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bnr67baeiwsis"
-path="res://.godot/imported/house_type13.glb-911105a0c3205a960ce65765f93216ac.scn"
+path="res://.godot/imported/house_type13.glb-a4a94cc3094f2947dcee8a333d968765.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/fences/house_type13.glb"
-dest_files=["res://.godot/imported/house_type13.glb-911105a0c3205a960ce65765f93216ac.scn"]
+source_file="res://assets/meshes/fences/house_type13.glb"
+dest_files=["res://.godot/imported/house_type13.glb-a4a94cc3094f2947dcee8a333d968765.scn"]
 
 [params]
 

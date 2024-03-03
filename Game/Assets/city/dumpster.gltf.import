@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dxo6csn0358sm"
-path="res://.godot/imported/dumpster.gltf-b196ccd45c9f83d43927eb6c7993b477.scn"
+path="res://.godot/imported/dumpster.gltf-2adce28327591ce113983f26db79446c.scn"
 
 [deps]
 
-source_file="res://Assets/city/dumpster.gltf"
-dest_files=["res://.godot/imported/dumpster.gltf-b196ccd45c9f83d43927eb6c7993b477.scn"]
+source_file="res://assets/city/dumpster.gltf"
+dest_files=["res://.godot/imported/dumpster.gltf-2adce28327591ce113983f26db79446c.scn"]
 
 [params]
 

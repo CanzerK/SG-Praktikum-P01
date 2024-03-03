@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv3gs42qepg3v"
-path="res://.godot/imported/scrollVertical.png-75038a65985d96d5953b98ef628d8277.ctex"
+path="res://.godot/imported/scrollVertical.png-a874bd5387da91513d8db1a5bfbf747f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/icons/png/Black/1x/scrollVertical.png"
-dest_files=["res://.godot/imported/scrollVertical.png-75038a65985d96d5953b98ef628d8277.ctex"]
+source_file="res://assets/ui/icons/png/Black/1x/scrollVertical.png"
+dest_files=["res://.godot/imported/scrollVertical.png-a874bd5387da91513d8db1a5bfbf747f.ctex"]
 
 [params]
 

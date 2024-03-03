@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bar3cwy7fo1f4"
-path="res://.godot/imported/road_straightBarrier.glb-6d4b4c6b562d2a7b2217018c8ef59112.scn"
+path="res://.godot/imported/road_straightBarrier.glb-bec015999ef34606102fe5d0a97fb17c.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/road_straightBarrier.glb"
-dest_files=["res://.godot/imported/road_straightBarrier.glb-6d4b4c6b562d2a7b2217018c8ef59112.scn"]
+source_file="res://assets/meshes/roads/road_straightBarrier.glb"
+dest_files=["res://.godot/imported/road_straightBarrier.glb-bec015999ef34606102fe5d0a97fb17c.scn"]
 
 [params]
 

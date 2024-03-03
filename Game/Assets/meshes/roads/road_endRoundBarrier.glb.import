@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://mtoseh3fapjf"
-path="res://.godot/imported/road_endRoundBarrier.glb-8097e5c603f507ee74e600b745ecc5d5.scn"
+path="res://.godot/imported/road_endRoundBarrier.glb-652e2d6bd9206585da3e97786e22356a.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/road_endRoundBarrier.glb"
-dest_files=["res://.godot/imported/road_endRoundBarrier.glb-8097e5c603f507ee74e600b745ecc5d5.scn"]
+source_file="res://assets/meshes/roads/road_endRoundBarrier.glb"
+dest_files=["res://.godot/imported/road_endRoundBarrier.glb-652e2d6bd9206585da3e97786e22356a.scn"]
 
 [params]
 

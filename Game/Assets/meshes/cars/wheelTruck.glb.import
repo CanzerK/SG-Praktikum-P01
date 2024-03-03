@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://y8n44mv8g4k1"
-path="res://.godot/imported/wheelTruck.glb-0d00e644214f5e4c5eba34a141bac4bf.scn"
+path="res://.godot/imported/wheelTruck.glb-3d4dcd6c379f1e0e2e556aa26d1311ab.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/cars/wheelTruck.glb"
-dest_files=["res://.godot/imported/wheelTruck.glb-0d00e644214f5e4c5eba34a141bac4bf.scn"]
+source_file="res://assets/meshes/cars/wheelTruck.glb"
+dest_files=["res://.godot/imported/wheelTruck.glb-3d4dcd6c379f1e0e2e556aa26d1311ab.scn"]
 
 [params]
 

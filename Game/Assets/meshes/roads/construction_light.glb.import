@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dc2yb2yc8mfny"
-path="res://.godot/imported/construction_light.glb-78788f26731da6ba85e7fc5fe056e255.scn"
+path="res://.godot/imported/construction_light.glb-64f7060a59cc82327691d7175aec698e.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/construction_light.glb"
-dest_files=["res://.godot/imported/construction_light.glb-78788f26731da6ba85e7fc5fe056e255.scn"]
+source_file="res://assets/meshes/roads/construction_light.glb"
+dest_files=["res://.godot/imported/construction_light.glb-64f7060a59cc82327691d7175aec698e.scn"]
 
 [params]
 

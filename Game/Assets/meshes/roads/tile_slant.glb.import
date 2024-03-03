@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5kbe8wdiopth"
-path="res://.godot/imported/tile_slant.glb-7f0bb47ad2878ba4149c7bf87befe434.scn"
+path="res://.godot/imported/tile_slant.glb-c87ae6b7b6bf6091038574bf6f782bb6.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/tile_slant.glb"
-dest_files=["res://.godot/imported/tile_slant.glb-7f0bb47ad2878ba4149c7bf87befe434.scn"]
+source_file="res://assets/meshes/roads/tile_slant.glb"
+dest_files=["res://.godot/imported/tile_slant.glb-c87ae6b7b6bf6091038574bf6f782bb6.scn"]
 
 [params]
 

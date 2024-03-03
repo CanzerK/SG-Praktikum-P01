@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b62wffnevvny8"
-path="res://.godot/imported/light_squareCross.glb-fe169fb68422595c37da090eb36ec558.scn"
+path="res://.godot/imported/light_squareCross.glb-1b7ff1efb1350b48e34927cb28eb101a.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/light_squareCross.glb"
-dest_files=["res://.godot/imported/light_squareCross.glb-fe169fb68422595c37da090eb36ec558.scn"]
+source_file="res://assets/meshes/roads/light_squareCross.glb"
+dest_files=["res://.godot/imported/light_squareCross.glb-1b7ff1efb1350b48e34927cb28eb101a.scn"]
 
 [params]
 

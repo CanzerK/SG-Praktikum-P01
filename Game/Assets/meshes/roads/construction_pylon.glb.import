@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cw7mxag6glms1"
-path="res://.godot/imported/construction_pylon.glb-134359c694a167446340a67a8d67a67b.scn"
+path="res://.godot/imported/construction_pylon.glb-6c265bae6f7ce7b76348931f22690a5d.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/construction_pylon.glb"
-dest_files=["res://.godot/imported/construction_pylon.glb-134359c694a167446340a67a8d67a67b.scn"]
+source_file="res://assets/meshes/roads/construction_pylon.glb"
+dest_files=["res://.godot/imported/construction_pylon.glb-6c265bae6f7ce7b76348931f22690a5d.scn"]
 
 [params]
 

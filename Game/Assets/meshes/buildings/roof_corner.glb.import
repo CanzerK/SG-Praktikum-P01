@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cw0ewb0qfpe51"
-path="res://.godot/imported/roof_corner.glb-23c7077d0022590eec0d342e8e2a4187.scn"
+path="res://.godot/imported/roof_corner.glb-520d687bfaaead0461cd4426ae80c403.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/buildings/roof_corner.glb"
-dest_files=["res://.godot/imported/roof_corner.glb-23c7077d0022590eec0d342e8e2a4187.scn"]
+source_file="res://assets/meshes/buildings/roof_corner.glb"
+dest_files=["res://.godot/imported/roof_corner.glb-520d687bfaaead0461cd4426ae80c403.scn"]
 
 [params]
 

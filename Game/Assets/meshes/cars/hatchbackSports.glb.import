@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://q2dtucym4c3j"
-path="res://.godot/imported/hatchbackSports.glb-9b4a93198dd0b896d1afbc7404545f5a.scn"
+path="res://.godot/imported/hatchbackSports.glb-ccd91e319e9167a752dba00340d89a1c.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/cars/hatchbackSports.glb"
-dest_files=["res://.godot/imported/hatchbackSports.glb-9b4a93198dd0b896d1afbc7404545f5a.scn"]
+source_file="res://assets/meshes/cars/hatchbackSports.glb"
+dest_files=["res://.godot/imported/hatchbackSports.glb-ccd91e319e9167a752dba00340d89a1c.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://015s8uji4mgd"
-path="res://.godot/imported/road_bendSquare.glb-2f298dbd811927883e7383d4ab0fb4a9.scn"
+path="res://.godot/imported/road_bendSquare.glb-db6cc8a2dd136f338f51ca2b95872e7b.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/road_bendSquare.glb"
-dest_files=["res://.godot/imported/road_bendSquare.glb-2f298dbd811927883e7383d4ab0fb4a9.scn"]
+source_file="res://assets/meshes/roads/road_bendSquare.glb"
+dest_files=["res://.godot/imported/road_bendSquare.glb-db6cc8a2dd136f338f51ca2b95872e7b.scn"]
 
 [params]
 

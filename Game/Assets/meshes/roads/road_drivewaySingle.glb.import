@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2w0725r57ijc"
-path="res://.godot/imported/road_drivewaySingle.glb-e45bf495234876b01c6e5be1b37b06f4.scn"
+path="res://.godot/imported/road_drivewaySingle.glb-c6f53b334442da8d20bd0b4d6876eff0.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/road_drivewaySingle.glb"
-dest_files=["res://.godot/imported/road_drivewaySingle.glb-e45bf495234876b01c6e5be1b37b06f4.scn"]
+source_file="res://assets/meshes/roads/road_drivewaySingle.glb"
+dest_files=["res://.godot/imported/road_drivewaySingle.glb-c6f53b334442da8d20bd0b4d6876eff0.scn"]
 
 [params]
 

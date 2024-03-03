@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ncbw6thwatxi"
-path.s3tc="res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-fe4cb82d6c31de2d609a913e42a2305e.s3tc.ctex"
-path.etc2="res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-fe4cb82d6c31de2d609a913e42a2305e.etc2.ctex"
+path.s3tc="res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-133665d58a65dcd0a2323a5ec6e1f753.s3tc.ctex"
+path.etc2="res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-133665d58a65dcd0a2323a5ec6e1f753.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Generic Items/Button/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg"
-dest_files=["res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-fe4cb82d6c31de2d609a913e42a2305e.s3tc.ctex", "res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-fe4cb82d6c31de2d609a913e42a2305e.etc2.ctex"]
+source_file="res://assets/Generic Items/Button/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg"
+dest_files=["res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-133665d58a65dcd0a2323a5ec6e1f753.s3tc.ctex", "res://.godot/imported/vecteezy_ambulance-vector-icon-isolated-on-white-background_7925774.jpg-133665d58a65dcd0a2323a5ec6e1f753.etc2.ctex"]
 
 [params]
 

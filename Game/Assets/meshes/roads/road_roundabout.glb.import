@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://x8b3tlbrh5s0"
-path="res://.godot/imported/road_roundabout.glb-3ecb61e0975a92385895a048764a6ddd.scn"
+path="res://.godot/imported/road_roundabout.glb-f0ffdd5f3d191f1b1f809f5dce553f94.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/roads/road_roundabout.glb"
-dest_files=["res://.godot/imported/road_roundabout.glb-3ecb61e0975a92385895a048764a6ddd.scn"]
+source_file="res://assets/meshes/roads/road_roundabout.glb"
+dest_files=["res://.godot/imported/road_roundabout.glb-f0ffdd5f3d191f1b1f809f5dce553f94.scn"]
 
 [params]
 

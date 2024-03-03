@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://lxafn3ui0m0l"
-path="res://.godot/imported/race.glb-2ffc7ec97cccccdb7cb75f5c9ed7ac02.scn"
+path="res://.godot/imported/race.glb-4b3f59349fdd8e40c982c5b9e373758e.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/cars/race.glb"
-dest_files=["res://.godot/imported/race.glb-2ffc7ec97cccccdb7cb75f5c9ed7ac02.scn"]
+source_file="res://assets/meshes/cars/race.glb"
+dest_files=["res://.godot/imported/race.glb-4b3f59349fdd8e40c982c5b9e373758e.scn"]
 
 [params]
 

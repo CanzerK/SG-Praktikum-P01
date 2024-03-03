@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bynul2cymc8ly"
-path="res://.godot/imported/path_tilesShort.glb-439abc9428155df7d0d2831024ff9ec1.scn"
+path="res://.godot/imported/path_tilesShort.glb-962b6faa82edeb85afe568ff061fca5e.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/fences/path_tilesShort.glb"
-dest_files=["res://.godot/imported/path_tilesShort.glb-439abc9428155df7d0d2831024ff9ec1.scn"]
+source_file="res://assets/meshes/fences/path_tilesShort.glb"
+dest_files=["res://.godot/imported/path_tilesShort.glb-962b6faa82edeb85afe568ff061fca5e.scn"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlkhselwwudnd"
-path="res://.godot/imported/joystickRight.png-d2866878446fe0e8fa34ca449c8d5147.ctex"
+path="res://.godot/imported/joystickRight.png-1336486380e17e3de9055c0f8389e4db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/icons/png/White/2x/joystickRight.png"
-dest_files=["res://.godot/imported/joystickRight.png-d2866878446fe0e8fa34ca449c8d5147.ctex"]
+source_file="res://assets/ui/icons/png/White/2x/joystickRight.png"
+dest_files=["res://.godot/imported/joystickRight.png-1336486380e17e3de9055c0f8389e4db.ctex"]
 
 [params]
 

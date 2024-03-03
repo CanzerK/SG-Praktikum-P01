@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df43auf6t8rtq"
-path.s3tc="res://.godot/imported/WaterDistortion.png-94c9797248615bdcf39e7e194f835b90.s3tc.ctex"
-path.etc2="res://.godot/imported/WaterDistortion.png-94c9797248615bdcf39e7e194f835b90.etc2.ctex"
+path.s3tc="res://.godot/imported/WaterDistortion.png-1f7a29ce17d9a0379035de8626c37bd3.s3tc.ctex"
+path.etc2="res://.godot/imported/WaterDistortion.png-1f7a29ce17d9a0379035de8626c37bd3.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/WaterDistortion.png"
-dest_files=["res://.godot/imported/WaterDistortion.png-94c9797248615bdcf39e7e194f835b90.s3tc.ctex", "res://.godot/imported/WaterDistortion.png-94c9797248615bdcf39e7e194f835b90.etc2.ctex"]
+source_file="res://assets/textures/WaterDistortion.png"
+dest_files=["res://.godot/imported/WaterDistortion.png-1f7a29ce17d9a0379035de8626c37bd3.s3tc.ctex", "res://.godot/imported/WaterDistortion.png-1f7a29ce17d9a0379035de8626c37bd3.etc2.ctex"]
 
 [params]
 

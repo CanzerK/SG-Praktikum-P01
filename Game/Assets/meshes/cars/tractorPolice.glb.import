@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c7rwqnfdlq2gx"
-path="res://.godot/imported/tractorPolice.glb-5e44475caccf6d90b6a984500e483cfb.scn"
+path="res://.godot/imported/tractorPolice.glb-345afba3f29ba6ad2f4d84fabaac0089.scn"
 
 [deps]
 
-source_file="res://Assets/meshes/cars/tractorPolice.glb"
-dest_files=["res://.godot/imported/tractorPolice.glb-5e44475caccf6d90b6a984500e483cfb.scn"]
+source_file="res://assets/meshes/cars/tractorPolice.glb"
+dest_files=["res://.godot/imported/tractorPolice.glb-345afba3f29ba6ad2f4d84fabaac0089.scn"]
 
 [params]
 
