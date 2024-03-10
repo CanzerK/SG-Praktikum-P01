@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpfp6qn5lop6e"]
+
+[ext_resource type="PackedScene" uid="uid://b586kgvlhjd4b" path="res://assets/meshes/roads/light_square.glb" id="1_pkeaq"]
+
+[node name="light_square2" instance=ExtResource("1_pkeaq")]
+
+[node name="light_square" parent="tmpParent" index="0"]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0.75)
