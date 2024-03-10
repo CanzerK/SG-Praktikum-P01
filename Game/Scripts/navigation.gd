@@ -7,12 +7,9 @@ const RAY_LENGTH = 1000
 @export var max_zoom: float
 @export var min_bbox: Vector2
 @export var max_bbox: Vector2
-
-const HTerrain = preload("res://addons/zylann.hterrain/hterrain.gd")
-const HTerrainData = preload("res://addons/zylann.hterrain/hterrain_data.gd")
+@export var terrain: Terrain3D
 
 @onready var camera = $Camera
-@onready var terrain: HTerrain = $/root/World/HTerrain
 
 var current_camera_focus_point: Vector3
 var current_camera_dist: float
@@ -49,17 +46,20 @@ func _zoom(event: InputEventScreenPinch):
 	current_camera_dist = zf
 
 func _ready():
+	# var storage: Terrain3DStorage = load("res://resources/terrain_storage.res")
+	# terrain.set_storage(storage)
+	terrain.set_camera(camera)
+	
 	# Raycast from the original camera position to the terrain to reposition it at the initial distance.
 	var camera_origin = camera.global_transform.origin
 	var camera_dir = -camera.global_transform.basis.z
-	var max_cast_distance = camera.far * 1.2
-	var hit_cell_pos = terrain.cell_raycast(camera_origin, camera_dir, max_cast_distance)
+	var hit_pos = terrain.get_intersection(camera_origin, camera_dir)
 	
-	if hit_cell_pos != null:
-		var cell_to_world := terrain.get_internal_transform()
-		var h := terrain.get_data().get_height_at(hit_cell_pos.x, hit_cell_pos.y)
-		current_camera_focus_point = cell_to_world * Vector3(hit_cell_pos.x, h, hit_cell_pos.y)
-	
+	#if hit_pos != null:
+	current_camera_focus_point = hit_pos
+	#else:
+	#current_camera_focus_point = Vector3(0.0, 0.0, 0.0)
+		
 	current_camera_dist = initial_distance
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

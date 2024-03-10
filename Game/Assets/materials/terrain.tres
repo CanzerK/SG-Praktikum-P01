@@ -23,6 +23,7 @@ noise = SubResource("FastNoiseLite_r5krq")
 
 [resource]
 _shader_parameters = {
+"_mouse_layer": 2147483648,
 "blend_sharpness": 0.87,
 "height_blending": true,
 "macro_variation1": Color(1, 1, 1, 1),

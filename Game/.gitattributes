@@ -4,3 +4,4 @@
 scenes/game/game.exr filter=lfs diff=lfs merge=lfs -text
 addons/terrain_3d/bin/libterrain.macos.debug.framework/libterrain.macos.debug filter=lfs diff=lfs merge=lfs -text
 addons/terrain_3d/bin/libterrain.macos.release.framework/libterrain.macos.release filter=lfs diff=lfs merge=lfs -text
+resources/terrain_storage_new.tres filter=lfs diff=lfs merge=lfs -text

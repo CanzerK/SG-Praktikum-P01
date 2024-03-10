@@ -2,8 +2,6 @@ extends Node3D
 
 @export var path: Path3D
 
-@onready var path_follow: PathFollow3D = $PathFollow
-
 var current_distance = 0.0
 
 # Called when the node enters the scene tree for the first time.
