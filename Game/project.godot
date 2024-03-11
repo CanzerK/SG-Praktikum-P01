@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+InputManager="res://addons/InputManager.gd"
 DeviceManager="*res://scripts/device_manager.gd"
-InputManager="*res://addons/InputManager.gd"
 
 [dotnet]
 
