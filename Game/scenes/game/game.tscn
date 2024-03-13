@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cvm2w7iu6f6dt"]
+[gd_scene load_steps=72 format=3 uid="uid://cvm2w7iu6f6dt"]
 
 [ext_resource type="Sky" uid="uid://bmqmyw8e8itwq" path="res://resources/sky.tres" id="1_cyc6i"]
 [ext_resource type="PackedScene" uid="uid://bchd04krcgph7" path="res://scenes/game/buildings/road_straight.tscn" id="2_5vrs8"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4fjl4x622anc" path="res://scenes/game/Capsule.tscn" id="6_l75j3"]
 [ext_resource type="Script" path="res://scripts/navigation.gd" id="7_4g631"]
 [ext_resource type="PackedScene" uid="uid://dgvs5yn07qblw" path="res://scenes/game/buildings/road_intersection.tscn" id="7_avaan"]
-[ext_resource type="Terrain3DMaterial" uid="uid://dhppteotut0d0" path="res://assets/materials/terrain.tres" id="10_ubs4y"]
+[ext_resource type="Terrain3DMaterial" uid="uid://dhppteotut0d0" path="res://Assets/materials/terrain.tres" id="10_ubs4y"]
 [ext_resource type="Terrain3DTextureList" uid="uid://dk3u2fyp0xvyy" path="res://resources/terrain_textures.tres" id="11_jh1ij"]
 [ext_resource type="Material" uid="uid://c7mw5tryqfggw" path="res://addons/proton_scatter/demos/assets/materials/m_water.tres" id="18_037og"]
 [ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="18_bn2jw"]
@@ -31,10 +31,12 @@
 [ext_resource type="PackedScene" uid="uid://ld53xh6c4aq5" path="res://scenes/game/buildings/base.tscn" id="47_w7erh"]
 [ext_resource type="PackedScene" uid="uid://bay4entoo3m5b" path="res://scenes/game/buildings/bench.tscn" id="51_bdc3t"]
 [ext_resource type="PackedScene" uid="uid://cholu72nvok6e" path="res://scenes/game/buildings/box_1.tscn" id="52_6upds"]
+[ext_resource type="PackedScene" uid="uid://bdtqmmf6i2xoy" path="res://scenes/game/EventWindow.tscn" id="52_hnlyt"]
+[ext_resource type="PackedScene" uid="uid://dqstfriod2sgn" path="res://scenes/ui/HUD.tscn" id="53_gduo1"]
 [ext_resource type="PackedScene" uid="uid://ma5vqcowaiwh" path="res://scenes/game/buildings/box_2.tscn" id="53_lq2np"]
 [ext_resource type="PackedScene" uid="uid://yw01xihymdfx" path="res://scenes/game/buildings/dumpster.tscn" id="54_ffolx"]
 [ext_resource type="PackedScene" uid="uid://b1l05a5ltl0au" path="res://scenes/game/buildings/road_corner.tscn" id="54_j7vqc"]
-[ext_resource type="Material" uid="uid://cxv36yd662fvn" path="res://assets/shaders/vignette.tres" id="54_y4s3c"]
+[ext_resource type="Material" uid="uid://cxv36yd662fvn" path="res://Assets/shaders/vignette.tres" id="54_y4s3c"]
 [ext_resource type="PackedScene" uid="uid://bpfp6qn5lop6e" path="res://scenes/game/buildings/light_square.tscn" id="55_7wnsi"]
 [ext_resource type="Script" path="res://scripts/moving_car.gd" id="55_crnvl"]
 [ext_resource type="PackedScene" uid="uid://bhvkcjrhf7ttb" path="res://scenes/game/buildings/road_crossroad.tscn" id="55_myklj"]
@@ -45,11 +47,11 @@
 [ext_resource type="PackedScene" uid="uid://caqxfqurbp3ku" path="res://addons/proton_scatter/demos/assets/pine_tree.tscn" id="60_6q7k4"]
 [ext_resource type="PackedScene" uid="uid://wwa8k6i28mq1" path="res://scenes/game/buildings/car_ambulance.tscn" id="60_sfach"]
 [ext_resource type="PackedScene" uid="uid://dts7dio0upi0m" path="res://scenes/game/buildings/car_taxi.tscn" id="61_0owua"]
-[ext_resource type="PackedScene" uid="uid://dwdudjhhrrrxo" path="res://assets/city/trafficlight_A.gltf" id="61_4qmwi"]
-[ext_resource type="PackedScene" uid="uid://coc4t5i10dshv" path="res://assets/city/building_E.gltf" id="61_lr7dq"]
-[ext_resource type="PackedScene" uid="uid://dedsg3e0vjssc" path="res://assets/city/trafficlight_B.gltf" id="62_cowlm"]
+[ext_resource type="PackedScene" uid="uid://dwdudjhhrrrxo" path="res://Assets/city/trafficlight_A.gltf" id="61_4qmwi"]
+[ext_resource type="PackedScene" uid="uid://coc4t5i10dshv" path="res://Assets/city/building_E.gltf" id="61_lr7dq"]
+[ext_resource type="PackedScene" uid="uid://dedsg3e0vjssc" path="res://Assets/city/trafficlight_B.gltf" id="62_cowlm"]
 [ext_resource type="PackedScene" uid="uid://bnaixp3qm5n2x" path="res://scenes/game/buildings/building_5.tscn" id="62_lmluy"]
-[ext_resource type="PackedScene" uid="uid://hxjs3tof65cx" path="res://assets/city/trafficlight_C.gltf" id="63_pphtv"]
+[ext_resource type="PackedScene" uid="uid://hxjs3tof65cx" path="res://Assets/city/trafficlight_C.gltf" id="63_pphtv"]
 [ext_resource type="PackedScene" uid="uid://deodkmoom03u3" path="res://scenes/game/buildings/trafficlight_c.tscn" id="64_jm6qo"]
 
 [sub_resource type="Environment" id="Environment_v10de"]
@@ -94,7 +96,7 @@ lightmap_size_hint = Vector2i(252, 352)
 add_uv2 = true
 size = Vector2(50, 70)
 
-[sub_resource type="Resource" id="Resource_ui7mo"]
+[sub_resource type="Resource" id="Resource_4th8y"]
 script = ExtResource("18_bn2jw")
 amount = 5000
 enabled = true
@@ -103,7 +105,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_rqmt0"]
+[sub_resource type="Resource" id="Resource_fd1s1"]
 script = ExtResource("19_uoke1")
 iterations = 3
 offset_step = 0.01
@@ -115,7 +117,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_yhfy2"]
+[sub_resource type="Resource" id="Resource_m0mn0"]
 script = ExtResource("20_0tjdg")
 mask = ""
 mask_rotation = 0.0
@@ -131,7 +133,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_qnij6"]
+[sub_resource type="Resource" id="Resource_wquy5"]
 script = ExtResource("21_20dul")
 rotation = Vector3(2.08167e-15, 360, 2.08167e-15)
 snap_angle = Vector3(0, 0, 0)
@@ -141,7 +143,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_dir3w"]
+[sub_resource type="Resource" id="Resource_jeoiq"]
 script = ExtResource("22_6nq33")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -152,7 +154,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_1uw8m"]
+[sub_resource type="Resource" id="Resource_33sqg"]
 script = ExtResource("22_rq628")
 terrain_node = NodePath("../../Terrain")
 align_with_collision_normal = false
@@ -162,9 +164,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_4i4rd"]
+[sub_resource type="Resource" id="Resource_vjoj3"]
 script = ExtResource("30_qjjbg")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_ui7mo"), SubResource("Resource_rqmt0"), SubResource("Resource_yhfy2"), SubResource("Resource_qnij6"), SubResource("Resource_dir3w"), SubResource("Resource_1uw8m")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_4th8y"), SubResource("Resource_fd1s1"), SubResource("Resource_m0mn0"), SubResource("Resource_wquy5"), SubResource("Resource_jeoiq"), SubResource("Resource_33sqg")])
 
 [sub_resource type="Resource" id="Resource_64uum"]
 script = ExtResource("37_652ur")
@@ -739,7 +741,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.191208, 0)
 [node name="Trees" type="Node3D" parent="Foliage"]
 transform = Transform3D(25.1107, -3.27162e-16, 1.2661e-14, 8.75829e-15, 0.938, -1.2661e-14, -8.75829e-15, 3.27162e-16, 36.3, -92, -20.3447, -139.5)
 script = ExtResource("29_uet7w")
-modifier_stack = SubResource("Resource_4i4rd")
+modifier_stack = SubResource("Resource_vjoj3")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -1124,7 +1126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0.775, -120.725)
 curve = SubResource("Curve3D_br3q7")
 
 [node name="PathFollow" type="PathFollow3D" parent="new_buildings/Path"]
-transform = Transform3D(-0.999988, -4.39605e-21, -1.50995e-07, 0, 0.999992, -2.91138e-14, 1.50994e-07, -2.91138e-14, -0.999993, 0, 0, 0)
+transform = Transform3D(-0.999988, 2.54521e-21, 8.74222e-08, 0, 0.999992, -2.91138e-14, -8.74217e-08, -2.91138e-14, -0.999993, 0, 0, 0)
 
 [node name="car_sedan2" parent="new_buildings" node_paths=PackedStringArray("path") instance=ExtResource("57_g3pxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0.775, -132)
@@ -1233,3 +1235,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" parent="CanvasLayer2" instance=ExtResource("52_hnlyt")]
+visible = false
+
+[node name="Window" parent="CanvasLayer2/Control" index="0"]
+visible = false
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer3" instance=ExtResource("53_gduo1")]
+
+[editable path="CanvasLayer2/Control"]

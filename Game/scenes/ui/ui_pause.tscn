@@ -1,22 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3w0sau70gjj1"]
+[gd_scene load_steps=3 format=3 uid="uid://dr3k5kje3kp57"]
 
-[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://UI/custom_ui.tres" id="1_ednwg"]
+[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://UI/custom_ui.tres" id="1_ppvwt"]
 
 [sub_resource type="GDScript" id="GDScript_cyiff"]
-script/source = "class_name MainMenu
+script/source = "class_name PauseMenu
 extends Control
 
-@onready var  start_button = $Button as Button
-@onready var  exit_button = $Button2 as Button
-@onready var start_game = preload(\"res://scenes/game/game.tscn\") as PackedScene
+@onready var  resume_button = $ResumeButton as Button
+@onready var  exit_button = $ExitButton as Button
+@onready var pause_menu = $\".\"
 
 func _ready():
-	start_button.button_down.connect(on_start_pressed)
+	resume_button.button_down.connect(on_resume_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
 	
 	
-func on_start_pressed() -> void:
-	get_tree().change_scene_to_packed(start_game)
+func on_resume_pressed() -> void:
+	Engine.time_scale = 1
+	pause_menu.hide()
 	
 	
 func on_exit_pressed() -> void:
@@ -32,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_cyiff")
 
-[node name="Button" type="Button" parent="."]
+[node name="ResumeButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.36
@@ -43,11 +44,11 @@ offset_left = 0.279968
 offset_top = -217.8
 offset_right = 0.279968
 offset_bottom = -217.8
-theme = ExtResource("1_ednwg")
+theme = ExtResource("1_ppvwt")
 theme_override_font_sizes/font_size = 35
-text = "Start Game"
+text = "Resume Game"
 
-[node name="Button2" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.36
@@ -58,7 +59,8 @@ offset_left = 0.279968
 offset_top = -61.8
 offset_right = 0.279968
 offset_bottom = -61.8
-theme = ExtResource("1_ednwg")
+scale = Vector2(0.993464, 0.993151)
+theme = ExtResource("1_ppvwt")
 theme_override_font_sizes/font_size = 35
 text = "Exit Game"
 

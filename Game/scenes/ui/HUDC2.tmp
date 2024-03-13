@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqstfriod2sgn"]
+
+[ext_resource type="Texture2D" uid="uid://bnxoutejagt7r" path="res://Assets/UI/icons/png/White/1x/forward.png" id="1_ldtke"]
+[ext_resource type="Texture2D" uid="uid://cte4j3ecrltwf" path="res://Assets/UI/icons/png/White/1x/pause.png" id="2_d4l15"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ShowEventsButton" type="Button" parent="."]
+offset_left = 533.0
+offset_top = 595.0
+offset_right = 592.0
+offset_bottom = 626.0
+scale = Vector2(1.69027, 1.48)
+text = "Events"
+
+[node name="NextRoundButton" type="Button" parent="."]
+offset_left = 501.0
+offset_top = 2.0
+offset_right = 650.0
+offset_bottom = 60.0
+text = "Play Round"
+icon = ExtResource("1_ldtke")
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 1089.0
+offset_top = 2.0
+offset_right = 1147.0
+offset_bottom = 60.0
+icon = ExtResource("2_d4l15")
+
+[node name="ScoreText" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(1.36, 1.4)
+text = "Score:"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 70.0
+offset_right = 110.0
+offset_bottom = 23.0
+scale = Vector2(1.06645, 1.4)
