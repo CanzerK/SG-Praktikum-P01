@@ -1,0 +1,9 @@
+{
+    "EventId": 13,
+    "EventName": "FastCar",
+    "EventTextMain": "res://Events/Police_Events/FastCar/FastCarUser_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/FastCar/FastCarUser_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/FastCar/FastCarUser_Success.txt",
+    "ImgFail": "res://Events/Police_Events/FastCar/FastCarUser_Failure.png",
+    "ImgOK": "res://Events/Police_Events/FastCar/FastCarUser_Success.png"
+}

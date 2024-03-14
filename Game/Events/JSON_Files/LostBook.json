@@ -1,0 +1,9 @@
+{
+    "EventId": 15,
+    "EventName": "LostBook",
+    "EventTextMain": "res://Events/Police_Events/LostBook/LostBookInLibrary_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/LostBook/LostBookInLibrary_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/LostBook/LostBookInLibrary_Success.txt",
+    "ImgFail": "res://Events/Police_Events/LostBook/LostBookInLibrary_Failure.png",
+    "ImgOK": "res://Events/Police_Events/LostBook/LostBookInLibrary_Success.png"
+}

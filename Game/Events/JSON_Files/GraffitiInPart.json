@@ -1,0 +1,9 @@
+{
+    "EventId": 14,
+    "EventName": "GraffitiInPart",
+    "EventTextMain": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Success.txt",
+    "ImgFail": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Failure.png",
+    "ImgOK": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Success.png"
+}

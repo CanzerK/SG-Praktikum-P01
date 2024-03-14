@@ -1,0 +1,9 @@
+{
+    "EventId": 20,
+    "EventName": "TaxFraud",
+    "EventTextMain": "res://Events/Police_Events/TaxFraud/LostPet_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/TaxFraud/LostPet_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/TaxFraud/LostPet_Success.txt",
+    "ImgFail": null,
+    "ImgOK": null
+}
