@@ -47,21 +47,26 @@ extension Device {
 	 * @param heading Value from 0 to 360
 	 * @param direction Direction of drive.
 	 */
-	public func driveWithHeading(speed: UInt8, heading: UInt16, direction: Direction) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .driving,
-							  commandId: DriveCommandId.driveWithHeading,
-							  data: [speed.packet, (heading % 360).packet, direction.rawValue.packet],
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func driveWithHeading(speed: UInt8,
+								 heading: UInt16, 
+								 direction: Direction,
+								 completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .driving,
+					   commandId: DriveCommandId.driveWithHeading,
+					   data: [speed.packet, (heading % 360).packet, direction.rawValue.packet],
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 
 	/**
 	 * Resets the device yaw.
 	 */
-	public func resetYaw() -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .driving,
-							  commandId: DriveCommandId.resetYaw,
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func resetYaw(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .driving,
+					   commandId: DriveCommandId.resetYaw,
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 }

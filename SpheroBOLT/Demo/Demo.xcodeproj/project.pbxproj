@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B48A7BA2BA357A600EE38D3 /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48A7B92BA357A600EE38D3 /* DelayOperation.swift */; };
 		5B5B17E72AFD6B2200C3DF11 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */; };
 		5B5B17E92AFD6B2200C3DF11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */; };
 		5B5B17EB2AFD6B2300C3DF11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5B17EA2AFD6B2300C3DF11 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B48A7B92BA357A600EE38D3 /* DelayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
 		5B5B17E32AFD6B2200C3DF11 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5B17E62AFD6B2200C3DF11 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		5B5B17E82AFD6B2200C3DF11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				5BA091ED2B555DF3000784DF /* PeripheralOperation.swift */,
 				5BA091EF2B555DF3000784DF /* ConnectOperation.swift */,
 				5BA091EE2B555DF3000784DF /* QueueOperation.swift */,
+				5B48A7B92BA357A600EE38D3 /* DelayOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				5BA092132B555DF3000784DF /* CommandResult.swift in Sources */,
 				5BA092042B555DF3000784DF /* PeripheralOperation.swift in Sources */,
 				5BA0920C2B555DF3000784DF /* Sensor.swift in Sources */,
+				5B48A7BA2BA357A600EE38D3 /* DelayOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

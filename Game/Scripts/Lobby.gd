@@ -53,8 +53,9 @@ func _on_connected_devices_item_selected(index):
 	print("Waking device %s" % device.get_name());
 	
 	device.wake()
-	device.drive(100, 90, 0, 2.5, 0)
-	#device.set_all_colors(Color(0.5, 0.1, 0.1), Color(0.1, 0.5, 0.1))
+	device.set_all_colors(Color(0.5, 0.1, 0.1), Color(0.1, 0.5, 0.1))
+	device.drive(100, 90, DeviceManager.DRIVE_DIRECTION.FORWARD, 2.5, 0)
+	device.sleep()
 
 	
 func _on_available_devices_item_selected(index):

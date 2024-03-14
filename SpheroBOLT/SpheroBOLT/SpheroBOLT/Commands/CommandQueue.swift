@@ -46,12 +46,6 @@ class CommandQueue {
 	}
 
 	func enqueueDelay(_ duration: Float, completion: ((Result<Void, DeviceError>) -> Void)?) {
-		guard let apiCharacteristic = apiCharacteristic else {
-			completion?(.failure(.notConnected))
-
-			return
-		}
-
 		let operation = DelayOperation(duration,
 									   completion: { result in
 			completion?(result)

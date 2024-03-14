@@ -37,7 +37,9 @@ class SpheroManager;
 
 - (void)connect;
 - (void)wake;
+- (void)ping;
 - (void)sleep;
+- (void)wait:(float)duration;
 - (void)driveWithHeading:(uint8_t)speed
 				 heading:(uint16_t)heading
 			   direction:(Direction)direction
@@ -65,11 +67,13 @@ public:
 	void try_connect();
 	void wake();
 	void sleep();
-	void drive(const int speed,
-			   const int heading,
+	void ping();
+	void wait(const float duration);
+	void drive(const uint8_t speed,
+			   const uint16_t heading,
 			   const int direction,
 			   const float duration,
-			   const int drive_id);
+			   const uint8_t drive_id);
 	void set_all_colors(const Color front, const Color back);
 	void set_main_color(const Color color);
 	void set_back_color(const Color color);

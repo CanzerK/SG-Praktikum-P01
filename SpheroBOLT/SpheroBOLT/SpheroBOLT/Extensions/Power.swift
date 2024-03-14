@@ -54,29 +54,37 @@ extension Device {
 	/**
 	 * Wakes up the device.
 	 */
-	public func wake() -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.wake)
+	public func wake(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .power, 
+					   commandId: PowerCommandId.wake,
+					   completion: completion)
 	}
 
 	/**
 	 * Shuts down the robot.
 	 */
-	public func enterDeepSleep() -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.enterDeepSleep)
+	public func enterDeepSleep(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .power, 
+					   commandId: PowerCommandId.enterDeepSleep,
+					   completion: completion)
 	}
 
 	/**
 	 * Sends a soft sleep command to the robot.
 	 */
-	public func enterSoftSleep() -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.enterSoftSleep)
+	public func enterSoftSleep(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .power, 
+					   commandId: PowerCommandId.enterSoftSleep,
+					   completion: completion)
 	}
 
 	/**
 	 * Get the current battery voltage. Determines the level of charge.
 	 */
-	public func getBatteryVoltage() -> CommandResponseType<BatteryLevel> {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryVoltage)
+	public func getBatteryVoltage(completion: ((Result<BatteryLevel, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .power,
+					   commandId: PowerCommandId.getBatteryVoltage,
+					   completion: completion)
 //		let batteryCharge = Float(100.0) / 100.0
 //
 //		return batteryCharge
@@ -85,8 +93,10 @@ extension Device {
 	/**
 	 * Get battery state without known voltage constants.
 	 */
-	public func getBatteryLMQ() -> CommandResponseType<Void> { // -> BatteryLMQ {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryStateLMQ)
+	public func getBatteryLMQ(completion: ((Result<Void, DeviceError>) -> Void)? = nil) { // -> BatteryLMQ {
+		enqueueCommand(deviceId: .power,
+					   commandId: PowerCommandId.getBatteryStateLMQ,
+					   completion: completion)
 
 //		let batteryState = BatteryLMQ(rawValue: 0x02)!
 //		return batteryState
@@ -95,8 +105,10 @@ extension Device {
 	/**
 	 * Get battery state without known voltage constants.
 	 */
-	public func getBatteryState() -> CommandResponseType<Void> { // -> BatteryVoltage {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryState)
+	public func getBatteryState(completion: ((Result<Void, DeviceError>) -> Void)? = nil) { // -> BatteryVoltage {
+		enqueueCommand(deviceId: .power,
+					   commandId: PowerCommandId.getBatteryState,
+					   completion: completion)
 
 //		let batteryVoltage = BatteryVoltage(rawValue: 0x02)!
 //		return batteryVoltage
@@ -105,8 +117,10 @@ extension Device {
 	/**
 	 * Charging status information.
 	 */
-	public func batteryStateChanged() -> CommandResponseType<Void> { // -> ChargeState {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.batteryStateChanged)
+	public func batteryStateChanged(completion: ((Result<Void, DeviceError>) -> Void)? = nil) { // -> ChargeState {
+		enqueueCommand(deviceId: .power,
+					   commandId: PowerCommandId.batteryStateChanged,
+					   completion: completion)
 
 //		let batteryState = ChargeState(rawValue: 0x02)!
 //		return batteryState
@@ -115,8 +129,10 @@ extension Device {
 	/**
 	 * Returns the battery percentage.
 	 */
-	public func getBatteryPercentage() -> CommandResponseType<Int> {
-		return enqueueCommand(deviceId: .power, commandId: PowerCommandId.getBatteryPercentage)
+	public func getBatteryPercentage(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .power,
+					   commandId: PowerCommandId.getBatteryPercentage,
+					   completion: completion)
 
 //		let batteryPercentage = 100
 //		return batteryPercentage

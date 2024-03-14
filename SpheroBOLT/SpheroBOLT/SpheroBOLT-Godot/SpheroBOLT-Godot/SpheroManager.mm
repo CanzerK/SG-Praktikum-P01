@@ -174,9 +174,19 @@
 	[self.device sendWakeCommand];
 }
 
+- (void)ping
+{
+	[self.device sendPingCommand];
+}
+
 - (void)sleep
 {
 	[self.device sendSoftSleepCommand];
+}
+
+- (void)wait:(float)duration
+{
+	[self.device sendDelayCommandWithDuration:duration];
 }
 
 - (void)driveWithHeading:(uint8_t)speed
@@ -223,6 +233,8 @@ void SpheroDevice::_bind_methods()
 	ClassDB::bind_method(D_METHOD("try_connect"), &SpheroDevice::try_connect);
 	ClassDB::bind_method(D_METHOD("wake"), &SpheroDevice::wake);
 	ClassDB::bind_method(D_METHOD("sleep"), &SpheroDevice::sleep);
+	ClassDB::bind_method(D_METHOD("ping"), &SpheroDevice::ping);
+	ClassDB::bind_method(D_METHOD("wait", "duration"), &SpheroDevice::wait);
 	ClassDB::bind_method(D_METHOD("get_name"), &SpheroDevice::get_name);
 	ClassDB::bind_method(D_METHOD("drive", "speed", "heading", "direction", "duration", "drive_id"), &SpheroDevice::drive);
 	ClassDB::bind_method(D_METHOD("set_all_colors", "front", "back"), &SpheroDevice::set_all_colors);
@@ -262,11 +274,21 @@ void SpheroDevice::sleep()
 	[_device.get() sleep];
 }
 
-void SpheroDevice::drive(const int speed,
-						 const int heading,
+void SpheroDevice::ping()
+{
+	[_device.get() ping];
+}
+
+void SpheroDevice::wait(const float duration)
+{
+	[_device.get() wait:duration];
+}
+
+void SpheroDevice::drive(const uint8_t speed,
+						 const uint16_t heading,
 						 const int direction,
 						 const float duration,
-						 const int drive_id)
+						 const uint8_t drive_id)
 {
 	[_device.get() driveWithHeading:speed heading:heading direction:static_cast<Direction>(direction) duration:duration driveId:drive_id];
 }

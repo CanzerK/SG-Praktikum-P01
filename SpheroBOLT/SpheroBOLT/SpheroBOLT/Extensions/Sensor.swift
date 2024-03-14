@@ -18,11 +18,12 @@ extension Device {
 	/**
 	 * Resets the device locator.
 	 */
-	public func resetLocator() -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .sensors,
-							  commandId: SensorCommandId.resetLocator,
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func resetLocator(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .sensors,
+					   commandId: SensorCommandId.resetLocator,
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 
 }

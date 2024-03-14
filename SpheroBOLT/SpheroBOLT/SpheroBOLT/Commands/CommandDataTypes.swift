@@ -76,5 +76,3 @@ extension Int: DataInitializable {
 		self.init()
 	}
 }
-
-public typealias CommandResponseType<R> = AnyPublisher<R, DeviceError>

@@ -90,80 +90,104 @@ extension Device {
 	/**
 	 * Sets the color of the main matrix.
 	 */
-	public func setAllLEDColors(front: CGColor, back: CGColor) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setAllLED8BitMask,
-							  data: [LED.all().rawValue.packet, front.packet, back.packet],
-							  sourceId: nil,
-							  targetId: nil)
+	public func setAllLEDColors(front: CGColor, 
+								back: CGColor,
+								completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setAllLED8BitMask,
+					   data: [LED.all().rawValue.packet, front.packet, back.packet],
+					   sourceId: nil,
+					   targetId: nil,
+					   completion: completion)
 	}
 
 	/**
 	 * Sets the main LED color.
 	 */
-	public func setMainLEDColor(_ color: CGColor) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setAllLED8BitMask,
-							  data: [[0x07], color.packet])
+	public func setMainLEDColor(_ color: CGColor, 
+								completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setAllLED8BitMask,
+					   data: [[0x07], color.packet],
+					   completion: completion)
 	}
 
 	/**
 	 * Sets the back LED color.
 	 */
-	public func setBackLEDColor(_ color: CGColor) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setAllLED8BitMask,
-							  data: [[0x38], color.packet])
+	public func setBackLEDColor(_ color: CGColor, 
+								completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setAllLED8BitMask,
+					   data: [[0x38], color.packet],
+					   completion: completion)
 	}
 
 	/**
 	 * Sets a single color.
 	 */
-	public func setOneColor(_ color: CGColor) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setLEDMatrixOneColor,
-							  data: color, 
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func setOneColor(_ color: CGColor,
+							completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setLEDMatrixOneColor,
+					   data: color,
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 
 	/**
 	 * Sets a single pixel to a color.
 	 */
-	public func setPixelColor(_ color: CGColor, pixel: Pixel) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setLEDMatrixPixel,
-							  data: [pixel.packet, color.packet],
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func setPixelColor(_ color: CGColor, 
+							  pixel: Pixel,
+							  completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setLEDMatrixPixel,
+					   data: [pixel.packet, color.packet],
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 
 	/**
 	 * Sets the audio volume.
 	 */
-	public func setAudioVolume(_ value: UInt8) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO, commandId: UserIOCommandId.setAudioVolume, data: [value])
+	public func setAudioVolume(_ value: UInt8,
+							   completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setAudioVolume,
+					   data: [value],
+					   completion: completion)
 	}
 
 	/**
 	 * Sets the matrix to display a single character.
 	 */
-	public func setLEDMatrixCharacter(_ character: Character, color: CGColor) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setLEDMatrixSingleCharacter,
-							  data: [color.packet, [character].byteArray.packet],
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func setLEDMatrixCharacter(_ character: Character, 
+									  color: CGColor,
+									  completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setLEDMatrixSingleCharacter,
+					   data: [color.packet, [character].byteArray.packet],
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 
 	/**
 	 * Sets the matrix to display an entire string of text.
 	 */
-	public func setLEDMatrixTextScrolling(_ text: String, color: CGColor, speed: UInt8 = 0x10, rep: Bool = true) -> CommandResponseType<Void> {
-		return enqueueCommand(deviceId: .userIO,
-							  commandId: UserIOCommandId.setLEDMatrixTextScrolling,
-							  data: [color.packet, (speed % 0x1e).packet, rep.packet, text.byteArray.packet, [0x00]],
-							  sourceId: nil,
-							  targetId: 0x12)
+	public func setLEDMatrixTextScrolling(_ text: String, 
+										  color: CGColor, 
+										  speed: UInt8 = 0x10,
+										  rep: Bool = true,
+										  completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
+		enqueueCommand(deviceId: .userIO,
+					   commandId: UserIOCommandId.setLEDMatrixTextScrolling,
+					   data: [color.packet, (speed % 0x1e).packet, rep.packet, text.byteArray.packet, [0x00]],
+					   sourceId: nil,
+					   targetId: 0x12,
+					   completion: completion)
 	}
 }

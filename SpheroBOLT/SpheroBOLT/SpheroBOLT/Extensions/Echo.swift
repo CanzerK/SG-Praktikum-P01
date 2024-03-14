@@ -17,8 +17,9 @@ extension Device {
 	/**
 	 * Pings the device
 	 */
-	public func echo() -> CommandResponseType<Void> {
+	public func ping(completion: ((Result<Void, DeviceError>) -> Void)? = nil) {
 		return enqueueCommand(deviceId: .apiProcessor,
-							  commandId: ProcessorCommandId.echo)
+							  commandId: ProcessorCommandId.echo,
+							  completion: completion)
 	}
 }
