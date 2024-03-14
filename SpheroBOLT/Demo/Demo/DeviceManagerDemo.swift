@@ -45,7 +45,6 @@ class DeviceManagerDemo: NSObject, DeviceCoordinatorDelegate, DeviceDelegate {
 			print("Connected to \(device.name!).")
 
 			device.wake()
-				.flatMap { device.wake() }
 //				.flatMap { device.resetYaw() }
 //				.flatMap { device.resetLocator() }
 	//			.flatMap { device.getBatteryPercentage() }
@@ -53,11 +52,11 @@ class DeviceManagerDemo: NSObject, DeviceCoordinatorDelegate, DeviceDelegate {
 //				.flatMap { device.setPixelColor(Color(0.0, 1.0, 0.0), pixel: Pixel(5, 5)) }
 				.flatMap { device.setLEDMatrixCharacter("A", color: Color(0.0, 0.0, 1.0))}
 //				.flatMap { device.setLEDMatrixTextScrolling("Text", color: Color(1.0, 0.0, 0.0), speed: 5, rep: true) }
-//				.flatMap { device.driveWithHeading(speed: 60, heading: 50, direction: .backward) }
+				.flatMap { device.driveWithHeading(speed: 60, heading: 50, direction: .forward) }
 				.delay(for: .seconds(5), scheduler: DispatchQueue.main, options: .none)
 				.flatMap { device.driveWithHeading(speed: 0, heading: 0, direction: .forward) }
 				.delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
-//				.flatMap { device.enterSoftSleep() }
+				.flatMap { device.enterSoftSleep() }
 //				.retry(3)
 				.receive(on: DispatchQueue.main)
 				.sink { completion in

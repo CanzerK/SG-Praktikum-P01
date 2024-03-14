@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 import Combine
 
 enum UserIOCommandId: UInt8 {
@@ -68,23 +69,11 @@ public struct Pixel {
 	}
 }
 
-public struct Color {
-	let r: Float
-	let g: Float
-	let b: Float
-
-	public init(_ r: Float, _ g: Float, _ b: Float) {
-		self.r = r
-		self.g = g
-		self.b = b
-	}
-}
-
-extension Color: CommandDataConvertible {
+extension CGColor: CommandDataConvertible {
 	var packet: Array<UInt8> {
-		let red: UInt8 = UInt8(round(r / 1.0) * 255)
-		let green: UInt8 = UInt8(round(g / 1.0) * 255)
-		let blue: UInt8 = UInt8(round(b / 1.0) * 255)
+		let red: UInt8 = UInt8(round(components![0] / 1.0) * 255)
+		let green: UInt8 = UInt8(round(components![1] / 1.0) * 255)
+		let blue: UInt8 = UInt8(round(components![2] / 1.0) * 255)
 
 		return [red, green, blue]
 	}
@@ -101,7 +90,7 @@ extension Device {
 	/**
 	 * Sets the color of the main matrix.
 	 */
-	public func setAllLEDColors(front: Color, back: Color) -> CommandResponseType<Void> {
+	public func setAllLEDColors(front: CGColor, back: CGColor) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [LED.all().rawValue.packet, front.packet, back.packet],
@@ -112,7 +101,7 @@ extension Device {
 	/**
 	 * Sets the main LED color.
 	 */
-	public func setMainLEDColor(_ color: Color) -> CommandResponseType<Void> {
+	public func setMainLEDColor(_ color: CGColor) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [[0x07], color.packet])
@@ -121,7 +110,7 @@ extension Device {
 	/**
 	 * Sets the back LED color.
 	 */
-	public func setBackLEDColor(_ color: Color) -> CommandResponseType<Void> {
+	public func setBackLEDColor(_ color: CGColor) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setAllLED8BitMask,
 							  data: [[0x38], color.packet])
@@ -130,7 +119,7 @@ extension Device {
 	/**
 	 * Sets a single color.
 	 */
-	public func setOneColor(_ color: Color) -> CommandResponseType<Void> {
+	public func setOneColor(_ color: CGColor) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixOneColor,
 							  data: color, 
@@ -141,7 +130,7 @@ extension Device {
 	/**
 	 * Sets a single pixel to a color.
 	 */
-	public func setPixelColor(_ color: Color, pixel: Pixel) -> CommandResponseType<Void> {
+	public func setPixelColor(_ color: CGColor, pixel: Pixel) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixPixel,
 							  data: [pixel.packet, color.packet],
@@ -159,7 +148,7 @@ extension Device {
 	/**
 	 * Sets the matrix to display a single character.
 	 */
-	public func setLEDMatrixCharacter(_ character: Character, color: Color) -> CommandResponseType<Void> {
+	public func setLEDMatrixCharacter(_ character: Character, color: CGColor) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixSingleCharacter,
 							  data: [color.packet, [character].byteArray.packet],
@@ -170,7 +159,7 @@ extension Device {
 	/**
 	 * Sets the matrix to display an entire string of text.
 	 */
-	public func setLEDMatrixTextScrolling(_ text: String, color: Color, speed: UInt8 = 0x10, rep: Bool = true) -> CommandResponseType<Void> {
+	public func setLEDMatrixTextScrolling(_ text: String, color: CGColor, speed: UInt8 = 0x10, rep: Bool = true) -> CommandResponseType<Void> {
 		return enqueueCommand(deviceId: .userIO,
 							  commandId: UserIOCommandId.setLEDMatrixTextScrolling,
 							  data: [color.packet, (speed % 0x1e).packet, rep.packet, text.byteArray.packet, [0x00]],

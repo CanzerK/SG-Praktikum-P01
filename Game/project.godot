@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InputManager="res://addons/InputManager.gd"
 DeviceManager="*res://scripts/device_manager.gd"
 
 [dotnet]
@@ -65,5 +64,3 @@ anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
 quality/filters/use_nearest_mipmap_filter=true
-quality/filters/msaa=2
-quality/intended_usage/framebuffer_allocation.mobile=0

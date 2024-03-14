@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public enum Direction: UInt8 {
+@objc public enum Direction: UInt8 {
 	case forward = 0x00
 	case backward = 0x01
 }

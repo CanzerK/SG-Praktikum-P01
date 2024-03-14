@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://brrijcqsq7urb"]
+
+[ext_resource type="PackedScene" uid="uid://g2o6vk4trm17" path="res://assets/meshes/others/cloud_5.glb" id="1_q3n5s"]
+[ext_resource type="Material" uid="uid://cxy2u6ujc4kmu" path="res://assets/materials/clouds.tres" id="2_ockpj"]
+
+[node name="cloud_5" instance=ExtResource("1_q3n5s")]
+
+[node name="C5_Cloud_0" parent="." index="0"]
+gi_mode = 0
+surface_material_override/0 = ExtResource("2_ockpj")

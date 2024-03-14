@@ -50,20 +50,28 @@ import CoreBluetooth
 	 * @parameter The device instance.
 	 */
 	@objc optional func deviceDidSleep(_ device: Device)
+
+	/**
+	 * @discussion Called when the device finishes a drive command.
+	 *
+	 * @parameter device The device instance.
+	 * @parameter driveId The drive id assigned when we started.
+	 */
+	@objc optional func deviceDidFinishDriving(_ device: Device, driveId: UInt8)
 }
 
 @objc public class Device: NSObject {
 	/// Underlying bluetooth peripheral instance.
 	private var peripheral: CBPeripheral
 
-	/// Command buffer to enqueue all device commands into.
-	internal var commandQueue: CommandQueue
-
 	/// Current sequence number of the command.
 	private var sequenceNumber: UInt8 = 0
 
+	/// Command buffer to enqueue all device commands into.
+	internal var commandQueue: CommandQueue
+
 	/// All cancellable operations.
-	private var cancellables = Set<AnyCancellable>()
+	internal var cancellables = Set<AnyCancellable>()
 
 	/// Returns the sequence number of the next packet.
 	internal var nextSequenceNumber: UInt8 {
@@ -151,37 +159,5 @@ import CoreBluetooth
 		commandQueue.cancelAll()
 
 		manager.cancelPeripheralConnection(peripheral)
-	}
-
-	@objc func sendWakeCommand() {
-		wake()
-			.flatMap { self.resetYaw() }
-			.flatMap { self.resetLocator() }
-			.receive(on: DispatchQueue.main)
-			.sink { [weak self] completion in
-				guard let self = self else {
-					return
-				}
-
-				self.delegate?.deviceDidWake?(self)
-			} receiveValue: { value in
-
-			}
-			.store(in: &cancellables)
-	}
-
-	@objc func sendSoftSleepCommand() {
-		enterSoftSleep()
-			.receive(on: DispatchQueue.main)
-			.sink { [weak self] completion in
-				guard let self = self else {
-					return
-				}
-
-				self.delegate?.deviceDidSleep?(self)
-			} receiveValue: { value in
-
-			}
-			.store(in: &cancellables)
 	}
 }

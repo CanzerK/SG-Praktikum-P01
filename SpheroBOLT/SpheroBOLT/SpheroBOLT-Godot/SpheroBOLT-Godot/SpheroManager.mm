@@ -1,6 +1,8 @@
 #include "GodotSphero.h"
 #include "SpheroManager.h"
 
+#include <algorithm>
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
@@ -95,6 +97,7 @@
 - (void)deviceDidUpdateConnectionState:(Device * _Nonnull)device state:(enum ConnectionState)state;
 - (void)deviceDidFailConnectionState:(Device * _Nonnull)device error:(NSError * _Nullable)error;
 - (void)deviceDidWake:(Device * _Nonnull)device;
+- (void)deviceDidFinishDriving:(Device *)device driveId:(uint8_t)driveId;
 - (void)deviceDidSleep:(Device * _Nonnull)device;
 
 @end
@@ -150,6 +153,11 @@
 	_godotDevice->emit_signal("device_did_wake", Variant(_godotDevice->get_name()));
 }
 
+- (void)deviceDidFinishDriving:(Device *)device driveId:(uint8_t)driveId
+{
+	_godotDevice->emit_signal("device_did_finish_driving", Variant(_godotDevice->get_name()), Variant((int)driveId));
+}
+
 - (void)deviceDidChangeState:(Device * _Nonnull)device
 {
 	_godotDevice->emit_signal("device_did_change_state", Variant(device.name), Variant((int)_device.state));
@@ -166,7 +174,44 @@
 	[self.device sendWakeCommand];
 }
 
+- (void)sleep
+{
+	[self.device sendSoftSleepCommand];
+}
+
+- (void)driveWithHeading:(uint8_t)speed
+				 heading:(uint16_t)heading
+			   direction:(Direction)direction
+				duration:(float)duration
+				 driveId:(uint8_t)driveId
+{
+	[self.device sendDriveWithHeadingCommandWithSpeed:speed heading:heading direction:direction duration:duration driveId:driveId];
+}
+
+- (void)setAllLEDColorsFront:(_Nonnull CGColorRef)front
+					 andBack:(_Nonnull CGColorRef)back
+{
+	[self.device sendSetAllLEDColorsCommandWithFront:front back:back];
+}
+
+- (void)setMainLEDColor:(CGColorRef)color
+{
+	[self.device sendSetMainLEDColorCommand:color];
+}
+
+- (void)setBackLEDColor:(CGColorRef)color
+{
+	[self.device sendSetBackLEDColorCommand:color];
+}
+
 @end
+
+namespace {
+	CGColorRef CreateCGColorRefFromGodotColor(const Color color)
+	{
+		return CGColorCreateGenericRGB(color.r, color.g, color.b, color.a);
+	}
+}
 
 SpheroDevice::~SpheroDevice()
 {
@@ -175,14 +220,20 @@ SpheroDevice::~SpheroDevice()
 
 void SpheroDevice::_bind_methods()
 {
-	ClassDB::bind_method(D_METHOD("attempt_connection"), &SpheroDevice::attempt_connection);
+	ClassDB::bind_method(D_METHOD("try_connect"), &SpheroDevice::try_connect);
 	ClassDB::bind_method(D_METHOD("wake"), &SpheroDevice::wake);
+	ClassDB::bind_method(D_METHOD("sleep"), &SpheroDevice::sleep);
 	ClassDB::bind_method(D_METHOD("get_name"), &SpheroDevice::get_name);
+	ClassDB::bind_method(D_METHOD("drive", "speed", "heading", "direction", "duration", "drive_id"), &SpheroDevice::drive);
+	ClassDB::bind_method(D_METHOD("set_all_colors", "front", "back"), &SpheroDevice::set_all_colors);
+	ClassDB::bind_method(D_METHOD("set_main_color", "color"), &SpheroDevice::set_main_color);
+	ClassDB::bind_method(D_METHOD("set_back_color", "color"), &SpheroDevice::set_back_color);
 
 	ADD_SIGNAL(MethodInfo("device_did_fail_connection", PropertyInfo(Variant::STRING, "device_name")));
 	ADD_SIGNAL(MethodInfo("device_did_sleep", PropertyInfo(Variant::OBJECT, "device_name")));
 	ADD_SIGNAL(MethodInfo("device_did_update_connection_state", PropertyInfo(Variant::OBJECT, "device_name"), PropertyInfo(Variant::INT, "state")));
 	ADD_SIGNAL(MethodInfo("device_did_wake", PropertyInfo(Variant::OBJECT, "device_name")));
+	ADD_SIGNAL(MethodInfo("device_did_finish_driving", PropertyInfo(Variant::OBJECT, "device_name"), PropertyInfo(Variant::INT, "drive_id")));
 	ADD_SIGNAL(MethodInfo("device_did_change_state", PropertyInfo(Variant::OBJECT, "device_name"), PropertyInfo(Variant::INT, "state")));
 }
 
@@ -196,7 +247,7 @@ void SpheroDevice::set_manager(SpheroManager* _Nonnull new_manager)
 	_manager = new_manager;
 }
 
-void SpheroDevice::attempt_connection()
+void SpheroDevice::try_connect()
 {
 	[_device.get() connect];
 }
@@ -204,6 +255,36 @@ void SpheroDevice::attempt_connection()
 void SpheroDevice::wake()
 {
 	[_device.get() wake];
+}
+
+void SpheroDevice::sleep()
+{
+	[_device.get() sleep];
+}
+
+void SpheroDevice::drive(const int speed,
+						 const int heading,
+						 const int direction,
+						 const float duration,
+						 const int drive_id)
+{
+	[_device.get() driveWithHeading:speed heading:heading direction:static_cast<Direction>(direction) duration:duration driveId:drive_id];
+}
+
+void SpheroDevice::set_all_colors(const Color front, const Color back)
+{
+	[_device.get() setAllLEDColorsFront:CreateCGColorRefFromGodotColor(front)
+								andBack:CreateCGColorRefFromGodotColor(back)];
+}
+
+void SpheroDevice::set_main_color(const Color color)
+{
+	[_device.get() setMainLEDColor:CreateCGColorRefFromGodotColor(color)];
+}
+
+void SpheroDevice::set_back_color(const Color color)
+{
+	[_device.get() setBackLEDColor:CreateCGColorRefFromGodotColor(color)];
 }
 
 String SpheroDevice::get_name()

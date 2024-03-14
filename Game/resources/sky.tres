@@ -1,9 +1,6 @@
-[gd_resource type="Sky" load_steps=3 format=3 uid="uid://bmqmyw8e8itwq"]
+[gd_resource type="Sky" load_steps=2 format=3 uid="uid://bmqmyw8e8itwq"]
 
-[ext_resource type="Texture2D" uid="uid://p58uibd4xpj3" path="res://assets/skybox/skybox.png" id="1_7m2l4"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4133a"]
-panorama = ExtResource("1_7m2l4")
+[ext_resource type="Material" uid="uid://b2ju3ad8dywsa" path="res://resources/sky_material.tres" id="1_gx1y2"]
 
 [resource]
-sky_material = SubResource("PanoramaSkyMaterial_4133a")
+sky_material = ExtResource("1_gx1y2")

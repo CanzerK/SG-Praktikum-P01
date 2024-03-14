@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cxy2u6ujc4kmu"]
+
+[ext_resource type="Shader" path="res://assets/shaders/clouds.gdshader" id="1_1du5v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w6nwr"]
+noise_type = 3
+frequency = 0.0046
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eulwj"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_w6nwr")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1du5v")
+shader_parameter/ToonRampOffset = 0.708
+shader_parameter/ToonRampSmoothness = 0.028
+shader_parameter/ToonRampTinting = Color(0.356863, 0.356863, 0.356863, 1)
+shader_parameter/RimPower = 3.0
+shader_parameter/RimCutOff = 0.6
+shader_parameter/RimSmoothness = 0.05
+shader_parameter/RimLightBrightness = 20.0
+shader_parameter/SubSurfDistortion = 0.5
+shader_parameter/SubSurfTint = null
+shader_parameter/SubSurfBrightness = 2.0
+shader_parameter/SubSurfCutoff = 0.5
+shader_parameter/SubSurfSmoothness = 0.05
+shader_parameter/SubSurfTexture = SubResource("NoiseTexture2D_eulwj")

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B120C132B6EC09D007391ED /* ObjCPtr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B120C122B6EC09D007391ED /* ObjCPtr.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5B905E712B9FA34B0082701E /* DelayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B905E702B9FA34B0082701E /* DelayOperation.swift */; };
+		5B905E732BA03DAC0082701E /* DeviceObjCFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B905E722BA03DAC0082701E /* DeviceObjCFunctions.swift */; };
 		5BDE25D42B2E33A300FED5A4 /* GodotSphero.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */; };
 		5BDE25D52B2E33A300FED5A4 /* SpheroManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25D32B2E33A300FED5A4 /* SpheroManager.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5BDE25F22B2E33DE00FED5A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDE25DA2B2E33DE00FED5A4 /* Constants.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		5B120C122B6EC09D007391ED /* ObjCPtr.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ObjCPtr.mm; sourceTree = "<group>"; };
+		5B905E702B9FA34B0082701E /* DelayOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayOperation.swift; sourceTree = "<group>"; };
+		5B905E722BA03DAC0082701E /* DeviceObjCFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceObjCFunctions.swift; sourceTree = "<group>"; };
 		5BDE25C42B2E332D00FED5A4 /* libSpheroBOLT-Godot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSpheroBOLT-Godot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDE25D02B2E33A300FED5A4 /* GodotSphero.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GodotSphero.mm; sourceTree = "<group>"; };
 		5BDE25D12B2E33A300FED5A4 /* GodotSphero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GodotSphero.h; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				5BDE25DD2B2E33DE00FED5A4 /* PeripheralOperation.swift */,
 				5BDE25DE2B2E33DE00FED5A4 /* QueueOperation.swift */,
 				5BDE25DF2B2E33DE00FED5A4 /* ConnectOperation.swift */,
+				5B905E702B9FA34B0082701E /* DelayOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			children = (
 				5BDE25EA2B2E33DE00FED5A4 /* DeviceCommandsExt.swift */,
 				5BDE25EB2B2E33DE00FED5A4 /* Device.swift */,
+				5B905E722BA03DAC0082701E /* DeviceObjCFunctions.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -268,6 +274,8 @@
 				5BDE25F22B2E33DE00FED5A4 /* Constants.swift in Sources */,
 				5BDE25FA2B2E33DE00FED5A4 /* DeviceId.swift in Sources */,
 				5BDE25F62B2E33DE00FED5A4 /* ConnectOperation.swift in Sources */,
+				5B905E732BA03DAC0082701E /* DeviceObjCFunctions.swift in Sources */,
+				5B905E712B9FA34B0082701E /* DelayOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,8 @@ enum MANAGER_STATE {
 	POWERED_ON }
 	
 enum DEVICE_STATE { CONNECTING, CONNECTED }
+
+enum DRIVE_DIRECTION { FORWARD, BACKWARD }
 	
 # List of available devices that are not connected yet.
 var _available_devices = []
@@ -32,10 +34,14 @@ func _init():
 	_devices_mutex = Mutex.new()
 
 	if Engine.has_singleton("Sphero"):
+		print("Found Sphero plugin. Finding devices.")
+		
 		_sphero_manager = Engine.get_singleton("Sphero")
 		_sphero_manager.connect("manager_state_updated", _on_manager_state_updated)
 		_sphero_manager.connect("manager_did_find_device", _on_manager_did_find_device)
 		_sphero_manager.connect("manager_did_disconnect_device", _on_manager_did_disconnect_device)
+		
+		_sphero_manager.find_devices()
 
 func _find_devices():
 	if (_sphero_manager.get_state() == MANAGER_STATE.POWERED_ON):
@@ -44,7 +50,6 @@ func _find_devices():
 func _on_manager_state_updated(state):
 	if (state == MANAGER_STATE.POWERED_ON):
 		_sphero_manager.find_devices()
-	
 	
 func _on_manager_did_find_device(device):
 	print("Found device {device_name}.".format({ "device_name": device.get_name() }))
@@ -129,6 +134,14 @@ func get_all_connected_devices():
 	_devices_mutex.unlock()
 	
 	return connected_devices_clone
+	
+	
+func get_connected_device(index):
+	_devices_mutex.lock()
+	var device = _connected_devices[index]
+	_devices_mutex.unlock()
+	
+	return device
 	
 	
 func _process(delta):

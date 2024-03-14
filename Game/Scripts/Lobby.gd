@@ -3,7 +3,7 @@ extends Control
 # UI elements in the view.
 var _available_devices_list: ItemList
 var _connected_devices_list: ItemList
-var _texture: Texture2D = load("res://Assets/Icons/PNG/White/2x/phone.png")
+var _texture: Texture2D = load("res://assets/ui/icons/png/White/2x/phone.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,10 +48,16 @@ func _process(delta):
 	
 	
 func _on_connected_devices_item_selected(index):
-	pass
+	var device = DeviceManager.get_connected_device(index)
+	
+	print("Waking device %s" % device.get_name());
+	
+	device.wake()
+	device.drive(100, 90, 0, 2.5, 0)
+	#device.set_all_colors(Color(0.5, 0.1, 0.1), Color(0.1, 0.5, 0.1))
 
 	
 func _on_available_devices_item_selected(index):
 	var device = DeviceManager.get_available_device(index)
-	device.attempt_connection()
+	device.try_connect()
 	

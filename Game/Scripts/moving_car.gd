@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var path: Path3D
+@export var speed: float
 
 var current_distance = 0.0
 
@@ -12,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var len := path.curve.get_baked_length()
-	current_distance += delta * 8.0
+	current_distance += delta * speed
 	
 	if current_distance > len:
 		current_distance = len - current_distance

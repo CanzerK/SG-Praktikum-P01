@@ -10,6 +10,11 @@ import CoreBluetooth
 import Combine
 
 extension Device {
+	internal func enqueueDelayCommandInternal(_ duration: Float,
+											  completion: ((Result<Void, DeviceError>) -> Void)?) {
+		return commandQueue.enqueueDelay(duration, completion: completion)
+	}
+
 	internal func enqueueCommandInternal<R, T: CommandRepresentable>(_ dump: R.Type,
 																	 deviceId: DeviceId,
 																	 commandId: T,
@@ -118,6 +123,27 @@ extension Device {
 							  targetId: targetId)
 
 		commandQueue.enqueueWithData(command: command, completion: completion)
+	}
+
+	internal func enqueueDelayCommand(_ duration: Float) -> CommandResponseType<Void> {
+		Deferred {
+			Future<Void, DeviceError> { [weak self] promise in
+				guard let self = self else {
+					promise(.failure(.unableToWrite))
+
+					return
+				}
+
+				return self.enqueueDelayCommandInternal(duration) {
+					switch $0 {
+					case .success(let value):
+						promise(.success(value))
+					case .failure(let error):
+						promise(.failure(error))
+					}
+				}
+			}
+		}.eraseToAnyPublisher()
 	}
 
 	internal func enqueueCommand<T: CommandRepresentable>(deviceId: DeviceId, commandId: T) -> CommandResponseType<Void> {

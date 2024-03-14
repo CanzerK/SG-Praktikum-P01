@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw8atwotbuc7d"]
+
+[ext_resource type="PackedScene" uid="uid://bmn2ppto07etr" path="res://assets/meshes/others/cloud_2.glb" id="1_cbfwv"]
+[ext_resource type="Material" uid="uid://cxy2u6ujc4kmu" path="res://assets/materials/clouds.tres" id="2_kvyhn"]
+
+[node name="cloud_2" instance=ExtResource("1_cbfwv")]
+
+[node name="C2_Cloud_0" parent="." index="0"]
+gi_mode = 0
+surface_material_override/0 = ExtResource("2_kvyhn")

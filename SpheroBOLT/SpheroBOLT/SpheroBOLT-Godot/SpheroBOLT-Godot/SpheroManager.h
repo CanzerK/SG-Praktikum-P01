@@ -3,6 +3,7 @@
 #include <swift/bridging>
 
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import <SpheroBOLT-Swift.h>
 #import "ObjCPtr.mm"
 
@@ -36,6 +37,16 @@ class SpheroManager;
 
 - (void)connect;
 - (void)wake;
+- (void)sleep;
+- (void)driveWithHeading:(uint8_t)speed
+				 heading:(uint16_t)heading
+			   direction:(Direction)direction
+				duration:(float)duration
+				 driveId:(uint8_t)driveId;
+- (void)setAllLEDColorsFront:(_Nonnull CGColorRef)front
+					 andBack:(_Nonnull CGColorRef)back;
+- (void)setMainLEDColor:(_Nonnull CGColorRef)color;
+- (void)setBackLEDColor:(_Nonnull CGColorRef)color;
 
 @end
 
@@ -51,8 +62,18 @@ public:
 	SpheroDevice() = default;
 	~SpheroDevice();
 
-	void attempt_connection();
+	void try_connect();
 	void wake();
+	void sleep();
+	void drive(const int speed,
+			   const int heading,
+			   const int direction,
+			   const float duration,
+			   const int drive_id);
+	void set_all_colors(const Color front, const Color back);
+	void set_main_color(const Color color);
+	void set_back_color(const Color color);
+
 	String get_name();
 
 public:
