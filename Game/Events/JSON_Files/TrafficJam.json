@@ -1,0 +1,9 @@
+{
+    "EventId": 21,
+    "EventName": "TrafficJam",
+    "EventTextMain": "res://Events/Police_Events/TrafficJam/TrafficJam_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/TrafficJam/TrafficJam_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/TrafficJam/TrafficJam_Success.txt",
+    "ImgFail": "res://Events/Police_Events/TrafficJam/TrafficJam_Failure.png",
+    "ImgOK": "res://Events/Police_Events/TrafficJam/TrafficJam_Success.png"
+}

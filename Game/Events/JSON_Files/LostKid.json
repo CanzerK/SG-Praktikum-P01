@@ -1,0 +1,9 @@
+{
+    "EventId": 16,
+    "EventName": "LostKid",
+    "EventTextMain": "res://Events/Police_Events/LostKid/LostKids_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/LostKid/LostKid_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/LostKid/LostKid_Success.txt",
+    "ImgFail": "res://Events/Police_Events/LostKid/LostKid_Failure.png",
+    "ImgOK": "res://Events/Police_Events/LostKid/LostKid_Success.png"
+}

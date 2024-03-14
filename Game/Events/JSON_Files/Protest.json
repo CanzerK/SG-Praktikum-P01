@@ -1,0 +1,9 @@
+{
+    "EventId": 18,
+    "EventName": "Protest",
+    "EventTextMain": "res://Events/Police_Events/Protest/SecurityToPeacefulProtest_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/Protest/SecurityToPeacefulProtest_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/Protest/SecurityToPeacefulProtest_Success.txt",
+    "ImgFail": "res://Events/Police_Events/Protest/Protest_Failure.png",
+    "ImgOK": "res://Events/Police_Events/Protest/Protest_Success.png"
+}

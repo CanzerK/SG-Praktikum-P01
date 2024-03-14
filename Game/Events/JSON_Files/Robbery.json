@@ -1,0 +1,9 @@
+{
+    "EventId": 19,
+    "EventName": "Robbery",
+    "EventTextMain": "res://Events/Police_Events/Robbery/Robbery_Occurance.txt",
+    "EventTextFail": "res://Events/Police_Events/Robbery/Robbery_Failure.txt",
+    "EventTextOK": "res://Events/Police_Events/Robbery/Robbery_Success.txt",
+    "ImgFail": "res://Events/Police_Events/Robbery/Robbery_Failure.png",
+    "ImgOK": "res://Events/Police_Events/Robbery/Robbery_Success.png"
+}
