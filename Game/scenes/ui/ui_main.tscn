@@ -6,9 +6,11 @@
 script/source = "class_name MainMenu
 extends Control
 
-@onready var  start_button = $Button as Button
-@onready var  exit_button = $Button2 as Button
-@onready var start_game = preload(\"res://scenes/game/game.tscn\") as PackedScene
+const GAME_SCENE_PATH : String = \"res://scenes/game/game.tscn\"
+
+@onready var start_button = $Button as Button
+@onready var exit_button = $Button2 as Button
+@onready var start_game = preload(GAME_SCENE_PATH) as PackedScene
 
 func _ready():
 	start_button.button_down.connect(on_start_pressed)
@@ -35,32 +37,25 @@ script = SubResource("GDScript_cyiff")
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.36
-anchor_top = 0.6
-anchor_right = 0.65
-anchor_bottom = 0.75
+anchor_left = 0.32
+anchor_top = 0.32
+anchor_right = 0.67
+anchor_bottom = 0.52
 offset_left = 0.279968
-offset_top = -217.8
-offset_right = 0.279968
-offset_bottom = -217.8
+offset_right = 0.279915
 theme = ExtResource("1_ednwg")
 theme_override_font_sizes/font_size = 35
-text = "Start Game"
+text = "Go To Lobby"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.36
-anchor_top = 0.6
+anchor_left = 0.35
+anchor_top = 0.55
 anchor_right = 0.65
-anchor_bottom = 0.75
+anchor_bottom = 0.7
 offset_left = 0.279968
-offset_top = -61.8
-offset_right = 0.279968
-offset_bottom = -61.8
+offset_right = 0.279915
 theme = ExtResource("1_ednwg")
 theme_override_font_sizes/font_size = 35
 text = "Exit Game"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.998754, 1)

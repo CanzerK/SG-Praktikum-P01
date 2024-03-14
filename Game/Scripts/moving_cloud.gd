@@ -12,6 +12,6 @@ func _ready():
 func _process(delta):
 	time += delta
 	var old_pos = transform.origin
-	old_pos.x += 0.02 * sin(0.5 * rand_dir.x * time)
-	old_pos.z += 0.01 * cos(0.5 * rand_dir.y * time)
+	old_pos.x += 0.04 * sin(0.5 * rand_dir.x * time)
+	old_pos.z += 0.02 * cos(0.5 * rand_dir.y * time)
 	transform.origin = old_pos

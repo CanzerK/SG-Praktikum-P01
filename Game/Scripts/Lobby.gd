@@ -50,8 +50,6 @@ func _process(delta):
 func _on_connected_devices_item_selected(index):
 	var device = DeviceManager.get_connected_device(index)
 	
-	print("Waking device %s" % device.get_name());
-	
 	device.wake()
 	device.set_all_colors(Color(0.5, 0.1, 0.1), Color(0.1, 0.5, 0.1))
 	device.drive(100, 90, DeviceManager.DRIVE_DIRECTION.FORWARD, 2.5, 0)

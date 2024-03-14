@@ -1,8 +1,8 @@
-[gd_scene load_steps=74 format=3 uid="uid://d1gi1b4nc2xfg"]
+[gd_scene load_steps=75 format=3 uid="uid://d1gi1b4nc2xfg"]
 
 [ext_resource type="Sky" uid="uid://bmqmyw8e8itwq" path="res://resources/sky.tres" id="1_mdi0v"]
 [ext_resource type="Terrain3DStorage" uid="uid://bgtj71hax5pdh" path="res://resources/new_terrain_3d_storage.res" id="2_4n17l"]
-[ext_resource type="Terrain3DMaterial" uid="uid://dhppteotut0d0" path="res://Assets/materials/terrain.tres" id="3_q2ru1"]
+[ext_resource type="Terrain3DMaterial" uid="uid://dhppteotut0d0" path="res://assets/materials/terrain.tres" id="3_q2ru1"]
 [ext_resource type="Terrain3DTextureList" uid="uid://dk3u2fyp0xvyy" path="res://resources/terrain_textures.tres" id="4_0qcw5"]
 [ext_resource type="PackedScene" uid="uid://bchd04krcgph7" path="res://scenes/game/buildings/road_straight.tscn" id="5_fus8h"]
 [ext_resource type="PackedScene" uid="uid://dgvs5yn07qblw" path="res://scenes/game/buildings/road_intersection.tscn" id="6_ngmhv"]
@@ -34,14 +34,14 @@
 [ext_resource type="PackedScene" uid="uid://cugtnnf82ql7l" path="res://scenes/game/buildings/building_3.tscn" id="27_w6ywk"]
 [ext_resource type="PackedScene" uid="uid://bir1u1v2pcqi6" path="res://scenes/game/buildings/building_2.tscn" id="28_4vvu0"]
 [ext_resource type="PackedScene" uid="uid://biodrisidxsov" path="res://scenes/game/buildings/building_4.tscn" id="29_u8lb6"]
-[ext_resource type="PackedScene" uid="uid://coc4t5i10dshv" path="res://Assets/city/building_E.gltf" id="30_8kt7e"]
+[ext_resource type="PackedScene" uid="uid://coc4t5i10dshv" path="res://assets/city/building_E.gltf" id="30_8kt7e"]
 [ext_resource type="PackedScene" uid="uid://bnaixp3qm5n2x" path="res://scenes/game/buildings/building_5.tscn" id="31_drh7q"]
 [ext_resource type="PackedScene" uid="uid://bppt4ya0uayyw" path="res://scenes/game/buildings/hospital.tscn" id="32_ihcc4"]
 [ext_resource type="PackedScene" uid="uid://ld53xh6c4aq5" path="res://scenes/game/buildings/base.tscn" id="33_gfrm7"]
 [ext_resource type="PackedScene" uid="uid://wwa8k6i28mq1" path="res://scenes/game/buildings/car_ambulance.tscn" id="34_8cdli"]
-[ext_resource type="PackedScene" uid="uid://dwdudjhhrrrxo" path="res://Assets/city/trafficlight_A.gltf" id="35_y7ofj"]
-[ext_resource type="PackedScene" uid="uid://dedsg3e0vjssc" path="res://Assets/city/trafficlight_B.gltf" id="36_4v8xo"]
-[ext_resource type="PackedScene" uid="uid://hxjs3tof65cx" path="res://Assets/city/trafficlight_C.gltf" id="37_1yklt"]
+[ext_resource type="PackedScene" uid="uid://dwdudjhhrrrxo" path="res://assets/city/trafficlight_A.gltf" id="35_y7ofj"]
+[ext_resource type="PackedScene" uid="uid://dedsg3e0vjssc" path="res://assets/city/trafficlight_B.gltf" id="36_4v8xo"]
+[ext_resource type="PackedScene" uid="uid://hxjs3tof65cx" path="res://assets/city/trafficlight_C.gltf" id="37_1yklt"]
 [ext_resource type="PackedScene" uid="uid://deodkmoom03u3" path="res://scenes/game/buildings/trafficlight_c.tscn" id="38_4kguo"]
 [ext_resource type="PackedScene" uid="uid://c1dytjpv5nvtd" path="res://scenes/game/buildings/building_6.tscn" id="39_047xp"]
 [ext_resource type="PackedScene" uid="uid://n6frswsdor3w" path="res://scenes/game/buildings/building_1.tscn" id="40_igp17"]
@@ -54,8 +54,9 @@
 [ext_resource type="PackedScene" uid="uid://bay4entoo3m5b" path="res://scenes/game/buildings/bench.tscn" id="47_rgg4e"]
 [ext_resource type="PackedScene" uid="uid://dts7dio0upi0m" path="res://scenes/game/buildings/car_taxi.tscn" id="48_0lu8j"]
 [ext_resource type="PackedScene" uid="uid://dcifjjths2ij8" path="res://scenes/game/buildings/firehydrant.tscn" id="49_kde13"]
-[ext_resource type="Material" uid="uid://cxv36yd662fvn" path="res://Assets/shaders/vignette.tres" id="51_ty4t3"]
 [ext_resource type="LightmapGIData" uid="uid://c4pfa08lr1mm7" path="res://resources/welcome_screen.lmbake" id="54_4jj4j"]
+[ext_resource type="PackedScene" uid="uid://d3w0sau70gjj1" path="res://scenes/ui/ui_main.tscn" id="56_8ardc"]
+[ext_resource type="Material" uid="uid://cj6nmt5tvafww" path="res://assets/materials/tilt_shift_material.tres" id="56_80p3a"]
 
 [sub_resource type="Environment" id="Environment_v10de"]
 background_mode = 2
@@ -91,7 +92,7 @@ adjustment_brightness = 1.05
 adjustment_contrast = 1.1
 adjustment_saturation = 1.05
 
-[sub_resource type="Resource" id="Resource_nqvk0"]
+[sub_resource type="Resource" id="Resource_rk2e7"]
 script = ExtResource("15_sv5ew")
 amount = 5000
 enabled = true
@@ -100,7 +101,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_s1k5f"]
+[sub_resource type="Resource" id="Resource_dvney"]
 script = ExtResource("16_0uw1e")
 iterations = 3
 offset_step = 0.01
@@ -112,7 +113,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_7f5cp"]
+[sub_resource type="Resource" id="Resource_1tyul"]
 script = ExtResource("17_hk3tn")
 mask = ""
 mask_rotation = 0.0
@@ -128,7 +129,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_tpawl"]
+[sub_resource type="Resource" id="Resource_ir1p7"]
 script = ExtResource("18_idun3")
 rotation = Vector3(2.08167e-15, 360, 2.08167e-15)
 snap_angle = Vector3(0, 0, 0)
@@ -138,7 +139,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_5h2b6"]
+[sub_resource type="Resource" id="Resource_656p6"]
 script = ExtResource("19_idqml")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -149,7 +150,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_picy7"]
+[sub_resource type="Resource" id="Resource_36qys"]
 script = ExtResource("20_tj70t")
 terrain_node = NodePath("../../Terrain")
 align_with_collision_normal = false
@@ -159,9 +160,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_qkix1"]
+[sub_resource type="Resource" id="Resource_y2mms"]
 script = ExtResource("14_0b6iy")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_nqvk0"), SubResource("Resource_s1k5f"), SubResource("Resource_7f5cp"), SubResource("Resource_tpawl"), SubResource("Resource_5h2b6"), SubResource("Resource_picy7")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_rk2e7"), SubResource("Resource_dvney"), SubResource("Resource_1tyul"), SubResource("Resource_ir1p7"), SubResource("Resource_656p6"), SubResource("Resource_36qys")])
 
 [sub_resource type="Resource" id="Resource_64uum"]
 script = ExtResource("23_u7q35")
@@ -786,9 +787,9 @@ script = ExtResource("13_vvnki")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.191208, 0)
 
 [node name="Trees" type="Node3D" parent="Foliage"]
-transform = Transform3D(25.1107, -3.27162e-16, 1.2661e-14, 8.75829e-15, 0.938, -1.2661e-14, -8.75829e-15, 3.27162e-16, 36.3, -92, -10.3447, -139.5)
+transform = Transform3D(25.1107, -3.27162e-16, 1.2661e-14, 8.75829e-15, 0.938, -1.2661e-14, -8.75829e-15, 3.27162e-16, 36.3, -92, -8.3447, -139.5)
 script = ExtResource("13_p7o2b")
-modifier_stack = SubResource("Resource_qkix1")
+modifier_stack = SubResource("Resource_y2mms")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -1168,7 +1169,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0.775, -120.725)
 curve = SubResource("Curve3D_br3q7")
 
 [node name="PathFollow" type="PathFollow3D" parent="new_buildings/Path"]
-transform = Transform3D(-0.999988, 2.54521e-21, 8.74222e-08, 0, 0.999992, -2.91138e-14, -8.74217e-08, -2.91138e-14, -0.999993, 0, 0, 0)
+transform = Transform3D(-0.999988, -4.39605e-21, -1.50995e-07, 0, 0.999992, -2.91138e-14, 1.50994e-07, -2.91138e-14, -0.999993, 0, 0, 0)
 
 [node name="car_sedan2" parent="new_buildings" node_paths=PackedStringArray("path") instance=ExtResource("41_k5vn6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0.775, -132)
@@ -1273,10 +1274,14 @@ light_data = ExtResource("54_4jj4j")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = ExtResource("51_ty4t3")
+material = ExtResource("56_80p3a")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="HUD" instance=ExtResource("56_8ardc")]

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cj6nmt5tvafww"]
+
+[ext_resource type="Shader" path="res://assets/shaders/tilt_shift.gdshader" id="1_j6tut"]
+
+[resource]
+shader = ExtResource("1_j6tut")
+shader_parameter/limit = 0.45
+shader_parameter/blur = 3.75

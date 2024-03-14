@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Urban Heroes"
-run/main_scene="res://scenes/game/game.tscn"
+run/main_scene="res://scenes/game/welcome_screen.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://icon.svg"
 
