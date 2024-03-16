@@ -7,67 +7,147 @@ script/source = "extends Sprite2D
 # We need to implement the way to get event information from Event Handler
 # The objects/variables from EventHandler should provide, which JSON file we
 # should read.
-# Define the JSON path here.
-var itemData = {}
-var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
+# Define the JSON path here
+#var itemData = {}
+#var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
 
 @onready var sprite_node: Sprite2D
 @onready var text_node
 
-func _ready():
-	itemData = load_json_file(data_file_path)	
-	sprite_node = $\"../EventImage\"
-	text_node = $\"../EventText\"
+
+# Event System with Time Only
+
+class EventReader:
+	var name: String
+	var event_time: Dictionary  # Dictionary to store time components
+
+	func _init(name, event_time):
+		self.name = name
+		self.event_time = event_time
+
+# Main Event System
+class EventSystem:
+	
+	extends Sprite2D
+	@onready var sprite_node: Sprite2D
+	@onready var text_node
+	
+	var itemData = {}
+	var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
 
 	
-	var image_path_occurance = \"\" # This could ne generic for all event/department
+	var events: Array = []
 	
-	if \"EventId\" in itemData:
-		var event_id_path = itemData[\"EventId\"]
-		# var event_id = load(event_id_path)
-	
-	if \"EventName\" in itemData:
-		var event_name_path = itemData[\"EventName\"]
-		#var eventNane = load(event_name_path)
-		print(event_name_path)
-	
-	if \"ImgOK\" in itemData:
-		var image_ok_path = itemData[\"ImgOK\"]
-		var imageOK = load(image_ok_path)
-		sprite_node.texture = imageOK
-	
-	var image_fail_path = itemData[\"ImgFail\"]
-	
-	if \"EventTextOK\" in itemData:
-		var textOK_path = itemData[\"EventTextOK\"]
-		var file = FileAccess.open(textOK_path, FileAccess.READ)
-		var textOK = file.get_as_text()
-		text_node.text = textOK
-		print(textOK)
+	func _read_the_events():
 		
-	var text_occurance_path = itemData[\"EventTextMain\"]
-	var text_ok_path = itemData[\"EventTextOK\"]
-	var text_fail_path = itemData[\"EventTextFail\"]
-	
-	
-
-
-
-func load_json_file(filePath : String):
-	if FileAccess.file_exists(filePath):
-		var dataFile = FileAccess.open(filePath, FileAccess.READ)
-		var parsedResults = JSON.parse_string(dataFile.get_as_text())
+		itemData = load_json_file(data_file_path)	
+		sprite_node = $\"../EventImage\"
+		text_node = $\"../EventText\"
 		
-		if parsedResults is Dictionary:
-			return parsedResults
-		else:
-			print(\"Error reading file. Probably JSON-File is corrupted.\")
+		var current_event = null
+		var new_events = []
+		
+		#this is the following
+		#Loading of random events in the array 
+		while (current_event == null):
+			var random_int = randi_range(0, 29)
+			if current_event != null:
+				break
+			if random_int not in new_events:
+				new_events.append(random_int)
+				current_event = new_events[random_int]
+			else :
+				current_event = null
 			
-	else:
-		print(\"File doesn't exists!\")
+		var image_path_occurance = \"\" # This could ne generic for all event/department
+		
+		if \"EventId\" in itemData:
+			var event_id_path = itemData[\"EventId\"]
+			# var event_id = load(event_id_path)
+		
+		if \"EventName\" in itemData:
+			var event_name_path = itemData[\"EventName\"]
+			#var eventNane = load(event_name_path)
+			print(event_name_path)
+		
+		if \"ImgOK\" in itemData:
+			var image_ok_path = itemData[\"ImgOK\"]
+			var imageOK = load(image_ok_path)
+			sprite_node.texture = imageOK
+		
+		var image_fail_path = itemData[\"ImgFail\"]
+		
+		if \"EventTextOK\" in itemData:
+			var textOK_path = itemData[\"EventTextOK\"]
+			var file = FileAccess.open(textOK_path, FileAccess.READ)
+			var textOK = file.get_as_text()
+			text_node.text = textOK
+			print(textOK)
+			
+		var text_occurance_path = itemData[\"EventTextMain\"]
+		var text_ok_path = itemData[\"EventTextOK\"]
+		var text_fail_path = itemData[\"EventTextFail\"]
 		
 		
 	
+		
+		
+		
+		
+		
+	func load_json_file(filePath : String):
+		if FileAccess.file_exists(filePath):
+			var dataFile = FileAccess.open(filePath, FileAccess.READ)
+			var parsedResults = JSON.parse_string(dataFile.get_as_text())
+		
+			if parsedResults is Dictionary:
+				return parsedResults
+			else:
+				print(\"Error reading file. Probably JSON-File is corrupted.\")
+			
+		else:
+			print(\"File doesn't exists!\")
+	# Function to show an event
+	func show_event(event):
+		print(\"Showing Event:\", event.name)
+
+	# Function to schedule an event
+	func schedule_event(event, time):
+		event.event_time = time
+		events.append(event)
+		#events.sort_custom(self, \"_compare_events\")
+
+	# Function to complete an event
+	func complete_event(event):
+		events.erase(events.find(event))
+
+	# Function to compare events based on time
+	func _compare_events(a, b):
+		var a_unix_time = _get_unix_time(a.event_time)
+		var b_unix_time = _get_unix_time(b.event_time)
+		return a_unix_time - b_unix_time
+
+	# Function to convert time components to Unix timestamp
+	func _get_unix_time(time):
+		return time[\"hour\"] * 3600 + time[\"minute\"] * 60 + time[\"second\"]
+
+	# Process function called in every frame
+	func _process(delta):
+		var current_unix_time = _get_unix_time({
+			\"hour\": 12,     # Replace with the current hour
+			\"minute\": 0,    # Replace with the current minute
+			\"second\": 0     # Replace with the current second
+		})
+		
+		for event in events:
+			var event_unix_time = _get_unix_time(event.event_time)
+			if event_unix_time <= current_unix_time:
+				show_event(event)
+				complete_event(event)
+
+
+
+
 "
 
 [sub_resource type="Theme" id="Theme_t8yp5"]
