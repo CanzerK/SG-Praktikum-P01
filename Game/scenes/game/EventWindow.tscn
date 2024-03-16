@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdtqmmf6i2xoy"]
+[gd_scene load_steps=6 format=3 uid="uid://bdtqmmf6i2xoy"]
+
+[ext_resource type="Script" path="res://scenes/game/control.gd" id="1_cihpc"]
+[ext_resource type="Script" path="res://scenes/game/state_machine_event.gd" id="2_gus47"]
+[ext_resource type="Script" path="res://scenes/game/Idle.gd" id="3_m2ssq"]
 
 [sub_resource type="GDScript" id="GDScript_4wb85"]
 resource_name = "Init_Event_Window"
@@ -159,6 +163,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cihpc")
 
 [node name="Window" type="Window" parent="."]
 initial_position = 3
@@ -186,16 +191,20 @@ horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
 
-[node name="state machine" type="Node" parent="."]
+[node name="state_machine_event" type="Node" parent="."]
+script = ExtResource("2_gus47")
 
-[node name="Idle" type="Node" parent="state machine"]
+[node name="Idle" type="Node" parent="state_machine_event"]
+script = ExtResource("3_m2ssq")
+animation_name = null
+move_speed = null
 
-[node name="Display" type="Node" parent="state machine"]
+[node name="Display" type="Node" parent="state_machine_event"]
 
-[node name="move" type="Node" parent="state machine"]
+[node name="move" type="Node" parent="state_machine_event"]
 
-[node name="success" type="Node" parent="state machine"]
+[node name="success" type="Node" parent="state_machine_event"]
 
-[node name="failure" type="Node" parent="state machine"]
+[node name="failure" type="Node" parent="state_machine_event"]
 
-[node name="score" type="Node" parent="state machine"]
+[node name="score" type="Node" parent="state_machine_event"]
