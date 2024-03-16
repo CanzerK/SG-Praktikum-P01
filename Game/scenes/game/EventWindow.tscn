@@ -27,14 +27,13 @@ class EventReader:
 
 # Main Event System
 class EventSystem:
-	
+
 	extends Sprite2D
 	@onready var sprite_node: Sprite2D
 	@onready var text_node
 	
 	var itemData = {}
 	var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
-
 	
 	var events: Array = []
 	
@@ -186,3 +185,17 @@ theme = SubResource("Theme_t8yp5")
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
+
+[node name="state machine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="state machine"]
+
+[node name="Display" type="Node" parent="state machine"]
+
+[node name="move" type="Node" parent="state machine"]
+
+[node name="success" type="Node" parent="state machine"]
+
+[node name="failure" type="Node" parent="state machine"]
+
+[node name="score" type="Node" parent="state machine"]
