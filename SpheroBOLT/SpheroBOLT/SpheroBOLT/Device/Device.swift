@@ -57,7 +57,7 @@ import CoreBluetooth
 	 * @parameter device The device instance.
 	 * @parameter driveId The drive id assigned when we started.
 	 */
-	@objc optional func deviceDidFinishDriving(_ device: Device, driveId: UInt8)
+	@objc optional func deviceDidFinishDriving(_ device: Device, driveId: Int)
 }
 
 @objc public class Device: NSObject {

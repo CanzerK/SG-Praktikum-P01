@@ -193,7 +193,7 @@
 				 heading:(uint16_t)heading
 			   direction:(Direction)direction
 				duration:(float)duration
-				 driveId:(uint8_t)driveId
+				 driveId:(int)driveId
 {
 	[self.device sendDriveWithHeadingCommandWithSpeed:speed heading:heading direction:direction duration:duration driveId:driveId];
 }
@@ -288,7 +288,7 @@ void SpheroDevice::drive(const uint8_t speed,
 						 const uint16_t heading,
 						 const int direction,
 						 const float duration,
-						 const uint8_t drive_id)
+						 const int drive_id)
 {
 	[_device.get() driveWithHeading:speed heading:heading direction:static_cast<Direction>(direction) duration:duration driveId:drive_id];
 }

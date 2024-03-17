@@ -7,8 +7,12 @@ atlas = ExtResource("1_n5fiu")
 
 [resource]
 texture = SubResource("AtlasTexture_yled2")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
 expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
-region_rect = Rect2(840, 240, 195, 55)
+region_rect = Rect2(835, 240, 200, 55)

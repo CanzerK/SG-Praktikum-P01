@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq6qdx751b3r7"]
+
+[ext_resource type="PackedScene" uid="uid://bpfp6qn5lop6e" path="res://scenes/game/buildings/light_square.tscn" id="1_krkrf"]
+
+[node name="street_lights" type="Node3D"]
+
+[node name="light_square6" parent="." instance=ExtResource("1_krkrf")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -8, 2.08165e-12, 2.08165e-12)
+
+[node name="light_square4" parent="." instance=ExtResource("1_krkrf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 2.08165e-12, 2.08165e-12)

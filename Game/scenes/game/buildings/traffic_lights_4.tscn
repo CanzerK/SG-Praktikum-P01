@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://du135brrgpv7e"]
+
+[ext_resource type="PackedScene" uid="uid://deodkmoom03u3" path="res://scenes/game/buildings/trafficlight_c.tscn" id="1_esksk"]
+
+[node name="traffic_lights_4" type="Node3D"]
+
+[node name="trafficlight_C15" parent="." instance=ExtResource("1_esksk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.08165e-12, 7)
+
+[node name="trafficlight_C16" parent="." instance=ExtResource("1_esksk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 2.08165e-12, 7)
+
+[node name="trafficlight_C17" parent="." instance=ExtResource("1_esksk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7, 2.08165e-12, -7)
+
+[node name="trafficlight_C18" parent="." instance=ExtResource("1_esksk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 2.08165e-12, -7)

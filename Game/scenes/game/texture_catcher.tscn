@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq8x88sidrl84"]
+
+[ext_resource type="Script" path="res://scripts/texture_catcher.gd" id="1_4a2ii"]
+[ext_resource type="PackedScene" uid="uid://bebhwok53g2" path="res://scenes/game/buildings/firetruck.tscn" id="1_nxl5h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j8u53"]
+viewport_path = NodePath("SubViewport")
+
+[node name="TextureCatcher" type="Node3D"]
+script = ExtResource("1_4a2ii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_j8u53")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Node3D" type="Node3D" parent="SubViewport"]
+
+[node name="Mesh" type="Node3D" parent="SubViewport/Node3D"]
+
+[node name="firetruck2" parent="SubViewport/Node3D/Mesh" instance=ExtResource("1_nxl5h")]
+transform = Transform3D(0.5, -1.74393e-16, 1.74394e-16, 1.74394e-16, 0.5, -1.74394e-16, -1.74394e-16, 1.74393e-16, 0.5, -0.709594, 0.0646921, -0.0201526)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D"]
+transform = Transform3D(0.884654, -0.207806, 0.417377, 5.57946e-09, 0.895183, 0.445698, -0.466248, -0.394289, 0.791928, 3.23571, 5.79737, 6.47901)
+fov = 70.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16098, 0.952857, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1986, 0.952857, 0)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207228, 0.952857, -11.1729)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(0.875186, 0.261879, -0.406778, 1.59024e-08, 0.840822, 0.541312, 0.483787, -0.473749, 0.735875, -2.0687, 1.85398, 1.49895)

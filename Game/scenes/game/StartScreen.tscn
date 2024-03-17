@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cacuhuxtsj4qh"]
+[gd_scene load_steps=25 format=3 uid="uid://duvoh5052bvo3"]
 
 [ext_resource type="PackedScene" uid="uid://dw75p503bbcyj" path="res://assets/meshes/roads/road_straight.glb" id="1_1dsuu"]
 [ext_resource type="PackedScene" uid="uid://d1tpnocnle1o6" path="res://assets/meshes/roads/road_bend.glb" id="2_l11nj"]

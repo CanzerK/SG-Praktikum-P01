@@ -1,79 +1,142 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqstfriod2sgn"]
+[gd_scene load_steps=12 format=3 uid="uid://dqstfriod2sgn"]
 
 [ext_resource type="Texture2D" uid="uid://bnxoutejagt7r" path="res://assets/ui/icons/png/White/1x/forward.png" id="1_ldtke"]
+[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="2_51igs"]
 [ext_resource type="Texture2D" uid="uid://cte4j3ecrltwf" path="res://assets/ui/icons/png/White/1x/pause.png" id="2_d4l15"]
 [ext_resource type="PackedScene" uid="uid://dr3k5kje3kp57" path="res://scenes/ui/ui_pause.tscn" id="3_n4t3t"]
+[ext_resource type="FontFile" uid="uid://b3ikqpaufcvxp" path="res://assets/ui/fonts/kenvector_future.ttf" id="4_u03m7"]
+[ext_resource type="Texture2D" uid="uid://bgmpfh7ps8xv" path="res://assets/ui/icons/vector/vector_whiteIcons.svg" id="6_xtxoo"]
 
 [sub_resource type="GDScript" id="GDScript_y2a48"]
 resource_name = "HUD"
 script/source = "class_name HUD
 extends Control
 
+const MOVE_SPEED = 50
+const MOVE_TIME = 0.4
+const EXTRA_MOVE_TIME = 0.15
+const MOVE_DIRECTION_NORTH = 0
+const MOVE_DIRECTION_EAST = 90
+const MOVE_DIRECTION_SOUTH = 180
+const MOVE_DIRECTION_WEST = 270
 
-@onready var  pause_button = $PauseButton as Button
+var _drive_id = 0
+
+var _heading_per_device = {}
+
+@onready var pause_button = $PauseButton as Button
 @onready var pause_menu = $PauseMenu
 
-
 func _ready():
-	pause_button.button_down.connect(on_pause_pressed)
-
+	pause_button.button_up.connect(_on_pause_pressed)
 	
 	
-func on_pause_pressed() -> void:
+func _on_pause_pressed():
 	if !Engine.time_scale:
 		pause_menu.hide()
 		Engine.time_scale = 1
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
-		
 
+
+func _get_total_time(device, heading):
+	var old_heading = _heading_per_device[device.get_name()]
+	var total_time = MOVE_TIME
+	
+	if old_heading != heading:
+		total_time += EXTRA_MOVE_TIME
+	
+	return total_time
+	
+	
+func _move_with_heading(device, heading):
+	_drive_id += 1
+	
+	var move_time = _get_total_time(device, heading)
+	_heading_per_device[device.get_name()] = heading
+	
+	device.drive(MOVE_SPEED, heading, DeviceManager.DRIVE_DIRECTION.FORWARD, move_time, _drive_id)
+
+
+func _on_up_button_pressed():
+	var device = DeviceManager.get_connected_device(0)
+	_move_with_heading(device, MOVE_DIRECTION_NORTH)
+
+
+func _on_left_button_pressed():
+	var device = DeviceManager.get_connected_device(0)
+	_move_with_heading(device, MOVE_DIRECTION_WEST)
+
+
+func _on_right_button_pressed():
+	var device = DeviceManager.get_connected_device(0)
+	_move_with_heading(device, MOVE_DIRECTION_EAST)
+
+
+func _on_down_button_pressed():
+	var device = DeviceManager.get_connected_device(0)
+	_move_with_heading(device, MOVE_DIRECTION_SOUTH)
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b1n3"]
+atlas = ExtResource("6_xtxoo")
+region = Rect2(105, 0, 30, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho1tl"]
+atlas = ExtResource("6_xtxoo")
+region = Rect2(50, 0, 40, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81jhm"]
+atlas = ExtResource("6_xtxoo")
+region = Rect2(0, 0, 40, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyigh"]
+atlas = ExtResource("6_xtxoo")
+region = Rect2(155, 0, 30, 35)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = SubResource("GDScript_y2a48")
 
 [node name="ShowEventsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 533.0
-offset_top = 595.0
-offset_right = 592.0
-offset_bottom = 626.0
-scale = Vector2(1.69027, 1.48)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.95
+theme = ExtResource("2_51igs")
+theme_override_font_sizes/font_size = 28
 text = "Events"
 
 [node name="NextRoundButton" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 501.0
 offset_top = 2.0
 offset_right = 650.0
 offset_bottom = 60.0
+theme = ExtResource("2_51igs")
 text = "Play Round"
 icon = ExtResource("1_ldtke")
 
 [node name="PauseButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1089.0
-offset_top = 2.0
-offset_right = 1147.0
-offset_bottom = 60.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.915
+anchor_top = 0.025
+anchor_right = 0.975
+anchor_bottom = 0.135
+theme = ExtResource("2_51igs")
 icon = ExtResource("2_d4l15")
-
-[node name="ScoreText" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(1.36, 1.4)
-text = "Score:"
-
-[node name="Score" type="Label" parent="."]
-layout_mode = 0
-offset_left = 70.0
-offset_right = 110.0
-offset_bottom = 23.0
-scale = Vector2(1.06645, 1.4)
+icon_alignment = 1
+expand_icon = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_n4t3t")]
 visible = false
@@ -82,3 +145,95 @@ offset_left = 472.0
 offset_top = 419.0
 offset_right = 472.0
 offset_bottom = 419.0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.025
+anchor_right = 0.3
+anchor_bottom = 0.1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.862745, 0.909804, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_u03m7")
+theme_override_font_sizes/font_size = 28
+text = "Score:"
+max_lines_visible = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreNumber" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.721569, 0.658824, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_u03m7")
+theme_override_font_sizes/font_size = 28
+text = "1245"
+max_lines_visible = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.6
+anchor_right = 0.95
+anchor_bottom = 0.95
+
+[node name="Control2" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AspectRatioContainer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.05
+anchor_right = 0.65
+anchor_bottom = 0.35
+theme = ExtResource("2_51igs")
+icon = SubResource("AtlasTexture_7b1n3")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="AspectRatioContainer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.35
+anchor_right = 0.35
+anchor_bottom = 0.65
+theme = ExtResource("2_51igs")
+icon = SubResource("AtlasTexture_ho1tl")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="AspectRatioContainer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.35
+anchor_right = 0.95
+anchor_bottom = 0.65
+theme = ExtResource("2_51igs")
+icon = SubResource("AtlasTexture_81jhm")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="AspectRatioContainer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.65
+anchor_right = 0.65
+anchor_bottom = 0.95
+theme = ExtResource("2_51igs")
+icon = SubResource("AtlasTexture_wyigh")
+icon_alignment = 1

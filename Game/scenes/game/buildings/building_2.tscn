@@ -43,5 +43,5 @@ shadow_mesh = SubResource("ArrayMesh_sdd28")
 [node name="building_G2" instance=ExtResource("1_iqv8w")]
 
 [node name="building_G" parent="." index="0"]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("ArrayMesh_fnjit")

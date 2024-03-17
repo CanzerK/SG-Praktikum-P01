@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://kcuwymokf4xl"]
+
+[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="1_s7ihb"]
+[ext_resource type="Texture2D" uid="uid://bgmpfh7ps8xv" path="res://assets/ui/icons/vector/vector_whiteIcons.svg" id="2_omlb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfg71"]
+atlas = ExtResource("2_omlb8")
+region = Rect2(450, 250, 40, 40)
+
+[node name="Button" type="Button"]
+theme = ExtResource("1_s7ihb")
+theme_override_font_sizes/font_size = 20
+text = "ROBOT1234"
+icon = SubResource("AtlasTexture_qfg71")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0

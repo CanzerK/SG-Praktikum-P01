@@ -2,9 +2,9 @@ extends Node
 
 signal manager_did_add_available_device(device)
 signal manager_did_remove_available_device(device)
-signal manager_did_add_connected_device(device)
-signal manager_did_remove_connected_device(device)
-signal manager_did_connect_device(device)
+signal manager_did_add_connected_device(device, type)
+signal manager_did_remove_connected_device(device, type)
+signal manager_did_connect_device(device, type)
 
 enum MANAGER_STATE {
 	UNKNOWN,
@@ -17,12 +17,17 @@ enum MANAGER_STATE {
 enum DEVICE_STATE { CONNECTING, CONNECTED }
 
 enum DRIVE_DIRECTION { FORWARD, BACKWARD }
+
+enum DEVICE_DEPARTMENT { POLICE, AMBULANCE, FIRE_BRIGADE }
 	
 # List of available devices that are not connected yet.
 var _available_devices = []
 
 # List of all connected devices.
-var _connected_devices = []
+var _connected_devices = {}
+
+# Devices and their departments that have to be connected.
+var _devices_in_connection = {}
 
 # Mutex to lock the lists of available and conncted devices.
 var _devices_mutex: Mutex
@@ -67,19 +72,19 @@ func _on_manager_did_find_device(device):
 		
 		call_deferred("emit_signal", "manager_did_add_available_device", device)
 	
-	var connected_index = Utility.find_device_by_device(device, _connected_devices)
-	if connected_index != -1:
-		_connected_devices.remove_at(connected_index)
-		call_deferred("emit_signal", "manager_did_remove_connected_device", device)
+	var connected_type = Utility.find_device_by_device_in_dict(device, _connected_devices)
+	if connected_type != -1:
+		_connected_devices.erase(connected_type)
+		call_deferred("emit_signal", "manager_did_remove_connected_device", device, connected_type)
 		
 	_devices_mutex.unlock()
 	
 func _on_manager_did_disconnect_device(device):
 	_devices_mutex.lock()
 	
-	var connected_index = Utility.find_device_by_device(device, _connected_devices)
-	if connected_index != -1:
-		_connected_devices.remove_at(connected_index)
+	var connected_type = Utility.find_device_by_device_in_dict(device, _connected_devices)
+	if connected_type != -1:
+		_connected_devices.erase(connected_type)
 		call_deferred("emit_signal", "manager_did_remove_connected_device", device)
 	
 	var available_index = Utility.find_device_by_device(device, _available_devices)
@@ -99,11 +104,14 @@ func _on_device_did_update_connection_state(device_name, state):
 		var available_index = Utility.find_device_by_device_name(device_name, _available_devices)
 		var device = _available_devices[available_index]
 		
-		var connected_index = Utility.find_device_by_device_name(device_name, _connected_devices)
-		
-		if connected_index == -1:
-			_connected_devices.append(device)
-			call_deferred("emit_signal", "manager_did_add_connected_device", device)
+		# Add the device to the connected ones.
+		var connected_type = Utility.find_device_by_device_in_dict(device, _devices_in_connection)
+		if connected_type != -1:
+			call_deferred("emit_signal", "manager_did_connect_device", device, connected_type)
+			_devices_in_connection.erase(connected_type)
+			
+			_connected_devices[connected_type] = device
+			call_deferred("emit_signal", "manager_did_add_connected_device", device, connected_type)
 		
 		if available_index != -1:
 			_available_devices.remove_at(available_index)
@@ -136,12 +144,17 @@ func get_all_connected_devices():
 	return connected_devices_clone
 	
 	
-func get_connected_device(index):
+func get_connected_device(type: DEVICE_DEPARTMENT):
 	_devices_mutex.lock()
-	var device = _connected_devices[index]
+	var device = _connected_devices[type]
 	_devices_mutex.unlock()
 	
 	return device
+	
+	
+func connect_to_device(device, type: DEVICE_DEPARTMENT):
+	_devices_in_connection[type] = device
+	device.try_connect()
 	
 	
 func _process(delta):

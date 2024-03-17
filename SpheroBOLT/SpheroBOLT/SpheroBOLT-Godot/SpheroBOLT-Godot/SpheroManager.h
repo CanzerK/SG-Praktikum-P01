@@ -44,7 +44,7 @@ class SpheroManager;
 				 heading:(uint16_t)heading
 			   direction:(Direction)direction
 				duration:(float)duration
-				 driveId:(uint8_t)driveId;
+				 driveId:(int)driveId;
 - (void)setAllLEDColorsFront:(_Nonnull CGColorRef)front
 					 andBack:(_Nonnull CGColorRef)back;
 - (void)setMainLEDColor:(_Nonnull CGColorRef)color;
@@ -73,7 +73,7 @@ public:
 			   const uint16_t heading,
 			   const int direction,
 			   const float duration,
-			   const uint8_t drive_id);
+			   const int drive_id);
 	void set_all_colors(const Color front, const Color back);
 	void set_main_color(const Color color);
 	void set_back_color(const Color color);
