@@ -1,9 +1,15 @@
 {
-    "EventId": 12,
+    "EventId": 14,
     "EventName": "CarAccident",
-    "EventTextMain": "res://Events/Police_Events/CarAccident/CarAccident_Occurance.txt",
-    "EventTextFail": "res://Events/Police_Events/CarAccident/CarAccident_Failure.txt",
-    "EventTextOK": "res://Events/Police_Events/CarAccident/CarAccident_Success.txt",
-    "ImgFail": null,
-    "ImgOK": null
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/CarAccident/CarAccident_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/CarAccident/CarAccident_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/CarAccident/CarAccident_Success.txt",
+    "ImgMain": "res://Events/FireFighter/CarAccident/CarAccident_Occurance.png",
+    "ImgFail": "res://Events/FireFighter/CarAccident/CarAccident_Failure.png",
+    "ImgOK": "res://Events/FireFighter/CarAccident/CarAccident_Success.png",
+    "Location": [
+        4,
+        24
+    ]
 }

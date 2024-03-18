@@ -1,9 +1,15 @@
 {
-    "EventId": 17,
+    "EventId": 29,
     "EventName": "LoudMusic",
-    "EventTextMain": "res://Events/Police_Events/LoudMusic/LoudMusic_Occurance.txt",
-    "EventTextFail": "res://Events/Police_Events/LoudMusic/LoudMusic_Failure.txt",
-    "EventTextOK": "res://Events/Police_Events/LoudMusic/LoudMusic_Success.txt",
-    "ImgFail": "res://Events/Police_Events/LoudMusic/LoudMusic_Failure.png",
-    "ImgOK": "res://Events/Police_Events/LoudMusic/LoudMusic_Success.png"
+    "Department": "Police",
+    "EventTextMain": "res://Events/Police/LoudMusic/LoudMusic_Occurance.txt",
+    "EventTextFail": "res://Events/Police/LoudMusic/LoudMusic_Failure.txt",
+    "EventTextOK": "res://Events/Police/LoudMusic/LoudMusic_Success.txt",
+    "ImgMain": "res://Events/Police/LoudMusic/LoudMusic_Occurance.png",
+    "ImgFail": "res://Events/Police/LoudMusic/LoudMusic_Failure.png",
+    "ImgOK": "res://Events/Police/LoudMusic/LoudMusic_Success.png",
+    "Location": [
+        19,
+        12
+    ]
 }

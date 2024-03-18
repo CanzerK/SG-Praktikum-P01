@@ -1,0 +1,15 @@
+{
+    "EventId": 6,
+    "EventName": "ElderlyFall",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/ElderlyFall/ElderlyFall_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/ElderlyFall/ElderlyFall_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/ElderlyFall/ElderlyFall_Success.txt",
+    "ImgMain": "res://Events/Ambulance/ElderlyFall/ElderlyFall_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/ElderlyFall/ElderlyFall_Failure.png",
+    "ImgOK": "res://Events/Ambulance/ElderlyFall/ElderlyFall_Success.png",
+    "Location": [
+        4,
+        20
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "EventId": 8,
+    "EventName": "Heatwave",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/Heatwave/Heatwave_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/Heatwave/Heatwave_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/Heatwave/Heatwave_Success.txt",
+    "ImgMain": "res://Events/Ambulance/Heatwave/Heatwave_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/Heatwave/Heatwave_Failure.png",
+    "ImgOK": "res://Events/Ambulance/Heatwave/Heatwave_Success.png",
+    "Location": [
+        4,
+        6
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "EventId": 9,
+    "EventName": "HikingInjury",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/HikingInjury/HikingInjury_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/HikingInjury/HikingInjury_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/HikingInjury/HikingInjury_Success.txt",
+    "ImgMain": "res://Events/Ambulance/HikingInjury/HikingInjury_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/HikingInjury/HIkingInjury_Failure.png",
+    "ImgOK": "res://Events/Ambulance/HikingInjury/HikingInjury_Success.png",
+    "Location": [
+        18,
+        7
+    ]
+}

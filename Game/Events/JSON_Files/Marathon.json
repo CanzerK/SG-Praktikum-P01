@@ -1,0 +1,15 @@
+{
+    "EventId": 11,
+    "EventName": "Marathon",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/Marathon/Marathon_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/Marathon/Marathon_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/Marathon/Marathon_Success.txt",
+    "ImgMain": "res://Events/Ambulance/Marathon/Marathon_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/Marathon/Marathon_Failure.png",
+    "ImgOK": "res://Events/Ambulance/Marathon/Marathon_Success.png",
+    "Location": [
+        12,
+        19
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "EventId": 22,
+    "EventName": "Wildfire",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/Wildfire/Wildfire_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/Wildfire/Wildfire_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/Wildfire/Wildfire_Success.txt",
+    "ImgMain": "res://Events/FireFighter/Wildfire/WildFire_Occurance.png",
+    "ImgFail": "res://Events/FireFighter/Wildfire/WildFire_Failure.png",
+    "ImgOK": "res://Events/FireFighter/Wildfire/WildFire_Success.png",
+    "Location": [
+        1,
+        29
+    ]
+}

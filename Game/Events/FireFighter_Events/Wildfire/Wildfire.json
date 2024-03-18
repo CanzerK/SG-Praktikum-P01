@@ -1,9 +1,0 @@
-{
-    "EventId": 11,
-    "EventName": "Wildfire",
-    "EventTextMain": "res://Events/FireFighter_Events/Wildfire/Wildfire_Occurance.txt",
-    "EventTextFail": "res://Events/FireFighter_Events/Wildfire/Wildfire_Failure.txt",
-    "EventTextOK": "res://Events/FireFighter_Events/Wildfire/Wildfire_Success.txt",
-    "ImgFail": null,
-    "ImgOK": null
-}

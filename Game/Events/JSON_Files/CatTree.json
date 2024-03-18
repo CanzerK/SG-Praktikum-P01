@@ -1,9 +1,15 @@
 {
-    "EventId": 2,
+    "EventId": 15,
     "EventName": "CatTree",
-    "EventTextMain": "res://Events/FireFighter_Events/CatTree//CatTree_Occurance.txt",
-    "EventTextFail": "res://Events/FireFighter_Events/CatTree//CatTree_Failure.txt",
-    "EventTextOK": "res://Events/FireFighter_Events/CatTree//CatTree_Success.txt",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/CatTree/CatTree_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/CatTree/CatTree_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/CatTree/CatTree_Success.txt",
+    "ImgMain": "res://Events/FireFighter/CatTree/CatTree_Occurance.png",
     "ImgFail": null,
-    "ImgOK": null
+    "ImgOK": "res://Events/FireFighter/CatTree/CatTree__Success.png",
+    "Location": [
+        11,
+        21
+    ]
 }

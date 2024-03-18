@@ -1,0 +1,15 @@
+{
+    "EventId": 28,
+    "EventName": "LostPet",
+    "Department": "Police",
+    "EventTextMain": "res://Events/Police/LostPet/LostPet_Occurance.txt",
+    "EventTextFail": "res://Events/Police/LostPet/LostPet_Failure.txt",
+    "EventTextOK": "res://Events/Police/LostPet/LostPet_Success.txt",
+    "ImgMain": null,
+    "ImgFail": null,
+    "ImgOK": null,
+    "Location": [
+        9,
+        29
+    ]
+}

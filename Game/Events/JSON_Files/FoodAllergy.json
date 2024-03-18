@@ -1,0 +1,15 @@
+{
+    "EventId": 7,
+    "EventName": "FoodAllergy",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/FoodAllergy/FoodAllergy_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/FoodAllergy/FoodAllergy_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/FoodAllergy/FoodAllergy_Success.txt",
+    "ImgMain": "res://Events/Ambulance/FoodAllergy/FoodAllergy_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/FoodAllergy/FoodAllergy_Failure.png",
+    "ImgOK": "res://Events/Ambulance/FoodAllergy/FoodAllergy_Success.png",
+    "Location": [
+        3,
+        0
+    ]
+}

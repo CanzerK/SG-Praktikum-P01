@@ -1,0 +1,15 @@
+{
+    "EventId": 12,
+    "EventName": "SportsDay",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/SportsDay/SportsDay_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/SportsDay/SportsDay_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/SportsDay/SportsDay_Success.txt",
+    "ImgMain": "res://Events/Ambulance/SportsDay/SportsDay_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/SportsDay/SportsDay_Failure.png",
+    "ImgOK": "res://Events/Ambulance/SportsDay/SportsDay_Success.png",
+    "Location": [
+        11,
+        21
+    ]
+}

@@ -1,9 +1,15 @@
 {
-    "EventId": 14,
+    "EventId": 25,
     "EventName": "GraffitiInPart",
-    "EventTextMain": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Occurance.txt",
-    "EventTextFail": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Failure.txt",
-    "EventTextOK": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Success.txt",
-    "ImgFail": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Failure.png",
-    "ImgOK": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Success.png"
+    "Department": "Police",
+    "EventTextMain": "res://Events/Police/GraffitiInPart/GraffitiInPark_Occurance.txt",
+    "EventTextFail": "res://Events/Police/GraffitiInPart/GraffitiInPark_Failure.txt",
+    "EventTextOK": "res://Events/Police/GraffitiInPart/GraffitiInPark_Success.txt",
+    "ImgMain": "res://Events/Police/GraffitiInPart/GraffitiInPark_Occurance.png",
+    "ImgFail": "res://Events/Police/GraffitiInPart/GraffitiInPark_Failure.png",
+    "ImgOK": "res://Events/Police/GraffitiInPart/GraffitiInPark_Success.png",
+    "Location": [
+        18,
+        10
+    ]
 }

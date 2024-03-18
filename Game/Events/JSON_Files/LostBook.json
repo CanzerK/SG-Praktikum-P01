@@ -1,9 +1,15 @@
 {
-    "EventId": 15,
+    "EventId": 26,
     "EventName": "LostBook",
-    "EventTextMain": "res://Events/Police_Events/LostBook/LostBookInLibrary_Occurance.txt",
-    "EventTextFail": "res://Events/Police_Events/LostBook/LostBookInLibrary_Failure.txt",
-    "EventTextOK": "res://Events/Police_Events/LostBook/LostBookInLibrary_Success.txt",
-    "ImgFail": "res://Events/Police_Events/LostBook/LostBookInLibrary_Failure.png",
-    "ImgOK": "res://Events/Police_Events/LostBook/LostBookInLibrary_Success.png"
+    "Department": "Police",
+    "EventTextMain": "res://Events/Police/LostBook/LostBookInLibrary_Occurance.txt",
+    "EventTextFail": "res://Events/Police/LostBook/LostBookInLibrary_Failure.txt",
+    "EventTextOK": "res://Events/Police/LostBook/LostBookInLibrary_Success.txt",
+    "ImgMain": "res://Events/Police/LostBook/LostBookInLibrary_Occurance.png",
+    "ImgFail": "res://Events/Police/LostBook/LostBookInLibrary_Failure.png",
+    "ImgOK": "res://Events/Police/LostBook/LostBookInLibrary_Success.png",
+    "Location": [
+        17,
+        0
+    ]
 }

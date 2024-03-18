@@ -1,0 +1,15 @@
+{
+    "EventId": 16,
+    "EventName": "ConstrYardCollapse",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/ConstrYardCollapse/ConsYardCollapse_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/ConstrYardCollapse/ConsYardCollapse_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/ConstrYardCollapse/ConsYardCollapse_Success.txt",
+    "ImgMain": "res://Events/FireFighter/ConstrYardCollapse/ConstructionAccident_Occurance.png",
+    "ImgFail": "res://Events/FireFighter/ConstrYardCollapse/ConstructionAccident_Failure.png",
+    "ImgOK": "res://Events/FireFighter/ConstrYardCollapse/ConstructionAccident_Success.png",
+    "Location": [
+        19,
+        27
+    ]
+}

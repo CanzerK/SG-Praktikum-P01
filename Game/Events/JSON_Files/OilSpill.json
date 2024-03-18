@@ -1,0 +1,15 @@
+{
+    "EventId": 21,
+    "EventName": "OilSpill",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/OilSpill/OilSpill_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/OilSpill/OilSpill_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/OilSpill/OilSpill_Success.txt",
+    "ImgMain": "res://Events/FireFighter/OilSpill/OilSpill_Occurance.png",
+    "ImgFail": "res://Events/FireFighter/OilSpill/OilSpill_Failure.png",
+    "ImgOK": "res://Events/FireFighter/OilSpill/OilLeakage_Success.png",
+    "Location": [
+        11,
+        4
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "EventId": 10,
+    "EventName": "LabAccident",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/LabAccident/LabAccident_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/LabAccident/LabAccident_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/LabAccident/LabAccident_Success.txt",
+    "ImgMain": "res://Events/Ambulance/LabAccident/LabAccident_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/LabAccident/LabAccident_Failure.png",
+    "ImgOK": "res://Events/Ambulance/LabAccident/LabAccident_Success.png",
+    "Location": [
+        0,
+        4
+    ]
+}

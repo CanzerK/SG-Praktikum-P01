@@ -1,0 +1,15 @@
+{
+    "EventId": 4,
+    "EventName": "BeeSting",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/BeeSting/BeeSting_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/BeeSting/BeeSting_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/BeeSting/BeeSting_Success.txt",
+    "ImgMain": "res://Events/Ambulance/BeeSting/BeeSting_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/BeeSting/BeeSting_Failure.png",
+    "ImgOK": "res://Events/Ambulance/BeeSting/BeeSting_Success.png",
+    "Location": [
+        10,
+        3
+    ]
+}

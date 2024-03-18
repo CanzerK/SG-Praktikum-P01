@@ -1,0 +1,15 @@
+{
+    "EventId": 13,
+    "EventName": "AdventurePark",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/AdventurePark/AdventurePark_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/AdventurePark/AdventurePark_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/AdventurePark/AdventurePark_Success.txt",
+    "ImgMain": "res://Events/FireFighter/AdventurePark/AdventurePark_Occurance.png",
+    "ImgFail": "res://Events/FireFighter/AdventurePark/Adventurepark_Failure.png",
+    "ImgOK": "res://Events/FireFighter/AdventurePark/AdventurePark_Success.png",
+    "Location": [
+        6,
+        3
+    ]
+}

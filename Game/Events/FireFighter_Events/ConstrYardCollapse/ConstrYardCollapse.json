@@ -1,9 +1,0 @@
-{
-    "EventId": 5,
-    "EventName": "ConstrYardCollapse",
-    "EventTextMain": "res://Events/FireFighter_Events/ConstrYardCollapse/ConsYardCollapse_Occurance.txt",
-    "EventTextFail": "res://Events/FireFighter_Events/ConstrYardCollapse/ConsYardCollapse_Failure.txt",
-    "EventTextOK": "res://Events/FireFighter_Events/ConstrYardCollapse/ConsYardCollapse_Success.txt",
-    "ImgFail": null,
-    "ImgOK": null
-}

@@ -1,0 +1,15 @@
+{
+    "EventId": 5,
+    "EventName": "DogBite",
+    "Department": "Ambulance",
+    "EventTextMain": "res://Events/Ambulance/DogBite/DogBite_Occurance.txt",
+    "EventTextFail": "res://Events/Ambulance/DogBite/DogBite_Failure.txt",
+    "EventTextOK": "res://Events/Ambulance/DogBite/DogBite_Success.txt",
+    "ImgMain": "res://Events/Ambulance/DogBite/DogBite_Occurance.png",
+    "ImgFail": "res://Events/Ambulance/DogBite/DogBite_Failure.png",
+    "ImgOK": "res://Events/Ambulance/DogBite/DogBite_Success.png",
+    "Location": [
+        6,
+        3
+    ]
+}

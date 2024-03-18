@@ -1,0 +1,15 @@
+{
+    "EventId": 20,
+    "EventName": "GasLeakage",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/GasLeakage/GasLeakage_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/GasLeakage/GasLeakage_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/GasLeakage/GasLeakage_Success.txt",
+    "ImgMain": "res://Events/FireFighter/GasLeakage/GasLeakage_Occurance.png",
+    "ImgFail": "res://Events/FireFighter/GasLeakage/GasLeakage_Failure.png",
+    "ImgOK": "res://Events/FireFighter/GasLeakage/GasLeakage_Success.png",
+    "Location": [
+        0,
+        18
+    ]
+}

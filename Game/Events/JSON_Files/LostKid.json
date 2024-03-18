@@ -1,9 +1,15 @@
 {
-    "EventId": 16,
+    "EventId": 27,
     "EventName": "LostKid",
-    "EventTextMain": "res://Events/Police_Events/LostKid/LostKids_Occurance.txt",
-    "EventTextFail": "res://Events/Police_Events/LostKid/LostKid_Failure.txt",
-    "EventTextOK": "res://Events/Police_Events/LostKid/LostKid_Success.txt",
-    "ImgFail": "res://Events/Police_Events/LostKid/LostKid_Failure.png",
-    "ImgOK": "res://Events/Police_Events/LostKid/LostKid_Success.png"
+    "Department": "Police",
+    "EventTextMain": "res://Events/Police/LostKid/LostKids_Occurance.txt",
+    "EventTextFail": "res://Events/Police/LostKid/LostKid_Failure.txt",
+    "EventTextOK": "res://Events/Police/LostKid/LostKid_Success.txt",
+    "ImgMain": "res://Events/Police/LostKid/LostKid_Occurance.png",
+    "ImgFail": "res://Events/Police/LostKid/LostKid_Failure.png",
+    "ImgOK": "res://Events/Police/LostKid/LostKid_Success.png",
+    "Location": [
+        16,
+        0
+    ]
 }

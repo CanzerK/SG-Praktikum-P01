@@ -1,9 +1,15 @@
 {
-    "EventId": 13,
+    "EventId": 24,
     "EventName": "FastCar",
-    "EventTextMain": "res://Events/Police_Events/FastCar/FastCarUser_Occurance.txt",
-    "EventTextFail": "res://Events/Police_Events/FastCar/FastCarUser_Failure.txt",
-    "EventTextOK": "res://Events/Police_Events/FastCar/FastCarUser_Success.txt",
-    "ImgFail": "res://Events/Police_Events/FastCar/FastCarUser_Failure.png",
-    "ImgOK": "res://Events/Police_Events/FastCar/FastCarUser_Success.png"
+    "Department": "Police",
+    "EventTextMain": "res://Events/Police/FastCar/FastCarUser_Occurance.txt",
+    "EventTextFail": "res://Events/Police/FastCar/FastCarUser_Failure.txt",
+    "EventTextOK": "res://Events/Police/FastCar/FastCarUser_Success.txt",
+    "ImgMain": "res://Events/Police/FastCar/FastCarUser_Occurance.png",
+    "ImgFail": "res://Events/Police/FastCar/FastCarUser_Failure.png",
+    "ImgOK": "res://Events/Police/FastCar/FastCarUser_Success.png",
+    "Location": [
+        0,
+        19
+    ]
 }

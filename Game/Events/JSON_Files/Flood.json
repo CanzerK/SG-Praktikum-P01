@@ -1,0 +1,15 @@
+{
+    "EventId": 19,
+    "EventName": "Flood",
+    "Department": "FireFighter",
+    "EventTextMain": "res://Events/FireFighter/Flood/Flood_Occurance.txt",
+    "EventTextFail": "res://Events/FireFighter/Flood/Flood_Failure.txt",
+    "EventTextOK": "res://Events/FireFighter/Flood/Flood_Success.txt",
+    "ImgMain": "res://Events/FireFighter/Flood/Flood_Occurance.png",
+    "ImgFail": null,
+    "ImgOK": "res://Events/FireFighter/Flood/Flood_Success.png",
+    "Location": [
+        8,
+        12
+    ]
+}
