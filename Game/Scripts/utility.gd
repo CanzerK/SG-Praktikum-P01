@@ -58,3 +58,24 @@ static func find_device_by_device_name_in_list(device_name, list: ItemList):
 			return index
 			
 	return -1
+
+
+
+static func find_device_by_device_in_container(device, list: HBoxContainer):
+	for index in list.get_child_count():
+		var node = list.get_child(index)
+		
+		if device.get_name() == node.name:
+			return index
+			
+	return -1
+	
+	
+static func find_device_by_device_name_in_container(device_name, list: HBoxContainer):
+	for index in list.get_child_count():
+		var node = list.get_child(index)
+		
+		if device_name == node.name:
+			return index
+			
+	return -1

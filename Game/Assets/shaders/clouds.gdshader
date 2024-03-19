@@ -20,6 +20,7 @@ render_mode
 group_uniforms Toon;
 uniform float     ToonRampOffset:     hint_range(0.0, 1.0) = 0.5;
 uniform float     ToonRampSmoothness: hint_range(0.0, 1.0) = 0.05;
+uniform vec3      ToonColor:          source_color;
 uniform vec3      ToonRampTinting:    source_color;
 
 #if USE_RIM
@@ -82,7 +83,7 @@ void fragment() {
 	#else
 		textureColor = texture(Texture, UV);
 	#endif
-		ALBEDO = textureColor.rgb;
+		ALBEDO = ToonColor.rgb;
 
 	#if USE_ALPHA
 		ALPHA = textureColor.a;

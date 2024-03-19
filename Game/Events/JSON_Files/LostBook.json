@@ -1,15 +1,9 @@
 {
-    "EventId": 26,
-    "EventName": "LostBook",
-    "Department": "Police",
-    "EventTextMain": "res://Events/Police/LostBook/LostBookInLibrary_Occurance.txt",
-    "EventTextFail": "res://Events/Police/LostBook/LostBookInLibrary_Failure.txt",
-    "EventTextOK": "res://Events/Police/LostBook/LostBookInLibrary_Success.txt",
-    "ImgMain": "res://Events/Police/LostBook/LostBookInLibrary_Occurance.png",
-    "ImgFail": "res://Events/Police/LostBook/LostBookInLibrary_Failure.png",
-    "ImgOK": "res://Events/Police/LostBook/LostBookInLibrary_Success.png",
-    "Location": [
-        17,
-        0
-    ]
+	"EventId": 15,
+	"EventName": "LostBook",
+	"EventTextMain": "Oopsie, some library books in Darmsville have gone missing! Without them, people can't read their favorite stories. Let's assign a police unit to this case to help people!",
+	"EventTextFail": "Oh dear, even though we searched high and low, we couldn't find the missing library books. We need to keep looking and asking for help until we find them.",
+	"EventTextOK": "Good news! We found all the missing library books in Darmsville and brought them back to the library. Now everyone can enjoy reading them again.",
+	"ImgFail": "res://Events/Police_Events/LostBook/LostBookInLibrary_Failure.png",
+	"ImgOK": "res://Events/Police_Events/LostBook/LostBookInLibrary_Success.png"
 }

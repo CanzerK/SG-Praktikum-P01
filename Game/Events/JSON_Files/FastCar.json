@@ -1,15 +1,9 @@
 {
-    "EventId": 24,
-    "EventName": "FastCar",
-    "Department": "Police",
-    "EventTextMain": "res://Events/Police/FastCar/FastCarUser_Occurance.txt",
-    "EventTextFail": "res://Events/Police/FastCar/FastCarUser_Failure.txt",
-    "EventTextOK": "res://Events/Police/FastCar/FastCarUser_Success.txt",
-    "ImgMain": "res://Events/Police/FastCar/FastCarUser_Occurance.png",
-    "ImgFail": "res://Events/Police/FastCar/FastCarUser_Failure.png",
-    "ImgOK": "res://Events/Police/FastCar/FastCarUser_Success.png",
-    "Location": [
-        0,
-        19
-    ]
+	"EventId": 13,
+	"EventName": "FastCar",
+	"EventTextMain": "Uh-oh! There's a car in Darmsville going super fast! That's not safe for anyone around. Let's report this driver to police to make the driver slow down and drive carefully.",
+	"EventTextFail": "Oh no, even though we asked the fast car in Darmsville to slow down, they didn't listen. It's still not safe for them or anyone around them. But don't worry, we won't give up! We'll keep reminding them and finding ways to make sure everyone stays safe on the roads.",
+	"EventTextOK": "Yay! The fast car in Darmsville slowed down when we asked them nicely. Now everyone can feel safe on the roads again. Great job, everyone, for helping to keep our streets safe!",
+	"ImgFail": "res://Events/Police_Events/FastCar/FastCarUser_Failure.png",
+	"ImgOK": "res://Events/Police_Events/FastCar/FastCarUser_Success.png"
 }

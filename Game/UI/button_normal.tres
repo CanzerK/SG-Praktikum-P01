@@ -4,6 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yled2"]
 atlas = ExtResource("1_lbq1q")
+region = Rect2(625, 235, 200, 60)
 
 [resource]
 content_margin_left = 5.0

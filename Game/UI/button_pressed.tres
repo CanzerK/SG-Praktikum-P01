@@ -4,6 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yled2"]
 atlas = ExtResource("1_n5fiu")
+region = Rect2(840, 240, 195, 55)
 
 [resource]
 texture = SubResource("AtlasTexture_yled2")

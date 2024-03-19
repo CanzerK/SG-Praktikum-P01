@@ -1,12 +1,8 @@
 extends Control
-extends State
 
 @onready var sprite_node: Sprite2D
-@onready 
-var text_node
-var state_machine_event = $state_machine_event
-
-
+@onready var text_node
+@onready var state_machine_event = $state_machine_event
 
 # Called when the node enters the scene tree for the first time.
 func _ready()-> void:
@@ -17,7 +13,7 @@ func _ready()-> void:
 	
 	
 func _unhandled_input(event: InputEvent)  -> void:
-	state_machine_event.set_process_input(event)
+	state_machine_event.process_input(event)
 
 
 func _physics_process(delta : float) -> void:

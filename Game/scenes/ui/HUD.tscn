@@ -1,83 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqstfriod2sgn"]
 
 [ext_resource type="Texture2D" uid="uid://bnxoutejagt7r" path="res://assets/ui/icons/png/White/1x/forward.png" id="1_ldtke"]
+[ext_resource type="Script" path="res://scripts/game_hud.gd" id="1_r2wy1"]
 [ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="2_51igs"]
 [ext_resource type="Texture2D" uid="uid://cte4j3ecrltwf" path="res://assets/ui/icons/png/White/1x/pause.png" id="2_d4l15"]
 [ext_resource type="PackedScene" uid="uid://dr3k5kje3kp57" path="res://scenes/ui/ui_pause.tscn" id="3_n4t3t"]
 [ext_resource type="FontFile" uid="uid://b3ikqpaufcvxp" path="res://assets/ui/fonts/kenvector_future.ttf" id="4_u03m7"]
 [ext_resource type="Texture2D" uid="uid://bgmpfh7ps8xv" path="res://assets/ui/icons/vector/vector_whiteIcons.svg" id="6_xtxoo"]
-
-[sub_resource type="GDScript" id="GDScript_y2a48"]
-resource_name = "HUD"
-script/source = "class_name HUD
-extends Control
-
-const MOVE_SPEED = 50
-const MOVE_TIME = 0.4
-const EXTRA_MOVE_TIME = 0.15
-const MOVE_DIRECTION_NORTH = 0
-const MOVE_DIRECTION_EAST = 90
-const MOVE_DIRECTION_SOUTH = 180
-const MOVE_DIRECTION_WEST = 270
-
-var _drive_id = 0
-
-var _heading_per_device = {}
-
-@onready var pause_button = $PauseButton as Button
-@onready var pause_menu = $PauseMenu
-
-func _ready():
-	pause_button.button_up.connect(_on_pause_pressed)
-	
-	
-func _on_pause_pressed():
-	if !Engine.time_scale:
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-
-
-func _get_total_time(device, heading):
-	var old_heading = _heading_per_device[device.get_name()]
-	var total_time = MOVE_TIME
-	
-	if old_heading != heading:
-		total_time += EXTRA_MOVE_TIME
-	
-	return total_time
-	
-	
-func _move_with_heading(device, heading):
-	_drive_id += 1
-	
-	var move_time = _get_total_time(device, heading)
-	_heading_per_device[device.get_name()] = heading
-	
-	device.drive(MOVE_SPEED, heading, DeviceManager.DRIVE_DIRECTION.FORWARD, move_time, _drive_id)
-
-
-func _on_up_button_pressed():
-	var device = DeviceManager.get_connected_device(0)
-	_move_with_heading(device, MOVE_DIRECTION_NORTH)
-
-
-func _on_left_button_pressed():
-	var device = DeviceManager.get_connected_device(0)
-	_move_with_heading(device, MOVE_DIRECTION_WEST)
-
-
-func _on_right_button_pressed():
-	var device = DeviceManager.get_connected_device(0)
-	_move_with_heading(device, MOVE_DIRECTION_EAST)
-
-
-func _on_down_button_pressed():
-	var device = DeviceManager.get_connected_device(0)
-	_move_with_heading(device, MOVE_DIRECTION_SOUTH)
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7b1n3"]
 atlas = ExtResource("6_xtxoo")
@@ -102,18 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_y2a48")
-
-[node name="ShowEventsButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.85
-anchor_right = 0.6
-anchor_bottom = 0.95
-theme = ExtResource("2_51igs")
-theme_override_font_sizes/font_size = 28
-text = "Events"
+script = ExtResource("1_r2wy1")
 
 [node name="NextRoundButton" type="Button" parent="."]
 visible = false
@@ -145,11 +63,6 @@ offset_left = 472.0
 offset_top = 419.0
 offset_right = 472.0
 offset_bottom = 419.0
-
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HFlowContainer" type="HFlowContainer" parent="."]
 layout_direction = 2
@@ -237,3 +150,8 @@ anchor_bottom = 0.95
 theme = ExtResource("2_51igs")
 icon = SubResource("AtlasTexture_wyigh")
 icon_alignment = 1
+
+[connection signal="button_up" from="AspectRatioContainer/Control2/Button" to="." method="_on_up_button_pressed"]
+[connection signal="button_up" from="AspectRatioContainer/Control2/Button2" to="." method="_on_left_button_pressed"]
+[connection signal="button_up" from="AspectRatioContainer/Control2/Button3" to="." method="_on_right_button_pressed"]
+[connection signal="button_up" from="AspectRatioContainer/Control2/Button4" to="." method="_on_down_button_pressed"]

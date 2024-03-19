@@ -1,15 +1,9 @@
 {
-    "EventId": 14,
-    "EventName": "CarAccident",
-    "Department": "FireFighter",
-    "EventTextMain": "res://Events/FireFighter/CarAccident/CarAccident_Occurance.txt",
-    "EventTextFail": "res://Events/FireFighter/CarAccident/CarAccident_Failure.txt",
-    "EventTextOK": "res://Events/FireFighter/CarAccident/CarAccident_Success.txt",
-    "ImgMain": "res://Events/FireFighter/CarAccident/CarAccident_Occurance.png",
-    "ImgFail": "res://Events/FireFighter/CarAccident/CarAccident_Failure.png",
-    "ImgOK": "res://Events/FireFighter/CarAccident/CarAccident_Success.png",
-    "Location": [
-        4,
-        24
-    ]
+	"EventId": 12,
+	"EventName": "CarAccident",
+	"EventTextMain": "The peaceful flow of traffic is abruptly disrupted as a vehicular accident unfolds on a busy road. A collision has left a person trapped inside a mangled car, necessitating urgent intervention. The Darmsville Fire Department swiftly responds to the distress call, racing against time to rescue the individual and restore order to the chaotic scene.",
+	"EventTextFail": "Regrettably, despite their best efforts, the firefighters face insurmountable challenges in reaching and rescuing the trapped person within the critical time frame. The intensity of the situation and unforeseen complications contribute to a difficult decision to acknowledge the limitations of the rescue attempt. The community, now grappling with the somber reality of the situation, comes together to support one another and recognize the valiant efforts of the emergency responders. This poignant moment underscores the unpredictable and demanding nature of emergency situations on the road.",
+	"EventTextOK": "Displaying exceptional skill and coordination, the firefighters of the Darmsville Fire Department meticulously extricate the trapped person from the wreckage. Using specialized equipment and techniques, they carefully navigate the damaged vehicle, ensuring the safety of both the rescuers and the individual inside. The relieved onlookers witness the successful rescue, expressing gratitude for the swift and efficient response of the firefighters. The rescued individual, though shaken, is in the capable hands of the emergency medical team, receiving prompt attention for a swift recovery.",
+	"ImgFail": null,
+	"ImgOK": null
 }

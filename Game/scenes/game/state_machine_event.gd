@@ -1,7 +1,6 @@
 extends Node
 
-@export
-var starting_state: State
+@export var starting_state: State
 
 var current_state: State
 

@@ -92,7 +92,7 @@ adjustment_brightness = 1.05
 adjustment_contrast = 1.1
 adjustment_saturation = 1.05
 
-[sub_resource type="Resource" id="Resource_1v5xj"]
+[sub_resource type="Resource" id="Resource_6dgfm"]
 script = ExtResource("15_sv5ew")
 amount = 5000
 enabled = true
@@ -101,7 +101,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_fxfnr"]
+[sub_resource type="Resource" id="Resource_q0dwb"]
 script = ExtResource("16_0uw1e")
 iterations = 3
 offset_step = 0.01
@@ -113,7 +113,7 @@ custom_seed = 0
 restrict_height = true
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_kbjwa"]
+[sub_resource type="Resource" id="Resource_1n105"]
 script = ExtResource("17_hk3tn")
 mask = ""
 mask_rotation = 0.0
@@ -129,7 +129,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_s0k2d"]
+[sub_resource type="Resource" id="Resource_f3fh3"]
 script = ExtResource("18_idun3")
 rotation = Vector3(2.08167e-15, 360, 2.08167e-15)
 snap_angle = Vector3(0, 0, 0)
@@ -139,7 +139,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_o0v4f"]
+[sub_resource type="Resource" id="Resource_hjlu2"]
 script = ExtResource("19_idqml")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
@@ -150,7 +150,7 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_dmuuu"]
+[sub_resource type="Resource" id="Resource_x7e0b"]
 script = ExtResource("20_tj70t")
 terrain_node = NodePath("../../Terrain")
 align_with_collision_normal = false
@@ -160,9 +160,9 @@ custom_seed = 0
 restrict_height = false
 reference_frame = 0
 
-[sub_resource type="Resource" id="Resource_fpmoi"]
+[sub_resource type="Resource" id="Resource_2f1sd"]
 script = ExtResource("14_0b6iy")
-stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_1v5xj"), SubResource("Resource_fxfnr"), SubResource("Resource_kbjwa"), SubResource("Resource_s0k2d"), SubResource("Resource_o0v4f"), SubResource("Resource_dmuuu")])
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_6dgfm"), SubResource("Resource_q0dwb"), SubResource("Resource_1n105"), SubResource("Resource_f3fh3"), SubResource("Resource_hjlu2"), SubResource("Resource_x7e0b")])
 
 [sub_resource type="Resource" id="Resource_64uum"]
 script = ExtResource("23_u7q35")
@@ -209,7 +209,7 @@ collision_mask = 5
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 500, 2.08165e-12, 500)
 
 [node name="roads" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.08165e-12, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -198, 2.08165e-12, 502)
 
 [node name="road_straight253" parent="roads" instance=ExtResource("5_fus8h")]
 transform = Transform3D(-2.18557e-08, 0, 1, 0, 1, 0, -0.5, 0, -4.37114e-08, -36, 2.08165e-12, -26)
@@ -704,7 +704,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 100, -
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -36, -2.08165e-12, -118)
 
 [node name="CameraArm" type="Node3D" parent="."]
-transform = Transform3D(0.173648, 0.754406, -0.633023, 2.24196e-16, 0.642788, 0.766044, 0.984808, -0.133022, 0.111619, -125, 200, -80)
+transform = Transform3D(0.173648, 0.754406, -0.633023, 2.24196e-16, 0.642788, 0.766044, 0.984808, -0.133022, 0.111619, -324, 200, 421)
 
 [node name="Camera" type="Camera3D" parent="CameraArm"]
 transform = Transform3D(1, 6.35358e-08, -1.30371e-07, -2.7331e-08, 1, 2.18152e-07, 1.5563e-08, 5.94878e-08, 1, 0, 0, 0)
@@ -714,6 +714,7 @@ current = true
 fov = 71.5
 
 [node name="clouds" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199, 0, 501)
 
 [node name="cloud_1" parent="clouds" instance=ExtResource("10_alswh")]
 transform = Transform3D(0.517638, 0, -1.93185, 0, 2, 0, 1.93185, 0, 0.517638, 4, 60, -101)
@@ -784,12 +785,12 @@ transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, -63, 79, -
 script = ExtResource("13_vvnki")
 
 [node name="Foliage" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.191208, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199, -0.191208, 501)
 
 [node name="Trees" type="Node3D" parent="Foliage"]
 transform = Transform3D(25.1107, -3.27162e-16, 1.2661e-14, 8.75829e-15, 0.938, -1.2661e-14, -8.75829e-15, 3.27162e-16, 36.3, -92, -8.3447, -139.5)
 script = ExtResource("13_p7o2b")
-modifier_stack = SubResource("Resource_fpmoi")
+modifier_stack = SubResource("Resource_2f1sd")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 
@@ -865,11 +866,12 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 44.7987, -0.935224, -106.251)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20.3816, -1.28206, -160.491)
 
 [node name="Lake" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.876357, 0, 0.481662, 0, 1, 0, -0.481662, 0, 0.876357, 34.6493, -3.5, -127.281)
+transform = Transform3D(0.876357, 0, 0.481662, 0, 1, 0, -0.481662, 0, 0.876357, -164.351, -3.5, 373.719)
 mesh = SubResource("PlaneMesh_ovss5")
 surface_material_override/0 = ExtResource("12_2425l")
 
 [node name="cars" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199, 0, 501)
 
 [node name="Ambulance" type="CharacterBody3D" parent="cars" groups=["cars"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
@@ -881,6 +883,7 @@ shape = SubResource("BoxShape3D_k4qiw")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="cars/Ambulance"]
 
 [node name="lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199, 0, 501)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lights"]
 transform = Transform3D(0.964361, 0.251144, 0.0832696, 0.0169198, -0.372604, 0.927836, 0.264047, -0.89336, -0.363574, 104.935, 17.882, -176.698)
@@ -1001,6 +1004,7 @@ directional_shadow_fade_start = 0.697
 directional_shadow_max_distance = 275.0
 
 [node name="new_buildings" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199, 0, 501)
 
 [node name="building_A3" parent="new_buildings" instance=ExtResource("25_b2bhn")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 2.08165e-12, -97)

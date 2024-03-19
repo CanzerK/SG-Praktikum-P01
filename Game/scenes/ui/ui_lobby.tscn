@@ -1,0 +1,283 @@
+[gd_scene load_steps=13 format=3 uid="uid://cql1qda4jj6qo"]
+
+[ext_resource type="Script" path="res://scripts/lobby.gd" id="1_htlsl"]
+[ext_resource type="Shader" path="res://assets/shaders/lobby_background.gdshader" id="2_03i1k"]
+[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="2_3uemc"]
+[ext_resource type="StyleBox" uid="uid://dkj1w8vd5k1mk" path="res://ui/background.tres" id="3_lke0f"]
+[ext_resource type="PackedScene" uid="uid://bebhwok53g2" path="res://scenes/game/buildings/firetruck.tscn" id="4_cujw2"]
+[ext_resource type="PackedScene" uid="uid://cq8x88sidrl84" path="res://scenes/game/texture_catcher.tscn" id="5_i38pq"]
+[ext_resource type="PackedScene" uid="uid://wwa8k6i28mq1" path="res://scenes/game/buildings/car_ambulance.tscn" id="6_s8ypm"]
+[ext_resource type="PackedScene" uid="uid://c1xh3tr85je3n" path="res://scenes/game/buildings/car_police.tscn" id="7_tjccp"]
+[ext_resource type="Texture2D" uid="uid://cxkx1u7gc1onn" path="res://assets/ui/ui_pack_vector.svg" id="8_e5n71"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jusoo"]
+shader = ExtResource("2_03i1k")
+shader_parameter/first_color = Color(0.607843, 0.843137, 0.976471, 1)
+shader_parameter/second_color = Color(0.54902, 0.690196, 0.960784, 1)
+shader_parameter/position = 0.167
+shader_parameter/size = 0.771
+shader_parameter/angle = 90.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuxpp"]
+atlas = ExtResource("8_e5n71")
+region = Rect2(835, 55, 200, 60)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bn861"]
+texture = SubResource("AtlasTexture_uuxpp")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_htlsl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jusoo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fire_Brigade_Container" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.2
+anchor_right = 0.85
+anchor_bottom = 0.65
+offset_left = 1.52588e-05
+offset_right = 2.28882e-05
+theme = ExtResource("2_3uemc")
+theme_override_styles/normal = ExtResource("3_lke0f")
+theme_override_styles/hover = ExtResource("3_lke0f")
+theme_override_styles/pressed = ExtResource("3_lke0f")
+theme_override_styles/disabled = ExtResource("3_lke0f")
+theme_override_styles/focus = ExtResource("3_lke0f")
+button_mask = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Fire_Brigade_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.6
+
+[node name="CenterContainer2" type="CenterContainer" parent="Fire_Brigade_Container/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Fire_Brigade_Container/AspectRatioContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Fire_Brigade_Container/AspectRatioContainer/CenterContainer2/Control"]
+layout_mode = 2
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="SubViewport" type="SubViewport" parent="Fire_Brigade_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="firetruck2" parent="Fire_Brigade_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer/SubViewport" instance=ExtResource("4_cujw2")]
+transform = Transform3D(-0.469846, 2.23522e-16, 0.17101, 1.74393e-16, 0.5, -1.74393e-16, -0.17101, -1.0423e-16, -0.469846, 0, 0, 0)
+
+[node name="TextureCatcher" parent="Fire_Brigade_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer/SubViewport" node_paths=PackedStringArray("mesh_scene") instance=ExtResource("5_i38pq")]
+mesh_scene = NodePath("../firetruck2")
+mesh_rotation = 160.0
+
+[node name="FireBrigade_Button" type="VSplitContainer" parent="Fire_Brigade_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.75
+anchor_right = 0.9
+anchor_bottom = 0.95
+split_offset = 200
+
+[node name="Fire" type="Button" parent="Fire_Brigade_Container/FireBrigade_Button"]
+layout_mode = 2
+theme = ExtResource("2_3uemc")
+text = "FIRE BRIGADE"
+
+[node name="Ambulance_Container" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.65
+theme = ExtResource("2_3uemc")
+theme_override_styles/normal = ExtResource("3_lke0f")
+theme_override_styles/hover = ExtResource("3_lke0f")
+theme_override_styles/pressed = ExtResource("3_lke0f")
+theme_override_styles/disabled = ExtResource("3_lke0f")
+theme_override_styles/focus = ExtResource("3_lke0f")
+button_mask = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Ambulance_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.6
+
+[node name="CenterContainer2" type="CenterContainer" parent="Ambulance_Container/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Ambulance_Container/AspectRatioContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Ambulance_Container/AspectRatioContainer/CenterContainer2/Control"]
+layout_mode = 2
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="SubViewport" type="SubViewport" parent="Ambulance_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="ambulance2" parent="Ambulance_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer/SubViewport" instance=ExtResource("6_s8ypm")]
+transform = Transform3D(-0.375877, 1.78818e-16, 0.136808, 1.39515e-16, 0.4, -1.39515e-16, -0.136808, -8.33841e-17, -0.375877, 0, 0, 0)
+
+[node name="TextureCatcher" parent="Ambulance_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer/SubViewport" node_paths=PackedStringArray("mesh_scene") instance=ExtResource("5_i38pq")]
+mesh_scene = NodePath("../ambulance2")
+mesh_rotation = 160.0
+
+[node name="Ambulance_Button" type="VSplitContainer" parent="Ambulance_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.75
+anchor_right = 0.9
+anchor_bottom = 0.95
+split_offset = 200
+
+[node name="Ambulance" type="Button" parent="Ambulance_Container/Ambulance_Button"]
+layout_mode = 2
+theme = ExtResource("2_3uemc")
+text = "AMBULANCE"
+
+[node name="Police_Container" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.2
+anchor_right = 0.35
+anchor_bottom = 0.65
+theme = ExtResource("2_3uemc")
+theme_override_styles/normal = ExtResource("3_lke0f")
+theme_override_styles/hover = ExtResource("3_lke0f")
+theme_override_styles/pressed = ExtResource("3_lke0f")
+theme_override_styles/disabled = ExtResource("3_lke0f")
+theme_override_styles/focus = ExtResource("3_lke0f")
+button_mask = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Police_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.6
+
+[node name="CenterContainer2" type="CenterContainer" parent="Police_Container/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Police_Container/AspectRatioContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Police_Container/AspectRatioContainer/CenterContainer2/Control"]
+layout_mode = 2
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="SubViewport" type="SubViewport" parent="Police_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="car_police2" parent="Police_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer/SubViewport" instance=ExtResource("7_tjccp")]
+transform = Transform3D(0.469846, -2.23522e-16, -0.17101, 1.74393e-16, 0.5, -1.74393e-16, 0.17101, 1.0423e-16, 0.469846, 0, 0, 0)
+
+[node name="TextureCatcher" parent="Police_Container/AspectRatioContainer/CenterContainer2/Control/SubViewportContainer/SubViewport" node_paths=PackedStringArray("mesh_scene") instance=ExtResource("5_i38pq")]
+mesh_scene = NodePath("../car_police2")
+mesh_rotation = 160.0
+
+[node name="Police_Button" type="VSplitContainer" parent="Police_Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.75
+anchor_right = 0.9
+anchor_bottom = 0.95
+split_offset = 200
+
+[node name="Police" type="Button" parent="Police_Container/Police_Button"]
+layout_mode = 2
+theme = ExtResource("2_3uemc")
+theme_override_font_sizes/font_size = 20
+text = "POLICE"
+
+[node name="Available_Devices" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.72
+anchor_right = 0.9
+anchor_bottom = 0.94
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Available_Devices"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Available_Devices/ScrollContainer"]
+layout_mode = 2
+
+[node name="Continue_Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.75
+anchor_right = 0.6
+anchor_bottom = 0.85
+theme = ExtResource("2_3uemc")
+theme_override_colors/font_color = Color(0.988235, 0.462745, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxTexture_bn861")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bn861")
+text = "CONTINUE"
+
+[connection signal="button_up" from="Fire_Brigade_Container/FireBrigade_Button/Fire" to="." method="_on_fire_brigade_button_up"]
+[connection signal="button_up" from="Ambulance_Container/Ambulance_Button/Ambulance" to="." method="_on_ambulance_button_up"]
+[connection signal="button_up" from="Police_Container/Police_Button/Police" to="." method="_on_police_button_up"]
+[connection signal="button_up" from="Continue_Button" to="." method="_on_continue_button_button_up"]

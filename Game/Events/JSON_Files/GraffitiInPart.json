@@ -1,15 +1,9 @@
 {
-    "EventId": 25,
-    "EventName": "GraffitiInPart",
-    "Department": "Police",
-    "EventTextMain": "res://Events/Police/GraffitiInPart/GraffitiInPark_Occurance.txt",
-    "EventTextFail": "res://Events/Police/GraffitiInPart/GraffitiInPark_Failure.txt",
-    "EventTextOK": "res://Events/Police/GraffitiInPart/GraffitiInPark_Success.txt",
-    "ImgMain": "res://Events/Police/GraffitiInPart/GraffitiInPark_Occurance.png",
-    "ImgFail": "res://Events/Police/GraffitiInPart/GraffitiInPark_Failure.png",
-    "ImgOK": "res://Events/Police/GraffitiInPart/GraffitiInPark_Success.png",
-    "Location": [
-        18,
-        10
-    ]
+	"EventId": 14,
+	"EventName": "GraffitiInPart",
+	"EventTextMain": "Oh no, someone has been painting on the walls and benches in our favorite park in Darmsville! It's not nice to make a mess like that. Let's report this to the Darmsville Police Department, and make this stop!",
+	"EventTextFail": "Oh dear, even though we cleaned up the graffiti in the park, it keeps coming back. We need to find out who's doing it and ask them to stop.",
+	"EventTextOK": "Yay! With some soap and water, and help from the community, we cleaned up all the graffiti in the park! Now it looks beautiful again, and everyone can enjoy playing there.",
+	"ImgFail": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Failure.png",
+	"ImgOK": "res://Events/Police_Events/GraffitiInPart/GraffitiInPark_Success.png"
 }

@@ -1,28 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dr3k5kje3kp57"]
 
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_4e6uc"]
 [ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="1_ppvwt"]
-
-[sub_resource type="GDScript" id="GDScript_cyiff"]
-script/source = "class_name PauseMenu
-extends Control
-
-@onready var resume_button = $ResumeButton as Button
-@onready var exit_button = $ExitButton as Button
-@onready var pause_menu = $\".\"
-
-func _ready():
-	resume_button.button_down.connect(on_resume_pressed)
-	exit_button.button_down.connect(on_exit_pressed)
-	
-	
-func on_resume_pressed() -> void:
-	Engine.time_scale = 1
-	pause_menu.hide()
-	
-	
-func on_exit_pressed() -> void:
-	get_tree().quit()
-"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -31,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_cyiff")
+script = ExtResource("1_4e6uc")
 
 [node name="ResumeButton" type="Button" parent="."]
 layout_mode = 1

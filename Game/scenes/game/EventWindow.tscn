@@ -1,160 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdtqmmf6i2xoy"]
+[gd_scene load_steps=4 format=3 uid="uid://bdtqmmf6i2xoy"]
 
-[ext_resource type="Script" path="res://scenes/game/control.gd" id="1_cihpc"]
-[ext_resource type="Script" path="res://scenes/game/state_machine_event.gd" id="2_gus47"]
-[ext_resource type="Script" path="res://scenes/game/Idle.gd" id="3_m2ssq"]
-
-[sub_resource type="GDScript" id="GDScript_4wb85"]
-resource_name = "Init_Event_Window"
-script/source = "extends Sprite2D
-
-# We need to implement the way to get event information from Event Handler
-# The objects/variables from EventHandler should provide, which JSON file we
-# should read.
-# Define the JSON path here
-#var itemData = {}
-#var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
-
-@onready var sprite_node: Sprite2D
-@onready var text_node
-
-
-# Event System with Time Only
-
-class EventReader:
-	var name: String
-	var event_time: Dictionary  # Dictionary to store time components
-
-	func _init(name, event_time):
-		self.name = name
-		self.event_time = event_time
-
-# Main Event System
-class EventSystem:
-
-	extends Sprite2D
-	@onready var sprite_node: Sprite2D
-	@onready var text_node
-	
-	var itemData = {}
-	var data_file_path = \"res://Events/JSON_Files/CarAccident.json\"
-	
-	var events: Array = []
-	
-	func _read_the_events():
-		
-		itemData = load_json_file(data_file_path)	
-		sprite_node = $\"../EventImage\"
-		text_node = $\"../EventText\"
-		
-		var current_event = null
-		var new_events = []
-		
-		#this is the following
-		#Loading of random events in the array 
-		while (current_event == null):
-			var random_int = randi_range(0, 29)
-			if current_event != null:
-				break
-			if random_int not in new_events:
-				new_events.append(random_int)
-				current_event = new_events[random_int]
-			else :
-				current_event = null
-			
-		var image_path_occurance = \"\" # This could ne generic for all event/department
-		
-		if \"EventId\" in itemData:
-			var event_id_path = itemData[\"EventId\"]
-			# var event_id = load(event_id_path)
-		
-		if \"EventName\" in itemData:
-			var event_name_path = itemData[\"EventName\"]
-			#var eventNane = load(event_name_path)
-			print(event_name_path)
-		
-		if \"ImgOK\" in itemData:
-			var image_ok_path = itemData[\"ImgOK\"]
-			var imageOK = load(image_ok_path)
-			sprite_node.texture = imageOK
-		
-		var image_fail_path = itemData[\"ImgFail\"]
-		
-		if \"EventTextOK\" in itemData:
-			var textOK_path = itemData[\"EventTextOK\"]
-			var file = FileAccess.open(textOK_path, FileAccess.READ)
-			var textOK = file.get_as_text()
-			text_node.text = textOK
-			print(textOK)
-			
-		var text_occurance_path = itemData[\"EventTextMain\"]
-		var text_ok_path = itemData[\"EventTextOK\"]
-		var text_fail_path = itemData[\"EventTextFail\"]
-		
-		
-	
-		
-		
-		
-		
-		
-	func load_json_file(filePath : String):
-		if FileAccess.file_exists(filePath):
-			var dataFile = FileAccess.open(filePath, FileAccess.READ)
-			var parsedResults = JSON.parse_string(dataFile.get_as_text())
-		
-			if parsedResults is Dictionary:
-				return parsedResults
-			else:
-				print(\"Error reading file. Probably JSON-File is corrupted.\")
-			
-		else:
-			print(\"File doesn't exists!\")
-	# Function to show an event
-	func show_event(event):
-		print(\"Showing Event:\", event.name)
-
-	# Function to schedule an event
-	func schedule_event(event, time):
-		event.event_time = time
-		events.append(event)
-		#events.sort_custom(self, \"_compare_events\")
-
-	# Function to complete an event
-	func complete_event(event):
-		events.erase(events.find(event))
-
-	# Function to compare events based on time
-	func _compare_events(a, b):
-		var a_unix_time = _get_unix_time(a.event_time)
-		var b_unix_time = _get_unix_time(b.event_time)
-		return a_unix_time - b_unix_time
-
-	# Function to convert time components to Unix timestamp
-	func _get_unix_time(time):
-		return time[\"hour\"] * 3600 + time[\"minute\"] * 60 + time[\"second\"]
-
-	# Process function called in every frame
-	func _process(delta):
-		var current_unix_time = _get_unix_time({
-			\"hour\": 12,     # Replace with the current hour
-			\"minute\": 0,    # Replace with the current minute
-			\"second\": 0     # Replace with the current second
-		})
-		
-		for event in events:
-			var event_unix_time = _get_unix_time(event.event_time)
-			if event_unix_time <= current_unix_time:
-				show_event(event)
-				complete_event(event)
-
-
-
-
-"
-
-[sub_resource type="Theme" id="Theme_t8yp5"]
-default_font_size = 13
+[ext_resource type="Script" path="res://scripts/event_popup.gd" id="1_3hryp"]
+[ext_resource type="Texture2D" uid="uid://8f6uutr1hod7" path="res://Events/FireFighter_Events/CarAccident/CarAccident_Success.png" id="1_ynbb1"]
+[ext_resource type="Theme" uid="uid://bt2457pxcgln2" path="res://ui/custom_ui.tres" id="2_lp1mx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -163,48 +11,77 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cihpc")
+script = ExtResource("1_3hryp")
 
-[node name="Window" type="Window" parent="."]
-initial_position = 3
-size = Vector2i(400, 600)
-current_screen = 0
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = 92.16
+offset_top = 51.84
+offset_right = 92.16
+offset_bottom = 51.8401
+stretch_mode = 0
 
-[node name="EventImage" type="Sprite2D" parent="Window"]
-position = Vector2(70, 30)
-scale = Vector2(0.25, 0.25)
-centered = false
-region_rect = Rect2(0, 0, 1024, 1024)
-script = SubResource("GDScript_4wb85")
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("1_ynbb1")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="EventText" type="Label" parent="Window"]
-anchors_preset = 14
-anchor_top = 0.5
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -10.0
-offset_bottom = 197.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_t8yp5")
+color = Color(0.219608, 0.219608, 0.219608, 0.87451)
+
+[node name="EventText" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.75
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_lp1mx")
+theme_override_font_sizes/font_size = 24
+text = "Hello"
 horizontal_alignment = 1
-vertical_alignment = 2
 autowrap_mode = 3
 
-[node name="state_machine_event" type="Node" parent="."]
-script = ExtResource("2_gus47")
+[node name="Control" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchor_left = 0.1
+anchor_top = 0.75
+anchor_right = 0.9
+anchor_bottom = 0.9
 
-[node name="Idle" type="Node" parent="state_machine_event"]
-script = ExtResource("3_m2ssq")
-animation_name = null
-move_speed = null
+[node name="Accept" type="Button" parent="ColorRect/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.45
+anchor_bottom = 0.8
+theme = ExtResource("2_lp1mx")
+theme_override_font_sizes/font_size = 28
+text = "ACCEPT"
 
-[node name="Display" type="Node" parent="state_machine_event"]
+[node name="Decline" type="Button" parent="ColorRect/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_right = 1.0
+anchor_bottom = 0.8
+theme = ExtResource("2_lp1mx")
+theme_override_font_sizes/font_size = 28
+text = "DECLINE"
 
-[node name="move" type="Node" parent="state_machine_event"]
-
-[node name="success" type="Node" parent="state_machine_event"]
-
-[node name="failure" type="Node" parent="state_machine_event"]
-
-[node name="score" type="Node" parent="state_machine_event"]
+[connection signal="button_up" from="ColorRect/Control/Accept" to="." method="_on_accept_button_up"]
+[connection signal="button_up" from="ColorRect/Control/Decline" to="." method="_on_decline_button_up"]

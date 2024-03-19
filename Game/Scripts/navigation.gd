@@ -1,4 +1,5 @@
 extends Node3D
+class_name CameraNavigation
 
 const RAY_LENGTH = 1000
 
@@ -18,6 +19,11 @@ var current_dist: float
 var last_dist: float
 var current_camera_focus_point: Vector3
 var current_camera_dist: float
+var has_set_init_position = false
+
+const WAIT_TIME_TO_RAYCAST = 2.0
+
+var current_wait_time = 0.0
 		
 func _handle_touch(event: InputEventScreenTouch):
 	if event.pressed:
@@ -77,15 +83,36 @@ func _zoom():
 		
 	current_camera_dist = zf
 
+
+func is_terrain_valid() -> bool:
+	var valid: bool = false
+	if is_instance_valid(terrain):
+		valid = terrain.get_storage() != null
+	return valid
+	
+	
 func _ready():
 	terrain.set_camera(camera)
 	
-	current_camera_dist = initial_distance
+	set_camera_after_terrain_raycast()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var camera_dir = get_global_transform().basis.z
 	position = position.lerp(current_camera_focus_point + camera_dir * current_camera_dist, delta * 14)
+		
+		
+func set_camera_after_terrain_raycast():
+	var camera_origin = camera.get_global_transform().origin
+	var camera_dir = -camera.get_global_transform().basis.z
+
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(camera_origin, camera_origin + camera_dir * 10000.0) 
+	var intersect = space_state.intersect_ray(query)
+	
+	current_camera_focus_point = intersect.get("position")
+	current_camera_dist = (current_camera_focus_point - camera_origin).length();
+		
 		
 func _input(event):
 	# Move the camera on drag.

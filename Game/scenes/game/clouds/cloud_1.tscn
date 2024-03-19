@@ -1,10 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://d35i5y4k88wt8"]
+[gd_scene load_steps=6 format=3 uid="uid://d35i5y4k88wt8"]
 
 [ext_resource type="PackedScene" uid="uid://de06c038yx4o6" path="res://assets/meshes/others/cloud_1.glb" id="1_mnif6"]
-[ext_resource type="Material" uid="uid://cxy2u6ujc4kmu" path="res://assets/materials/clouds.tres" id="2_5ykgh"]
+[ext_resource type="Shader" path="res://assets/shaders/clouds.gdshader" id="2_usx88"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w6nwr"]
+noise_type = 3
+frequency = 0.0046
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eulwj"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_w6nwr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4uvt"]
+render_priority = 0
+shader = ExtResource("2_usx88")
+shader_parameter/ToonRampOffset = 0.522
+shader_parameter/ToonRampSmoothness = 0.141
+shader_parameter/ToonColor = Color(0.67451, 0.898039, 0.964706, 1)
+shader_parameter/ToonRampTinting = Color(0.713726, 0.882353, 0.996078, 1)
+shader_parameter/RimPower = 2.819
+shader_parameter/RimCutOff = 0.6
+shader_parameter/RimSmoothness = 0.05
+shader_parameter/RimLightBrightness = 13.213
+shader_parameter/SubSurfDistortion = 0.545
+shader_parameter/SubSurfTint = null
+shader_parameter/SubSurfBrightness = 2.0
+shader_parameter/SubSurfCutoff = 0.5
+shader_parameter/SubSurfSmoothness = 0.05
+shader_parameter/SubSurfTexture = SubResource("NoiseTexture2D_eulwj")
 
 [node name="cloud_1" instance=ExtResource("1_mnif6")]
 
 [node name="C1_Cloud_0" parent="." index="0"]
 gi_mode = 0
-surface_material_override/0 = ExtResource("2_5ykgh")
+surface_material_override/0 = SubResource("ShaderMaterial_m4uvt")
